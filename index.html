@@ -7,7 +7,7 @@
   <style>
     * {margin:0;padding:0;box-sizing:border-box;}
     body {background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.6;}
-    header img {width:100vw;height:auto;display:block;}
+    header svg {width:100vw;height:auto;display:block;}
     main {max-width:1100px;margin:2rem auto;padding:0 1rem;}
     h1,h2{margin:2.5rem 0 1rem;}
     a{color:#00BFA6;text-decoration:none;}
@@ -17,7 +17,30 @@
 <body>
 
 <header>
-  <img src="https://i.imgur.com/3jKqZ8m.png" alt="Echo Truth Hub">
+  <svg viewBox="0 0 4096 1600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="4096" height="1600" fill="#0A0F14"/>
+
+    <!-- Static waves (your exact colors) -->
+    <path d="M0,800 Q900,280 2048,800 T4096,800 L4096,1600 L0,1600 Z" fill="#FFB800" opacity="0.95"/>
+    <path d="M0,800 Q1100,420 2048,800 T4096,800 L4096,1600 L0,1600 Z" fill="#00BFA6" opacity="0.90"/>
+    <path d="M0,800 Q1300,580 2048,800 T4096,800 L4096,1600 L0,1600 Z" fill="#008080" opacity="0.95"/>
+
+    <!-- Mirrored reflection (static) -->
+    <g opacity="0.35">
+      <path d="M0,800 Q900,1320 2048,800 T4096,800 L4096,0 L0,0 Z" fill="#FFB800"/>
+      <path d="M0,800 Q1100,1180 2048,800 T4096,800 L4096,0 L0,0 Z" fill="#00BFA6"/>
+      <path d="M0,800 Q1300,1020 2048,800 T4096,800 L4096,0 L0,0 Z" fill="#008080"/>
+    </g>
+
+    <!-- Replace this base64 logo with your own tomorrow – for now it’s a clean placeholder -->
+    <!-- Or just delete the <image> line and paste your own <path> logo here -->
+    <image href="logo.svg" x="1696" y="60" width="704" height="704"/>
+
+    <!-- Text (you can move/adjust as you like) -->
+    <text x="2048" y="720" font-size="148" fill="#FFFFFF" font-weight="900" text-anchor="middle" font-family="Impact, sans-serif">Echo Truth Hub</text>
+    <text x="2048" y="860" font-size="92" fill="#FFFFFF" font-weight="600" text-anchor="middle">Debunk. Learn. &amp; Earn by Merit.</text>
+  </svg>
 </header>
 
 <main>
@@ -29,7 +52,7 @@
 
   <h1>How it works</h1>
   <p>A peer-controlled learning platform where the community — not editors or algorithms — decide what holds up.<br>
-  Tired of second-guessing sensational headlines and doing your own research just to learn the truth? Here, real experts and everyday people pitch in their evidence, and the strongest proof earns recognition and reward.</p>
+  Tired of second-guessing sensational headlines? Here, real experts and everyday people pitch in their evidence, and the strongest proof earns recognition and reward.</p>
 </main>
 
 </body>
