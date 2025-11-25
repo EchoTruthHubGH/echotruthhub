@@ -5,29 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Echo Truth Hub – Debunk. Learn. & Earn by Merit.</title>
   <style>
-    *,*::before,*::after{box-sizing:border-box}
-    body,html{margin:0;padding:0;height:100%;font-family:system-ui,-apple-system,sans-serif;background:#000;color:#f0f0f0;line-height:1.7}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,sans-serif;background:#000;color:#f0f0f0;line-height:1.7}
     header{
       background:url('header.png') center center/cover no-repeat;
       height:100vh;
       display:flex;flex-direction:column;justify-content:center;align-items:center;
       text-align:center;position:relative;
     }
-    header::before{
-      content:'';position:absolute;inset:0;background:rgba(0,0,0,0.58);
-    }
+    header::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6)}
     .logo{max-width:86%;max-height:70vh;z-index:2}
-    h1{font-size:68px;color:#fff;margin:20px 0 0;z-index:2;letter-spacing:-1px;font-weight:800}
-    .tagline{font-size:36px;color:#e0e0e0;margin:8px 0 0;z-index:2;font-weight:400}
-    .content{max-width:900px;margin:0 auto;padding:100px 30px}
-    h2{font-size:38px;color:#fff;margin:80px 0 24px;font-weight:700}
+    h1{font-size:68px;color:#fff;margin:20px 0 0;z-index:2}
+    .tagline{font-size:36px;color:#e0e0e0;margin:8px 0 0;z-index:2}
+    main{max-width:900px;margin:0 auto;padding:100px 30px}
+    h2{font-size:38px;color:#fff;margin:80px 0 24px}
     .box{background:#111;padding:44px;border-radius:20px;margin:60px 0;border:1px solid #333}
-    .btn{
-      display:inline-block;background:#00d4aa;color:#000;padding:22px 64px;
-      border-radius:50px;font-weight:800;font-size:23px;text-decoration:none;
-    }
+    .btn{background:#00d4aa;color:#000;padding:22px 64px;border-radius:50px;font-weight:800;font-size:23px;text-decoration:none}
     footer{text-align:center;padding:120px 20px;color:#777;font-size:15px}
     a{color:#00d4aa;text-decoration:none}
     @media(max-width:768px){
       h1{font-size:48px}
-      .tagline{font-size
+      .tagline{font-size:28px}
+      .logo{max-width:92%}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" class="logo" alt="Echo Truth Hub">
+  <h1>Echo Truth Hub</h1>
+  <p class="tagline">Debunk. Learn. & Earn by Merit.</p>
+</header>
+
+<main>
+  <h2>What is Echo Truth Hub?</h2>
+  <p>A peer-controlled learning platform where the community — not editors or algorithms — decides what holds up. Tired of second-guessing headlines? Here the best evidence wins.</p>
+
+  <h2>How it works</h2>
+  <div class="box">
+    1. See a claim on <a href="https://x.com/EchoTruthHub">@EchoTruthHub</a><br>
+    2. Pay €1 entry → IBAN NL65 BUNQ 2172 6473 81 (mention your @)<br>
+    3. Reply with proof + category A/B/C<br>
+    4. Community votes top B/C in a 24 h poll<br><br>
+    <strong>Rewards (always known upfront):</strong><br>
+    • 10–19 B/C → top 2 earn €3 each<br>
+    • 20–49 → top 3 earn €3 each<br>
+    • 50–99 → top 5 earn €3 each<br>
+    • 100+ → top 10 earn €3 each<br><br>
+    Remaining funds grow the platform — no ads, no investors.
+  </div>
+
+  <div style="text-align:center;margin:80px 0">
+    <a href="https://x.com/EchoTruthHub" class="btn">Join the Current Claim</a>
+  </div>
+</main>
+
+<footer>
+  <p><a href="#">Terms & Conditions</a> • <a href="https://x.com/EchoTruthHub">@EchoTruthHub</a> • 2025</p>
+</footer>
+
+</body>
+</html>
