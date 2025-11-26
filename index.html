@@ -18,21 +18,30 @@
     .philo h2{cursor:pointer;font-size:2.1em;color:#00BFA6;margin:3.5em 0 1em;}
     .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
     footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
+    .lang-toggle{position:fixed;top:20px;right:20px;z-index:1000;}
+    .lang-toggle button{background:#00BFA6;color:#000;border:none;padding:0.8em 1.2em;border-radius:20px;cursor:pointer;font-weight:bold;margin-left:0.5em;}
+    .lang-toggle button:hover{background:#FFB800;}
+    [lang="nl"] {display:none;}
+    [lang="en"].hidden {display:none;}
+    [lang="nl"].show {display:block;}
   </style>
 </head>
 <body>
+
+<div class="lang-toggle">
+  <button onclick="toggleLang('en')">EN</button>
+  <button onclick="toggleLang('nl')">NL</button>
+</div>
 
 <header>
   <img src="header.svg" alt="Echo Truth Hub">
 </header>
 
-<main>
-  <!-- 1. PAIN -->
+<main lang="en">
   <h1>Weary of twisted headlines and leading narratives?</h1>
-  <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
+  <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, and proudly agenda-free.</p>
   <p>We’re exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
 
-  <!-- 2. VISION -->
   <h1>Imagine a place where evidence actually wins</h1>
   <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
 
@@ -44,4 +53,127 @@
       <p>We’re not here to get rich. We’re here because the world is loud with half-truths and people who bring real evidence deserve more than just likes.</p>
       <p>The €1 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible “thank you” in cash.</p>
       <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
-      <p style="margin-top:1
+      <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
+        → Merit first. Learning second. Money last.<br>
+        That’s the only order that feels honest.
+      </p>
+    </div>
+  </div>
+
+  <h1>Real people (you!), real proof, real reward</h1>
+  <div class="box">
+    <strong>How it works (skill, not luck)</strong>
+    <ul style="margin:1.5em 0;padding-left:1.5em;font-size:1.1em;">
+      <li>Pay €1 → reply on X with sources + #TruthWithTeeth</li>
+      <li>72 h — community likes decide the top contributor</li>
+      <li>Minimum 10 entries → best evidence earns max 35% of pot</li>
+      <li>Winner paid via Bunq within 24 h — announced publicly</li>
+    </ul>
+  </div>
+
+  <div class="play">
+    <h1>Ready to play?</h1>
+    <p>€1 entry — best evidence earns the pot</p>
+    <a href="https://bunq.me/EchoTruthHubEntry" target="_blank" class="bigcta">
+      Pay €1 Now (2 clicks)
+    </a>
+    <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
+      Add “Entry @yourhandle” in notes · Global · Secure · <strong>Skill game, not gambling</strong>
+    </p>
+  </div>
+
+  <h1>About the guy behind it</h1>
+  <p>One early morning I woke up, grabbed my phone, and — like so many of us — ended up scrolling way longer than planned.  
+  The sheer amount of half-truths and noise just left me tired and overwhelmed.</p>
+  <p>I noticed a lot of friends, family, and random people I talk to feel exactly the same itch.  
+  So I asked myself: what if we turned that quiet “ugh” into something fun and useful?</p>
+  <p>A place where normal people can share real sources, listen to each other, and learn — without anyone acting superior or judgemental.</p>
+  <p>That’s how Echo Truth Hub was born.  
+  Not because I’m a professional debunker. Just because the itch is shared by so many… and because I genuinely love a good, open-minded conversation with someone who’s willing to listen.</p>
+  <p>So here we are.  
+  No agenda, just curiosity and a €1 pot.  
+  Got thoughts? DM me — start with the word <strong>TRUTH</strong> and I’ll reply.</p>
+
+  <div class="box">
+    Questions? DM personal account starting with <strong>TRUTH</strong>.<br>
+    Tips & coffee? DM @EchoTruthHub.
+  </div>
+</main>
+
+<main lang="nl" class="hidden">
+  <h1>Vermoeid van verdraaide koppen en sturende verhalen?</h1>
+  <p>Gebouwd en gerund door iemand die genoeg had van bevooroordeelde headlines en een plek wilde waar bewijs gezamenlijk zegeviert. Onafhankelijk, community-gefinancierd, en trots agenda-vrij.</p>
+  <p>We zijn uitgeput door gecensureerde realiteit en gekleurde nieuwsberichten. Dit is de kalme, educatieve en leuke veilige haven waar sceptici, gelovigen en de nieuwsgierigen elkaar ontmoeten op neutraal terrein — gewapend met bronnen, hun verstand en logica.</p>
+
+  <h1>Stel je een plek voor waar bewijs werkelijk wint</h1>
+  <p>Geen geschreeuw meer. Gewoon heldere claims, zichtbaar bewijs, en een scorebord dat beloont wie het beste bewijs brengt — niets anders.</p>
+
+  <div class="philo">
+    <h2 onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">
+      Onze Filosofie ⟡
+    </h2>
+    <div>
+      <p>We zijn hier niet om rijk te worden. We zijn hier omdat de wereld luid is van halve waarheden en mensen die echt bewijs brengen meer verdienen dan alleen likes.</p>
+      <p>De €1 die je betaalt houdt de lichten aan en financiert de pot. Niets anders — geen ads, geen investeerders, geen verborgen agenda. Gewoon een community-gefinancierde kampvuur waar het beste bewijs een respectvol, tastbaar “dank je wel” in cash krijgt.</p>
+      <p>Zie het als een leuk, collaboratief avontuur in de jungle van verdraaide headlines — waar kennis respect verdient… en een beetje geld aan de zijlijn.</p>
+      <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
+        → Merit eerst. Leren tweede. Geld laatste.<br>
+        Dat is de enige volgorde die eerlijk voelt.
+      </p>
+    </div>
+  </div>
+
+  <h1>Echte mensen (jij!), echt bewijs, echte beloning</h1>
+  <div class="box">
+    <strong>Hoe het werkt (vaardigheid, niet geluk)</strong>
+    <ul style="margin:1.5em 0;padding-left:1.5em;font-size:1.1em;">
+      <li>Pay €1 → reply on X with sources + #TruthWithTeeth</li>
+      <li>72 h — community likes decide the top contributor</li>
+      <li>Minimum 10 entries → best evidence earns max 35% of pot</li>
+      <li>Winner paid via Bunq within 24 h — announced publicly</li>
+    </ul>
+  </div>
+
+  <div class="play">
+    <h1>Klaar om te spelen?</h1>
+    <p>€1 entry — best evidence earns the pot</p>
+    <a href="https://bunq.me/EchoTruthHubEntry" target="_blank" class="bigcta">
+      Pay €1 Now (2 clicks)
+    </a>
+    <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
+      Add “Entry @yourhandle” in notes · Global · Secure · <strong>Skill game, not gambling</strong>
+    </p>
+  </div>
+
+  <h1>About the guy behind it</h1>
+  <p>One early morning I woke up, grabbed my phone, and — like so many of us — ended up scrolling way longer than planned.  
+  The sheer amount of half-truths and noise just left me tired and overwhelmed.</p>
+  <p>I noticed a lot of friends, family, and random people I talk to feel exactly the same itch.  
+  So I asked myself: what if we turned that quiet “ugh” into something fun and useful?</p>
+  <p>A place where normal people can share real sources, listen to each other, and learn — without anyone acting superior or judgemental.</p>
+  <p>That’s how Echo Truth Hub was born.  
+  Not because I’m a professional debunker. Just because the itch is shared by so many… and because I genuinely love a good, open-minded conversation with someone who’s willing to listen.</p>
+  <p>So here we are.  
+  No agenda, just curiosity and a €1 pot.  
+  Got thoughts? DM me — start with the word <strong>TRUTH</strong> and I’ll reply.</p>
+
+  <div class="box">
+    Questions? DM personal account starting with <strong>TRUTH</strong>.<br>
+    Tips & coffee? DM @EchoTruthHub.
+  </div>
+</main>
+
+<script>
+function toggleLang(lang) {
+  document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
+  document.querySelector(`main[lang="${lang}"]`).classList.remove('hidden');
+}
+</script>
+
+<footer>
+  <p>Beta · 18+ · <strong>Skill game – not gambling</strong> · No financial/medical advice</p>
+  <p><a href="tnc.html">Terms & Conditions</a> · 2025</p>
+</footer>
+
+</body>
+</html>
