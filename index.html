@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Echo Truth Hub – Weary of twisted headlines?</title>
-  <style>
-    body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
-    header img{width:100vw;height:auto;display:block;}
-    main{max-width:1000px;margin:40px auto;padding:0 20px;}
-    h1{font-size:2.9em;margin:2.8em 0 1.2em;color:#00BFA6;line-height:1.2;}
-    h2{text-align:center;font-size:1.9em;font-weight:bold;margin:2rem 0;color:#00BFA6;}
-    p{font-size:1.18em;margin-bottom:1.4em;}
-    a{color:#00BFA6;text-decoration:none;}
-    .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
-    .play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
-    .play h1{font-size:3.6em;margin:0 0 1rem;color:#fff;}
-    .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;}
-    .xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
-    .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
-    .philo h2{cursor:pointer;font-size:2.1em;color:#00BFA6;margin:3.5em 0 1em;}
-    .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
-    footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
-    .lang-toggle{position:fixed;top:20px;right:20px;z-index:1000;}
-    .lang-toggle button{background:#00BFA6;color:#000;border:none;padding:0.8em 1.2em;border-radius:20px;cursor:pointer;font-weight:bold;margin-left:0.5em;}
-    .lang-toggle button:hover{background:#FFB800;}
-    .hidden{display:none;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Echo Truth Hub – Weary of twisted headlines?</title>
+<style>
+  body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
+  header img{width:100vw;height:auto;display:block;}
+  main{max-width:1000px;margin:40px auto;padding:0 20px;}
+  h1{font-size:2.9em;margin:2.8em 0 1.2em;color:#00BFA6;line-height:1.2;}
+  h2{text-align:center;font-size:1.9em;font-weight:bold;margin:1.5rem 0;color:#00BFA6;}
+  p{font-size:1.18em;margin-bottom:1.4em;}
+  a{color:#00BFA6;text-decoration:none;}
+  .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
+  .play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
+  .play h1{font-size:3.6em;margin:0 0 1rem;color:#fff;}
+  .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;}
+  .xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
+  .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
+  .philo h2{cursor:pointer;font-size:2.1em;color:#00BFA6;margin:3.5em 0 1em;}
+  .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
+  footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
+  .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
+  .lang-toggle button{background:#00BFA6;color:#000;border:none;width:56px;height:56px;border-radius:50%;font-size:2.2em;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+  .lang-toggle button:hover{background:#FFB800;}
+  .hidden{display:none;}
+</style>
 </head>
 <body>
 
 <div class="lang-toggle">
-  <button onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">EN</button>
-  <button onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">NL</button>
+  <button title="English" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">🇬🇧</button>
+  <button title="Nederlands" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">🇳🇱</button>
+</button>
 </div>
 
 <header>
@@ -109,7 +110,9 @@
 <main lang="nl" class="hidden">
   <h1>Vermoeid van verdraaide koppen en sturende verhalen?</h1>
   <p>Gebouwd en gerund door iemand die genoeg had van vooringenomen nieuws en een plek wilde creëren waar bewijs het gezamenlijk wint. Onafhankelijk, volledig gemeenschappelijk gefinancierd, en trots agenda vrij.</p>
-  <p>We zijn vermoeid van geknipte realiteit en gekleurde nieuwsberichten. Dit is de rustige, leerzame en leuke thuishaven waar sceptici, gelovigen en de nieuwsgierigen elkaar op neutraal terrein ontmoeten — gewapend met niets meer dan bronnen, hun verstand en pure logica.</p>
+
+  <p>We zijn vermoeid van geknipte realiteit en gekleurde nieuwsberichten.  
+  Dit is de rustige, leerzame en leuke thuishaven waar sceptici, gelovigen en de nieuwsgierigen elkaar op neutraal terrein ontmoeten — gewapend met niets meer dan bronnen, hun verstand en pure logica.</p>
 
   <h1>Stel je een plek voor waar de realiteit werkelijk wint</h1>
   <p>Geen geschreeuw. Gewoon heldere claims, zichtbaar bewijs, en een 'scorebord' dat het beste bewijs beloont — niets anders.</p>
@@ -121,7 +124,7 @@
       <p>De €1,21 inleg houdt de motor draaiende en spekt de pot. Niets anders — geen advertenties, geen investeerders, geen verborgen agenda. Gewoon een gemeenschappelijke plek bij het kampvuur waar het beste bewijs een respectvol, tastbaar “dank je wel” als beloning ontvangt.</p>
       <p>Zie het als een plezierig avontuur in de weelderige woestenij van het interwebs — waar kennis respect verdient… en een kers op de taart toe.</p>
       <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
-        → Verdiensten eerst. Leren tweede. Beloning laatst.<br>
+        → Verdiensten eerst. Leren tweede. Beloning laatste.<br>
         Dat is de beloning dat eerlijk is.
       </p>
     </div>
@@ -150,21 +153,21 @@
 
   <div class="xcta">
     <h2>Niet alleen maar 'ergernis' – doe mee aan het plezier op X</h2>
-    <p>Lopende premies, echte gesprekken, toffe mensen die samen mythen ontmaskeren. Volg om het avontuur te zien (geen ergernis, alleen wijsheid en plezier).</p>
+    <p>Lopende premies, echte gesprekken, toffe mensen die samen mythen ontmaskeren. Volg om het avontvouwen (geen ergernis, alleen wijsheid en plezier).</p>
     <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Volg op X</a>
   </div>
 
   <h1>Over de persoon achter dit initiatief</h1>
   <p>Eén vroege ochtend werd ik wakker, pakte mijn telefoon en — zoals zovelen — eindigde ik veel langer aan het scrollen dan gepland.  
   Door de hoeveelheid halve waarheden en ruis raakte ik simpelweg afgestompt en overweldigd.</p>
-  <p>Ik merk dat veel vrienden, familie en willekeurige mensen hetzelfde jeukende gevoel ervaren.</p>
+  <p>Ik merkte dat veel vrienden, familie en willekeurige mensen hetzelfde jeukende gevoel ervaren.</p>
   <p>Dus dacht ik: wat als we die stille zucht omzetten in iets leuks en nuttigs?</p>
   <p>Een plek waar gewone mensen echte bronnen delen, naar elkaar luisteren en leren — zonder dat iemand zich superieur waant of oordelend gedraagt.</p>
   <p>Zo is Echo Truth Hub geboren.</p>
   <p>Niet omdat ik een professionele mytheontkrachter ben. Gewoon omdat de ontstemming door velen gedeeld wordt… en omdat iedereen een goed gesprek waardeert op basis van openheid en wederkerigheid.</p>
   <p>Dus. Daar zijn wij dan.</p>
-  <p>Geen agenda, alleen nieuwsgierigheid en ideaal met beloning.</p>
-  <p>Ideeën of gedachten? Stuur mij een PB — begin met het woord TRUTH en ik antwoord altijd.</p>
+  <p>Geen agenda, alleen nieuwsgierigheid en een ideaal met beloning.</p>
+  <p>Ideeën of gedachten? Stuur mij een PB — begin met het woord <strong>TRUTH</strong> en ik antwoord altijd.</p>
 
   <div class="box">
     Vragen? PB mijn persoonlijke account, begin met <strong>TRUTH</strong>.<br>
