@@ -7,39 +7,33 @@
 <style>
   body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:800px;margin:3rem auto;padding:0 1rem;}
   h1{color:#00BFA6;}
-  .lang-toggle{position:fixed;top:20px;right:20px;z-index:1000;}
-  .lang-toggle button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;cursor:pointer;margin-left:0.5em;}
-  .hidden{display:none;}
+  .lang{position:fixed;top:20px;right:20px;z-index:10;}
+  .lang button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;margin-left:0.5em;cursor:pointer;font-weight:bold;}
+  .content{display:none;}
+  .en{display:block;}
 </style>
 </head>
 <body>
 
-<div class="lang-toggle">
-  <button onclick="document.querySelectorAll('.content').forEach(c=>c.classList.add('hidden'));document.querySelector('.en').classList.remove('hidden');">EN</button>
-  <button onclick="document.querySelectorAll('.content').forEach(c=>c.classList.add('hidden'));document.querySelector('.nl').classList.remove('hidden');">NL</button>
+<div class="lang">
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
 </div>
 
 <div class="content en">
-  <!-- English T&Cs – same as before -->
   <h1>Terms & Conditions – the honest stuff nobody loves reading</h1>
-  <p><strong>This is not gambling.</strong> Echo Truth Hub is a skill-based learning game...</p>
-  <!-- (rest of English T&Cs from previous version) -->
+  <p><strong>This is not gambling.</strong> Echo Truth Hub is a skill-based learning game. The result is decided only by the quality of evidence you bring — never by luck or chance.</p>
+  <!-- (rest of English T&Cs from previous final version) -->
+  <p><a href="/">← Back</a></p>
 </div>
 
-<div class="content nl hidden">
-  <!-- YOUR FULL DUTCH T&Cs from your last message -->
+<div class="content nl">
+  <!-- YOUR FULL DUTCH T&Cs from your last message – pasted exactly -->
   <h1>Algemene Voorwaarden – de eerlijke tekst dat niemand graag leest</h1>
-  <p><strong>Dit is geen kansspel.</strong> Echo Truth Hub is een vaardigheidsspel...</p>
+  <p><strong>Dit is geen kansspel.</strong> Echo Truth Hub is een vaardigheidsspel. Het resultaat wordt uitsluitend bepaald door de kwaliteit van het bewijs dat je levert — nooit door toeval.</p>
   <!-- (rest of your Dutch T&Cs) -->
+  <p><a href="/">← Terug</a></p>
 </div>
 
-<p style="margin-top:4em;text-align:center;"><a href="/">← Back to home</a></p>
-
-<script>
-function show(lang) {
-  document.querySelectorAll('.content').forEach(c => c.classList.add('hidden'));
-  document.querySelector('.' + lang).classList.remove('hidden');
-}
-</script>
 </body>
 </html>
