@@ -24,14 +24,14 @@
     .lang-toggle{position:fixed;top:20px;right:20px;z-index:1000;}
     .lang-toggle button{background:#00BFA6;color:#000;border:none;padding:0.8em 1.2em;border-radius:20px;cursor:pointer;font-weight:bold;margin-left:0.5em;}
     .lang-toggle button:hover{background:#FFB800;}
-    [lang="nl"]{display:none;}
+    .hidden{display:none;}
   </style>
 </head>
 <body>
 
 <div class="lang-toggle">
-  <button onclick="document.querySelectorAll('main').forEach(m=>m.style.display='none');document.querySelector('main[lang=en]').style.display='block';">EN</button>
-  <button onclick="document.querySelectorAll('main').forEach(m=>m.style.display='none');document.querySelector('main[lang=nl]').style.display='block';">NL</button>
+  <button onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">EN</button>
+  <button onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">NL</button>
 </div>
 
 <header>
@@ -41,7 +41,6 @@
 <h2>Debunk myths together, learn from real sources, and earn merit for the best proof</h2>
 
 <main lang="en">
-  <!-- English content – unchanged from last perfect version -->
   <h1>Weary of twisted headlines and leading narratives?</h1>
   <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
   <p>We’re exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
@@ -109,7 +108,7 @@
 
 <main lang="nl" class="hidden">
   <h1>Vermoeid van verdraaide koppen en sturende verhalen?</h1>
-  <p>Gebouwd en gerund door iemand die genoeg had van bevooroordeelde headlines en een plek wilde creëren waar bewijs het gezamenlijk wint. Onafhankelijk, volledig gemeenschappelijk gefinancierd, en trots agenda vrij.</p>
+  <p>Gebouwd en gerund door iemand die genoeg had van vooringenomen nieuws en een plek wilde creëren waar bewijs het gezamenlijk wint. Onafhankelijk, volledig gemeenschappelijk gefinancierd, en trots agenda vrij.</p>
   <p>We zijn vermoeid van geknipte realiteit en gekleurde nieuwsberichten. Dit is de rustige, leerzame en leuke thuishaven waar sceptici, gelovigen en de nieuwsgierigen elkaar op neutraal terrein ontmoeten — gewapend met niets meer dan bronnen, hun verstand en pure logica.</p>
 
   <h1>Stel je een plek voor waar de realiteit werkelijk wint</h1>
@@ -180,8 +179,8 @@
 
 <script>
 function toggleLang(lang) {
-  document.querySelectorAll('main').forEach(m => m.style.display = 'none');
-  document.querySelector(`main[lang="${lang}"]`).style.display = 'block';
+  document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
+  document.querySelector(`main[lang="${lang}"]`).classList.remove('hidden');
 }
 </script>
 
