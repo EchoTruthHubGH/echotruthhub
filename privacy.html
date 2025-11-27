@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Privacy Policy – Echo Truth Hub</title>
-  <style>
-    body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:800px;margin:3rem auto;padding:0 1rem;}
-    h1{color:#00BFA6;}
-    h2{margin-top:2.5em;color:#00BFA6;}
-    ul{margin:1em 0 2em;padding-left:1.5em;}
-    .note{font-size:0.95em;opacity:0.9;margin-top:3em;padding:1.5em;background:#1a2630;border-radius:12px;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy – Echo Truth Hub</title>
+<style>
+  body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:800px;margin:3rem auto;padding:0 1rem;}
+  h1{color:#00BFA6;margin-bottom:1.5em;}
+  .lang{position:fixed;top:20px;right:20px;z-index:10;}
+  .lang button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;margin-left:0.5em;cursor:pointer;font-weight:bold;}
+  .lang button:hover{background:#FFB800;}
+  .content{display:none;}
+  .en{display:block;}
+</style>
 </head>
 <body>
 
-<h1>Privacy Policy – short and honest</h1>
-
-<p>We collect almost nothing, and we keep it safe. GDPR-compliant, no BS.</p>
-
-<h2>What data we collect</h2>
-<ul>
-  <li>Your X handle (from payment note "Entry @yourhandle")</li>
-  <li>Payment reference (to match entries to bounties)</li>
-  <li>Myth requests (if you use the form: your suggestion text + optional email)</li>
-</ul>
-
-<h2>Why we collect it (lawful basis)</h2>
-<p>Legitimate interest for the skill game (GDPR Art 6(1)(f)): to run bounties, credit earners, and pick myths. Consent for requests (Art 6(1)(a)). No selling, no sharing – just to make the game work.</p>
-
-<h2>How we store it</h2>
-<p>Bunq for payments (their GDPR policy applies), GitHub for site files (encrypted), email for requests (your provider's policy). Deleted after 1 year or on request.</p>
-
-<h2>Your rights</h2>
-<p>Access, correct, delete, or object anytime. DM @EchoTruthHub starting with <strong>PRIVACY</strong> – we respond in 24h, no cost. No automated decisions or profiling.</p>
-
-<h2>International transfers</h2>
-<p>No transfers outside EEA – all EU-based (Bunq/GitHub NL servers).</p>
-
-<h2>Cookies & tracking</h2>
-<p>None – no cookies, no analytics, no ads.</p>
-
-<div class="note">
-  <strong>Friendly note:</strong><br>
-  We’re a tiny team (just me) – data is minimal because the game is simple. Questions? DM <strong>PRIVACY</strong> start.<br><br>
-  <strong>Controller:</strong><br>
-  Echo Truth Hub, KvK 51644525, BTW NL002062337B87 (SimpleLight sole proprietor).
+<div class="lang">
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
 </div>
 
-<p style="margin-top:4em;font-size:0.9em;"><a href="/">← Back to home</a></p>
+<div class="content en">
+  <h1>Privacy Policy – short and honest</h1>
+  <p>We collect almost nothing, and we keep it safe. GDPR-compliant, no BS.</p>
+  <p><strong>What we collect</strong><br>
+  – Your X handle (from payment note "Entry @yourhandle")<br>
+  – Payment reference (to match entries to bounties)<br>
+  – Myth requests (if you use the form: your suggestion text + optional email)</p>
+  <p><strong>What we do with it</strong><br>
+  – Credit you if you win a bounty<br>
+  – Match payments to entries<br>
+  – Read myth requests to pick the next bounty</p>
+  <p><strong>What we NEVER do</strong><br>
+  – Sell, share, or spam your data<br>
+  – Store bank details (Bunq handles that)<br>
+  – Track you across the web</p>
+  <p><strong>Your rights</strong><br>
+  Want it deleted? DM @EchoTruthHub starting with <strong>PRIVACY</strong> — gone in 24 h.</p>
+  <p><a href="/">← Back</a></p>
+</div>
+
+<div class="content nl">
+  <h1>Privacybeleid – kort en eerlijk</h1>
+  <p>We verzamelen bijna niets en bewaren het veilig. AVG-conform, geen onzin.</p>
+  <p><strong>Welke gegevens we verzamelen</strong><br>
+  – Uw X-handle (uit de betaalnotitie "Inleg @uwhandle")<br>
+  – Betaalreferentie (om inleg aan premie te koppelen)<br>
+  – Mytheverzoeken (als u het formulier gebruikt: uw suggestietekst + optioneel e-mailadres)</p>
+  <p><strong>Waarom we het verzamelen</strong><br>
+  – Om u te crediteren als u een bounty verdient<br>
+  – Om betalingen aan inleggen te koppelen<br>
+  – Om mytheverzoeken te lezen voor de volgende bounty</p>
+  <p><strong>Wat we NOOIT doen</strong><br>
+  – Verkoop, delen of spammen van uw data<br>
+  – Bankgegevens opslaan (Bunq doet dat)<br>
+  – U volgen over het web</p>
+  <p><strong>Uw rechten</strong><br>
+  Wilt u alles weg? PB @EchoTruthHub, begin met <strong>PRIVACY</strong> — binnen 24 uur weg.</p>
+  <p><a href="/">← Terug</a></p>
+</div>
 
 </body>
 </html>
