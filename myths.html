@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Myth Archive – Echo Truth Hub</title>
-  <style>
-    body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:900px;margin:3rem auto;padding:0 1rem;}
-    h1{color:#00BFA6;}
-    table{width:100%;border-collapse:collapse;margin:2em 0;font-size:1.1em;}
-    th,td{padding:1.2em 0.8em;border-bottom:1px solid #00BFA633;text-align:left;}
-    th{background:#1a2630;color:#00BFA6;}
-    tr:hover{background:#1a263022;}
-    .empty{font-style:italic;opacity:0.7;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Myth Archive – Echo Truth Hub</title>
+<style>
+  body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:900px;margin:3rem auto;padding:0 1rem;}
+  h1{color:#00BFA6;}
+  .lang{position:fixed;top:20px;right:20px;z-index:10;}
+  .lang button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;margin-left:0.5em;cursor:pointer;font-weight:bold;}
+  .content{display:none;}
+  .en{display:block;}
+  table{width:100%;border-collapse:collapse;margin:2em 0;}
+  th,td{padding:1em;border-bottom:1px solid #00BFA633;text-align:left;}
+  th{background:#1a2630;color:#00BFA6;}
+</style>
 </head>
 <body>
 
-<h1>Myth Archive</h1>
-<p>Every myth gets a permanent ID and can never be repeated.<br>
-Once settled, the best evidence earns the pot — forever on record.</p>
+<div class="lang">
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
+</div>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Date</th>
-    <th>Myth</th>
-    <th>Earner</th>
-    <th>Reward</th>
-  </tr>
-  <!-- Example row – delete when real ones exist -->
-  <!--
-  <tr>
-    <td>M0001</td>
-    <td>27 Nov 2025</td>
-    <td>“COVID vaccines contain microchips”</td>
-    <td>@example</td>
-    <td>€7</td>
-  </tr>
-  -->
-  <tr>
-    <td colspan="5" class="empty">No closed myths yet — be the first!</td>
-  </tr>
-</table>
+<div class="content en">
+  <h1>Myth Archive</h1>
+  <p>Every myth gets a permanent ID and can never be repeated.<br>
+  Once settled, the best evidence earns the pot — forever on record.</p>
+  <!-- English table -->
+</div>
 
-<p style="margin-top:4em;font-size:0.95em;"><a href="/">← Back to home</a></p>
+<div class="content nl">
+  <h1>Mythe Archief</h1>
+  <p>Elke mythe krijgt een permanente ID en kan nooit worden herhaald.</p>
+  <p>Zodra de mythe is 'opgelost', verdient het beste bewijs de prijzenpot — en staat het voor altijd geregistreerd.</p>
+  <!-- Dutch table with your text -->
+</div>
+
+<p style="margin-top:4em;text-align:center;"><a href="/">← Back</a></p>
 
 </body>
 </html>
