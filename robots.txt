@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /scripts/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/     # if you ever use WordPress stuff
+Disallow: /.git/         # hides any code history
+Disallow: /*.php$        # hides PHP files if you have any
+
+Allow: /
+
+Sitemap: https://echotruthhub.news/sitemap.xml   # optional, helps good pages get found faster
