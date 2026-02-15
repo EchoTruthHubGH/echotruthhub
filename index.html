@@ -27,17 +27,19 @@
   .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
   .play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
   .play h2{font-size:3.6em;margin:0 0 1rem;color:#fff;}
-  .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;transition:all 0.3s ease;}
+  .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:12px;}
   .bigcta:hover{background:#FFB800;transform:scale(1.05);}
+  .bigcta .x-logo{filter:brightness(0);margin:0;}
   .mollie-badge{max-width:280px;width:100%;height:auto;margin:1.5em auto 0;display:block;opacity:0.9;border-radius:8px;}
   .xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
-  .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
+  .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:12px;}
   .philo h2{font-size:2.1em;margin:3rem 0 1em;text-align:center;cursor:pointer;transition:all 0.3s ease;}
   .philo h2:hover{transform:scale(1.05);}
   .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
   .blog-header{font-size:2.1em;margin:2rem 0 1em;text-align:center;}
   .blog-header a{color:#FFB800;text-decoration:none;transition:all 0.3s ease;display:inline-block;}
   .blog-header a:hover{color:#00BFA6;transform:scale(1.05);}
+  .x-logo{width:32px;height:32px;display:inline-block;vertical-align:middle;}
   footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
   .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
   .lang-toggle button{background:#00BFA6;border:none;width:56px;height:56px;border-radius:50%;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:0;transition:all 0.3s ease;}
@@ -75,9 +77,9 @@
   <h1>Debunk myths together, Learn from real sources,<br>&<br>earn by Merit for the best Proof</h1>
   <h2>Weary of twisted headlines and leading narratives?</h2>
   <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
-  <p>We're exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
+  <p>We're exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground, armed only with sources, wits, and logic.</p>
   <h2>Imagine a place where evidence actually wins</h2>
-  <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
+  <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence, nothing else.</p>
   
   <h2 class="gold blog-header">
     <a href="blog.html">Investigative commentaries ◆</a>
@@ -88,8 +90,8 @@
     <div>
       <p>We're not here to get rich. We're here because the world is loud with half-truths or plain out lies conflicting with reality. We would like to encourage kin alike who feel the same to bring real evidence so that we may learn from each other.</p>
       <p>We all deserve more than just likes for clout because it's sensational, misleading or misinforming. It's for all that like an honest and safe place to discuss around the campfire.</p>
-      <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible "thank you" in cash.</p>
-      <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
+      <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else, no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible "thank you" in cash.</p>
+      <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines, where knowledge earns respect… and a little money on the side.</p>
       <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
         → Merit first. Learning second. Money last.<br>
         That's the only order that feels honest.
@@ -97,7 +99,7 @@
       <div class="prompt-box">
         <p style="margin:0;font-size:1em;"><strong>Try this in any AI for our style:</strong><br>
         "Investigate Echo Truth Hub style: raw data, verifiable sources with direct full URLs, merit- and evidence-based facts only. No fluff. No spin."</p>
-        <p style="margin-top:1em;font-size:0.9em;opacity:0.9;">Evidence first — unfiltered reality.</p>
+        <p style="margin-top:1em;font-size:0.9em;opacity:0.9;">Evidence first, unfiltered reality.</p>
       </div>
     </div>
   </div>
@@ -115,28 +117,28 @@
   <div class="play">
     <h2>Ready to play?</h2>
     <p>Your 🎫 €1.21 entry is just a click away</p>
-    <a href="https://www.mollie.com/checkout/select-method/vM2YFquXBgWn3PxfEkCMJ" target="_blank" class="bigcta">1 Click to Play</a>
+    <a href="https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk" target="_blank" class="bigcta">1 Click to Play</a>
     <img src="mollie-badge.png" alt="Secure payments powered by Mollie – Cards and more" class="mollie-badge">
     <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
       ETH Bounty Entry | Add in payment note or DM @EchoTruthHub on X |'Entry+@yourhandle+M000X+Screenshot'  (replace 'X' with exact bounty code) · Global · Secure · <strong>Skill game, not gambling</strong>
     </p>
   </div>
   <div class="xcta">
-    <h2>Not all pain – join the fun on X</h2>
+    <h2>Not all pain, join the fun on <img src="X_logo.svg" alt="X" class="x-logo"></h2>
     <p>Live bounties, real discussions, awesome people debunking myths together. Follow to see the adventure unfold (no pain, all gain).</p>
-    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Follow on X</a>
+    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Follow on <img src="X_logo.svg" alt="X" class="x-logo"></a>
   </div>
   <h2>About the guy behind it</h2>
-  <p>One early morning I woke up, grabbed my phone, and — like so many of us — ended up scrolling way longer than planned.
+  <p>One early morning I woke up, grabbed my phone, and, like so many of us, ended up scrolling way longer than planned.
   The sheer amount of half-truths and noise just left me tired and overwhelmed.</p>
   <p>I noticed a lot of friends, family, and random people I talk to feel exactly the same itch.
   So I asked myself: what if we turned that quiet "ugh" into something fun and useful?</p>
-  <p>A place where normal people can share real sources, listen to each other, and learn — without anyone acting superior or judgemental.</p>
+  <p>A place where normal people can share real sources, listen to each other, and learn, without anyone acting superior or judgemental.</p>
   <p>That's how Echo Truth Hub was born.
   Not because I'm a professional debunker. Just because the itch is shared by so many… and because I genuinely love a good, open-minded conversation with someone who's willing to listen.</p>
   <p>So here we are.
   No agenda, just curiosity and a €1 pot.
-  Got thoughts? DM me — start with the word <strong>TRUTH</strong> and I'll reply.</p>
+  Got thoughts? DM me, start with the word <strong>TRUTH</strong> and I'll reply.</p>
   <div class="box">
     Questions? DM personal account starting with <strong>TRUTH</strong>.<br>
     Tips & coffee? DM @EchoTruthHub.
@@ -147,20 +149,20 @@
   <h2>Vermoeid van verdraaide koppen en sturende verhalen?</h2>
   <p>Gebouwd en gerund door iemand die genoeg had van vooringenomen nieuws en een plek wilde creëren waar bewijs het gezamenlijk wint. Onafhankelijk, volledig gemeenschap gefinancierd, en trots agenda vrij.</p>
   <p>We zijn vermoeid van geknipte realiteit en gekleurde nieuwsberichten.
-  Dit is de rustige, leerzame en leuke thuishaven waar sceptici, gelovigen en de nieuwsgierigen elkaar op neutraal terrein ontmoeten — gewapend met niets meer dan bronnen, hun verstand en pure logica.</p>
+  Dit is de rustige, leerzame en leuke thuishaven waar sceptici, gelovigen en de nieuwsgierigen elkaar op neutraal terrein ontmoeten, gewapend met niets meer dan bronnen, hun verstand en pure logica.</p>
   <h2>Stel je een plek voor waar de realiteit werkelijk wint</h2>
-  <p>Geen geschreeuw. Gewoon heldere claims, zichtbaar bewijs, en een 'scorebord' dat het beste bewijs beloont — niets anders.</p>
+  <p>Geen geschreeuw. Gewoon heldere claims, zichtbaar bewijs, en een 'scorebord' dat het beste bewijs beloont, niets anders.</p>
   
   <h2 class="gold blog-header">
-    <a href="blog.html">Investigative commentaries ◆</a>
+    <a href="blog.html">Onderzoekende beschouwingen ◆</a>
   </h2>
   
   <div class="philo">
     <h2 class="gold" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Onze Filosofie ⟡</h2>
     <div>
       <p>We zijn hier niet om rijk te worden. We zijn hier omdat de wereld een kakofonie is van halve waarheden, en mensen die echt bewijs leveren, meer verdienen dan enkel vind-ik-leuks.</p>
-      <p>De €1.21 inleg houdt de motor draaiende en spekt de pot. Niets anders — geen advertenties, geen investeerders, geen verborgen agenda. Gewoon een gemeenschappelijke plek bij het kampvuur waar het beste bewijs een respectvol, tastbaar "dank je wel" als beloning ontvangt.</p>
-      <p>Zie het als een plezierig avontuur in de weelderige woestenij van het interwebs — waar kennis respect verdient… en een kers op de taart toe.</p>
+      <p>De €1.21 inleg houdt de motor draaiende en spekt de pot. Niets anders, geen advertenties, geen investeerders, geen verborgen agenda. Gewoon een gemeenschappelijke plek bij het kampvuur waar het beste bewijs een respectvol, tastbaar "dank je wel" als beloning ontvangt.</p>
+      <p>Zie het als een plezierig avontuur in de weelderige woestenij van het interwebs, waar kennis respect verdient… en een kers op de taart toe.</p>
       <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
         → Verdiensten eerst. Leren tweede. Beloning laatste.<br>
         Dat is de beloning dat eerlijk is.
@@ -168,7 +170,7 @@
       <div class="prompt-box">
         <p style="margin:0;font-size:1em;"><strong>Probeer dit in elke AI voor onze stijl:</strong><br>
         "Onderzoek Echo Truth Hub stijl: ruwe data, verifieerbare bronnen met directe volledige URLs, merit- en bewijsgebaseerde feiten alleen. Geen fluff. Geen spin."</p>
-        <p style="margin-top:1em;font-size:0.9em;opacity:0.9;">Bewijs eerst — ongefilterde realiteit.</p>
+        <p style="margin-top:1em;font-size:0.9em;opacity:0.9;">Bewijs eerst, ongefilterde realiteit.</p>
       </div>
     </div>
   </div>
@@ -186,35 +188,35 @@
   <div class="play">
     <h2>Klaar om te spelen?</h2>
     <p>Je 🎫 €1.21 entry is maar één klik verwijderd</p>
-    <a href="https://www.mollie.com/checkout/select-method/vM2YFquXBgWn3PxfEkCMJ" target="_blank" class="bigcta">1 Klik om te Spelen</a>
+    <a href="https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk" target="_blank" class="bigcta">1 Klik om te Spelen</a>
     <img src="mollie-badge.png" alt="Secure payments powered by Mollie – Cards and more" class="mollie-badge">
     <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
       ETH Bounty Entry | Add in payment note or DM @EchoTruthHub on X |'Entry+@jouwhandle+M000X+Screenshot'  (replace 'X' with exact bounty code) · Wereldwijd · Veilig · <strong>Vaardigheidsspel, geen gokken</strong>
     </p>
   </div>
   <div class="xcta">
-    <h2>Niet alleen maar 'ergernis' – doe mee aan het plezier op X</h2>
+    <h2>Niet alleen maar 'ergernis', doe mee aan het plezier op <img src="X_logo.svg" alt="X" class="x-logo"></h2>
     <p>Lopende premies, echte gesprekken, toffe mensen die samen mythen ontmaskeren. Volg om het avontuur te zien ontvouwen (geen ergernis, alleen wijsheid en plezier).</p>
-    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Volg op X</a>
+    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Volg op <img src="X_logo.svg" alt="X" class="x-logo"></a>
   </div>
   <h2>Over de persoon achter dit initiatief</h2>
-  <p>Eén vroege ochtend werd ik wakker, pakte mijn telefoon en — zoals zovelen — eindigde ik veel langer aan het scrollen dan gepland.
+  <p>Eén vroege ochtend werd ik wakker, pakte mijn telefoon en, zoals zovelen, eindigde ik veel langer aan het scrollen dan gepland.
   Door de hoeveelheid halve waarheden en ruis raakte ik simpelweg afgestompt en overweldigd.</p>
   <p>Ik merkte dat veel vrienden, familie en willekeurige mensen hetzelfde jeukende gevoel ervaren.</p>
   <p>Dus dacht ik: wat als we die stille zucht omzetten in iets leuks en nuttigs?</p>
-  <p>Een plek waar gewone mensen echte bronnen delen, naar elkaar luisteren en leren — zonder dat iemand zich superieur waant of oordelend gedraagt.</p>
+  <p>Een plek waar gewone mensen echte bronnen delen, naar elkaar luisteren en leren, zonder dat iemand zich superieur waant of oordelend gedraagt.</p>
   <p>Zo is Echo Truth Hub geboren.</p>
   <p>Niet omdat ik een professionele mytheontkrachter ben. Gewoon omdat de ontstemming door velen gedeeld wordt… en omdat iedereen een goed gesprek waardeert op basis van openheid en wederkerigheid.</p>
   <p>Dus. Daar zijn wij dan.</p>
   <p>Geen agenda, alleen nieuwsgierigheid en een ideaal met beloning.</p>
-  <p>Ideeën or gedachten? Stuur mij een PB — begin met het woord <strong>TRUTH</strong> en ik antwoord altijd.</p>
+  <p>Ideeën or gedachten? Stuur mij een PB, begin met het woord <strong>TRUTH</strong> en ik antwoord altijd.</p>
   <div class="box">
     Vragen? PB mijn persoonlijke account, begin met <strong>TRUTH</strong>.<br>
     Fooien & koffie? PB @EchoTruthHub.
   </div>
 </main>
 <footer>
-  <p>Beta · 18+ · <strong>Vaardigheidsspel – geen gokken</strong> · Geen financieel/medisch advies</p>
+  <p>Beta · 18+ · <strong>Vaardigheidsspel, geen gokken</strong> · Geen financieel/medisch advies</p>
   <p><a href="privacy.html">Privacybeleid</a> · <a href="tnc.html">Algemene Voorwaarden</a> · <a href="myths.html">Mythe Archief</a> · 2025</p>
 </footer>
 <script>
