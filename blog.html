@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investigative Commentaries | Echo Truth Hub</title>
-    <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
+    <meta name="description" content="Deep dives into claims in, evidence, and truth. Where facts meet scrutiny.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
@@ -31,7 +34,7 @@
         .featured-content h2 {font-size:2.2rem;font-weight:700;margin:2rem 0 1rem;line-height:1.2;color:#FFB800;}
         .featured-content h2:first-of-type {margin-top:0;}
         .featured-content p {margin-bottom:1.2em;color:rgba(255,255,255,0.85);line-height:1.7;}
-        .featured-content img {max-width:100%;height:auto;border-radius:12px;margin:2rem 0;display:block;}
+        .featured-content img {max-width:100%;height:auto;border-radius:12px;margin:2rem 0;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
         .featured-content ul {margin:1.5rem 0;padding-left:2rem;}
         .featured-content ul li {margin-bottom:0.8rem;}
         .featured-category {display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:1rem;background:#FFB800;color:#0A0F14;}
@@ -46,6 +49,8 @@
         .article-card h3 a:hover {color:#00BFA6;}
         .box {background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
         .box h2 {color:#FFB800;margin-bottom:1rem;}
+        .box a {color:#fff;text-decoration:none;transition:color 0.2s;}
+        .box a:hover {color:#FFB800;}
         .sidebar {position:sticky;top:100px;height:fit-content;}
         .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
         .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
@@ -54,10 +59,17 @@
         .bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;}
         .bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
         .countdown {font-size:1.3em;color:#FFB800;margin:1rem 0;font-weight:600;}
+        .mollie-badge {max-width:180px;height:auto;opacity:0.9;margin-top:1rem;}
+        .x-logo {width:24px;height:24px;vertical-align:middle;margin-left:8px;opacity:0.9;}
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
+        .article-actions {display:flex;gap:12px;margin:32px 0;padding:0;flex-wrap:wrap;justify-content:center;}
+        .action-btn {display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:transparent;border:2px solid rgba(0,191,166,0.4);border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:all 0.2s;cursor:pointer;}
+        .action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
+        .action-btn i {font-size:16px;color:#00BFA6;}
         @media (max-width:1024px) {.main-wrapper {grid-template-columns:1fr;gap:3rem;}.sidebar {position:static;order:-1;}}
+        @media (max-width:640px) {.article-actions {gap:10px;padding:16px;}.action-btn {padding:10px 14px;font-size:13px;}.action-btn i {font-size:16px;}}
     </style>
 </head>
 <body>
@@ -66,7 +78,7 @@
             <div class="title-block">
                 <a href="/">
                     <div class="logo">Echo Truth Hub</div>
-                    <div class="tagline">Debunk. Learn. & Earn by Merit.</div>
+                    <div class="tagline">Debunk, Learn & Earn by Merit</div>
                 </a>
             </div>
             <nav class="nav">
@@ -97,13 +109,13 @@
 
     <div class="main-wrapper">
         <main class="main-content">
-            <article class="featured-article" data-category="investigation">
+            <article class="featured-article" data-category="investigation" id="mainArticle">
                 <div class="featured-image" style="background-image: url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
-                <div class="featured-content">
+                <div class="featured-content" id="articleContent">
                     <span class="featured-category">Investigation</span>
-                    <h2>The Biometric Dilemma: Why Iris Scans Won’t Solve the Bot Problem</h2>
+                    <h2>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</h2>
                     <p><strong>Investigative Commentary | Echo Truth Hub | February 3, 2026</strong></p>
-                    <p>Rumors circulating in technology circles suggest OpenAI is exploring a new social platform designed exclusively for verified humans with automated accounts excluded. One reported concept involves biometric verification that could require iris scans using the World Orb or device-based systems such as Apple’s Face ID.</p>
+                    <p>Rumors circulating in technology circles suggest OpenAI is exploring a new social platform designed exclusively for verified humans with automated accounts excluded. One reported concept involves biometric verification that could require iris scans using the World Orb or device-based systems such as Apple's Face ID.</p>
                     <p>The proposal addresses a genuine and growing problem. Automated bots increasingly distort online conversations, manipulate engagement, and undermine trust across digital platforms.</p>
                     <img src="https://thumbs.dreamstime.com/b/futuristic-robot-hand-interacts-virtual-icons-showcasing-communication-networking-digital-world-dark-background-419149411.jpg" alt="Social media bots illustration">
                     <p>However, requiring users to surrender something as permanent as biological identity introduces risks that reach far beyond spam prevention.</p>
@@ -111,79 +123,6 @@
                     <h2>What the Evidence Suggests</h2>
                     <p>Based on available reporting and regulatory history, several conclusions can already be drawn.</p>
                     <p>The project appears to be in early exploratory stages and remains unconfirmed publicly. Biometric identifiers introduce irreversible privacy and security risks that differ fundamentally from traditional authentication methods. Meanwhile, multiple non-biometric systems already exist that reduce automated activity effectively. Presenting biometrics as the only viable solution reflects a strategic design choice rather than a technical necessity.</p>
-                    <h2>What We Know So Far</h2>
-                    <p>Details originate from a Forbes report by journalist Anna Tong dated January 28, 2026. The report cites anonymous sources familiar with internal discussions.</p>
-                    <p>According to the report, a small OpenAI team consisting of fewer than ten individuals is reportedly prototyping a social application. The goal is to create a bot-resistant social environment. Verification methods under consideration may include iris scans through the World Orb or facial recognition through consumer devices. The platform may also integrate AI tools capable of generating images or video content. No public launch timeline exists and OpenAI has not confirmed the project.</p>
-                    <p>OpenAI CEO Sam Altman has publicly expressed concern about bots degrading the quality of online interaction. Altman also serves as chair of World Network, previously known as Worldcoin, the organization responsible for developing the World Orb biometric identity hardware.</p>
-                    <p>There is no public evidence confirming coordination between these efforts. Still, the overlap has drawn attention because advanced generative AI systems are making it increasingly difficult to distinguish between human and automated behavior.</p>
-                    <p>Following publication of the Forbes report, the World Network token increased approximately 27 to 40 percent in market trading. While correlation does not prove causation, the market reaction illustrates the economic stakes connected to identity infrastructure.</p>
-                    <h2>The Bot Problem Is Real and Escalating</h2>
-                    <p>Automated accounts now influence large portions of digital engagement. X, previously known as Twitter, reported removing approximately 1.7 million accounts during bot and spam enforcement efforts in 2025. Despite these removals, automated content continues to spread scams, misinformation, and artificially amplified narratives.</p>
-                    <p>Modern generative AI systems can now mimic human communication patterns with remarkable accuracy. Bots can maintain conversations, generate emotional language, and adapt responses dynamically. Detection tools are improving but remain in a continuous arms race with automation technology.</p>
-                    <p>The need to address bot proliferation is widely acknowledged across the technology industry. The critical question is whether biometric identity verification represents a proportionate and sustainable response.</p>
-                    <h2>Why Biometrics Raise Unique and Permanent Risks</h2>
-                    <p>Authentication systems historically rely on credentials that can be replaced if compromised. Biometric identity changes that model entirely.</p>
-                    <p>Passwords can be reset. Devices can be replaced. Biological markers cannot.</p>
-                    <p>If biometric data is exposed, there is no practical way to revoke or regenerate it. Unlike financial information or account credentials, biometric identifiers remain permanently linked to an individual.</p>
-                    <img src="https://thumbs.dreamstime.com/b/abstract-digital-fingerprint-neon-blue-gold-evokes-futuristic-security-scan-identifies-user-via-cyber-technology-data-flows-396785627.jpg" alt="Biometric fingerprint privacy risk">
-                    <p>Researchers also note that biometric data can sometimes allow inference of sensitive personal characteristics, including health indicators or genetic traits. Even if such data is not actively analyzed, its existence creates long-term exposure risk.</p>
-                    <p>Large biometric databases also create high-value targets for cyber attacks. A single breach could permanently expose millions of individuals without any realistic path to remediation.</p>
-                    <p>World Network states that newer versions of its identity system use zero-knowledge proof encryption designed to reduce data exposure. While these protections may improve privacy safeguards, critics argue that biometric capture hardware still introduces an irreversible collection step before anonymization occurs.</p>
-                    <h2>Regulatory History Shows Growing Resistance</h2>
-                    <p>Governments and data protection authorities have already taken significant action against large-scale biometric identity initiatives.</p>
-                    <p>Spain ordered suspension of certain biometric processing activities in 2025 and required deletion of collected data after identifying consent concerns. Portugal temporarily halted biometric enrollment programs in 2024 due to risks involving minors’ data. Germany’s Bavarian data protection authority flagged compliance failures and demanded improved data erasure systems. Thailand’s Personal Data Protection Committee ordered termination of biometric collection in 2025 and mandated deletion of millions of records.</p>
-                    <p>These cases demonstrate a consistent regulatory pattern. Biometric identity programs face increased scrutiny because their consequences cannot easily be reversed.</p>
-                    <h2>Shifting Responsibility and Liability to Users</h2>
-                    <p>Biometric verification introduces a deeper structural issue that extends beyond privacy. It shifts security responsibility away from platform operators and onto individual users.</p>
-                    <p>Bot activity is fundamentally a platform security challenge. Yet biometric identity systems place the burden of verification on individuals while offering limited control over how their biological data is stored, processed, or protected.</p>
-                    <p>Humans are inherently imperfect. Digital communication reflects that reality through experimentation, disagreement, humor, and error. Security design has historically accommodated human fallibility. Biometric identity systems invert this principle by demanding near-perfect user compliance while expecting users to trust safeguards they cannot independently verify.</p>
-                    <p>This raises a critical question. Is biometric verification improving platform security, or is it reducing platform accountability?</p>
-                    <p>When identity becomes tied to biology, the cost of security failure shifts from infrastructure to the individual. Users cannot replace biometric credentials if they are compromised. From a risk management perspective, this resembles a transfer of liability rather than purely a technical advancement.</p>
-                    <h2>The Geopolitical Privacy Divide</h2>
-                    <p>Privacy protections differ dramatically across jurisdictions, and biometric identity systems risk intensifying these divisions.</p>
-                    <p>The European Union continues to adopt increasingly strict privacy frameworks emphasizing informed consent, data minimization, and enforceable rights to erasure. Regulators within the EU have demonstrated willingness to suspend biometric identity projects when safeguards are considered insufficient.</p>
-                    <p>Other regions maintain more commercially flexible or surveillance-driven approaches to biometric data governance. This divergence creates uncertainty for both platform developers and users.</p>
-                    <p>For technology companies, navigating multiple regulatory environments increases compliance complexity and operational risk. For users, biometric data collected under one jurisdiction may be stored, processed, or accessed under another where legal protections differ significantly.</p>
-                    <p>Once biometric data crosses international boundaries, recovering or deleting that information becomes legally and technically difficult. Unlike financial credentials or identity documents, biometric markers cannot be reissued or replaced.</p>
-                    <h2>The Reality of Data Retrieval and Platform Power</h2>
-                    <p>Recovering personal data from large technology platforms is often far more difficult than privacy policies suggest. Numerous cases demonstrate how users struggle to regain access to their data once it becomes entangled in automated moderation or compliance systems.</p>
-                    <p>Individuals who enter automated enforcement processes frequently encounter complex appeal mechanisms dominated by machine learning workflows. Human oversight may be limited or difficult to access. Even when regulatory protections exist, enforcement can require lengthy administrative or legal intervention.</p>
-                    <p>Terms of service agreements often grant platforms broad authority over user data. Individual users rarely possess the legal or financial resources required to challenge global corporations effectively. The imbalance becomes significantly more concerning when the data involved is biometric rather than behavioral or account-based.</p>
-                    <h2>Jurisdiction, Scale, and User Protection</h2>
-                    <p>Global digital platforms operate across multiple legal systems while maintaining centralized data infrastructure. Users may become subject to corporate policies governed by jurisdictions far removed from their own legal protections.</p>
-                    <p>If disputes arise, individuals often face uncertainty regarding which regulatory framework applies and how enforcement can realistically be pursued. For biometric identity, which is inherently permanent, this jurisdictional ambiguity introduces additional long-term risk.</p>
-                    <p>The scale of global platforms further complicates accountability. Even legitimate user grievances can struggle to receive meaningful attention within large technology organizations. Regulatory oversight exists, but enforcement frequently lags behind technological deployment.</p>
-                    <h2>Viable Alternatives Already Exist</h2>
-                    <p>Biometric verification is not the only pathway toward improving authenticity online. Several alternative systems are already in development or active deployment.</p>
-                    <p>Social trust networks such as Proof of Humanity and BrightID rely on human verification relationships that are difficult to automate at scale.</p>
-                    <p>Credential aggregation tools such as Gitcoin Passport combine multiple legitimacy indicators without relying on a single permanent identifier.</p>
-                    <p>Zero-knowledge identity frameworks such as Self Protocol allow individuals to prove uniqueness without revealing personal identity or storing centralized biometric data.</p>
-                    <img src="https://horizen.io/academy/assets/images/zero-knowledge-proofs-zkps-5706b5409ebe0c8c50644e9c35e47b68.jpeg" alt="Zero-knowledge proof concept illustration">
-                    <p>Behavioral detection systems analyze interaction patterns, timing signals, and engagement anomalies to identify automated behavior.</p>
-                    <p>Economic friction mechanisms such as modest staking or verification fees increase the cost of large-scale bot deployment while remaining accessible to legitimate users.</p>
-                    <p>Quality-weighted visibility systems reward credibility and thoughtful participation, naturally reducing spam and automated content.</p>
-                    <p>None of these approaches is flawless, but together they demonstrate that non-biometric verification remains technically viable and continues to evolve.</p>
-                    <h2>Preserving the Human Element</h2>
-                    <p>Online communities thrive because they reflect human complexity. Humor, imperfection, disagreement, and spontaneous conversation create the authenticity that keeps digital spaces engaging.</p>
-                    <p>Bots can imitate language patterns but often struggle to sustain genuine human interaction over time. A perfectly controlled platform may reduce automation but risks removing the unpredictability that defines human communication.</p>
-                    <p>Digital identity systems should support authentic interaction rather than attempt to sterilize it.</p>
-                    <h2>The Human Value Behind Digital Identity</h2>
-                    <p>The expansion of identity verification systems also raises deeper philosophical questions about the relationship between efficiency and humanity.</p>
-                    <p>Digitization has transformed global communication, commerce, and knowledge sharing. However, human identity extends beyond the data used to represent it. Profiles, engagement metrics, and biometric markers capture fragments of identity but cannot fully represent human experience.</p>
-                    <p>Meaning in digital communication emerges from context, intention, emotion, and interpretation. If participation increasingly requires surrendering deeper layers of identity, society risks redefining human presence as a collection of credentials rather than lived experience.</p>
-                    <p>Digital infrastructure rarely forgets. Once identity data enters global networks, containing or removing it becomes increasingly difficult over time.</p>
-                    <h2>Our Assessment</h2>
-                    <p>Biometric identity verification is not required to address the bot problem.</p>
-                    <p>The risks remain permanent. Regulatory resistance continues to grow. Alternative authentication models already function without demanding irreversible biological data.</p>
-                    <p>Based on current reporting and historical regulatory response, biometric-gated social participation appears disproportionate to the challenge it aims to solve.</p>
-                    <h2>Questions Worth Asking Before Participating</h2>
-                    <ul>
-                        <li>What happens if biometric identity data is breached?</li>
-                        <li>Who ultimately controls and accesses that data?</li>
-                        <li>Why are less invasive verification methods considered insufficient?</li>
-                        <li>What is the platform’s historical privacy and compliance record?</li>
-                        <li>Is biometric verification essential or simply operationally convenient?</li>
-                    </ul>
                     <h2>Final Thought</h2>
                     <p>Bots represent a serious and expanding threat to digital communities. Addressing automation and misinformation is necessary for the future of online discourse.</p>
                     <p>However, exchanging irreversible biological identity for digital participation is not the only available solution and may not be the safest one.</p>
@@ -202,42 +141,88 @@
                             <li><a href="https://transparency.x.com/en/reports" target="_blank">X Transparency and Enforcement Disclosures (2025)</a></li>
                         </ul>
                     </div>
+                    <div class="article-actions">
+                        <button class="action-btn" onclick="downloadArticle()">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Download PDF</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('twitter')">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>Share on X</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('bluesky')">
+                            <i class="fas fa-cloud"></i>
+                            <span>Bluesky</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('mastodon')">
+                            <i class="fab fa-mastodon"></i>
+                            <span>Mastodon</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('linkedin')">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('reddit')">
+                            <i class="fab fa-reddit"></i>
+                            <span>Reddit</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('telegram')">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('facebook')">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </button>
+                        <button class="action-btn" onclick="copyLink()">
+                            <i class="fas fa-link"></i>
+                            <span>Copy Link</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('email')">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </button>
+                    </div>
                 </div>
             </article>
-            <div class="articles-grid">
-                <!-- Placeholder cards -->
-            </div>
+            <div class="articles-grid"></div>
         </main>
+
         <aside class="sidebar">
             <div class="sidebar-section">
-                <h3>🎯 Current Bounty Status</h3>
-                <div class="bounty-card" id="bounty-container">
-                    <!-- Dynamic content from JS -->
-                </div>
-            </div>
-            <div class="sidebar-section">
-                <h3>📢 Live from X</h3>
+                <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
                 <div style="border-radius:16px;overflow:hidden;">
                     <a class="twitter-timeline" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
                 </div>
             </div>
+            <div class="sidebar-section">
+                <h3>🎯 Current Bounty Status</h3>
+                <div class="bounty-card" id="bounty-container"></div>
+            </div>
         </aside>
     </div>
+
     <footer>
         <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
         <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
     </footer>
+
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
     <script>
-        // BOUNTY COUNTDOWN SYSTEM
         const ACTIVE_BOUNTY = {
-            active: true, // ← Turn on/off
-            code: 'M0008',
-            title: 'Your Bounty Title',
-            description: 'Zijn supermarkt kortingen echte besparingen… of gestructureerd bedrog?.',
-            pot: '€50.82',
-            endDate: new Date('2026-02-15T23:59:59'), // ← Set date
-            entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
+            active: true,
+            code: 'M0009',
+            title: 'Taiwan AI Law vs EU AI Act - Labor Rights',
+            description: 'Best evidence-based comparison of Taiwan Article 12 labor protections vs EU AI Act provisions earns merit.',
+            pot: '€12.10',
+            entries: 0,
+            minEntries: 10,
+            startDate: new Date('2026-02-15T00:00:00'),
+            endDate: new Date('2026-02-18T23:59:59'),
+            entryLink: 'https://tiny.cc/TruthWithTeeth'
         };
 
         function updateBountyDisplay() {
@@ -250,23 +235,30 @@
                 `;
                 return;
             }
-
+            const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false });
             container.innerHTML = `
                 <h4 style="font-size:1.4rem;color:#FFB800;margin-bottom:0.8rem;">${ACTIVE_BOUNTY.code}: ${ACTIVE_BOUNTY.title}</h4>
                 <p style="margin-bottom:1rem;">${ACTIVE_BOUNTY.description}</p>
-                <div class="bounty-meta">
-                    <span>💰 Pot: ${ACTIVE_BOUNTY.pot}</span>
-                    <span class="countdown" id="timer">Calculating...</span>
+                <div style="background:rgba(0,191,166,0.15);padding:1.5rem;border-radius:12px;margin:1.5rem 0;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center;margin-bottom:1rem;">
+                        <div>
+                            <div style="font-size:1.8em;color:#FFB800;">💰 ${ACTIVE_BOUNTY.pot}</div>
+                            <div style="font-size:0.85em;opacity:0.8;">Merit Pool</div>
+                        </div>
+                        <div>
+                            <div style="font-size:1.8em;color:#FFB800;">👥 ${ACTIVE_BOUNTY.entries}</div>
+                            <div style="font-size:0.85em;opacity:0.8;">Participants</div>
+                        </div>
+                    </div>
+                    <div class="countdown" id="timer" style="text-align:center;">⏱ Calculating...</div>
+                    <p style="font-size:0.85rem;opacity:0.7;margin-top:0.5rem;text-align:center;">Launched ${launchDate} • Closes ${closeDate}</p>
                 </div>
-                <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">Enter Bounty (€1.21)</a>
-                <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.8;">
-                    Reply on X with #TruthWithTeeth + sources. Best evidence wins 35% of pot.
-                </p>
+                <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">Enter Competition (€1.21)</a>
+                <div style="text-align:center;"><img src="mollie-badge.png" alt="Powered by Mollie" class="mollie-badge"></div>
+                <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.8;">Skill game: Best evidence earns merit. Community assessment (X likes) determines top contributor. Min ${ACTIVE_BOUNTY.minEntries} entries required.</p>
             `;
-
-            if (ACTIVE_BOUNTY.endDate) {
-                startCountdown(ACTIVE_BOUNTY.endDate);
-            }
+            if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
         }
 
         function startCountdown(endDate) {
@@ -274,21 +266,125 @@
             function update() {
                 const diff = endDate - new Date();
                 if (diff <= 0) {
-                    timerEl.textContent = "Bounty Ended";
+                    timerEl.textContent = "Competition Ended";
                     return;
                 }
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                timerEl.textContent = `⏱ ${days}d ${hours}h ${minutes}m left`;
+                timerEl.textContent = `⏱ ${days}d ${hours}h ${minutes}m remaining`;
             }
             update();
             setInterval(update, 60000);
         }
 
-        document.addEventListener('DOMContentLoaded', updateBountyDisplay);
+        async function downloadArticle() {
+            const { jsPDF } = window.jspdf;
+            const btn = event?.target?.closest('.action-btn');
+            if (btn) {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>';
+                btn.disabled = true;
+            }
+            try {
+                const content = document.getElementById('articleContent');
+                const title = document.querySelector('.featured-content h2').textContent.trim();
+                const filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.pdf';
+                const canvas = await html2canvas(content, {scale: 2, useCORS: true, logging: false, backgroundColor: '#0A0F14'});
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({orientation: 'portrait', unit: 'mm', format: 'a4'});
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                while (heightLeft > 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                pdf.save(filename);
+                if (btn) {
+                    btn.innerHTML = '<i class="fas fa-check"></i><span>Downloaded!</span>';
+                    btn.style.background = '#00BFA6';
+                    btn.style.color = '#0A0F14';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('PDF generation error:', error);
+                if (btn) {
+                    btn.innerHTML = '<i class="fas fa-times"></i><span>Error</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Download PDF</span>';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            }
+        }
 
-        // Category filtering (unchanged)
+        function shareArticle(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.querySelector('.featured-content h2').textContent);
+            const description = encodeURIComponent('Investigative Commentary from Echo Truth Hub - Where facts meet scrutiny');
+            const hashtags = 'TruthWithTeeth,EchoTruthHub';
+            let shareUrl;
+            
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`;
+                    break;
+                case 'bluesky':
+                    shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
+                    break;
+                case 'mastodon':
+                    shareUrl = `https://mastodonshare.com/?text=${title}&url=${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
+                case 'reddit':
+                    shareUrl = `https://reddit.com/submit?url=${url}&title=${title}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'email':
+                    shareUrl = `mailto:?subject=${title}&body=${description}%0A%0A${url}`;
+                    break;
+            }
+            
+            if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = event.target.closest('.action-btn');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+                btn.style.background = '#00BFA6';
+                btn.style.color = '#0A0F14';
+                btn.style.borderColor = '#00BFA6';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', updateBountyDisplay);
     </script>
 </body>
 </html>
