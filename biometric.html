@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigative Commentaries | Echo Truth Hub</title>
-    <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
+    <title>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem | Echo Truth Hub</title>
+    <meta name="description" content="OpenAI is reportedly exploring biometric verification for a new social platform. But exchanging irreversible biological identity for digital participation may not be the safest solution.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
@@ -32,11 +32,14 @@
         .featured-content h2 {font-size:2.2rem;font-weight:700;margin:2rem 0 1rem;line-height:1.2;color:#FFB800;}
         .featured-content h2:first-of-type {margin-top:0;}
         .featured-content p {margin-bottom:1.2em;color:rgba(255,255,255,0.85);line-height:1.7;}
+        .featured-content img {max-width:100%;height:auto;border-radius:12px;margin:2rem 0;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
         .featured-content ul {margin:1.5rem 0;padding-left:2rem;}
-        .featured-content ul li {margin-bottom:0.8rem;}
+        .featured-content ul li {margin-bottom:0.8rem;color:rgba(255,255,255,0.85);}
         .featured-category {display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:1rem;background:#FFB800;color:#0A0F14;}
-        .read-btn {display:inline-block;margin-top:1rem;padding:0.8rem 1.8rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;}
-        .read-btn:hover {background:#FFB800;}
+        .box {background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
+        .box h2 {color:#FFB800;margin-bottom:1rem;}
+        .box a {color:#fff;text-decoration:none;transition:color 0.2s;}
+        .box a:hover {color:#FFB800;}
         .sidebar {position:sticky;top:100px;height:fit-content;}
         .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
         .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
@@ -50,10 +53,13 @@
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
+        .article-actions {display:flex;gap:12px;margin:32px 0;padding:0;flex-wrap:wrap;justify-content:center;}
+        .action-btn {display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:transparent;border:2px solid rgba(0,191,166,0.4);border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:all 0.2s;cursor:pointer;}
+        .action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
+        .action-btn i {font-size:16px;color:#00BFA6;}
         @media (max-width:1024px) {
             .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
             .sidebar {position:static;display:flex;flex-direction:column;}
-            .sidebar-section:nth-child(1) {order:1;} .sidebar-section:nth-child(2) {order:2;}
             .sticky-bounty-mobile {
                 display:block;position:sticky;top:0;z-index:100;
                 background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
@@ -67,11 +73,9 @@
             .x-feed-container {max-height:400px;overflow-y:auto;}
         }
         @media (max-width:640px) {
-            .hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
-            .filter-container {width:100%;}
-            .sticky-bounty-mobile .bounty-title {font-size:0.85rem;}
-            .sticky-bounty-mobile .bounty-meta-compact {font-size:0.75rem;}
-            .sticky-bounty-mobile .bounty-btn {padding:8px 16px;font-size:0.85rem;}
+            .hero h1 {font-size:2.4em;}
+            .hero p {font-size:1.4em;}
+            .article-actions {gap:10px;} .action-btn {padding:10px 14px;font-size:13px;}
         }
     </style>
 </head>
@@ -97,14 +101,14 @@
     <section class="category-filter">
         <div class="filter-container">
             <span class="filter-label">Filter by:</span>
-            <a href="#" class="category-tag active" data-category="all">All</a>
-            <a href="#" class="category-tag" data-category="investigation">Investigation</a>
-            <a href="#" class="category-tag" data-category="analysis">Analysis</a>
-            <a href="#" class="category-tag" data-category="debunked">Debunked</a>
-            <a href="#" class="category-tag" data-category="verified">Verified</a>
-            <a href="#" class="category-tag" data-category="methodology">Methodology</a>
-            <a href="#" class="category-tag" data-category="language">Language</a>
-            <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
+            <a href="/blog.html" class="category-tag">All</a>
+            <a href="/blog.html#investigation" class="category-tag active">Investigation</a>
+            <a href="/blog.html#analysis" class="category-tag">Analysis</a>
+            <a href="/blog.html#debunked" class="category-tag">Debunked</a>
+            <a href="/blog.html#verified" class="category-tag">Verified</a>
+            <a href="/blog.html#methodology" class="category-tag">Methodology</a>
+            <a href="/blog.html#language" class="category-tag">Language</a>
+            <a href="/blog.html#evidence" class="category-tag">Evidence-Based</a>
         </div>
     </section>
 
@@ -112,33 +116,52 @@
 
     <div class="main-wrapper">
         <main class="main-content">
-
-            <!-- ARTICLE 1: Errored (newest — February 2026) -->
-            <article class="featured-article" data-category="language">
-                <div class="featured-image" style="background-image: url('oed-hero.jpg.webp'); background-color:#0d1a16;"></div>
-                <div class="featured-content">
-                    <span class="featured-category">Language &amp; Evidence</span>
-                    <h2>Errored. A Word That Wasn't. Until It Was.</h2>
-                    <p><strong>Commentary | Echo Truth Hub | February 2026</strong></p>
-                    <p>Doodling on Echo Truth Hub, I noticed AI writing "erred" where I expected "errored." The grammar enthusiast in me went looking. What followed was a rabbit hole into Oxford English, 200 years of linguistic history, and why the engineers were right all along.</p>
-                    <p>The OED has a separate entry for <em>error, v.</em> going back to the 1820s. Not American English. Not tech slang. Oxford English, predating the telephone by a considerable margin.</p>
-                    <a href="/errored.html" class="read-btn">Read Full Article →</a>
-                </div>
-            </article>
-
-            <!-- ARTICLE 2: Biometric Dilemma (February 3, 2026) -->
-            <article class="featured-article" data-category="investigation">
+            <article class="featured-article" data-category="investigation" id="mainArticle">
                 <div class="featured-image" style="background-image: url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
-                <div class="featured-content">
+                <div class="featured-content" id="articleContent">
                     <span class="featured-category">Investigation</span>
                     <h2>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</h2>
                     <p><strong>Investigative Commentary | Echo Truth Hub | February 3, 2026</strong></p>
-                    <p>OpenAI is reportedly exploring a new social platform designed exclusively for verified humans. One concept involves biometric verification, requiring iris scans via the World Orb or Apple's Face ID. The proposal addresses a real problem. But exchanging irreversible biological identity for digital participation may not be the safest solution.</p>
+                    <p>Rumors circulating in technology circles suggest OpenAI is exploring a new social platform designed exclusively for verified humans with automated accounts excluded. One reported concept involves biometric verification that could require iris scans using the World Orb or device-based systems such as Apple's Face ID.</p>
+                    <p>The proposal addresses a genuine and growing problem. Automated bots increasingly distort online conversations, manipulate engagement, and undermine trust across digital platforms.</p>
+                    <img src="https://thumbs.dreamstime.com/b/futuristic-robot-hand-interacts-virtual-icons-showcasing-communication-networking-digital-world-dark-background-419149411.jpg" alt="Social media bots illustration">
+                    <p>However, requiring users to surrender something as permanent as biological identity introduces risks that reach far beyond spam prevention.</p>
                     <p>This investigation examines what is currently known, evaluates the long-term implications of biometric verification, and explores alternative solutions that preserve both authenticity and human autonomy online.</p>
-                    <a href="/biometric.html" class="read-btn">Read Full Article →</a>
+                    <h2>What the Evidence Suggests</h2>
+                    <p>Based on available reporting and regulatory history, several conclusions can already be drawn.</p>
+                    <p>The project appears to be in early exploratory stages and remains unconfirmed publicly. Biometric identifiers introduce irreversible privacy and security risks that differ fundamentally from traditional authentication methods. Meanwhile, multiple non-biometric systems already exist that reduce automated activity effectively. Presenting biometrics as the only viable solution reflects a strategic design choice rather than a technical necessity.</p>
+                    <h2>Final Thought</h2>
+                    <p>Bots represent a serious and expanding threat to digital communities. Addressing automation and misinformation is necessary for the future of online discourse.</p>
+                    <p>However, exchanging irreversible biological identity for digital participation is not the only available solution and may not be the safest one.</p>
+                    <p>Technology should solve engineering challenges through responsible design rather than transforming human biology into authentication infrastructure.</p>
+                    <p>The digitization of society should strengthen human interaction rather than gradually replace it with credential systems that redefine participation itself.</p>
+                    <p>Human identity is not stored in databases. It exists in expression, conversation, and lived experience.</p>
+                    <p>The internet has a long memory. Individuals should carefully consider what they contribute to it, especially when that contribution cannot be retrieved or replaced.</p>
+                    <div class="box">
+                        <h2>Sources</h2>
+                        <ul>
+                            <li><a href="https://www.forbes.com/sites/annatong/2026/01/28/openai-wants-to-create-biometric-social-network-to-kill-xs-bot-problem" target="_blank">Forbes, Anna Tong (January 28, 2026)</a></li>
+                            <li>National Data Protection Authorities: <a href="https://www.aepd.es/" target="_blank">Spain (AEPD)</a>, <a href="https://www.lda.bayern.de/" target="_blank">Germany (BayLDA)</a>, <a href="https://www.cnpd.pt/" target="_blank">Portugal (CNPD)</a>, <a href="https://www.pdpc.go.th/" target="_blank">Thailand (PDPC)</a></li>
+                            <li><a href="https://proofofhumanity.id/" target="_blank">Proof of Humanity</a></li>
+                            <li><a href="https://passport.human.tech/" target="_blank">Gitcoin Passport (Human Passport)</a></li>
+                            <li><a href="https://docs.self.xyz/" target="_blank">Self Protocol</a></li>
+                            <li><a href="https://transparency.x.com/en/reports" target="_blank">X Transparency and Enforcement Disclosures (2025)</a></li>
+                        </ul>
+                    </div>
+                    <div class="article-actions">
+                        <button class="action-btn" onclick="downloadArticle()"><i class="fas fa-file-pdf"></i><span>Download PDF</span></button>
+                        <button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+                        <button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
+                        <button class="action-btn" onclick="shareArticle('mastodon')"><i class="fab fa-mastodon"></i><span>Mastodon</span></button>
+                        <button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+                        <button class="action-btn" onclick="shareArticle('reddit')"><i class="fab fa-reddit"></i><span>Reddit</span></button>
+                        <button class="action-btn" onclick="shareArticle('telegram')"><i class="fab fa-telegram"></i><span>Telegram</span></button>
+                        <button class="action-btn" onclick="shareArticle('facebook')"><i class="fab fa-facebook"></i><span>Facebook</span></button>
+                        <button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+                        <button class="action-btn" onclick="shareArticle('email')"><i class="fas fa-envelope"></i><span>Email</span></button>
+                    </div>
                 </div>
             </article>
-
         </main>
 
         <aside class="sidebar">
@@ -187,8 +210,8 @@
                 if (mobileContainer) mobileContainer.style.display = 'none';
                 return;
             }
-            const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
-            const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit', hour12:false });
+            const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false });
             if (container) {
                 container.innerHTML = `
                     <h4 style="font-size:1.4rem;color:#FFB800;margin-bottom:0.8rem;">${ACTIVE_BOUNTY.code}: ${ACTIVE_BOUNTY.title}</h4>
@@ -224,33 +247,66 @@
             const timerMobileEl = document.getElementById('timer-mobile');
             function update() {
                 const diff = endDate - new Date();
-                if (diff <= 0) { if(timerEl) timerEl.textContent="Competition Ended"; if(timerMobileEl) timerMobileEl.textContent="⏱ Ended"; return; }
-                const days=Math.floor(diff/(1000*60*60*24)), hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60)), minutes=Math.floor((diff%(1000*60*60))/(1000*60));
-                if(timerEl) timerEl.textContent=`⏱ ${days}d ${hours}h ${minutes}m remaining`;
-                if(timerMobileEl) timerMobileEl.textContent=`⏱ ${days}d ${hours}h`;
+                if (diff <= 0) { if (timerEl) timerEl.textContent = "Competition Ended"; if (timerMobileEl) timerMobileEl.textContent = "⏱ Ended"; return; }
+                const days = Math.floor(diff / (1000*60*60*24));
+                const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+                if (timerEl) timerEl.textContent = `⏱ ${days}d ${hours}h ${minutes}m remaining`;
+                if (timerMobileEl) timerMobileEl.textContent = `⏱ ${days}d ${hours}h`;
             }
             update(); setInterval(update, 60000);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            updateBountyDisplay();
+        async function downloadArticle() {
+            const { jsPDF } = window.jspdf;
+            const btn = event?.target?.closest('.action-btn');
+            if (btn) { const orig = btn.innerHTML; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>'; btn.disabled = true; }
+            try {
+                const content = document.getElementById('articleContent');
+                const title = document.querySelector('.featured-content h2').textContent.trim();
+                const filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.pdf';
+                const canvas = await html2canvas(content, {scale:2, useCORS:true, logging:false, backgroundColor:'#0A0F14'});
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+                const imgWidth = 210, pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight, position = 0;
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                while (heightLeft > 0) { position = heightLeft - imgHeight; pdf.addPage(); pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); heightLeft -= pageHeight; }
+                pdf.save(filename);
+                if (btn) { btn.innerHTML = '<i class="fas fa-check"></i><span>Downloaded!</span>'; btn.style.background='#00BFA6'; btn.style.color='#0A0F14'; setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Download PDF</span>'; btn.style.background=''; btn.style.color=''; btn.disabled=false; }, 2000); }
+            } catch(e) { console.error(e); if (btn) { btn.innerHTML='<i class="fas fa-times"></i><span>Error</span>'; setTimeout(()=>{btn.innerHTML='<i class="fas fa-file-pdf"></i><span>Download PDF</span>';btn.disabled=false;},2000); } }
+        }
 
-            // Category filter
-            const tags = document.querySelectorAll('.category-tag');
-            const articles = document.querySelectorAll('.featured-article');
+        function shareArticle(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('The Biometric Dilemma: Why Iris Scans Won\'t Solve the Bot Problem | Echo Truth Hub');
+            const hashtags = 'TruthWithTeeth,EchoTruthHub,Biometrics';
+            let shareUrl;
+            switch(platform) {
+                case 'twitter': shareUrl=`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`; break;
+                case 'bluesky': shareUrl=`https://bsky.app/intent/compose?text=${title}%20${url}`; break;
+                case 'mastodon': shareUrl=`https://mastodonshare.com/?text=${title}&url=${url}`; break;
+                case 'linkedin': shareUrl=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`; break;
+                case 'reddit': shareUrl=`https://reddit.com/submit?url=${url}&title=${title}`; break;
+                case 'telegram': shareUrl=`https://t.me/share/url?url=${url}&text=${title}`; break;
+                case 'facebook': shareUrl=`https://www.facebook.com/sharer/sharer.php?u=${url}`; break;
+                case 'email': shareUrl=`mailto:?subject=${title}&body=${url}`; break;
+            }
+            if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
 
-            tags.forEach(tag => {
-                tag.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    tags.forEach(t => t.classList.remove('active'));
-                    tag.classList.add('active');
-                    const selected = tag.dataset.category;
-                    articles.forEach(article => {
-                        article.style.display = (selected === 'all' || article.dataset.category === selected) ? 'block' : 'none';
-                    });
-                });
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = event.target.closest('.action-btn');
+                const orig = btn.innerHTML;
+                btn.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>'; btn.style.background='#00BFA6'; btn.style.color='#0A0F14'; btn.style.borderColor='#00BFA6';
+                setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';btn.style.borderColor='';},2000);
             });
-        });
+        }
+
+        document.addEventListener('DOMContentLoaded', updateBountyDisplay);
     </script>
 </body>
 </html>
