@@ -88,12 +88,10 @@
             </nav>
         </div>
     </header>
-
     <section class="hero">
         <h1>Investigative Commentaries</h1>
         <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
     </section>
-
     <section class="category-filter">
         <div class="filter-container">
             <span class="filter-label">Filter by:</span>
@@ -107,11 +105,21 @@
             <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
         </div>
     </section>
-
     <div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
-
     <div class="main-wrapper">
         <main class="main-content">
+
+            <!-- ARTICLE 0: Odido Breach (newest — February 24, 2026) -->
+            <article class="featured-article" data-category="investigation">
+                <div class="featured-image" style="background-image: url('IMG_6321.png'); background-color:#04080b;"></div>
+                <div class="featured-content">
+                    <span class="featured-category">Investigation</span>
+                    <h2>The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</h2>
+                    <p><strong>Investigative Commentary | Echo Truth Hub | February 24, 2026</strong></p>
+                    <p>Odido’s breach wasn’t a sophisticated attack — it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with millions of records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps, plaintext storage, and why the Netherlands is still not ready under Wbni/NIS2.</p>
+                    <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
+                </div>
+            </article>
 
             <!-- ARTICLE 1: Errored (newest — February 2026) -->
             <article class="featured-article" data-category="language">
@@ -125,7 +133,6 @@
                     <a href="/errored.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
             <!-- ARTICLE 2: Biometric Dilemma (February 3, 2026) -->
             <article class="featured-article" data-category="investigation">
                 <div class="featured-image" style="background-image: url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
@@ -138,9 +145,7 @@
                     <a href="/biometric.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
         </main>
-
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h3>🎯 Current Bounty Status</h3>
@@ -156,12 +161,10 @@
             </div>
         </aside>
     </div>
-
     <footer>
         <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
         <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
     </footer>
-
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -178,7 +181,6 @@
             endDate: new Date('2026-02-18T23:59:59'),
             entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
         };
-
         function updateBountyDisplay() {
             const container = document.getElementById('bounty-container');
             const mobileContainer = document.getElementById('sticky-bounty-mobile');
@@ -218,7 +220,6 @@
             }
             if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
         }
-
         function startCountdown(endDate) {
             const timerEl = document.getElementById('timer');
             const timerMobileEl = document.getElementById('timer-mobile');
@@ -231,14 +232,11 @@
             }
             update(); setInterval(update, 60000);
         }
-
         document.addEventListener('DOMContentLoaded', () => {
             updateBountyDisplay();
-
             // Category filter
             const tags = document.querySelectorAll('.category-tag');
             const articles = document.querySelectorAll('.featured-article');
-
             tags.forEach(tag => {
                 tag.addEventListener('click', (e) => {
                     e.preventDefault();
