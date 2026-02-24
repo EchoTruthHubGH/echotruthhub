@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Open Door. What the Odido Breach Tells Us About Cyber Complacency. | Echo Truth Hub</title>
+    <meta name="description" content="Odido's breach wasn't a sophisticated attack. It was an open door. What the ShinyHunters hack tells us about cyber complacency, compliance, and who is next.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0A0F14;
+            --teal: #00BFA6;
+            --gold: #FFB800;
+            --red: #ff6b6b;
+            --text: rgba(255,255,255,0.88);
+            --muted: rgba(255,255,255,0.55);
+            --border: rgba(0,191,166,0.2);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Serif', Georgia, serif; line-height: 1.8; }
+
+        header { padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: relative; z-index: 10; }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .title-block a { text-decoration: none; color: #fff; }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 2px; color: #fff; }
+        .tagline { font-size: 0.85rem; color: var(--teal); margin-top: 0.2rem; font-family: 'IBM Plex Mono', monospace; }
+        .nav a { color: var(--teal); text-decoration: none; margin: 0 1rem; font-weight: 600; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; transition: color 0.2s; }
+        .nav a:hover { color: var(--gold); }
+
+        /* HERO */
+        .hero-banner { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; height: 520px; overflow: hidden; background: #04080b; }
+        .hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.4) saturate(0.5) blur(1px); z-index: 1; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,191,166,0.15) 0%, transparent 55%), linear-gradient(to bottom, rgba(4,8,11,0.25) 0%, rgba(4,8,11,0.88) 100%); z-index: 2; }
+        .hero-scanlines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px); z-index: 3; pointer-events: none; }
+        .hero-odido-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(460px, 70%); height: auto; opacity: 0.11; filter: saturate(0.3) brightness(2) blur(0.5px); z-index: 4; mix-blend-mode: screen; }
+        .hero-tag { position: absolute; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; padding: 0.28rem 0.65rem; border-radius: 3px; border: 1px solid; z-index: 6; opacity: 0; animation: tagIn 0.5s ease forwards; }
+        @keyframes tagIn { to { opacity: 0.85; } }
+        .hero-tag.warn { color: var(--red); border-color: rgba(255,107,107,0.45); background: rgba(255,107,107,0.08); }
+        .hero-tag.info { color: var(--teal); border-color: rgba(0,191,166,0.35); background: rgba(0,191,166,0.06); }
+        .hero-tag.gold { color: var(--gold); border-color: rgba(255,184,0,0.35); background: rgba(255,184,0,0.06); }
+        .hero-terminal { position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%); width: min(580px, 92%); background: rgba(4,10,14,0.94); border: 1px solid rgba(0,191,166,0.42); border-radius: 8px; overflow: hidden; box-shadow: 0 0 50px rgba(0,191,166,0.1), 0 20px 60px rgba(0,0,0,0.75); z-index: 7; animation: termUp 0.7s ease forwards; }
+        @keyframes termUp { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+        .terminal-bar { background: rgba(0,191,166,0.07); padding: 0.52rem 1rem; display: flex; align-items: center; gap: 0.45rem; border-bottom: 1px solid rgba(0,191,166,0.18); }
+        .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .t-dot.r { background: #ff5f57; } .t-dot.y { background: #febc2e; } .t-dot.g { background: #28c840; }
+        .terminal-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-left: 0.5rem; }
+        .terminal-body { padding: 0.95rem 1.4rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.77rem; line-height: 1.9; }
+        .tl { display: block; }
+        .tl-k { color: var(--teal); }
+        .tl-w { color: var(--red); }
+        .tl-g { color: var(--gold); }
+        .tl-d { color: var(--muted); }
+        .t-cursor { display: inline-block; width: 7px; height: 13px; background: var(--teal); vertical-align: middle; animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .hero-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 110px; background: linear-gradient(transparent, var(--bg)); z-index: 8; }
+
+        .article-hero { max-width: 860px; margin: 2.5rem auto 0; padding: 0 20px; }
+        .article-category { display: inline-block; padding: 0.35rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: var(--gold); color: var(--bg); font-family: 'IBM Plex Mono', monospace; margin-bottom: 1.5rem; }
+        .article-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; color: #fff; letter-spacing: 1px; margin-bottom: 1rem; }
+        .article-hero h1 span { color: var(--gold); }
+        .article-subtitle { font-size: 1.2rem; color: var(--teal); margin-bottom: 2rem; font-style: italic; line-height: 1.6; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; padding: 1.2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; flex-wrap: wrap; }
+        .article-meta span { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--muted); }
+        .article-meta .author { color: var(--teal); font-weight: 600; }
+
+        .article-body { max-width: 860px; margin: 0 auto; padding: 0 20px 5rem; }
+        .article-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); letter-spacing: 1px; margin: 3.5rem 0 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .article-body p { margin-bottom: 1.4rem; color: var(--text); font-size: 1.05rem; }
+        .article-body a { color: var(--teal); text-decoration: underline; text-decoration-color: rgba(0,191,166,0.4); }
+        .article-body a:hover { color: var(--gold); }
+        code { font-family: 'IBM Plex Mono', monospace; font-size: 0.88em; background: rgba(0,191,166,0.1); padding: 0.1em 0.4em; border-radius: 3px; color: var(--teal); }
+
+        .alert-box { background: rgba(255,184,0,0.07); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .alert-box p { color: rgba(255,255,255,0.9); font-size: 1rem; margin: 0; }
+        .alert-box strong { color: var(--gold); }
+
+        .pull-quote { border-left: 5px solid var(--teal); padding: 1rem 2rem; margin: 3rem 0; background: rgba(0,191,166,0.05); border-radius: 0 8px 8px 0; }
+        .pull-quote p { font-size: 1.35rem; font-style: italic; color: #fff; line-height: 1.5; margin: 0; }
+        .pull-quote cite { display: block; margin-top: 0.8rem; font-size: 0.78rem; color: var(--teal); font-family: 'IBM Plex Mono', monospace; font-style: normal; }
+
+        .fact-box { background: rgba(0,191,166,0.05); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .fact-box h4 { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 1.2rem; }
+        .fact-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.65rem 0; border-bottom: 1px solid rgba(0,191,166,0.1); gap: 1.5rem; }
+        .fact-row:last-child { border-bottom: none; }
+        .fact-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--muted); flex-shrink: 0; }
+        .fact-value { font-size: 0.9rem; color: #fff; text-align: right; }
+        .fact-value.warn { color: var(--red); }
+        .fact-value.ok { color: var(--teal); }
+        .fact-value.unknown { color: var(--gold); }
+
+        .victims-box { background: rgba(255,107,107,0.04); border: 1px solid rgba(255,107,107,0.18); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .victims-box h4 { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--red); margin-bottom: 1.2rem; }
+        .victim-row { display: flex; justify-content: space-between; padding: 0.55rem 0; border-bottom: 1px solid rgba(255,107,107,0.08); font-size: 0.88rem; gap: 1rem; }
+        .victim-row:last-child { border-bottom: none; }
+        .victim-name { color: #fff; font-weight: 600; }
+        .victim-date { color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; flex-shrink: 0; }
+
+        .apt-callout { background: rgba(255,184,0,0.05); border: 1px solid rgba(255,184,0,0.2); border-radius: 12px; padding: 2.2rem; margin: 2.5rem 0; text-align: center; }
+        .apt-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 0.8rem; }
+        .apt-term { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--gold); letter-spacing: 2px; line-height: 1.1; }
+        .apt-sub { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.6; }
+        .apt-credit { font-size: 0.74rem; color: rgba(255,255,255,0.28); font-family: 'IBM Plex Mono', monospace; margin-top: 1rem; }
+
+        .legenda { background: rgba(0,191,166,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin: 4rem 0 2rem; }
+        .legenda h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--teal); letter-spacing: 1px; margin-bottom: 0.4rem; }
+        .legenda-intro { font-size: 0.82rem; color: var(--muted); font-family: 'IBM Plex Mono', monospace; margin-bottom: 1.8rem; line-height: 1.55; }
+        .legenda-item { padding: 1rem 0; border-bottom: 1px solid rgba(0,191,166,0.1); }
+        .legenda-item:last-child { border-bottom: none; }
+        .legenda-term { font-family: 'IBM Plex Mono', monospace; font-size: 0.87rem; font-weight: 700; color: var(--gold); margin-bottom: 0.3rem; }
+        .legenda-def { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+        .legenda-def a { color: var(--teal); }
+
+        .sources-box { background: rgba(0,0,0,0.22); border-radius: 12px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.05); }
+        .sources-box h4 { font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 1rem; }
+        .sources-box ol { padding-left: 1.5rem; }
+        .sources-box li { font-size: 0.81rem; color: var(--muted); margin-bottom: 0.55rem; font-family: 'IBM Plex Mono', monospace; line-height: 1.55; }
+        .sources-box a { color: var(--teal); }
+
+        .closing-cta { text-align: center; padding: 3rem 2rem; background: rgba(0,191,166,0.05); border-radius: 16px; border: 1px solid var(--border); margin: 3rem 0; }
+        .closing-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 1rem; }
+        .closing-cta p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .cta-btn { display: inline-block; padding: 0.9rem 2rem; background: var(--teal); color: var(--bg); text-decoration: none; border-radius: 8px; font-weight: 700; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; transition: all 0.2s; margin: 0.4rem; }
+        .cta-btn:hover { background: var(--gold); }
+
+        footer { margin: 80px 0 40px; text-align: center; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 2rem; font-family: 'IBM Plex Mono', monospace; }
+        footer a { color: var(--teal); margin: 0 1rem; text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 640px) {
+            .hero-banner { height: 400px; }
+            .article-hero h1 { font-size: 2.5rem; }
+            .hero-terminal { width: 95%; }
+            .terminal-body { font-size: 0.68rem; }
+            .fact-row, .victim-row { flex-direction: column; gap: 0.2rem; }
+            .fact-value { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="title-block">
+            <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
+        </div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/blog.html">Commentary</a>
+            <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO: ShinyHunters dark web page as background, Odido logo ghosted over it -->
+<div class="hero-banner">
+    <img class="hero-bg-img" src="IMG_6321.png" alt="ShinyHunters Scattered LAPSUS$ Hunters extortion site">
+    <div class="hero-overlay"></div>
+    <div class="hero-scanlines"></div>
+    <img class="hero-odido-logo" src="IMG_6320.png" alt="Odido logo">
+
+    <div class="hero-tag warn" style="top:11%;left:5%;animation-delay:0.2s;">IBAN EXPOSED</div>
+    <div class="hero-tag warn" style="top:22%;left:6%;animation-delay:0.5s;">PASSPORT NO. LEAKED</div>
+    <div class="hero-tag info" style="top:14%;right:5%;animation-delay:0.4s;">21M RECORDS</div>
+    <div class="hero-tag warn" style="top:27%;right:6%;animation-delay:0.7s;">FINAL WARNING</div>
+    <div class="hero-tag gold" style="bottom:40%;left:4%;animation-delay:0.9s;">DEADLINE: THU 26 FEB</div>
+    <div class="hero-tag warn" style="bottom:34%;right:5%;animation-delay:1.1s;">PLAINTEXT STORED</div>
+
+    <div class="hero-terminal">
+        <div class="terminal-bar">
+            <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+            <span class="terminal-title">shinyhunters@darkweb ~ extortion.sh — Odido NL &amp; BEN.nl</span>
+        </div>
+        <div class="terminal-body">
+            <span class="tl"><span class="tl-k">TARGET  :</span> Odido NL &amp; BEN.nl</span>
+            <span class="tl"><span class="tl-k">RECORDS :</span> <span class="tl-w">21,000,000 rows exfiltrated</span></span>
+            <span class="tl"><span class="tl-k">CLAIM   :</span> <span class="tl-w">8,000,000 customers — "Odido is lying"</span></span>
+            <span class="tl"><span class="tl-k">VECTOR  :</span> <span class="tl-g">Voice phishing / Salesforce CRM</span></span>
+            <span class="tl"><span class="tl-k">DATA    :</span> IBAN, passport, DOB, address, password_c</span>
+            <span class="tl"><span class="tl-k">RANSOM  :</span> <span class="tl-w">Seven-figure demand</span></span>
+            <span class="tl"><span class="tl-k">DEADLINE:</span> <span class="tl-w">Thu 26 Feb 2026</span></span>
+            <span class="tl tl-d" style="margin-top:0.3rem;">// "This is your FINAL WARNING."</span>
+            <span class="tl"><span class="tl-k">STATUS  :</span> <span class="tl-w">EXTORTION ACTIVE</span> <span class="t-cursor"></span></span>
+        </div>
+    </div>
+    <div class="hero-fade"></div>
+</div>
+
+<section class="article-hero">
+    <span class="article-category">Investigation</span>
+    <h1>The <span>Open Door.</span><br>What the Odido Breach Tells Us About Cyber Complacency.</h1>
+    <p class="article-subtitle">Odido's hack was not a sophisticated attack. It was a basic hygiene failure, dressed up in headlines. The real story is what it reveals about how companies treat their obligations to the people whose data they hold.</p>
+    <div class="article-meta">
+        <span class="author">Echo Truth Hub</span>
+        <span>Investigative Commentary</span>
+        <span>February 24, 2026</span>
+        <span>The Hague, Netherlands</span>
+    </div>
+</section>
+
+<div class="article-body">
+
+    <p>On the weekend of February 7 and 8, 2026, someone walked through an open door at Odido. Not a back door. Not a zero-day exploit that required months of engineering. A door that was left open because the basics were not done well enough. By the time the alarm was raised, the personal data of millions of customers, including names, home addresses, bank account numbers, passport numbers and dates of birth, had already left the building.</p>
+
+    <p>This piece is not primarily about Odido. It is about what Odido represents: a pattern playing out across corporate Europe at speed, and a question every organisation handling sensitive customer data should be asking itself right now. Not "are we compliant?" but "are we genuinely prepared?"</p>
+
+    <div class="alert-box">
+        <p><strong>Status as of February 24, 2026:</strong> ShinyHunters has issued a "final warning" to Odido on their dark web platform, demanding a seven-figure ransom. Deadline: Thursday morning, February 26. The data has not yet been publicly released. The extortion phase is active.</p>
+    </div>
+
+    <h2>What Actually Happened</h2>
+
+    <p>Odido confirmed that attackers gained access to a customer contact system, described in independent reporting as a Salesforce CRM environment. The entry method was social engineering, a combination of phishing and credential manipulation targeting employees, not a technical vulnerability in Odido's core infrastructure. Once inside, the attackers exfiltrated data quietly, over a period of time, before anyone noticed.</p>
+
+    <p>The data confirmed stolen includes full names, addresses, mobile numbers, customer numbers, email addresses, IBANs, dates of birth, and identification document numbers with validity dates. Odido states this affected approximately 6.2 million customers across Odido NL and its sub-brand BEN.nl.</p>
+
+    <p>ShinyHunters disputes this figure. In direct communication with RTL Nieuws journalist Daniël Verlaan, the group stated: "Odido is lying. It concerns 8 million customers and a total of 21 million rows of data." That discrepancy, roughly 2 million additional customers and 15 million additional records, has never been addressed by Odido.</p>
+
+    <div class="fact-box">
+        <h4>Confirmed vs. Claimed, Side by Side</h4>
+        <div class="fact-row"><span class="fact-label">Customers affected</span><span class="fact-value unknown">Odido: 6.2M / ShinyHunters: 8M</span></div>
+        <div class="fact-row"><span class="fact-label">Total records</span><span class="fact-value unknown">21M claimed, gap unexplained</span></div>
+        <div class="fact-row"><span class="fact-label">IBANs, addresses, ID numbers</span><span class="fact-value warn">Confirmed by Odido</span></div>
+        <div class="fact-row"><span class="fact-label">Login passwords (Mijn Odido)</span><span class="fact-value ok">Not leaked, confirmed</span></div>
+        <div class="fact-row"><span class="fact-label">Verification code words (password_c)</span><span class="fact-value warn">Leaked, stored plaintext in CRM</span></div>
+        <div class="fact-row"><span class="fact-label">Internal documents, source code</span><span class="fact-value unknown">Claimed, not confirmed or denied</span></div>
+        <div class="fact-row"><span class="fact-label">Data publicly released</span><span class="fact-value ok">Not yet, as of Feb 24</span></div>
+        <div class="fact-row"><span class="fact-label">Attacker named by Odido</span><span class="fact-value unknown">No official confirmation</span></div>
+    </div>
+
+    <h2>The Password That Was Not a Password</h2>
+
+    <p>Here is where the story gets interesting, and where both sides of the public debate have been less than fully transparent.</p>
+
+    <p>ShinyHunters claimed to hold plaintext customer passwords. Odido flatly denied this, stating that "no passwords from Mijn Odido or other login systems have been leaked." Both statements are technically defensible. Neither tells the complete story.</p>
+
+    <p>What was actually leaked is a field in the Salesforce CRM named <code>password_c</code>. This is not a login password. It is a spoken verification code word, agreed between a customer and Odido for use when calling customer service to authorise account changes, the kind of thing a customer might use to verify their identity over the phone before changing a direct debit or updating an address.</p>
+
+    <p>Odido clarified this quietly, buried in the FAQ section of their official incident page, only after the "plaintext passwords" framing had already dominated media coverage for days. The correction is accurate. The timing of the clarification is worth noting.</p>
+
+    <div class="pull-quote">
+        <p>"Despite its name, this is not a password, but a so-called challenge word or code word. This was used as an additional security question when a customer contacted us by telephone."</p>
+        <cite>Odido official statement, odido.nl/veiligheid-eng, updated February 23, 2026</cite>
+    </div>
+
+    <p>The problem is not that Odido stored this field. The problem is that they stored it in plaintext. A spoken verification code, linked to a customer's name, address, IBAN and passport number, sitting in a CRM environment reachable via a phishing call. That is a security hygiene failure, regardless of what the field is called.</p>
+
+    <h2>This Was Not Sophisticated. That Is the Point.</h2>
+
+    <p>When a major breach makes headlines, the instinct is to frame it as the work of elite nation-state actors using complex tools. It flatters the victim and satisfies the reader's appetite for drama. The reality here is considerably less glamorous, and considerably more alarming.</p>
+
+    <p>ShinyHunters did not crack Odido's encryption. They did not exploit a previously unknown vulnerability in network infrastructure. According to reporting by NOS, they used a combination of phishing and social engineering to gain access to a Salesforce environment, then downloaded data quietly before anyone noticed.</p>
+
+    <p>This playbook is not new and it is not unique to Odido. As investigative journalist Brian Krebs documented in October 2025, ShinyHunters launched an identical Salesforce campaign in May 2025, using voice phishing to trick employees at dozens of companies into connecting a malicious application to their organisation's Salesforce portal. The victims included Toyota, FedEx, Disney and UPS. Google's own Threat Intelligence Group, which tracks the group as UNC6040, confirmed the methodology. And notably, Google itself acknowledged that one of its own corporate Salesforce instances was compromised in the same campaign.</p>
+
+    <div class="apt-callout">
+        <div class="apt-label">Security community term for ShinyHunters and affiliated groups</div>
+        <div class="apt-term">Advanced Persistent Teenagers</div>
+        <div class="apt-sub">APT. The acronym that usually denotes sophisticated nation-state threat actors.<br>In this case, it means something rather different.</div>
+        <div class="apt-credit">Term coined by security researcher Kevin Beaumont, October 2025. The irony is entirely intentional.</div>
+    </div>
+
+    <p>If Google, with its security resources and expertise, was caught in this net, the implication for the average Dutch enterprise is sobering. The sophistication barrier to this kind of attack is not high. What it requires is not elite skill. It requires a target that has left the door open.</p>
+
+    <h2>The Law Is Not the Point</h2>
+
+    <p>NIS2, the European Union's updated Network and Information Security directive, was supposed to be transposed into Dutch national law by January 1, 2025. It has not been. The Netherlands is formally in breach of EU rules on this point, and the Cyberbeveiligingswet, the Dutch implementation law, is not expected to take effect until Q2 2026.</p>
+
+    <p>Some have used this delay to suggest Odido's compliance obligations were not fully in force at the time of the breach. The argument goes: if the law is not law yet, the obligation does not fully apply.</p>
+
+    <p>This argument misses the point entirely.</p>
+
+    <p>Odido is a telecommunications provider handling the financial and identity data of more than six million people. They operated under the older Wbni framework, which already imposed meaningful security obligations on critical infrastructure operators. More fundamentally, the ethical obligation to protect customer data does not originate in a piece of legislation. It originates in the decision to accept that data in the first place.</p>
+
+    <p>When a customer gives Odido their IBAN, their passport number, their home address, they are extending trust. That trust does not come with a legal footnote. A company of Odido's scale had every reason to know the risks and every capability to address them.</p>
+
+    <div class="pull-quote">
+        <p>The law is a floor, not a ceiling. The obligation to protect customer data does not begin when the legislation takes effect. It begins when you ask for the data.</p>
+    </div>
+
+    <h2>ShinyHunters Is Not Finished</h2>
+
+    <p>Understanding the Odido breach in isolation misses the larger picture. ShinyHunters is running an active, systematic campaign against organisations across Europe and North America using a consistent and documented playbook: identify companies using cloud CRM platforms, gain access via voice phishing, exfiltrate data quietly, apply extortion pressure through their dark web platform. Repeat.</p>
+
+    <p>When Salesforce itself was targeted as an intermediary in October 2025, ShinyHunters demanded Salesforce pay a single ransom covering all victims, stating that if Salesforce paid, all individual extortions would be withdrawn. Salesforce refused publicly, stating it would not engage with, negotiate with, or pay any extortion demand. Odido now faces the same choice individually.</p>
+
+    <div class="victims-box">
+        <h4>ShinyHunters Confirmed Victims, 2025 to February 2026 — Partial List</h4>
+        <div class="victim-row"><span class="victim-name">Odido NL / BEN.nl</span><span class="victim-date">Feb 2026 — NL</span></div>
+        <div class="victim-row"><span class="victim-name">Harvard University</span><span class="victim-date">Jan 2026 — US</span></div>
+        <div class="victim-row"><span class="victim-name">University of Pennsylvania</span><span class="victim-date">Jan 2026 — US</span></div>
+        <div class="victim-row"><span class="victim-name">Panera Bread</span><span class="victim-date">Jan 2026 — US</span></div>
+        <div class="victim-row"><span class="victim-name">Match Group</span><span class="victim-date">Jan 2026 — US</span></div>
+        <div class="victim-row"><span class="victim-name">SoundCloud</span><span class="victim-date">Jan/Feb 2026</span></div>
+        <div class="victim-row"><span class="victim-name">Canada Goose</span><span class="victim-date">Jan/Feb 2026</span></div>
+        <div class="victim-row"><span class="victim-name">Toyota Motor Corporation</span><span class="victim-date">2025 — Salesforce campaign</span></div>
+        <div class="victim-row"><span class="victim-name">FedEx</span><span class="victim-date">2025 — Salesforce campaign</span></div>
+        <div class="victim-row"><span class="victim-name">Disney / Hulu</span><span class="victim-date">2025 — Salesforce campaign</span></div>
+        <div class="victim-row"><span class="victim-name">Google (internal instance)</span><span class="victim-date">2025 — confirmed by Google</span></div>
+        <div class="victim-row"><span class="victim-name">Discord</span><span class="victim-date">Sep 2025</span></div>
+        <div class="victim-row"><span class="victim-name">Red Hat</span><span class="victim-date">Oct 2025 — 28,000 Git repositories</span></div>
+    </div>
+
+    <p>The pattern is consistent and the playbook is public. In every case, the door they walk through is one that was left unlocked. ShinyHunters does not select targets randomly. They select targets where the combination of data value and security posture makes the effort worthwhile. A company holding millions of customers' IBANs and passport numbers, with a CRM environment reachable via a phishing call, is precisely the profile they look for.</p>
+
+    <h2>The ShinyHunters Oven Is On. Who Is Next?</h2>
+
+    <p>That is not a rhetorical question. It is a practical one. The attack vector being used here, social engineering into cloud CRM platforms, is not Odido-specific. It is sector-agnostic. Any organisation running customer data through a cloud-based CRM environment, which covers the overwhelming majority of medium and large enterprises across the Netherlands and Europe, is operating in the same threat landscape that Odido was in when this breach occurred.</p>
+
+    <p>The question every board, every CTO, every data protection officer should be sitting with today is not "could we be attacked?" The answer to that is yes, for nearly everyone. The question is: if ShinyHunters pointed their playbook at us tomorrow morning, what would they find?</p>
+
+    <p>Would they find multi-factor authentication enforced across all CRM access? Least-privilege controls limiting which employees can reach which customer data fields? Regular voice phishing simulation training with documented outcomes? A data minimisation policy that asks whether plaintext storage of verification codes in a customer-facing system is actually necessary? An incident response plan that has been tested, not just written and filed?</p>
+
+    <p>If the honest answer to any of those questions is "we are not sure," that is where the work starts. Not when the dark web post appears. Not when a journalist calls for comment. Now.</p>
+
+    <p>Odido's customers extended trust. Millions of them are now monitoring their bank accounts for unusual transactions, checking whether their passport details are being used to open fraudulent credit lines, and fielding suspicious calls from people claiming to be their bank. That is the real cost of complacency. It does not show up in a compliance audit. It shows up in the lives of the people whose data you were holding.</p>
+
+    <div class="legenda">
+        <h3>Legenda</h3>
+        <p class="legenda-intro">Not familiar with the terminology? Here is what the key terms in this article mean, with links to further reading where available.</p>
+
+        <div class="legenda-item">
+            <div class="legenda-term">NIS2 — Network and Information Security Directive 2</div>
+            <div class="legenda-def">The EU's updated cybersecurity law requiring organisations in critical sectors to implement strong security measures and report incidents promptly. Was supposed to become Dutch national law by January 1, 2025. Still pending as of Q1 2026, making the Netherlands formally in breach of EU rules. <a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank">EU official page →</a></div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Wbni — Wet beveiliging netwerk- en informatiesystemen</div>
+            <div class="legenda-def">The Dutch national implementation of the original NIS directive, currently the applicable law for critical infrastructure operators in the Netherlands including telecoms providers such as Odido. Imposes meaningful security obligations regardless of the NIS2 delay. <a href="https://www.rijksoverheid.nl/onderwerpen/cybersecurity/wbni" target="_blank">Dutch government page →</a></div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Salesforce CRM</div>
+            <div class="legenda-def">A cloud-based customer relationship management platform widely used by large enterprises to store customer data and manage customer interactions. In Odido's case, this was the environment from which customer data including the <code>password_c</code> verification field was exfiltrated. Salesforce itself was separately targeted by ShinyHunters in 2025.</div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Social Engineering / Voice Phishing (Vishing)</div>
+            <div class="legenda-def">Manipulation of people rather than systems to gain unauthorised access. Voice phishing means calling employees and impersonating trusted parties, such as IT support or vendor representatives, to obtain credentials or convince staff to connect malicious applications to corporate systems. No sophisticated hacking required.</div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Plaintext Storage</div>
+            <div class="legenda-def">Storing sensitive data in readable, unencrypted form. If a plaintext field is accessed by an attacker, its contents are immediately readable with no additional effort. Industry best practice requires all credential and verification data to be stored in encrypted or hashed form.</div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">ShinyHunters (UNC6040)</div>
+            <div class="legenda-def">A cybercriminal extortion group tracked by Google's Threat Intelligence Group as UNC6040. Documented history of breaching cloud CRM environments via voice phishing since at least 2025. Known victims span Ticketmaster (2024), dozens of Fortune 500 companies (2025), and now Odido (2026). <a href="https://krebsonsecurity.com/2025/10/shinyhunters-wage-broad-corporate-extortion-spree/" target="_blank">Krebs on Security →</a></div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">ISO 27001</div>
+            <div class="legenda-def">The international standard for information security management systems. Organisations certified to ISO 27001 have demonstrated a structured approach to identifying and managing information security risks. <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank">ISO official page →</a></div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Data Minimisation</div>
+            <div class="legenda-def">A principle under GDPR and NIS2 requiring organisations to collect and retain only the personal data strictly necessary for a defined purpose. Storing telephone verification code words in a widely-accessible CRM field raises legitimate questions about whether this principle was applied at Odido.</div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Least-Privilege Access</div>
+            <div class="legenda-def">A security principle under which each employee or system component is granted only the minimum level of access needed to perform their function. Limiting which staff can reach which customer data fields significantly reduces the impact of any credential compromise.</div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">GDPR — General Data Protection Regulation</div>
+            <div class="legenda-def">The EU's data protection law, in force since 2018. Requires organisations to protect personal data with appropriate technical and organisational measures. Data breaches must be reported to the national authority, in the Netherlands the Autoriteit Persoonsgegevens (AP), within 72 hours. <a href="https://gdpr.eu" target="_blank">gdpr.eu →</a></div>
+        </div>
+        <div class="legenda-item">
+            <div class="legenda-term">Autoriteit Persoonsgegevens (AP)</div>
+            <div class="legenda-def">The Dutch Data Protection Authority. The independent supervisory body responsible for enforcing GDPR and data protection law in the Netherlands. Odido reported this incident to the AP as legally required. <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank">AP website →</a></div>
+        </div>
+    </div>
+
+    <div class="sources-box">
+        <h4>Sources</h4>
+        <ol>
+            <li>Odido official incident page (updated Feb 23, 2026): <a href="https://www.odido.nl/veiligheid-eng" target="_blank">odido.nl/veiligheid-eng</a></li>
+            <li>RTL Nieuws, Daniël Verlaan: "Cybercriminelen dreigen met lekken data Odido: Laatste waarschuwing" (Feb 23, 2026): <a href="https://www.rtl.nl/nieuws/binnenland/artikel/5570922/odido-hack-shinyhunters-dark-web-data-publiceren" target="_blank">rtl.nl</a></li>
+            <li>Brian Krebs / KrebsOnSecurity: "ShinyHunters Wage Broad Corporate Extortion Spree" (Oct 7, 2025): <a href="https://krebsonsecurity.com/2025/10/shinyhunters-wage-broad-corporate-extortion-spree/" target="_blank">krebsonsecurity.com</a></li>
+            <li>Google Threat Intelligence Group (GTIG): ShinyHunters tracked as UNC6040, voice phishing Salesforce campaign (June 2025)</li>
+            <li>NOS reporting on Salesforce attack vector, Odido breach (February 2026)</li>
+            <li>Dutch Cyberbeveiligingswet implementation status: Rijksoverheid.nl</li>
+            <li>Kevin Beaumont, "Advanced Persistent Teenagers" — Mastodon post, October 2025</li>
+        </ol>
+    </div>
+
+    <div class="closing-cta">
+        <h3>Are You an Odido or BEN.nl Customer?</h3>
+        <p>Check your personal status on Odido's official incident page. Be alert to phishing calls, unexpected invoices, and messages claiming to be from your bank or Odido. Your name, IBAN and ID document number are a powerful combination in the wrong hands.</p>
+        <a href="https://www.odido.nl/veiligheid-eng" class="cta-btn" target="_blank">Check Your Status →</a>
+        <a href="https://x.com/EchoTruthHub" class="cta-btn" target="_blank">Follow ETH on X →</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+    <p style="margin-top:0.8rem;"><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+</footer>
+
+</body>
+</html>
