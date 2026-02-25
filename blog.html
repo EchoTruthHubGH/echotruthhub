@@ -32,60 +32,54 @@
         .featured-content {padding:2.5rem;}
         .featured-content h2 {font-size:2.2rem;font-weight:700;margin:0 0 1rem;line-height:1.2;color:#FFB800;}
         .featured-content p {margin-bottom:1.2em;color:rgba(255,255,255,0.85);line-height:1.7;}
-
-```
-    /* ── CARD META ROW: category + read time ── */
-    .card-meta {display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
-    .featured-category {display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;background:#FFB800;color:#0A0F14;}
-    .read-time-badge {display:inline-flex;align-items:center;gap:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.5);font-family:monospace;}
-    .read-time-badge i {color:#00BFA6;font-size:0.75rem;}
-
-    .read-btn {display:inline-block;margin-top:1rem;padding:0.8rem 1.8rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;transition:all 0.2s;}
-    .read-btn:hover {background:#FFB800;}
-    .sidebar {position:sticky;top:100px;height:fit-content;}
-    .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
-    .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
-    .bounty-card {text-align:center;}
-    .bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;transition:all 0.2s;}
-    .bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
-    .countdown {font-size:1.3em;color:#FFB800;margin:1rem 0;font-weight:600;}
-    .mollie-badge {max-width:180px;height:auto;opacity:0.9;margin-top:1rem;}
-    .x-logo {width:24px;height:24px;vertical-align:middle;margin-left:8px;opacity:0.9;}
-    .x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
-    footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
-    footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
-    footer a:hover {color:#FFB800;}
-    @media (max-width:1024px) {
-        .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
-        .sidebar {position:static;display:flex;flex-direction:column;}
-        .sticky-bounty-mobile {
-            display:block;position:sticky;top:0;z-index:100;
-            background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
-            border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);
+        .card-meta {display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+        .featured-category {display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;background:#FFB800;color:#0A0F14;}
+        .read-time-badge {display:inline-flex;align-items:center;gap:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.5);font-family:monospace;}
+        .read-time-badge i {color:#00BFA6;font-size:0.75rem;}
+        .read-btn {display:inline-block;margin-top:1rem;padding:0.8rem 1.8rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;transition:all 0.2s;}
+        .read-btn:hover {background:#FFB800;}
+        .sidebar {position:sticky;top:100px;height:fit-content;}
+        .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
+        .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
+        .bounty-card {text-align:center;}
+        .bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;transition:all 0.2s;}
+        .bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
+        .countdown {font-size:1.3em;color:#FFB800;margin:1rem 0;font-weight:600;}
+        .mollie-badge {max-width:180px;height:auto;opacity:0.9;margin-top:1rem;}
+        .x-logo {width:24px;height:24px;vertical-align:middle;margin-left:8px;opacity:0.9;}
+        .x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
+        footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
+        footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
+        footer a:hover {color:#FFB800;}
+        @media (max-width:1024px) {
+            .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
+            .sidebar {position:static;display:flex;flex-direction:column;}
+            .sticky-bounty-mobile {
+                display:block;position:sticky;top:0;z-index:100;
+                background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
+                border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);
+            }
+            .sticky-bounty-mobile .bounty-compact {display:flex;align-items:center;justify-content:space-between;gap:12px;}
+            .sticky-bounty-mobile .bounty-info {flex:1;min-width:0;}
+            .sticky-bounty-mobile .bounty-title {font-size:0.95rem;font-weight:700;color:#FFB800;margin:0 0 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+            .sticky-bounty-mobile .bounty-meta-compact {display:flex;gap:12px;font-size:0.85rem;color:#00BFA6;}
+            .sticky-bounty-mobile .bounty-btn {padding:10px 20px;font-size:0.9rem;white-space:nowrap;margin:0;}
+            .x-feed-container {max-height:400px;overflow-y:auto;}
         }
-        .sticky-bounty-mobile .bounty-compact {display:flex;align-items:center;justify-content:space-between;gap:12px;}
-        .sticky-bounty-mobile .bounty-info {flex:1;min-width:0;}
-        .sticky-bounty-mobile .bounty-title {font-size:0.95rem;font-weight:700;color:#FFB800;margin:0 0 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-        .sticky-bounty-mobile .bounty-meta-compact {display:flex;gap:12px;font-size:0.85rem;color:#00BFA6;}
-        .sticky-bounty-mobile .bounty-btn {padding:10px 20px;font-size:0.9rem;white-space:nowrap;margin:0;}
-        .x-feed-container {max-height:400px;overflow-y:auto;}
-    }
-    @media (max-width:640px) {
-        .hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
-        .filter-container {width:100%;}
-        .sticky-bounty-mobile .bounty-title {font-size:0.85rem;}
-        .sticky-bounty-mobile .bounty-meta-compact {font-size:0.75rem;}
-        .sticky-bounty-mobile .bounty-btn {padding:8px 16px;font-size:0.85rem;}
-    }
-</style>
-```
-
+        @media (max-width:640px) {
+            .hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
+            .filter-container {width:100%;}
+            .sticky-bounty-mobile .bounty-title {font-size:0.85rem;}
+            .sticky-bounty-mobile .bounty-meta-compact {font-size:0.75rem;}
+            .sticky-bounty-mobile .bounty-btn {padding:8px 16px;font-size:0.85rem;}
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="title-block">
-                <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn & Earn by Merit</div></a>
+                <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
             </div>
             <nav class="nav">
                 <a href="/">Home</a>
@@ -94,29 +88,48 @@
             </nav>
         </div>
     </header>
-    <section class="hero">
-        <h1>Investigative Commentaries</h1>
-        <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
-    </section>
-    <section class="category-filter">
-        <div class="filter-container">
-            <span class="filter-label">Filter by:</span>
-            <a href="#" class="category-tag active" data-category="all">All</a>
-            <a href="#" class="category-tag" data-category="investigation">Investigation</a>
-            <a href="#" class="category-tag" data-category="analysis">Analysis</a>
-            <a href="#" class="category-tag" data-category="debunked">Debunked</a>
-            <a href="#" class="category-tag" data-category="verified">Verified</a>
-            <a href="#" class="category-tag" data-category="methodology">Methodology</a>
-            <a href="#" class="category-tag" data-category="language">Language</a>
-            <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
-        </div>
-    </section>
-    <div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
-    <div class="main-wrapper">
-        <main class="main-content">
 
 ```
-        <!-- ARTICLE 0: Odido Breach — Feb 24, 2026 — 10 min read -->
+<section class="hero">
+    <h1>Investigative Commentaries</h1>
+    <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
+</section>
+
+<section class="category-filter">
+    <div class="filter-container">
+        <span class="filter-label">Filter by:</span>
+        <a href="#" class="category-tag active" data-category="all">All</a>
+        <a href="#" class="category-tag" data-category="investigation">Investigation</a>
+        <a href="#" class="category-tag" data-category="analysis">Analysis</a>
+        <a href="#" class="category-tag" data-category="debunked">Debunked</a>
+        <a href="#" class="category-tag" data-category="verified">Verified</a>
+        <a href="#" class="category-tag" data-category="methodology">Methodology</a>
+        <a href="#" class="category-tag" data-category="language">Language</a>
+        <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
+    </div>
+</section>
+
+<div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
+
+<div class="main-wrapper">
+    <main class="main-content">
+
+        <!-- ARTICLE 0: Algorithm Ate Your Tribe — Feb 25, 2026 — 12 min read -->
+        <article class="featured-article" data-category="evidence">
+            <div class="featured-image" style="background-image:url('tribe-fire.jpg');background-color:#0d1a16;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Evidence-Based</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 12 min read</span>
+                </div>
+                <h2>The Algorithm That Ate Your Tribe</h2>
+                <p><strong>February 25, 2026</strong></p>
+                <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number — 150 — and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
+                <a href="/algorithm-ate-your-tribe.html" class="read-btn">Read Full Article →</a>
+            </div>
+        </article>
+
+        <!-- ARTICLE 1: Odido Breach — Feb 24, 2026 — 10 min read -->
         <article class="featured-article" data-category="investigation">
             <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
             <div class="featured-content">
@@ -131,7 +144,7 @@
             </div>
         </article>
 
-        <!-- ARTICLE 1: Errored — Feb 2026 — 5 min read -->
+        <!-- ARTICLE 2: Errored — Feb 2026 — 5 min read -->
         <article class="featured-article" data-category="language">
             <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
             <div class="featured-content">
@@ -146,7 +159,7 @@
             </div>
         </article>
 
-        <!-- ARTICLE 2: Biometric — Feb 3, 2026 — 8 min read -->
+        <!-- ARTICLE 3: Biometric — Feb 3, 2026 — 8 min read -->
         <article class="featured-article" data-category="investigation">
             <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
             <div class="featured-content">
@@ -162,6 +175,7 @@
         </article>
 
     </main>
+
     <aside class="sidebar">
         <div class="sidebar-section">
             <h3>🎯 Current Bounty Status</h3>
@@ -177,10 +191,12 @@
         </div>
     </aside>
 </div>
+
 <footer>
     <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
     <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
 </footer>
+
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
     const ACTIVE_BOUNTY = {
@@ -195,6 +211,7 @@
         endDate: new Date('2026-02-18T23:59:59'),
         entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
     };
+
     function updateBountyDisplay() {
         const container = document.getElementById('bounty-container');
         const mobileContainer = document.getElementById('sticky-bounty-mobile');
@@ -234,6 +251,7 @@
         }
         if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
     }
+
     function startCountdown(endDate) {
         const timerEl = document.getElementById('timer');
         const timerMobileEl = document.getElementById('timer-mobile');
@@ -246,6 +264,7 @@
         }
         update(); setInterval(update, 60000);
     }
+
     document.addEventListener('DOMContentLoaded', () => {
         updateBountyDisplay();
         const tags = document.querySelectorAll('.category-tag');
