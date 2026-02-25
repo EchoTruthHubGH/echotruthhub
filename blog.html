@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +50,39 @@
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
+        /* === Animated header overlay for Algorithm article card === */
+        @keyframes rain {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 2000px; }
+        }
+        @keyframes pulse-swarm {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.08); }
+        }
+        .code-rain {
+            position: absolute; inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, #0f0 2px, #0f0 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, #0f0 2px, #0f0 4px);
+            background-size: 100% 100px;
+            animation: rain 20s linear infinite;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+        .swarm-motion {
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(200,0,0,0.15), transparent 70%),
+                        radial-gradient(circle at 70% 60%, rgba(200,0,0,0.12), transparent 70%);
+            animation: pulse-swarm 12s ease-in-out infinite;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+        .vignette {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.75) 100%);
+            pointer-events: none;
+        }
+        .featured-image { position: relative; overflow: hidden; }
         @media (max-width:1024px) {
             .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
             .sidebar {position:static;display:flex;flex-direction:column;}
@@ -88,201 +120,187 @@
             </nav>
         </div>
     </header>
-
-```
-<section class="hero">
-    <h1>Investigative Commentaries</h1>
-    <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
-</section>
-
-<section class="category-filter">
-    <div class="filter-container">
-        <span class="filter-label">Filter by:</span>
-        <a href="#" class="category-tag active" data-category="all">All</a>
-        <a href="#" class="category-tag" data-category="investigation">Investigation</a>
-        <a href="#" class="category-tag" data-category="analysis">Analysis</a>
-        <a href="#" class="category-tag" data-category="debunked">Debunked</a>
-        <a href="#" class="category-tag" data-category="verified">Verified</a>
-        <a href="#" class="category-tag" data-category="methodology">Methodology</a>
-        <a href="#" class="category-tag" data-category="language">Language</a>
-        <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
+    <section class="hero">
+        <h1>Investigative Commentaries</h1>
+        <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
+    </section>
+    <section class="category-filter">
+        <div class="filter-container">
+            <span class="filter-label">Filter by:</span>
+            <a href="#" class="category-tag active" data-category="all">All</a>
+            <a href="#" class="category-tag" data-category="investigation">Investigation</a>
+            <a href="#" class="category-tag" data-category="analysis">Analysis</a>
+            <a href="#" class="category-tag" data-category="debunked">Debunked</a>
+            <a href="#" class="category-tag" data-category="verified">Verified</a>
+            <a href="#" class="category-tag" data-category="methodology">Methodology</a>
+            <a href="#" class="category-tag" data-category="language">Language</a>
+            <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
+        </div>
+    </section>
+    <div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
+    <div class="main-wrapper">
+        <main class="main-content">
+            <!-- ARTICLE 0: Algorithm Ate Your Tribe , Feb 25, 2026 , 12 min read -->
+            <article class="featured-article" data-category="evidence">
+                <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#000;">
+                    <div class="code-rain"></div>
+                    <div class="swarm-motion"></div>
+                    <div class="vignette"></div>
+                </div>
+                <div class="featured-content">
+                    <div class="card-meta">
+                        <span class="featured-category">Evidence-Based</span>
+                        <span class="read-time-badge"><i class="far fa-clock"></i> 12 min read</span>
+                    </div>
+                    <h2>The Algorithm That Ate Your Tribe</h2>
+                    <p><strong>February 25, 2026</strong></p>
+                    <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number, 150, and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
+                    <a href="/algorithm-ate-your-tribe.html" class="read-btn">Read Full Article →</a>
+                </div>
+            </article>
+            <!-- ARTICLE 1: Odido Breach , Feb 24, 2026 , 10 min read -->
+            <article class="featured-article" data-category="investigation">
+                <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
+                <div class="featured-content">
+                    <div class="card-meta">
+                        <span class="featured-category">Investigation</span>
+                        <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
+                    </div>
+                    <h2>The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</h2>
+                    <p><strong>February 24, 2026</strong></p>
+                    <p>Odido's breach wasn't a sophisticated attack, it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
+                    <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
+                </div>
+            </article>
+            <!-- ARTICLE 2: Errored , Feb 2026 , 5 min read -->
+            <article class="featured-article" data-category="language">
+                <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
+                <div class="featured-content">
+                    <div class="card-meta">
+                        <span class="featured-category">Language &amp; Evidence</span>
+                        <span class="read-time-badge"><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                    <h2>Errored. A Word That Wasn't. Until It Was.</h2>
+                    <p><strong>February 2026</strong></p>
+                    <p>Doodling on Echo Truth Hub, I noticed AI writing "erred" where I expected "errored." The grammar enthusiast in me went looking. What followed was a rabbit hole into Oxford English, 200 years of linguistic history, and why the engineers were right all along.</p>
+                    <a href="/errored.html" class="read-btn">Read Full Article →</a>
+                </div>
+            </article>
+            <!-- ARTICLE 3: Biometric , Feb 3, 2026 , 8 min read -->
+            <article class="featured-article" data-category="investigation">
+                <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
+                <div class="featured-content">
+                    <div class="card-meta">
+                        <span class="featured-category">Investigation</span>
+                        <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h2>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</h2>
+                    <p><strong>February 3, 2026</strong></p>
+                    <p>OpenAI is reportedly exploring a new social platform designed exclusively for verified humans. One concept involves biometric verification, requiring iris scans via the World Orb or Apple's Face ID. The proposal addresses a real problem. But exchanging irreversible biological identity for digital participation may not be the safest solution.</p>
+                    <a href="/biometric.html" class="read-btn">Read Full Article →</a>
+                </div>
+            </article>
+        </main>
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🎯 Current Bounty Status</h3>
+                <div class="bounty-card" id="bounty-container"></div>
+            </div>
+            <div class="sidebar-section">
+                <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+                <div class="x-feed-container">
+                    <a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
+                       data-chrome="noheader nofooter noborders transparent"
+                       href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+                </div>
+            </div>
+        </aside>
     </div>
-</section>
-
-<div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
-
-<div class="main-wrapper">
-    <main class="main-content">
-
-        <!-- ARTICLE 0: Algorithm Ate Your Tribe — Feb 25, 2026 — 12 min read -->
-        <article class="featured-article" data-category="evidence">
-            <div class="featured-image" style="background-image:url('tribe-fire.jpg');background-color:#0d1a16;"></div>
-            <div class="featured-content">
-                <div class="card-meta">
-                    <span class="featured-category">Evidence-Based</span>
-                    <span class="read-time-badge"><i class="far fa-clock"></i> 12 min read</span>
-                </div>
-                <h2>The Algorithm That Ate Your Tribe</h2>
-                <p><strong>February 25, 2026</strong></p>
-                <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number — 150 — and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
-                <a href="/algorithm-ate-your-tribe.html" class="read-btn">Read Full Article →</a>
-            </div>
-        </article>
-
-        <!-- ARTICLE 1: Odido Breach — Feb 24, 2026 — 10 min read -->
-        <article class="featured-article" data-category="investigation">
-            <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
-            <div class="featured-content">
-                <div class="card-meta">
-                    <span class="featured-category">Investigation</span>
-                    <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
-                </div>
-                <h2>The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</h2>
-                <p><strong>February 24, 2026</strong></p>
-                <p>Odido's breach wasn't a sophisticated attack — it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
-                <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
-            </div>
-        </article>
-
-        <!-- ARTICLE 2: Errored — Feb 2026 — 5 min read -->
-        <article class="featured-article" data-category="language">
-            <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
-            <div class="featured-content">
-                <div class="card-meta">
-                    <span class="featured-category">Language &amp; Evidence</span>
-                    <span class="read-time-badge"><i class="far fa-clock"></i> 5 min read</span>
-                </div>
-                <h2>Errored. A Word That Wasn't. Until It Was.</h2>
-                <p><strong>February 2026</strong></p>
-                <p>Doodling on Echo Truth Hub, I noticed AI writing "erred" where I expected "errored." The grammar enthusiast in me went looking. What followed was a rabbit hole into Oxford English, 200 years of linguistic history, and why the engineers were right all along.</p>
-                <a href="/errored.html" class="read-btn">Read Full Article →</a>
-            </div>
-        </article>
-
-        <!-- ARTICLE 3: Biometric — Feb 3, 2026 — 8 min read -->
-        <article class="featured-article" data-category="investigation">
-            <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
-            <div class="featured-content">
-                <div class="card-meta">
-                    <span class="featured-category">Investigation</span>
-                    <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
-                </div>
-                <h2>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</h2>
-                <p><strong>February 3, 2026</strong></p>
-                <p>OpenAI is reportedly exploring a new social platform designed exclusively for verified humans. One concept involves biometric verification, requiring iris scans via the World Orb or Apple's Face ID. The proposal addresses a real problem. But exchanging irreversible biological identity for digital participation may not be the safest solution.</p>
-                <a href="/biometric.html" class="read-btn">Read Full Article →</a>
-            </div>
-        </article>
-
-    </main>
-
-    <aside class="sidebar">
-        <div class="sidebar-section">
-            <h3>🎯 Current Bounty Status</h3>
-            <div class="bounty-card" id="bounty-container"></div>
-        </div>
-        <div class="sidebar-section">
-            <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
-            <div class="x-feed-container">
-                <a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
-                   data-chrome="noheader nofooter noborders transparent"
-                   href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
-            </div>
-        </div>
-    </aside>
-</div>
-
-<footer>
-    <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
-    <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
-</footer>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script>
-    const ACTIVE_BOUNTY = {
-        active: true,
-        code: 'M0009',
-        title: 'Taiwan AI Law vs EU AI Act, Labor Rights',
-        description: 'Best evidence-based comparison of Taiwan Article 12 labor protections vs EU AI Act provisions earns merit.',
-        pot: '€12.10',
-        entries: 0,
-        minEntries: 10,
-        startDate: new Date('2026-02-15T00:00:00'),
-        endDate: new Date('2026-02-18T23:59:59'),
-        entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
-    };
-
-    function updateBountyDisplay() {
-        const container = document.getElementById('bounty-container');
-        const mobileContainer = document.getElementById('sticky-bounty-mobile');
-        if (!ACTIVE_BOUNTY.active) {
-            if (container) container.innerHTML = `<p style="font-size:1.1rem;margin-bottom:1rem;">No active bounty at the moment.</p><a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank" style="margin-top:1.5rem;">Follow on X</a>`;
-            if (mobileContainer) mobileContainer.style.display = 'none';
-            return;
-        }
-        const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
-        const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit', hour12:false });
-        if (container) {
-            container.innerHTML = `
-                <h4 style="font-size:1.4rem;color:#FFB800;margin-bottom:0.8rem;">${ACTIVE_BOUNTY.code}: ${ACTIVE_BOUNTY.title}</h4>
-                <p style="margin-bottom:1rem;">${ACTIVE_BOUNTY.description}</p>
-                <div style="background:rgba(0,191,166,0.15);padding:1.5rem;border-radius:12px;margin:1.5rem 0;">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center;margin-bottom:1rem;">
-                        <div><div style="font-size:1.8em;color:#FFB800;">🍯 ${ACTIVE_BOUNTY.pot}</div><div style="font-size:0.85em;opacity:0.8;">Merit Pool</div></div>
-                        <div><div style="font-size:1.8em;color:#FFB800;">👥 ${ACTIVE_BOUNTY.entries}</div><div style="font-size:0.85em;opacity:0.8;">Participants</div></div>
+    <footer>
+        <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+        <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+    </footer>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script>
+        const ACTIVE_BOUNTY = {
+            active: true,
+            code: 'M0009',
+            title: 'Taiwan AI Law vs EU AI Act, Labor Rights',
+            description: 'Best evidence-based comparison of Taiwan Article 12 labor protections vs EU AI Act provisions earns merit.',
+            pot: '€12.10',
+            entries: 0,
+            minEntries: 10,
+            startDate: new Date('2026-02-15T00:00:00'),
+            endDate: new Date('2026-02-18T23:59:59'),
+            entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
+        };
+        function updateBountyDisplay() {
+            const container = document.getElementById('bounty-container');
+            const mobileContainer = document.getElementById('sticky-bounty-mobile');
+            if (!ACTIVE_BOUNTY.active) {
+                if (container) container.innerHTML = `<p style="font-size:1.1rem;margin-bottom:1rem;">No active bounty at the moment.</p><a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank" style="margin-top:1.5rem;">Follow on X</a>`;
+                if (mobileContainer) mobileContainer.style.display = 'none';
+                return;
+            }
+            const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+            const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit', hour12:false });
+            if (container) {
+                container.innerHTML = `
+                    <h4 style="font-size:1.4rem;color:#FFB800;margin-bottom:0.8rem;">${ACTIVE_BOUNTY.code}: ${ACTIVE_BOUNTY.title}</h4>
+                    <p style="margin-bottom:1rem;">${ACTIVE_BOUNTY.description}</p>
+                    <div style="background:rgba(0,191,166,0.15);padding:1.5rem;border-radius:12px;margin:1.5rem 0;">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center;margin-bottom:1rem;">
+                            <div><div style="font-size:1.8em;color:#FFB800;">🍯 ${ACTIVE_BOUNTY.pot}</div><div style="font-size:0.85em;opacity:0.8;">Merit Pool</div></div>
+                            <div><div style="font-size:1.8em;color:#FFB800;">👥 ${ACTIVE_BOUNTY.entries}</div><div style="font-size:0.85em;opacity:0.8;">Participants</div></div>
+                        </div>
+                        <div class="countdown" id="timer" style="text-align:center;">⏱ Calculating...</div>
+                        <p style="font-size:0.85rem;opacity:0.7;margin-top:0.5rem;text-align:center;">Launched ${launchDate} • Closes ${closeDate}</p>
                     </div>
-                    <div class="countdown" id="timer" style="text-align:center;">⏱ Calculating...</div>
-                    <p style="font-size:0.85rem;opacity:0.7;margin-top:0.5rem;text-align:center;">Launched ${launchDate} • Closes ${closeDate}</p>
-                </div>
-                <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">🎫 Enter Competition (€1.21)</a>
-                <div style="text-align:center;"><img src="mollie-badge.png" alt="Powered by Mollie" class="mollie-badge"></div>
-                <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.8;">Skill game: Best evidence earns merit. Community assessment (X likes) determines top contributor. Min ${ACTIVE_BOUNTY.minEntries} entries required.</p>
-            `;
+                    <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">🎫 Enter Competition (€1.21)</a>
+                    <div style="text-align:center;"><img src="mollie-badge.png" alt="Powered by Mollie" class="mollie-badge"></div>
+                    <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.8;">Skill game: Best evidence earns merit. Community assessment (X likes) determines top contributor. Min ${ACTIVE_BOUNTY.minEntries} entries required.</p>
+                `;
+            }
+            if (mobileContainer) {
+                mobileContainer.innerHTML = `
+                    <div class="bounty-compact">
+                        <div class="bounty-info">
+                            <div class="bounty-title">${ACTIVE_BOUNTY.code}: Taiwan AI Law</div>
+                            <div class="bounty-meta-compact"><span>🍯 ${ACTIVE_BOUNTY.pot}</span><span>👥 ${ACTIVE_BOUNTY.entries}</span><span id="timer-mobile">⏱ ...</span></div>
+                        </div>
+                        <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">🎫 Enter</a>
+                    </div>`;
+            }
+            if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
         }
-        if (mobileContainer) {
-            mobileContainer.innerHTML = `
-                <div class="bounty-compact">
-                    <div class="bounty-info">
-                        <div class="bounty-title">${ACTIVE_BOUNTY.code}: Taiwan AI Law</div>
-                        <div class="bounty-meta-compact"><span>🍯 ${ACTIVE_BOUNTY.pot}</span><span>👥 ${ACTIVE_BOUNTY.entries}</span><span id="timer-mobile">⏱ ...</span></div>
-                    </div>
-                    <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">🎫 Enter</a>
-                </div>`;
+        function startCountdown(endDate) {
+            const timerEl = document.getElementById('timer');
+            const timerMobileEl = document.getElementById('timer-mobile');
+            function update() {
+                const diff = endDate - new Date();
+                if (diff <= 0) { if(timerEl) timerEl.textContent="Competition Ended"; if(timerMobileEl) timerMobileEl.textContent="⏱ Ended"; return; }
+                const days=Math.floor(diff/(1000*60*60*24)), hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60)), minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+                if(timerEl) timerEl.textContent=`⏱ ${days}d ${hours}h ${minutes}m remaining`;
+                if(timerMobileEl) timerMobileEl.textContent=`⏱ ${days}d ${hours}h`;
+            }
+            update(); setInterval(update, 60000);
         }
-        if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
-    }
-
-    function startCountdown(endDate) {
-        const timerEl = document.getElementById('timer');
-        const timerMobileEl = document.getElementById('timer-mobile');
-        function update() {
-            const diff = endDate - new Date();
-            if (diff <= 0) { if(timerEl) timerEl.textContent="Competition Ended"; if(timerMobileEl) timerMobileEl.textContent="⏱ Ended"; return; }
-            const days=Math.floor(diff/(1000*60*60*24)), hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60)), minutes=Math.floor((diff%(1000*60*60))/(1000*60));
-            if(timerEl) timerEl.textContent=`⏱ ${days}d ${hours}h ${minutes}m remaining`;
-            if(timerMobileEl) timerMobileEl.textContent=`⏱ ${days}d ${hours}h`;
-        }
-        update(); setInterval(update, 60000);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        updateBountyDisplay();
-        const tags = document.querySelectorAll('.category-tag');
-        const articles = document.querySelectorAll('.featured-article');
-        tags.forEach(tag => {
-            tag.addEventListener('click', (e) => {
-                e.preventDefault();
-                tags.forEach(t => t.classList.remove('active'));
-                tag.classList.add('active');
-                const selected = tag.dataset.category;
-                articles.forEach(article => {
-                    article.style.display = (selected === 'all' || article.dataset.category === selected) ? 'block' : 'none';
+        document.addEventListener('DOMContentLoaded', () => {
+            updateBountyDisplay();
+            const tags = document.querySelectorAll('.category-tag');
+            const articles = document.querySelectorAll('.featured-article');
+            tags.forEach(tag => {
+                tag.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    tags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                    const selected = tag.dataset.category;
+                    articles.forEach(article => {
+                        article.style.display = (selected === 'all' || article.dataset.category === selected) ? 'block' : 'none';
+                    });
                 });
             });
         });
-    });
-</script>
-```
-
+    </script>
 </body>
 </html>
