@@ -174,7 +174,9 @@
     }
     /* Amber border frame */
     .teaser-frame {
-        display: inline-block;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
         padding: 1.2rem 2.2rem 1rem;
         border: 2px solid rgba(255,184,0,0.6);
         border-radius: 4px;
@@ -194,36 +196,39 @@
         letter-spacing: 0.15em;
     }
     .typewriter-line1 {
-        font-size: clamp(0.85rem, 2vw, 1.3rem);
+        font-size: clamp(0.75rem, 1.8vw, 1.2rem);
         font-weight: 700;
         color: #ffffff;
         text-shadow: 0 0 10px rgba(255,255,255,0.3);
         border-right: 3px solid #FFB800;
-        width: 0;
-        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 0;
         animation:
             typing1 2.6s steps(26, end) 0.5s forwards,
             blink-cursor 0.75s step-end infinite;
     }
     .typewriter-line2 {
-        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-size: clamp(1.1rem, 2.5vw, 1.8rem);
         font-weight: 900;
         color: #FFB800;
         text-shadow: 0 0 15px rgba(255,184,0,0.6);
         border-right: none;
-        width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 0;
         opacity: 0;
         animation:
             delay-show 3.4s forwards,
             typing2 0.8s steps(3, end) 3.4s forwards;
     }
     @keyframes typing1 {
-        from { width: 0; }
-        to   { width: 26ch; }
+        from { max-width: 0; }
+        to   { max-width: 100%; }
     }
     @keyframes typing2 {
-        from { width: 0; }
-        to   { width: 3ch; }
+        from { max-width: 0; }
+        to   { max-width: 100%; }
     }
     @keyframes delay-show {
         0%, 99% { opacity: 0; }
