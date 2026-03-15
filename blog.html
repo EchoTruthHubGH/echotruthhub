@@ -194,14 +194,15 @@
         letter-spacing: 0.15em;
     }
     .typewriter-line1 {
-        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        font-size: clamp(0.85rem, 2vw, 1.3rem);
         font-weight: 700;
         color: #ffffff;
         text-shadow: 0 0 10px rgba(255,255,255,0.3);
         border-right: 3px solid #FFB800;
         width: 0;
+        max-width: 100%;
         animation:
-            typing1 2s steps(22, end) 0.5s forwards,
+            typing1 2.6s steps(26, end) 0.5s forwards,
             blink-cursor 0.75s step-end infinite;
     }
     .typewriter-line2 {
@@ -213,12 +214,12 @@
         width: 0;
         opacity: 0;
         animation:
-            delay-show 2.8s forwards,
-            typing2 0.8s steps(3, end) 2.8s forwards;
+            delay-show 3.4s forwards,
+            typing2 0.8s steps(3, end) 3.4s forwards;
     }
     @keyframes typing1 {
         from { width: 0; }
-        to   { width: 22ch; }
+        to   { width: 26ch; }
     }
     @keyframes typing2 {
         from { width: 0; }
@@ -403,8 +404,47 @@
             </div>
         </article>
 
-        <!-- TEASER CARDS — injected by JS. To add a new teaser, add one object to the TEASERS array. Nothing else to touch. -->
-        <div id="teasers-container"></div>
+        <!-- TEASER CARDS — To add a new teaser, copy one block below and update title/subtitle/category -->
+
+        <article class="teaser-article" data-category="investigation">
+            <div class="teaser-image-wrap">
+                <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
+                <div class="teaser-amber-glow"></div>
+                <div class="teaser-dust"></div>
+                <div class="teaser-vignette"></div>
+                <span class="teaser-badge">Coming Soon</span>
+                <div class="teaser-text-overlay">
+                    <div class="teaser-frame">
+                        <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
+                        <span class="typewriter-line2">ETH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="teaser-content">
+                <h2>Who Actually Protects Your Data, Identity &amp; Money</h2>
+                <p>EU Digital ID · eIDAS 2.0 · CBDC · Institutional Track Record</p>
+            </div>
+        </article>
+
+        <article class="teaser-article" data-category="investigation">
+            <div class="teaser-image-wrap">
+                <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
+                <div class="teaser-amber-glow"></div>
+                <div class="teaser-dust"></div>
+                <div class="teaser-vignette"></div>
+                <span class="teaser-badge">Coming Soon</span>
+                <div class="teaser-text-overlay">
+                    <div class="teaser-frame">
+                        <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
+                        <span class="typewriter-line2">ETH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="teaser-content">
+                <h2>Who Actually Protects Your Data When the State No Longer Owns the Infrastructure</h2>
+                <p>Privatisation · GDPR as Paper Tiger · The Revolving Door</p>
+            </div>
+        </article>
 
     </main>
 
@@ -593,7 +633,6 @@ function startCountdown(endDate) {
 ================================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     updateBountyDisplay();
-    buildTeasers();
 
     const tags     = document.querySelectorAll('.category-tag');
     const getAll   = () => document.querySelectorAll('.featured-article, .teaser-article');
