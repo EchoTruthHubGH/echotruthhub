@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIRED Set the Standard. Then Filed the Article. | Echo Truth Hub</title>
+    <meta name="description" content="WIRED published a piece about AI verification failures on X. We applied their own standard to the article. The measurement is the article.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── BASE ── */
+        body { margin:0; background:#0A0F14; color:#fff; font-family:system-ui,-apple-system,sans-serif; line-height:1.8; }
+
+```
+    /* ── HEADER ── */
+    header { padding:2rem 0; border-bottom:1px solid rgba(0,191,166,0.2); }
+    .header-container { max-width:1400px; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .title-block a { text-decoration:none; color:#fff; }
+    .logo { font-family:system-ui,-apple-system,sans-serif; font-weight:900; font-size:2.2rem; letter-spacing:2px; color:#fff; }
+    .tagline { font-size:0.85rem; color:#00BFA6; margin-top:0.2rem; font-family:monospace; }
+    .nav a { color:#00BFA6; text-decoration:none; margin:0 1rem; font-weight:600; font-family:monospace; font-size:0.9rem; transition:color 0.2s; }
+    .nav a:hover, .nav a.active { color:#FFB800; }
+
+    /* ── HERO BANNER ── */
+    .hero-banner { position:relative; width:100%; max-width:1400px; margin:0 auto; height:520px; overflow:hidden; background:#04080b; }
+
+    /* Shatter entrance animation */
+    @keyframes shatterIn {
+        0%   { filter:brightness(0) blur(12px) saturate(0); transform:scale(1.04); }
+        25%  { filter:brightness(0.35) blur(5px) saturate(0.3); transform:scale(1.025); }
+        60%  { filter:brightness(0.65) blur(1px) saturate(0.8); transform:scale(1.01); }
+        100% { filter:brightness(0.88) blur(0) saturate(1); transform:scale(1); }
+    }
+    @keyframes glassFlicker {
+        0%,100% { opacity:1; }
+        7%  { opacity:0.85; }
+        8%  { opacity:1; }
+        45% { opacity:1; }
+        46% { opacity:0.92; }
+        47% { opacity:1; }
+    }
+
+    .hero-bg-img {
+        position:absolute; inset:0; width:100%; height:100%;
+        object-fit:cover; object-position:center top;
+        animation: shatterIn 1.8s ease forwards, glassFlicker 6s ease-in-out 2s infinite;
+        z-index:1;
+    }
+    .hero-overlay {
+        position:absolute; inset:0;
+        background:linear-gradient(135deg,rgba(255,50,50,0.06) 0%,transparent 50%),
+                    linear-gradient(to bottom,rgba(4,8,11,0.1) 0%,rgba(4,8,11,0.88) 100%);
+        z-index:2;
+    }
+    .hero-scanlines {
+        position:absolute; inset:0;
+        background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);
+        z-index:3; pointer-events:none;
+    }
+
+    /* Crack overlay effect */
+    .hero-crack {
+        position:absolute; inset:0; z-index:4; pointer-events:none;
+        background:
+            linear-gradient(47deg, transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%),
+            linear-gradient(133deg, transparent 45%, rgba(255,255,255,0.02) 47%, transparent 49%),
+            linear-gradient(78deg, transparent 52%, rgba(255,255,255,0.02) 54%, transparent 56%);
+        opacity:0; animation:crackReveal 0.3s ease 1.5s forwards;
+    }
+    @keyframes crackReveal { to { opacity:1; } }
+
+    /* Floating tags */
+    .hero-tag { position:absolute; font-family:monospace; font-size:0.68rem; padding:0.28rem 0.65rem; border-radius:3px; border:1px solid; z-index:6; opacity:0; animation:tagIn 0.5s ease forwards; }
+    @keyframes tagIn { to { opacity:0.85; } }
+    .hero-tag.warn { color:#ff6b6b; border-color:rgba(255,107,107,0.45); background:rgba(255,107,107,0.08); }
+    .hero-tag.info { color:#00BFA6; border-color:rgba(0,191,166,0.35); background:rgba(0,191,166,0.06); }
+    .hero-tag.gold { color:#FFB800; border-color:rgba(255,184,0,0.35); background:rgba(255,184,0,0.06); }
+
+    .hero-fade { position:absolute; bottom:0; left:0; right:0; height:140px; background:linear-gradient(transparent,#0A0F14); z-index:8; }
+
+    /* ── FILTER BAR ── */
+    .category-filter { background:rgba(0,191,166,0.05); padding:1.2rem 2rem; border-bottom:1px solid rgba(0,191,166,0.2); }
+    .filter-container { max-width:1400px; margin:0 auto; display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+    .filter-label { font-weight:600; color:#00BFA6; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; font-family:monospace; }
+    .category-tag { padding:0.4rem 0.9rem; border-radius:20px; border:1px solid rgba(0,191,166,0.3); background:rgba(0,191,166,0.08); color:#00BFA6; font-size:0.85rem; font-weight:500; transition:all 0.2s; cursor:pointer; text-decoration:none; display:inline-block; font-family:monospace; }
+    .category-tag:hover, .category-tag.active { background:#00BFA6; color:#0A0F14; }
+
+    /* ── STICKY MOBILE BOUNTY ── */
+    .sticky-bounty-mobile { display:none; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrapper { max-width:1400px; margin:0 auto; padding:3rem 20px; display:grid; grid-template-columns:1fr 400px; gap:4rem; }
+
+    /* ── ARTICLE ── */
+    .article-wrap { min-width:0; }
+    .article-header { margin-bottom:2rem; }
+    .article-category-badge { display:inline-block; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#ff6b6b; color:#0A0F14; font-family:monospace; margin-bottom:1.2rem; }
+    .article-header h1 { font-family:system-ui,-apple-system,sans-serif; font-weight:900; font-size:clamp(2.4rem,5vw,4rem); line-height:1.05; color:#FFB800; letter-spacing:1px; margin-bottom:0.8rem; }
+    .article-subtitle { font-size:1.15rem; color:#00BFA6; margin-bottom:1.5rem; font-style:italic; line-height:1.6; }
+    .article-meta { display:flex; align-items:center; gap:1.2rem; padding:1rem 0; border-top:1px solid rgba(0,191,166,0.2); border-bottom:1px solid rgba(0,191,166,0.2); margin-bottom:0.8rem; flex-wrap:wrap; }
+    .article-meta span { font-family:monospace; font-size:0.78rem; color:rgba(255,255,255,0.5); }
+    .article-meta .author { color:#00BFA6; font-weight:600; }
+    .read-time { display:flex; align-items:center; gap:0.4rem; font-family:monospace; font-size:0.78rem; color:rgba(255,255,255,0.5); padding:0.6rem 0; margin-bottom:2rem; }
+    .read-time i { color:#FFB800; }
+
+    /* ── BODY TEXT ── */
+    .article-body h2 { font-family:system-ui,-apple-system,sans-serif; font-weight:900; font-size:1.9rem; color:#FFB800; letter-spacing:1px; margin:3rem 0 1.2rem; padding-top:1rem; border-top:1px solid rgba(0,191,166,0.2); }
+    .article-body p { margin-bottom:1.4rem; color:rgba(255,255,255,0.88); font-size:1.05rem; line-height:1.85; }
+    .article-body a { color:#00BFA6; text-decoration:underline; text-decoration-color:rgba(0,191,166,0.4); }
+    .article-body a:hover { color:#FFB800; }
+    .article-body .standalone { font-size:1.05rem; font-weight:400; color:rgba(255,255,255,0.88); margin-bottom:1.4rem; }
+    code { font-family:monospace; font-size:0.88em; background:rgba(0,191,166,0.1); padding:0.1em 0.4em; border-radius:3px; color:#00BFA6; }
+
+    /* ── INLINE IMAGES ── */
+    .article-img { width:100%; border-radius:12px; margin:2rem 0; display:block; box-shadow:0 10px 40px rgba(0,0,0,0.6); }
+    .article-img-half { width:100%; border-radius:12px; margin:2rem 0; display:block; box-shadow:0 10px 40px rgba(0,0,0,0.6); }
+    .img-caption { font-family:monospace; font-size:0.75rem; color:#00BFA6; margin:-1rem 0 2rem; text-align:center; }
+    .img-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
+    .img-grid img { width:100%; border-radius:10px; box-shadow:0 6px 24px rgba(0,0,0,0.5); }
+    .img-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; margin:2rem 0; }
+    .img-grid-3 img { width:100%; border-radius:10px; box-shadow:0 6px 24px rgba(0,0,0,0.5); }
+
+    /* ── BOXES ── */
+    .alert-box { background:rgba(255,107,107,0.07); border-left:4px solid #ff6b6b; border-radius:0 8px 8px 0; padding:1.4rem 1.8rem; margin:2.5rem 0; }
+    .alert-box p { color:rgba(255,255,255,0.9); font-size:1rem; margin:0; }
+    .alert-box strong { color:#ff6b6b; }
+    .pull-quote { border-left:5px solid #00BFA6; padding:1rem 2rem; margin:3rem 0; background:rgba(0,191,166,0.05); border-radius:0 8px 8px 0; }
+    .pull-quote p { font-size:1.25rem; font-style:italic; color:#fff; line-height:1.5; margin:0; }
+    .pull-quote cite { display:block; margin-top:0.8rem; font-size:0.76rem; color:#00BFA6; font-family:monospace; font-style:normal; }
+    .fact-box { background:rgba(0,191,166,0.05); border:1px solid rgba(0,191,166,0.2); border-radius:12px; padding:2rem; margin:2.5rem 0; }
+    .fact-box h4 { font-family:monospace; font-size:0.76rem; text-transform:uppercase; letter-spacing:1px; color:#00BFA6; margin-bottom:1.2rem; }
+    .fact-row { display:flex; justify-content:space-between; align-items:baseline; padding:0.6rem 0; border-bottom:1px solid rgba(0,191,166,0.1); gap:1.5rem; }
+    .fact-row:last-child { border-bottom:none; }
+    .fact-label { font-family:monospace; font-size:0.8rem; color:rgba(255,255,255,0.5); flex-shrink:0; }
+    .fact-value { font-size:0.88rem; color:#fff; text-align:right; }
+    .fact-value.warn { color:#ff6b6b; }
+    .fact-value.ok { color:#00BFA6; }
+    .fact-value.unknown { color:#FFB800; }
+
+    /* Debunked verdict box */
+    .verdict-box {
+        background:rgba(255,107,107,0.06);
+        border:1px solid rgba(255,107,107,0.25);
+        border-radius:12px; padding:2.2rem; margin:2.5rem 0; text-align:center;
+    }
+    .verdict-label { font-family:monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.45); margin-bottom:0.8rem; }
+    .verdict-term { font-family:system-ui,-apple-system,sans-serif; font-weight:900; font-size:2.6rem; color:#ff6b6b; letter-spacing:3px; line-height:1.1; }
+    .verdict-sub { font-family:monospace; font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:0.6rem; line-height:1.6; }
+
+    .sources-box { background:rgba(0,191,166,0.08); border-left:5px solid #00BFA6; border-radius:0 12px 12px 0; padding:2rem 2.5rem; margin:2rem 0; }
+    .sources-box h4 { font-size:1.4rem; font-weight:700; color:#FFB800; margin-bottom:1.2rem; font-family:system-ui,-apple-system,sans-serif; }
+    .sources-box .source-tier { font-family:monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:1px; color:#00BFA6; margin:1.2rem 0 0.5rem; }
+    .sources-box ol, .sources-box ul { padding-left:1.5rem; }
+    .sources-box li { font-size:0.95rem; color:rgba(255,255,255,0.85); margin-bottom:0.75rem; font-family:system-ui,-apple-system,sans-serif; line-height:1.65; }
+    .sources-box a { color:#fff; text-decoration:underline; text-decoration-color:rgba(0,191,166,0.5); }
+
+    .closing-cta { text-align:center; padding:3rem 2rem; background:#0d1f1c; border-radius:16px; border:1px solid rgba(0,191,166,0.35); margin:3rem 0; }
+    .closing-cta h3 { font-family:system-ui,-apple-system,sans-serif; font-weight:900; font-size:2rem; color:#FFB800; letter-spacing:1px; margin-bottom:1rem; }
+    .closing-cta p { color:rgba(255,255,255,0.65); margin-bottom:1.5rem; font-size:0.95rem; }
+    .cta-btn { display:inline-block; padding:0.9rem 2rem; background:#00BFA6 !important; color:#0A0F14 !important; text-decoration:none !important; border-radius:8px; font-weight:700; font-family:monospace; font-size:0.9rem; transition:all 0.2s; margin:0.4rem; border:none; -webkit-text-fill-color:#0A0F14; }
+    .cta-btn:hover { background:#FFB800 !important; }
+
+    /* ── SHARE BUTTONS ── */
+    .article-actions { display:flex; gap:10px; margin:2.5rem 0; flex-wrap:wrap; }
+    .action-btn { display:inline-flex; align-items:center; gap:7px; padding:10px 16px; background:transparent; border:1px solid rgba(0,191,166,0.3); border-radius:8px; color:#fff; text-decoration:none; font-size:0.82rem; font-weight:600; transition:all 0.2s; cursor:pointer; font-family:monospace; }
+    .action-btn:hover { background:rgba(0,191,166,0.1); border-color:#00BFA6; transform:translateY(-1px); }
+    .action-btn i { font-size:14px; color:#00BFA6; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { position:sticky; top:100px; height:fit-content; }
+    .sidebar-section { background:rgba(0,191,166,0.08); padding:2rem; border-radius:16px; margin-bottom:2.5rem; border-left:4px solid #00BFA6; }
+    .sidebar-section h3 { font-size:1.5rem; color:#FFB800; text-align:center; margin-bottom:1rem; font-family:system-ui,-apple-system,sans-serif; font-weight:900; letter-spacing:1px; }
+    .bounty-btn { display:inline-block; margin-top:1rem; padding:0.9rem 1.8rem; background:#00BFA6; color:#0A0F14; text-decoration:none; border-radius:8px; font-weight:700; transition:all 0.2s; font-family:monospace; }
+    .bounty-btn:hover { background:#FFB800; transform:translateY(-2px); }
+    .countdown { font-size:1.1rem; color:#FFB800; margin:1rem 0; font-weight:600; font-family:monospace; }
+    .mollie-badge { max-width:160px; height:auto; opacity:0.85; margin-top:1rem; }
+    .x-logo { width:22px; height:22px; vertical-align:middle; margin-left:6px; opacity:0.9; }
+    .x-feed-container { border-radius:12px; overflow:hidden; min-height:400px; background:rgba(0,191,166,0.05); }
+
+    /* ── FOOTER ── */
+    footer { margin:100px 0 50px; text-align:center; color:rgba(255,255,255,0.45); font-size:0.85rem; border-top:1px solid rgba(0,191,166,0.2); padding-top:2.5rem; font-family:monospace; }
+    footer a { color:#00BFA6; margin:0 1rem; text-decoration:none; }
+    footer a:hover { color:#FFB800; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:1024px) {
+        .main-wrapper { grid-template-columns:1fr; gap:2rem; }
+        .sidebar { position:static; }
+        .sticky-bounty-mobile { display:block; position:sticky; top:0; z-index:100; background:rgba(10,15,20,0.98); backdrop-filter:blur(10px); border-bottom:2px solid #00BFA6; padding:12px 16px; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+        .sticky-bounty-mobile .bounty-compact { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+        .sticky-bounty-mobile .bounty-info { flex:1; min-width:0; }
+        .sticky-bounty-mobile .bounty-title { font-size:0.9rem; font-weight:700; color:#FFB800; margin:0 0 4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-family:monospace; }
+        .sticky-bounty-mobile .bounty-meta-compact { display:flex; gap:12px; font-size:0.8rem; color:#00BFA6; font-family:monospace; }
+        .sticky-bounty-mobile .bounty-btn { padding:8px 16px; font-size:0.85rem; white-space:nowrap; margin:0; }
+        .img-grid-3 { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:640px) {
+        .hero-banner { height:300px; }
+        .article-header h1 { font-size:2rem; }
+        .img-grid, .img-grid-3 { grid-template-columns:1fr; }
+        .article-img-half { width:90%; max-width:none; }
+        .article-actions { gap:8px; }
+        .action-btn { padding:8px 12px; font-size:0.76rem; }
+    }
+</style>
+```
+
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="title-block">
+            <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
+        </div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/blog.html" class="active">Commentary</a>
+            <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO BANNER -->
+
+<div class="hero-banner">
+    <img class="hero-bg-img" src="IMG_7366.jpeg" alt="WIRED Journalistic Standard — Debunked by Echo Truth Hub">
+    <div class="hero-overlay"></div>
+    <div class="hero-scanlines"></div>
+    <div class="hero-crack"></div>
+
+```
+<div class="hero-tag warn" style="top:10%;left:5%;animation-delay:1.9s;">SINGLE PLATFORM FRAMING</div>
+<div class="hero-tag info" style="top:10%;right:5%;animation-delay:2.1s;">148 SOURCES VERIFIED</div>
+<div class="hero-tag gold" style="bottom:38%;left:4%;animation-delay:2.3s;">META: ONE PARAGRAPH</div>
+<div class="hero-tag warn" style="bottom:32%;right:5%;animation-delay:2.5s;">BENCHMARK MISSING</div>
+
+<div class="hero-fade"></div>
+```
+
+</div>
+
+<!-- FILTER BAR -->
+
+<section class="category-filter">
+    <div class="filter-container">
+        <span class="filter-label">Filter by:</span>
+        <a href="/blog.html" class="category-tag">All</a>
+        <a href="/blog.html" class="category-tag">Investigation</a>
+        <a href="/blog.html" class="category-tag">Analysis</a>
+        <a href="/blog.html" class="category-tag active">Debunked</a>
+        <a href="/blog.html" class="category-tag">Verified</a>
+        <a href="/blog.html" class="category-tag">Methodology</a>
+        <a href="/blog.html" class="category-tag">Language</a>
+        <a href="/blog.html" class="category-tag">Evidence-Based</a>
+    </div>
+</section>
+
+<div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
+
+<div class="main-wrapper">
+    <main class="article-wrap">
+
+```
+    <!-- ARTICLE HEADER -->
+    <div class="article-header">
+        <span class="article-category-badge">Debunked</span>
+        <h1>WIRED Set the Standard. Then Filed the Article.</h1>
+        <p class="article-subtitle">A technology publication reviewed an AI tool's verification performance. We applied the same standard to the review.</p>
+        <div class="article-meta">
+            <span class="author">Echo Truth Hub</span>
+            <span>Debunked</span>
+            <span>March 20, 2026</span>
+            <span>The Hague, Netherlands</span>
+        </div>
+        <div class="read-time"><i class="far fa-clock"></i> Estimated reading time: 7 minutes</div>
+    </div>
+
+    <!-- ARTICLE BODY -->
+    <div class="article-body" id="articleContent">
+
+        <p>WIRED covers technology and its intersection with culture, economy, and society. Within that remit sits a specific obligation: when a technology publication examines a tool's performance, it benchmarks. Across platforms. Across comparable systems. Under equivalent conditions. It does not select one instrument, document its shortcomings, and file.</p>
+
+        <p>That would not be a technology review. That would be a case study with a headline attached.</p>
+
+        <p>On March 10, 2026, WIRED published <em>"Fake AI Content About the Iran War Is All Over X"</em> by David Gilbert.</p>
+
+        <p class="standalone">The title names one platform.</p>
+
+        <!-- IMAGE 1: WIRED Instagram Reel -->
+        <img src="IMG_7314.png" alt="David Gilbert for WIRED on Instagram Reels — X's Grok is failing to accurately verify video" class="article-img-half">
+        <p class="img-caption">The WIRED piece, distributed as an Instagram Reel on Meta's platform. 362 shares. 58 comments.</p>
+
+        <h2>What the piece contains</h2>
+
+        <!-- IMAGE 2: WIRED article page -->
+        <img src="IMG_7364.png" alt="WIRED article: Fake AI Content About the Iran War Is All Over X — David Gilbert, March 10 2026" class="article-img">
+        <p class="img-caption">The article as published. Title, byline, date. The subtitle states Grok is sharing its own AI-generated images about the war.</p>
+
+        <p>The article is built around a single documented exchange. Disinformation researcher Tal Hagin queried Grok about a PressTV post claiming mass destruction in Tel Aviv during Iran's 2026 retaliatory strikes.</p>
+
+        <!-- IMAGE 3: PressTV original post -->
+        <img src="IMG_7362.png" alt="PressTV post claiming Tel Aviv destruction following Iran retaliatory strikes" class="article-img">
+        <p class="img-caption">The PressTV original. Captioned as Tel Aviv destruction from Iran's 2026 retaliatory strikes. Iranian state media.</p>
+
+        <!-- IMAGE 4: Grok verification thread -->
+        <img src="IMG_7361.png" alt="Grok verification thread identifying recycled June 2025 footage from Bat Yam" class="article-img">
+        <p class="img-caption">Grok's response. The PressTV video is recycled June 2025 footage from Iran's missile barrage on Bat Yam during the 12-day war. Exact match to ABC News June 19, 2025 and CNN June 20, 2025 reports. Snopes/AFP fact-checks confirmed.</p>
+
+        <!-- IMAGE 5: Community Note + Tal Hagin -->
+        <img src="IMG_7353.jpeg" alt="Community Note on PressTV post — video is from Bat Yam June 15 2025, with Tal Hagin reply" class="article-img">
+        <p class="img-caption">Community Notes independently confirmed Grok's core finding. The video shows Bat Yam, June 15, 2025. Tal Hagin: "You posted about this strike in June 2025, now recycling it as new."</p>
+
+        <p>Grok identified the footage as recycled material from a June 2025 strike on Bat Yam in the Tel Aviv metro area. That finding was subsequently confirmed by community notes, AFP, Snopes, and AP. Directionally, Grok was correct.</p>
+
+        <p>Then Grok produced an unprompted AI-generated image of destruction. That is the actual failure point, and WIRED documents it accurately.</p>
+
+        <p>Meta receives one paragraph. The Meta Oversight Board, cited by WIRED itself, found the company's AI labeling approach "neither robust nor comprehensive enough" for conflict conditions. Meta welcomed the findings. The article moved on.</p>
+
+        <p>Facebook, Instagram, and Threads are not tested on the same footage. ChatGPT, Gemini, and Claude are not tested on the same footage. No comparative benchmark appears anywhere in the piece.</p>
+
+        <p>The evidence that one was warranted existed before publication.</p>
+
+        <h2>What the evidence floor actually shows</h2>
+
+        <p>The disinformation during the February to March 2026 Iran conflict was not an X problem. It was a platform problem.</p>
+
+        <div class="img-grid">
+            <!-- IMAGE 6: NYT -->
+            <div>
+                <img src="IMG_7355.jpeg" alt="New York Times — Cascade of AI Fakes About War With Iran Causes Chaos Online, March 13 2026">
+                <p class="img-caption" style="margin-top:0.5rem;">New York Times, March 13, 2026. Over 110 unique AI-generated images and videos across X, TikTok, and Facebook.</p>
+            </div>
+            <!-- IMAGE 7: BBC Verify -->
+            <div>
+                <img src="IMG_7356.png" alt="BBC Verify — AI-generated Iran war videos surge as creators use new tech to cash in, March 7 2026">
+                <p class="img-caption" style="margin-top:0.5rem;">BBC Verify, March 7, 2026. Hundreds of millions of views. Monetised creators. Examples from Facebook and Instagram.</p>
+            </div>
+        </div>
+
+        <!-- IMAGE 8: Cyabra -->
+        <img src="IMG_7354.jpeg" alt="Cyabra report — Iran's Coordinated Campaign: Deepfakes Used to Manipulate the War Narrative, March 13 2026" class="article-img">
+        <p class="img-caption">Cyabra primary report, March 13, 2026. A coordinated network of tens of thousands of inauthentic accounts distributing AI-generated war footage across major social platforms. Over 145 million views in under two weeks.</p>
+
+        <p>The New York Times documented over 110 unique AI-generated images and videos circulating across X, TikTok, and Facebook during the same conflict window. BBC Verify reported hundreds of millions of views on AI war content, with specific documented examples on Facebook and Instagram, including fabricated footage of the Burj Khalifa accumulating significant engagement before any platform response. Cyabra's primary report (covered in Foreign Policy) identified coordinated networks distributing deepfakes across X, Facebook, Instagram, and TikTok, accumulating over 145 million views in the opening weeks of the conflict.</p>
+
+        <p class="standalone">The flood was not platform-specific.</p>
+        <p class="standalone">The headline was.</p>
+
+        <h2>A technical detail the article omits</h2>
+
+        <p>There is a capability distinction the piece does not address. Grok processes video natively, a multimodal capability confirmed in xAI's own product documentation. Most major LLMs do not. When Hagin queried Grok about the PressTV footage, Grok was working with the actual video content. ChatGPT, Gemini, and Claude were not tested on the same footage, but it is worth noting they could not have performed an equivalent task. The comparison WIRED did not run was never apples to apples. The article does not note that either.</p>
+
+        <p>Benchmarking a tool's video verification performance without acknowledging which tools share that capability is not a technology review.</p>
+
+        <h2>Where the piece was distributed</h2>
+
+        <!-- IMAGE 9: Meta Oversight Board -->
+        <img src="IMG_7363.jpeg" alt="Meta transparency.meta.com — AI Generated Video in Iran-Israel conflict, Oversight Board decision updated March 10 2026" class="article-img">
+        <p class="img-caption">transparency.meta.com. The Meta Oversight Board's decision on AI-generated video in the Iran-Israel conflict. Updated March 10, 2026. The same day as the WIRED article.</p>
+
+        <!-- IMAGE 10: WIRED drowning piece -->
+        <img src="IMG_7365.png" alt="WIRED — X Is Drowning in Disinformation Following US and Israeli Attack on Iran, David Gilbert Feb 28 2026" class="article-img">
+        <p class="img-caption">WIRED's earlier piece, February 28, 2026. Same author. Same frame. "WIRED has reviewed hundreds of posts on X."</p>
+
+        <p>The WIRED article was promoted via an Instagram Reel, narrated by the author, on Meta's platform.</p>
+
+        <p>The Meta Oversight Board had, days prior, found that same platform's AI content labeling insufficient for conflict conditions.</p>
+
+        <div class="verdict-box">
+            <div class="verdict-label">ETH finding</div>
+            <div class="verdict-term">INCOMPLETE</div>
+            <div class="verdict-sub">Single-platform framing. No comparative benchmark. Multi-platform evidence publicly available before publication.<br>Category: Debunked by omission.</div>
+        </div>
+
+        <h2>The fold</h2>
+
+        <!-- IMAGE 11: ETH CN screenshot -->
+        <img src="IMG_7351.png" alt="ETH Community Notes Q/RT — CGI test environment breached not BankID core system, community note confirmed" class="article-img">
+        <p class="img-caption">March 20, 2026. ETH real-time verification loop on the CGI/BankID claim. Swedish primary source confirmed. Community Notes supported. Corrective post live on X. Same day as the WIRED reel circulated.</p>
+
+        <p>On the same day this reel was circulating, a small evidence-first publication ran a real-time verification loop on a separate disinformation claim. Primary source in Swedish confirmed. Community Notes supported with documented evidence. A corrective post executed on X with full source attribution. Multiple LLMs used. Custom agents deployed. No fabricated images. No platform-specific framing.</p>
+
+        <p>The thing the WIRED piece argued AI tools could not do reliably was done reliably. By a publication WIRED would never benchmark against, using the same tools WIRED selected for critique.</p>
+
+        <p>This is not a counter-argument. It is a data point.</p>
+
+        <p>WIRED's operating argument, reduced to its principle, is correct: during active conflict, tools that apply insufficient verification standards cause measurable harm. The evidence supports it.</p>
+
+        <p>The verification gap the article identified existed, in structural form, in the documentation itself.</p>
+
+        <p class="standalone">The standard was WIRED's. The measurement is the article.</p>
+
+        <h2>What this reflects</h2>
+
+        <p>Traditional investigative journalism built its authority on a specific promise: specialists, applying rigorous process, in the fields they cover. That promise is under pressure. The speed of technological change has not been matched by equivalent adaptation in the workflows, tools, or benchmarking standards of the institutions reporting on it. The gap between what these tools can do in skilled hands and what legacy reporting assumes about them is, at this point, a story in itself.</p>
+
+        <p>WIRED is not uniquely responsible for that gap. But a piece filed from inside it, about it, without appearing to notice, is a particular kind of documentation.</p>
+
+        <h2>The question this piece cannot answer</h2>
+
+        <p>What explains the editorial frame is not for ETH to determine. The multi-platform evidence was publicly available. The Meta Oversight Board's findings were cited and then set aside. X received the headline, the case study, and the conclusion.</p>
+
+        <p>Whether that reflects editorial priorities, deadline constraints, or something less incidental remains an open question.</p>
+
+        <p class="standalone">WIRED covers those stories.</p>
+
+        <p style="font-style:italic;color:rgba(255,255,255,0.5);font-family:monospace;font-size:0.9rem;margin-top:3rem;">#TruthWithTeeth</p>
+
+        <!-- SHARE BUTTONS -->
+        <div class="article-actions">
+            <button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+            <button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+            <button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
+            <button class="action-btn" onclick="shareArticle('mastodon')"><i class="fab fa-mastodon"></i><span>Mastodon</span></button>
+            <button class="action-btn" onclick="shareArticle('telegram')"><i class="fab fa-telegram"></i><span>Telegram</span></button>
+            <button class="action-btn" onclick="shareArticle('reddit')"><i class="fab fa-reddit"></i><span>Reddit</span></button>
+            <button class="action-btn" onclick="shareArticle('facebook')"><i class="fab fa-facebook"></i><span>Facebook</span></button>
+            <button class="action-btn" onclick="downloadArticle()"><i class="fas fa-file-pdf"></i><span>Download PDF</span></button>
+            <button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+            <button class="action-btn" onclick="shareArticle('email')"><i class="fas fa-envelope"></i><span>Email</span></button>
+        </div>
+
+        <!-- SOURCES -->
+        <div class="sources-box">
+            <h4>Sources &amp; Verification</h4>
+            <p class="source-tier">Primary</p>
+            <ul>
+                <li>WIRED, David Gilbert, March 10, 2026: <a href="https://www.wired.com/story/fake-ai-content-about-the-iran-war-is-all-over-x/" target="_blank">wired.com</a></li>
+                <li>WIRED, David Gilbert, February 28, 2026: <a href="https://www.wired.com/story/x-is-drowning-in-disinformation-following-us-and-israels-attack-on-iran/" target="_blank">X Is Drowning in Disinformation Following US and Israeli Attack on Iran</a></li>
+                <li>Meta Oversight Board, AI-generated video in Iran-Israel conflict: <a href="https://transparency.meta.com/oversight/oversight-board-cases/ai-generated-video-in-iran-israel-conflict/" target="_blank">transparency.meta.com</a></li>
+                <li>Grok verification thread: <a href="https://x.com/grok/status/2030774565291405566" target="_blank">x.com/grok/status/2030774565291405566</a></li>
+                <li>Grok AI image reply: <a href="https://x.com/grok/status/2030777216607412400" target="_blank">x.com/grok/status/2030777216607412400</a></li>
+                <li>PressTV original post: <a href="https://x.com/PressTV/status/2030703851846701142" target="_blank">x.com/PressTV/status/2030703851846701142</a></li>
+                <li>Cyabra primary report, March 13, 2026: <a href="https://cyabra.com/reports/irans-coordinated-campaign-deepfakes-used-to-manipulate-the-war-narrative/" target="_blank">cyabra.com</a> (145M+ views across platforms)</li>
+            </ul>
+            <p class="source-tier">International context</p>
+            <ul>
+                <li>New York Times, Stuart A. Thompson and Alexander Cardia, March 13, 2026: <a href="https://www.nytimes.com/interactive/2026/03/14/business/media/iran-disinfo-artificial-intelligence.html" target="_blank">Cascade of A.I. Fakes About War With Iran Causes Chaos Online</a></li>
+                <li>BBC Verify, Thomas Copeland, March 7, 2026: <a href="https://www.bbc.com/news/articles/ckg8wvz427vo" target="_blank">AI-generated Iran war videos surge as creators use new tech to cash in</a></li>
+            </ul>
+            <p class="source-tier">ETH prior reporting</p>
+            <ul>
+                <li>ETH Community Notes Q/RT, March 20, 2026: <a href="https://x.com/echotruthhub/status/2034960602578162172" target="_blank">x.com/echotruthhub/status/2034960602578162172</a></li>
+            </ul>
+            <p style="font-family:monospace;font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:1.5rem;">All sources verified live and accurate as of March 20, 2026 14:30 CET. Verification: Mimir (xAI agent), 148 sources cross-referenced.</p>
+        </div>
+
+        <div class="closing-cta">
+            <h3>Evidence First. Always.</h3>
+            <p>ETH publishes evidence-based reporting with full source disclosure. If you find stronger evidence, the bounty mechanic is how you prove it.</p>
+            <a href="https://x.com/EchoTruthHub" class="cta-btn" target="_blank">Follow ETH on X</a>
+            <a href="/blog.html" class="cta-btn" target="_blank">All Articles</a>
+        </div>
+
+    </div><!-- /article-body -->
+</main>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <div class="sidebar-section">
+        <h3>🎯 Current Bounty</h3>
+        <div id="bounty-container"></div>
+    </div>
+    <div class="sidebar-section">
+        <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+        <div class="x-feed-container">
+            <a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
+               data-chrome="noheader nofooter noborders transparent"
+               href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+        </div>
+    </div>
+</aside>
+```
+
+</div>
+
+<footer>
+    <p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+    <p style="margin-top:0.8rem;"><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+    const ACTIVE_BOUNTY = {
+        active: false,
+        code: '',
+        title: '',
+        description: '',
+        pot: '€0.00',
+        entries: 0,
+        minEntries: 10,
+        startDate: new Date(),
+        endDate: new Date(),
+        entryLink: '#'
+    };
+
+    function updateBountyDisplay() {
+        const container = document.getElementById('bounty-container');
+        const mobileContainer = document.getElementById('sticky-bounty-mobile');
+        if (!ACTIVE_BOUNTY.active) {
+            if (container) container.innerHTML = `<p style="font-size:1rem;margin-bottom:1rem;color:rgba(255,255,255,0.7);">No active bounty at the moment.</p><a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank">Follow on X</a>`;
+            if (mobileContainer) mobileContainer.style.display = 'none';
+            return;
+        }
+    }
+
+    function shareArticle(platform) {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent('WIRED Set the Standard. Then Filed the Article. | Echo Truth Hub');
+        const hashtags = 'TruthWithTeeth,WIRED,AIVerification,MediaAccountability,EchoTruthHub';
+        let shareUrl;
+        switch(platform) {
+            case 'twitter': shareUrl=`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`; break;
+            case 'bluesky': shareUrl=`https://bsky.app/intent/compose?text=${title}%20${url}`; break;
+            case 'mastodon': shareUrl=`https://mastodonshare.com/?text=${title}&url=${url}`; break;
+            case 'linkedin': shareUrl=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`; break;
+            case 'reddit': shareUrl=`https://reddit.com/submit?url=${url}&title=${title}`; break;
+            case 'telegram': shareUrl=`https://t.me/share/url?url=${url}&text=${title}`; break;
+            case 'facebook': shareUrl=`https://www.facebook.com/sharer/sharer.php?u=${url}`; break;
+            case 'email': shareUrl=`mailto:?subject=${title}&body=${url}`; break;
+        }
+        if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+
+    async function downloadArticle() {
+        const btn = event?.target?.closest('.action-btn');
+        if (btn) { const orig = btn.innerHTML; btn.innerHTML='<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>'; btn.disabled=true; }
+        try {
+            const { jsPDF } = window.jspdf;
+            const content = document.getElementById('articleContent');
+            const canvas = await html2canvas(content, {scale:2, useCORS:true, logging:false, backgroundColor:'#0A0F14'});
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+            const imgWidth=210, pageHeight=297;
+            const imgHeight=(canvas.height*imgWidth)/canvas.width;
+            let heightLeft=imgHeight, position=0;
+            pdf.addImage(imgData,'PNG',0,position,imgWidth,imgHeight);
+            heightLeft -= pageHeight;
+            while(heightLeft>0){position=heightLeft-imgHeight;pdf.addPage();pdf.addImage(imgData,'PNG',0,position,imgWidth,imgHeight);heightLeft-=pageHeight;}
+            pdf.save('wired-standard-eth.pdf');
+            if(btn){btn.innerHTML='<i class="fas fa-check"></i><span>Downloaded!</span>';btn.style.background='#00BFA6';btn.style.color='#0A0F14';setTimeout(()=>{btn.innerHTML='<i class="fas fa-file-pdf"></i><span>Download PDF</span>';btn.style.background='';btn.style.color='';btn.disabled=false;},2000);}
+        } catch(e) {
+            console.error(e);
+            if(btn){btn.innerHTML='<i class="fas fa-times"></i><span>Error</span>';setTimeout(()=>{btn.innerHTML='<i class="fas fa-file-pdf"></i><span>Download PDF</span>';btn.disabled=false;},2000);}
+        }
+    }
+
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = event.target.closest('.action-btn');
+            const orig = btn.innerHTML;
+            btn.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>';
+            btn.style.background='#00BFA6';btn.style.color='#0A0F14';btn.style.borderColor='#00BFA6';
+            setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';btn.style.borderColor='';},2000);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateBountyDisplay);
+</script>
+
+</body>
+</html>
