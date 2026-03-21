@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Digital Hive — Part III: The Individual's Collective | Echo Truth Hub</title>
+    <title>The Bios First | Echo Truth Hub</title>
     <meta name="description" content="Fire or wildfire. Governance, dumbphones, and the only measure that has ever mattered. What the organism does when it starts to self-correct. Part III of The Digital Hive trilogy.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -31,11 +30,8 @@
         .featured-content{padding:2.5rem;}
         .featured-content h2{font-size:2.2rem;font-weight:700;margin:2rem 0 1rem;line-height:1.2;color:#FFB800;}
         .featured-content h2:first-of-type{margin-top:0;}
-        .featured-content h3{font-size:1.4rem;font-weight:700;margin:2rem 0 0.8rem;color:#00BFA6;}
         .featured-content p{margin-bottom:1.2em;color:rgba(255,255,255,0.85);line-height:1.7;}
         .featured-content img{max-width:100%;height:auto;border-radius:12px;margin:2rem 0;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-        .featured-content ul{margin:1.5rem 0;padding-left:2rem;}
-        .featured-content ul li{margin-bottom:0.8rem;color:rgba(255,255,255,0.85);}
         .featured-category{display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:1rem;background:#FFB800;color:#0A0F14;}
         .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
         .box h2{color:#FFB800;margin-bottom:1rem;}
@@ -45,27 +41,13 @@
         .box ul{margin:0.5rem 0;padding-left:1.5rem;}
         .box ul li{margin-bottom:0.5rem;font-size:0.95rem;}
         .pull-quote{background:rgba(255,184,0,0.07);border-left:4px solid #FFB800;border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2.5rem 0;font-size:1.25rem;font-style:italic;color:#FFB800;line-height:1.6;}
-        .term{color:#00BFA6;font-weight:700;}
-        .stat-callout{background:rgba(0,191,166,0.08);border:1px solid rgba(0,191,166,0.3);border-radius:12px;padding:1.5rem 2rem;margin:2rem 0;display:flex;align-items:center;gap:1.5rem;}
-        .stat-callout .stat-number{font-size:2.8rem;font-weight:900;color:#FFB800;line-height:1;white-space:nowrap;}
-        .stat-callout .stat-text{font-size:1rem;color:rgba(255,255,255,0.85);}
-        .dunbar-rings{background:rgba(0,191,166,0.05);border:1px solid rgba(0,191,166,0.2);border-radius:16px;padding:2rem;margin:2rem 0;}
-        .dunbar-rings h3{color:#FFB800;margin:0 0 1.5rem;text-align:center;}
-        .ring{display:flex;align-items:center;gap:1.5rem;padding:0.9rem 1.2rem;border-radius:8px;margin-bottom:0.8rem;background:rgba(0,0,0,0.2);}
-        .ring-number{font-size:1.8rem;font-weight:900;color:#FFB800;min-width:60px;text-align:center;}
-        .ring-label{font-weight:700;color:#00BFA6;min-width:120px;}
-        .ring-desc{color:rgba(255,255,255,0.75);font-size:0.95rem;}
-        .author-note{background:rgba(255,184,0,0.07);border:1px solid rgba(255,184,0,0.2);border-radius:12px;padding:1.5rem 2rem;margin:2rem 0;font-size:0.95rem;color:rgba(255,255,255,0.7);font-style:italic;}
-        .author-note strong{color:#FFB800;font-style:normal;}
         .series-banner{background:rgba(0,191,166,0.08);border:1px solid rgba(0,191,166,0.2);border-radius:8px;padding:0.8rem 1.5rem;margin-bottom:1.5rem;font-size:0.9rem;color:rgba(255,255,255,0.6);text-align:center;letter-spacing:0.5px;}
         .series-banner strong{color:#00BFA6;}
-        .series-nav{display:flex;justify-content:space-between;gap:1rem;margin:3rem 0;flex-wrap:wrap;}
-        .series-nav a{flex:1;min-width:200px;padding:1.2rem 1.5rem;border-radius:12px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.05);text-decoration:none;transition:all 0.2s;}
+        .series-nav{display:flex;justify-content:flex-start;gap:1rem;margin:3rem 0;flex-wrap:wrap;}
+        .series-nav a{flex:1;min-width:200px;max-width:320px;padding:1.2rem 1.5rem;border-radius:12px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.05);text-decoration:none;transition:all 0.2s;text-align:left;}
         .series-nav a:hover{background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
         .nav-label{font-size:0.8rem;color:#00BFA6;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem;}
         .nav-title{font-size:1rem;font-weight:700;color:#FFB800;}
-        .nav-prev{text-align:left;}
-        .nav-next{text-align:right;}
         .sidebar{position:sticky;top:100px;height:fit-content;}
         .sidebar-section{background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
         .sidebar-section h3{font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
@@ -81,8 +63,8 @@
         .action-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:transparent;border:2px solid rgba(0,191,166,0.4);border-radius:8px;color:#fff;font-size:14px;font-weight:600;transition:all 0.2s;cursor:pointer;}
         .action-btn:hover{background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
         .action-btn i{font-size:16px;color:#00BFA6;}
-        @media(max-width:1024px){.main-wrapper{grid-template-columns:1fr;}.sidebar{position:static;}.stat-callout{flex-direction:column;text-align:center;}}
-        @media(max-width:640px){.hero h1{font-size:2.4em;}.pull-quote{font-size:1.05rem;}.ring{flex-wrap:wrap;}}
+        @media(max-width:1024px){.main-wrapper{grid-template-columns:1fr;}.sidebar{position:static;}}
+        @media(max-width:640px){.hero h1{font-size:2.4em;}.pull-quote{font-size:1.05rem;}}
     </style>
 </head>
 <body>
@@ -106,276 +88,137 @@
     <div class="main-wrapper">
         <main class="main-content">
             <article class="featured-article" id="mainArticle">
-                <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#0d1a16;"></div>
+                <div class="featured-image" style="background-image:url('fire-vs-wildfire.jpg');background-color:#0d1a16;"></div>
                 <div class="featured-content" id="articleContent">
                     <span class="featured-category">Evidence-Based</span>
-                    <div class="series-banner"><strong>The Digital Hive</strong> — A Trilogy &nbsp;|&nbsp; Part III of III</div>
-                    <h2>The Swarm</h2>
-                    <p><strong>Analysis | Echo Truth Hub | February 2026 | ~10 min read</strong></p>
+                    <div class="series-banner"><strong>The Digital Hive</strong> &nbsp;|&nbsp; Part III of III</div>
 
-```
-                <p><em>In Part I, we established the baseline: a savannah brain built for 150 people, dropped into a machine offering millions. This part follows the evidence of what that machine does once it has your attention, and what its architects knew while they were building it.</em></p>
+                    <h2>The Bios First</h2>
+                    <p><strong>Analysis | Echo Truth Hub | March 2026 | ~7 min read</strong></p>
+                    <p style="font-size:0.95rem;color:rgba(255,255,255,0.5);margin-top:-0.6rem;">By <span style="color:#00BFA6;font-weight:600;">Mímir Mímisbrunnr</span></p>
 
-                <h2>The Counterfeit Tribe</h2>
+                    <p><em>Parts I and II established what we are, what the machine does to that, and what the internal documents prove the architects knew. This part asks what remains when the signal clears, and what, if anything, is being done about it.</em></p>
 
-                <img src="alone-scrolling.jpg" alt="The counterfeit tribe: connected to everything, belonging to nothing" onerror="this.style.display='none'">
+                    <h2>Fire or Wildfire: Technology, Risk, and the Speed Problem</h2>
 
-                <p>What social media built, deliberately, architecturally, with full knowledge of the neurochemistry involved, is what might fairly be called the <span class="term">counterfeit tribe</span>: a digitally simulated experience of belonging that delivers just enough reward to sustain engagement, while systematically failing to provide what the human organism actually requires.</p>
+                    <!--
+                        IMAGE — FIRE DUALITY / CONTROLLED vs WILDFIRE
+                        Grok prompt: "Split scene: left side shows a small controlled campfire warming a group of silhouetted people at night, warm amber glow, intimate. Right side shows a raging wildfire consuming a forest, out of control, red and orange inferno. Dark sky. Dramatic contrast. No text."
+                        Save as: fire-vs-wildfire.jpg
+                    -->
+                    <img src="fire-vs-wildfire.jpg" alt="Same fire. Different relationship to it." onerror="this.style.display='none'">
 
-                <p>In-person social contact releases a complex cocktail of oxytocin, serotonin, dopamine, and endorphins. Real eye contact alone triggers measurable oxytocin release. The physical proximity of a trusted person activates the parasympathetic nervous system, reducing cortisol, calming the threat response, signalling safety in ways that screen contact demonstrably cannot replicate. These are not metaphors for connection. They <em>are</em> connection, the full-bandwidth biological version, refined over millions of years.</p>
+                    <p>Here is the observation that cuts to the heart of this: <strong>technology is a fast-moving threat and a fast-moving opportunity. The ailment is slow when it is respected. The damage is rapid when safety is ignored in the race to advance.</strong></p>
 
-                <p>Social media delivers a partial signal. The dopamine hit of a like. The recognition of a reply. The simulated tribal affirmation of a share. Without the oxytocin. Without the eye contact. Without the physical presence that tells your nervous system, at the deepest level, <em>I am not alone</em>.</p>
+                    <p>This is not new. Every transformative technology in human history arrived before the framework for managing it did. Fire got out of hand before humans developed fire management. The printing press enabled both the Reformation and the burning of heretics. Nuclear energy arrived before nuclear governance. Social media arrived before anyone had the faintest idea what it was doing to adolescent brains, and the people building it either didn't know or didn't care, because the money was arriving much faster than the research.</p>
 
-                <p>It is, in other words, a meal that looks exactly like food but provides no nutrition. You feel temporarily satisfied. Then you come back, hungrier than before. Then you scroll again. This is not a bug. It is the product.</p>
+                    <p>The asymmetry is the problem. Platform deployment is fast. The science of its impact is slow, EEG studies, meta-analyses, longitudinal cohorts take years. Regulatory frameworks are slower still. And the human cost accumulates in the gap.</p>
 
-                <p>There is a second mechanism layered on top of this, arguably more insidious: <span class="term">herd mentality</span>. The tendency to mimic the actions of a larger group, often overriding personal judgment, because we assume at a deep evolutionary level that the crowd must be right. In a genuine tribe of 150, the crowd usually <em>was</em> right. If everyone in your band was running, you ran. Stopping to evaluate the evidence was a predator's opportunity.</p>
+                    <p>But intellectual honesty requires a counterweight: <strong>risk and discomfort must be taken if you want to grow.</strong> The printing press was destabilising. The telephone was disorienting. Framing all technological disruption as damage is its own kind of cognitive failure. The question is not whether to accept risk. It is whether the risk is being taken consciously, with genuine intent to course-correct when the harm becomes visible.</p>
 
-                <p>The algorithm weaponises this ancient heuristic with surgical precision. The trending tab is not a neutral reflection of what people are watching. It is engineered social proof, a manufactured crowd signal designed to trigger herd behaviour at scale. Studies find that 63% of streaming decisions are influenced by what others appear to be watching. The queue is long, so the show must be good. The post has 2.3 million likes, so it must be true. The <span class="term">bandwagon effect</span>, where popularity alone substitutes for validity, is not a glitch in human social wiring. It is a feature. One that evolved for a world of 150 people, now running in a world of 8 billion algorithmically connected ones, being actively exploited by a machine with no interest in whether the judgment is correct.</p>
-
-                <p>The people caught in this loop are not stupid. They are running ancient, well-calibrated social software in an environment it was never designed for. Which is precisely the problem.</p>
-
-                <p>Sean Parker, Facebook's founding president, admitted as much publicly in 2017. The platforms were designed from the outset to give users dopamine hits through social-validation feedback loops. His words: they deliberately exploited <em>"a vulnerability in human psychology."</em> The architects knew. They built it anyway. And then they sent their own children to schools with no phones.</p>
-
-                <p>Fast forward to February 18, 2026. Mark Zuckerberg testified under oath before a jury in Los Angeles Superior Court, the first time in history he has faced a jury, and maintained that the existing body of scientific work has not proved that social media causes mental health harms. Plaintiff attorney Mark Lanier responded by pointing out that people who are addicted to something also tend to increase the amount they use it, directly paralleling Zuckerberg's own defence that people use things more when they provide value. Zuckerberg said he didn't know how to respond to the statement and didn't know whether it applied to this situation. The man who built the machine, in a courtroom, under oath, could not distinguish between his product's value proposition and an addiction. Internal documents introduced at the same trial told a different story: a 2020 Meta document showed that 11-year-olds were four times as likely to keep returning to its apps as older users; a 2017 internal email noted that Zuckerberg's top priority for the year was "teens"; a strategy document explicitly stated <em>"if we want to win big with teens, we must bring them in as tweens"</em>; and 4 million children under the age of 13 were documented using the platform in the US alone. Instagram CEO Adam Mosseri testified the week prior that he does not believe social media can be clinically addictive, while also stating that spending 16 hours a day on Instagram is "problematic." Legal experts have described the case, a bellwether for 1,600 pending lawsuits from families and school districts, as the social media industry's Big Tobacco moment. The architects still know. They are still building it anyway.</p>
-
-                <p>MIT psychologist Sherry Turkle has spent her career documenting what this does to us. In <em>Alone Together</em> and subsequent work, she describes a generation increasingly losing the capacity for deep, patient, vulnerable, face-to-face conversation, the kind where you can't edit your response, can't disappear mid-sentence, can't perform a curated version of yourself. Real conversation requires tolerance of pauses, ambiguity, and the occasional awkward silence that turns out to be where intimacy lives. Screens let us manage, edit, and retreat. We are training ourselves out of the discomfort that genuine connection requires, and calling it progress.</p>
-
-                <h2>150 People, 10,000 Followers, and the Mathematics of Loneliness</h2>
-
-                <p>Picture someone you know who has 4,000 Instagram followers. Ask them how many of those people they would call if something went badly wrong tonight. The number they give you is their actual tribe. The gap between that number and 4,000 is the product the platform sold them.</p>
-
-                <p>Social media's core offer is scale. More connections. More reach. More relationships. The implicit promise is that more is better, that expanding your network to thousands or millions of people is an upgrade on the cognitive limit of 150. It is, in fact, the opposite.</p>
-
-                <p>Flooding your social environment beyond the Dunbar ceiling doesn't enhance your tribal experience. It degrades it. Your brain cannot track 10,000 people meaningfully. What it does instead, under constant pressure from a feed algorithmically optimised to maximise surface-level engagement, is spread its social processing capacity thin across thousands of shallow signals, while the genuine 5, the 15, the 50 go underserved. The people who actually matter get less of you because the machine is demanding your attention for strangers.</p>
-
-                <div class="stat-callout">
-                    <div class="stat-number">r = −0.41</div>
-                    <div class="stat-text">The correlation between heavy short-form video use and inhibitory control deficits, across 98,000 participants. Nguyen et al., <em>Psychological Bulletin</em>, 2025. This is not a niche finding. This is a population-level signal.</div>
-                </div>
-
-                <p>Meta-analyses consistently link problematic social media use to higher loneliness, with correlation coefficients ranging from r ~0.21 to 0.41 in student populations. Hunt et al.'s 2018 randomised controlled trial found that limiting social media to 30 minutes per day reduced both loneliness and depression significantly within three weeks. Not months. Three weeks.</p>
-
-                <p>We can have more "connections" than any human being in history while being measurably lonelier than our grandparents, who knew their 150, knew them well, and met them in person regularly. The tribe was never supposed to be infinite. The algorithm made it infinite, and charged you your attention, your sleep, your mental health, and your capacity for real intimacy as the price of admission.</p>
-
-                <h2>The Great Rewiring, and Who Paid the Price</h2>
-
-                <img src="teens-phones-together.jpg" alt="Together apart: the Great Rewiring in one frame" onerror="this.style.display='none'">
-
-                <p>Psychologist Jonathan Haidt, in <em>The Anxious Generation</em> (2024), documents a sharp inflection point around 2012–2013, when smartphone adoption in teenagers crossed a critical threshold and coincided with a near-simultaneous rise in adolescent anxiety, depression, and self-harm rates across multiple countries. Not one country. Not one demographic. A global signal, consistent across the US, UK, Canada, Australia, and beyond, affecting girls most acutely, corresponding precisely to the transition from phone-supplemented to phone-first social life.</p>
-
-                <p>The mechanism Haidt identifies is displacement. Smartphones didn't add a new activity to teenagers' lives. They crowded out what was already there: unstructured in-person play, boredom with nowhere to go, the slow accumulation of face-to-face social risk that builds confidence, empathy, and resilience. Jean Twenge's longitudinal data tells the same story: pre-2010, mental health indicators for adolescents were stable. Post-2010, they are not.</p>
-
-                <p>Physical interaction is not simply one option among many for meeting social needs. It is the primary channel through which humans develop the social competencies that allow them to function in real relationships, reading nonverbal cues, tolerating ambiguity, managing the anxiety of genuine vulnerability. When screen time crowds out face time, those skills don't plateau. They atrophy. And they atrophy precisely in the developmental windows when they were supposed to be built.</p>
-
-                <h2>The Unfinished Brain: A Feature, Not a Bug</h2>
-
-                <img src="brain-development.jpg" alt="The adolescent brain: reward system fully lit, prefrontal cortex still under construction" onerror="this.style.display='none'">
-
-                <p>Here is the biological fact that the platforms understood and the public largely did not: <strong>the prefrontal cortex, the brain's seat of impulse control, long-term planning, risk assessment, and self-regulation, does not fully mature until approximately age 25 in males, and 22 to 24 in females.</strong> It is the last brain region to complete development.</p>
-
-                <p>The adolescent brain does not develop as a single unified system on a single timeline. It develops in two distinct phases, and understanding the sequence is the key to understanding why targeting children and teenagers with an engagement-maximisation engine is not a grey area. It is a biological ambush.</p>
-
-                <p>In <strong>early adolescence</strong>, the brain undergoes rapid synaptogenesis: a surge in new neural connections, followed by aggressive pruning. More connections are formed than will ever be kept. The ones reinforced by experience survive. The ones unused are cut. Whatever a young person repeatedly does, thinks, feels, and seeks during this window is literally being built into the architecture of their brain. The reward system, centred on the nucleus accumbens and the ventral tegmental area (VTA), matures early and peaks in this phase. It is hypersensitive. It releases more dopamine in response to rewards than the adult brain does. It treats social validation, novelty, and pleasurable stimulation as high-priority signals, and it escalates motivation accordingly.</p>
-
-                <p>In <strong>late adolescence and early adulthood</strong>, the brain shifts to a different kind of work: myelination, the process by which neural pathways are insulated to make them faster and more reliable, and the strengthening of long-range circuits connecting the prefrontal cortex to the rest of the brain. This is the phase of refinement rather than expansion. And this is the phase the prefrontal cortex depends on to complete its development, typically finishing around 22 to 24 in females and 25 in males.</p>
-
-                <p>The result of this staggered timeline is what a 2012 Ghent University medical thesis on the neuroscience of the reward system, supervised by Professor C. Van Heeringen, describes precisely: a temporary but structurally significant imbalance. The emotional and reward systems are hyperactive under hormonal influence, while the rational prefrontal regions are not yet strong enough to provide adequate counterbalance. The accelerator is fully installed and running hot. The brakes are still being manufactured.</p>
-
-                <div class="dunbar-rings" style="margin:2rem 0;">
-                    <h3>The Brain's Two-Speed Development</h3>
-                    <div class="ring">
-                        <div class="ring-number" style="font-size:1.2rem;min-width:80px;">Early<br>Adolescence</div>
-                        <div class="ring-label" style="color:#FFB800;">Reward System</div>
-                        <div class="ring-desc">Nucleus accumbens and VTA mature early. Hypersensitive to dopamine signals. Peaks 10–15 years. Drives novelty-seeking, social validation hunger, and risk appetite.</div>
+                    <div class="pull-quote">
+                        "The fire that warms the tribe and the fire that burns the village down are the same fire. The difference is the relationship to it."
                     </div>
-                    <div class="ring">
-                        <div class="ring-number" style="font-size:1.2rem;min-width:80px;">Age<br>22–25</div>
-                        <div class="ring-label" style="color:#00BFA6;">Prefrontal Cortex</div>
-                        <div class="ring-desc">Last region to complete myelination. Controls impulse inhibition, consequence-modelling, long-term planning, self-regulation. Structurally immature throughout the entire period of peak reward sensitivity.</div>
+
+                    <p>Every genuinely useful technology in human history has been additive to the bios, to the living, breathing, socially embedded organism that we are. Fire extended warmth without replacing physical proximity. The printing press democratised knowledge without demanding that humans stop arguing in person. The telephone extended the reach of voice without dismantling the embodied world it supplemented.</p>
+
+                    <p>The current architecture of algorithmic social media does something categorically different. It does not extend human social life. It <strong>substitutes</strong> for it, while delivering just enough of the neurochemical signal of connection to prevent the user from clearly perceiving the deficit. It is a prosthetic for social experience that, like a prosthetic limb preventing the remaining muscles from developing, atrophies the biological capacity it claims to replace. The technology is extraordinary. The relationship to it is the problem.</p>
+
+                    <h2>The Governance Question: Bans, Bonobos, and Dumb Phones</h2>
+
+                    <!--
+                        IMAGE — DUMBPHONE / FEATURE PHONE
+                        Concept: Simple basic phone on a table, minimalist, intentional
+                        Save as: dumbphone.jpg
+                    -->
+                    <img src="IMG_6420.jpeg" alt="The new status symbol, a phone that can't scroll" onerror="this.style.display='none'">
+
+                    <p>The instinct of governments facing this problem is to regulate. Australia banned social media for under-16s. Various US states have pushed age limits and time restrictions. The impulse is understandable, the evidence of harm is real. But the research suggests that government bans, as a primary solution, face a fundamental limitation: social media bans and severe restrictions offer little measurable improvement in addressing these challenges, and they neglect the genuine positive experiences that platforms can also provide.</p>
+
+                    <p>There is also a philosophical problem worth naming. Government is one of the abstractions humans built to coordinate social life at scales impossible for direct physical accountability. At its best it is oriented toward human flourishing. In practice it is a blunt instrument, applied slowly, by people who are themselves scrolling between legislation. The instinct to regulate is understandable. The execution will lag the problem by a decade, minimum. It always does.</p>
+
+                    <p>The distinctly human answer to this problem is not external constraint. It is the exercise of the very capacity being eroded: <strong>the prefrontal cortex's ability to model consequences, weigh values, and choose differently.</strong> The irony is precise: the very brain region most degraded by short-form video addiction is the one we need to regulate our relationship with short-form video. Which is why protecting it, especially in developing children and adolescents, is not a lifestyle preference. It is the foundation of human agency.</p>
+
+                    <p>And something interesting is happening. The organism, without being told to, is starting to self-correct.</p>
+
+                    <p><strong>The dumbphone is making a comeback.</strong> Not among technophobes. Among Gen Z. A 2024 BePresent Digital Wellness Report found that 83% of Gen Z describe their smartphone relationship as unhealthy. Morning Consult (2024) found 28% of Gen Z actively interested in switching to basic feature phones. A 2025 study from the University of British Columbia and UT Austin, published in <em>PNAS Nexus</em> (<a href="https://academic.oup.com/pnasnexus/article/4/2/pgaf017/8016017" target="_blank" rel="noopener">Ward et al., 2025</a>), found that blocking mobile internet access for two weeks improved mental health in 71% of participants, with attention span gains equivalent to reversing ten years of age-related cognitive decline. Some benefits persisted even after internet access was restored.</p>
+
+                    <p>The CNA Insider ran a ten-day experiment with Gen Z teenagers on dumbphones. Less procrastination. Better sleep. An uncomfortable but genuine rediscovery that boredom, without a phone to fill it, turns out to be where creativity lives. The "Analog 2026" movement, minimalist devices, intentional disconnection, is not mainstream. But it is the leading edge of a corrective impulse that the data says is real and growing.</p>
+
+                    <p>The psychological tools for this are not complicated, though they require what the algorithm is specifically designed to prevent: <strong>deliberate pause.</strong> Recognising when you are following crowd signal rather than personal judgment, and asking the question that herd behaviour is designed to bypass: <em>what do I actually think?</em> Seeking genuinely opposing views. Justifying choices independently before checking what the group is doing. Aligning decisions with personal values rather than social proof.</p>
+
+                    <p>These are not revolutionary acts. They are the cognitive habits most directly targeted by an engagement-maximisation system that profits from their absence. The contrarian is not always right. But the person who never questions the herd is, statistically, following an algorithm.</p>
+
+                    <h2>The Only Measure That Has Ever Mattered</h2>
+
+                    <p>We are at an early and genuinely dangerous moment in this. The tools are extraordinarily powerful. The science of their biological impact is still emerging, decades after the platforms were already embedded in billions of lives. The economic incentives remain pointed in the wrong direction. The populations most at risk have the least capacity to recognise and act on the harm.</p>
+
+                    <p>But the argument for despair is not established. Three things are happening simultaneously that were not happening five years ago. The science has become impossible to dismiss: EEG studies, population-level meta-analyses, randomised controlled trials, all pointing the same direction. The legal reckoning has arrived: 1,600 pending cases, a jury trial with a CEO who could not distinguish his product's value from an addiction under oath, internal documents that read like a prosecution brief written by the defendant. And the organism is self-correcting: teenagers putting down smartphones voluntarily, the dumbphone revival growing quietly from the leading edge of the generation that was most harmed. The prefrontal cortex is plastic. Social skills atrophy with disuse and rebuild with exercise. The Dunbar relationships, the 5, the 15, the 50, can be rebuilt from the ruins of the infinite feed. The evidence from Hunt's RCT, from Ward et al.'s PNAS Nexus study, is that the organism responds quickly when the signal is cleared.</p>
+
+                    <p>What the chimp and the bonobo tell us is what we need at the base of the stack. What the Dunbar number tells us is how much of it we can meaningfully sustain. What the EEG data tells us is what we are currently trading it for. What the internal Meta slides tell us is that the people who built the machine knew exactly what they were doing. And what the dumbphone revival tells us is that enough people are doing the maths, and not liking the answer.</p>
+
+                    <p>The standard for what technology should be is not technical. It is biological. Not what the platform can do. What the human needs. The bios first, the living system, the embodied animal, the ancient creature that sat around fires in groups of 150, made eye contact across the flames, and built trust through shared physical experience.</p>
+
+                    <p>Every technology that has genuinely served us has honoured that creature. Extended its reach without severing its roots. Amplified its capacities without replacing them. Kept the fire warm without burning the village down.</p>
+
+                    <p>That is the only measure that has ever mattered. And it is the one, so far, that the algorithm has been built to ignore.</p>
+
+                    <div class="pull-quote">
+                        "The good news, if you can call it that, is that you are sitting on the solution. It has a neocortex, two hands, and approximately 150 slots still open. Use them wisely. In person, where possible."
+                    </div>
+
+                    <div class="series-nav">
+                        <a href="the-swarm-the-counterfeit-tribe.html">
+                            <div class="nav-label">&larr; Previous</div>
+                            <div class="nav-title">The Swarm — The Counterfeit Tribe</div>
+                        </a>
+                    </div>
+
+                    <div class="box">
+                        <h2>Sources &amp; Further Reading</h2>
+                        <h3>Governance &amp; The Dumbphone Revival</h3>
+                        <ul>
+                            <li>PMC (2024). Social media bans vs. self-directed emotion regulation. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11554337/" target="_blank" rel="noopener">PMC11554337</a></li>
+                            <li>Ward A et al. (2025). Blocking mobile internet improves sustained attention, mental health, and well-being. <em>PNAS Nexus.</em> <a href="https://academic.oup.com/pnasnexus/article/4/2/pgaf017/8016017" target="_blank" rel="noopener">academic.oup.com</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11834938/" target="_blank" rel="noopener">PMC11834938</a></li>
+                            <li>BePresent (2024). Digital Wellness Report. <a href="https://www.bepresentapp.com/post/bepresent-2024-digital-wellness-report" target="_blank" rel="noopener">bepresentapp.com</a></li>
+                            <li>Morning Consult (2024). Gen Z &amp; dumbphone interest. <a href="https://pro.morningconsult.com/analysis/dumb-phone-gen-z-millennials-dumb-tech-interest-2024" target="_blank" rel="noopener">morningconsult.com</a></li>
+                            <li>CNA Insider, Gen Z teens, 10 days on dumbphones: <a href="https://www.youtube.com/watch?v=4GcqRPlOWPM" target="_blank" rel="noopener">youtube.com</a></li>
+                        </ul>
+                        <h3>Neuroscience &amp; Recovery</h3>
+                        <ul>
+                            <li>Hunt M et al. (2018). No More FOMO: Limiting Social Media Decreases Loneliness and Depression. <em>Journal of Social and Clinical Psychology.</em></li>
+                            <li>APA (2024). Health Advisory on Social Media Use in Adolescence. <a href="https://www.apa.org/topics/social-media-internet/youth-social-media-2024" target="_blank" rel="noopener">apa.org</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="article-actions">
+                        <button class="action-btn" onclick="shareArticle('twitter','The Bios First')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+                        <button class="action-btn" onclick="shareArticle('linkedin','The Bios First')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+                        <button class="action-btn" onclick="shareArticle('reddit','The Bios First')"><i class="fab fa-reddit"></i><span>Reddit</span></button>
+                        <button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+                        <button class="action-btn" onclick="shareArticle('email','The Bios First')"><i class="fas fa-envelope"></i><span>Email</span></button>
                     </div>
                 </div>
-
-                <p>The neuroplasticity that makes the adolescent brain so capable of learning is, in this context, a double-edged feature. Early exposure to highly stimulating reward signals can alter the developmental trajectory of dopamine receptors and the prefrontal-limbic connections that are supposed to regulate them. The Ghent thesis documents this explicitly: early conditioning of the reward system during this window can lead to permanent changes in motivation, self-control, and addiction liability later in life.</p>
-
-                <div class="stat-callout">
-                    <div class="stat-number">10–12</div>
-                    <div class="stat-text">The target age range described in Meta's internal strategy documents: <em>"if we want to win big with teens, we must bring them in as tweens."</em> The prefrontal cortex will not finish developing for another 12–15 years. The algorithm was engineered for a brain that does not yet have its regulatory architecture in place.</div>
-                </div>
-
-                <p>The platforms did not stumble into this demographic. A 2020 internal Meta slideshow titled "Teen Fundamentals" contained a slide explicitly stating: <em>"The teenage brain is usually about 80% mature. The remaining 20% rests in the frontal cortex. At this time, teens are highly dependent on their temporal lobe, where emotions, memory, learning, and the reward system reign supreme."</em> The following slide added that teens are driven by emotion and <em>"the intrigue of novelty and reward."</em> And then, several slides later, the same document listed as a commercial <em>opportunity</em>: <em>"teens need rapid fire discovery features,"</em> captioned with the observation that teens have an <em>"insatiable appetite for novelty."</em></p>
-
-                <p>Meta's own internal team diagrammed the neurological incompleteness of the adolescent brain, identified its hypersensitivity to novelty and reward as a product design opportunity, and then engineered features specifically calibrated to that vulnerability. This is not a company that failed to do its homework. This is a company that did its homework, understood exactly what it was looking at, and called it a market.</p>
-
-                <p>A separate internal Meta study concluded: <em>"Teens are hooked despite how it makes them feel. Instagram is addictive, and time spent on the platform is having a negative impact on mental health."</em> One Meta employee asked internally: <em>"If the results are bad and we don't publish and they leak, is it going to look like tobacco companies doing research and knowing cigarettes were bad and then keeping that info to themselves?"</em> The answer, as it turned out, was yes.</p>
-
-                <h2>The Male Perspective: When the Hunt Gets Replaced by the Scroll</h2>
-
-                <img src="IMG_6417.jpeg" alt="Physical play, competition, shared risk, the original male bonding protocol" onerror="this.style.display='none'">
-
-                <p>Watch a group of young children playing without supervision for twenty minutes. The girls will often be together, talking, organising, negotiating social dynamics, maintaining the relational fabric of the group. The boys will typically be elsewhere, doing something physical and at least moderately dangerous, testing each other through rough-and-tumble play, establishing hierarchies through action. This is not a cultural accident. It is ancient, cross-cultural, and thoroughly documented.</p>
-
-                <p>Research involving 112,000 participants confirmed that boys and men are far more likely than girls and women to engage in physical competition and sports spontaneously, outside organised, institutional settings. The sex difference is not primarily socialised. It is wired. University of California Davis research identified testosterone as the key driver of gender-based differences in social stress responses: testosterone during puberty dampens the amygdala's threat response, making males less sensitive to social pressure and more oriented toward physical approach, challenge, and competition.</p>
-
-                <p>In plain terms: testosterone makes men less susceptible to social approval loops. Which should, theoretically, make men more resistant to the social media trap. And in some ways it does. Men are less likely to develop the acute social comparison anxiety that visual platforms inflict on girls. They are, in general, more easily bored by passive social performance.</p>
-
-                <p>The problem is that the platforms found the back door anyway. Gaming. Status hierarchies among creators. Competition metrics. The male tendency toward mission-oriented obsession, channelled into algorithmic rabbit holes. And critically, the simple fact of displacement. Every hour a young man spends passively in the digital world is an hour not spent doing the physical, risk-taking, achievement-oriented things through which masculine competence, confidence, and genuine peer trust are built.</p>
-
-                <p>Male bonding is not built primarily through conversation. It is built through shared physical experience, the trust forged by training together, building something together, surviving something together. The kind of trust that doesn't need to be articulated because it was <em>earned</em>. Social media offers none of that. It offers performance without stakes. Status without achievement. Tribe without the shared hunt.</p>
-
-                <div class="pull-quote">
-                    "Look at most polygynous species, lions in a pride, roosters among hens, and the pattern is consistent: fewer dominant males, competing intensely for earned positions, with status derived from demonstrated capability rather than social consensus. Social media inverts this entirely."
-                </div>
-
-                <p>Social media rewards performance of identity over demonstration of capacity. The result is a generation of young men whose physical and competitive energies have no healthy outlet, more isolated than any previous male generation, being offered as a substitute for genuine masculine social life the simulacrum of connection on a 6-inch screen. That is not an upgrade. It is a slow hollowing out, performed with consent, in exchange for free content.</p>
-
-                <p>That is the male side of the equation. But an argument about human social architecture that only covers half of humanity is not an argument, it is a blind spot. The other half of the story is not simply a mirror image. It is a different wound, delivered by the same weapon, to a different and in some ways more vulnerable part of the human social system. And it deserves the same attention.</p>
-
-                <h2>The Female Perspective: The Mirror That Never Tells the Truth</h2>
-
-                <img src="female-mirror-scroll.jpg" alt="The mirror that only shows you what the algorithm decides you should see" onerror="this.style.display='none'">
-
-                <div class="author-note">
-                    <strong>A necessary disclosure before this section:</strong> This part of the piece is written by a man. That matters. I hold women in the highest regard and have spent genuine time with the research. But I will never be able to fully mirror the lived experience this describes. I can lecture from the science. I cannot speak from the inside. What follows is founded, sourced, and offered with respect, not authority. It should be read, and if necessary corrected, with that limitation in mind. If you are a woman reading this and something rings false from the inside, that signal is more reliable than anything in my footnotes.
-                </div>
-
-                <p>Go back to that same group of unsupervised children. The girls are together, and they are talking. Not performing. Not competing for a leaderboard. Talking, maintaining the invisible relational fabric that holds the group together, reading each other's emotional states, negotiating belonging through language, empathy, and shared disclosure. This is not a softer version of what the boys are doing. It is a different and equally ancient social architecture, built for a different set of evolutionary pressures, and no less sophisticated for being quieter.</p>
-
-                <p>Female social bonding is built primarily through verbal intimacy, emotional attunement, and mutual vulnerability. Trust between women is established through what is shared, how it is received, and whether the other person can be relied upon to hold it carefully. The relational network is dense, emotionally high-resolution, and deeply sensitive to signals of acceptance and exclusion. In the context of a tribe of 150, this was extraordinary social technology. In the context of Instagram, it becomes the precise mechanism of harm.</p>
-
-                <p>Visual social comparison is not equally distributed across sexes. It lands hardest on adolescent girls, and the research on this is not subtle. Haidt's data shows that the sharpest mental health deterioration in the post-2012 period is concentrated in girls aged 10 to 14, precisely the window of peak identity formation and peak reward system hypersensitivity. The Nguyen et al. meta-analysis of 98,000 participants found that the negative correlation between heavy short-form video use and psychological wellbeing was significantly stronger in female participants.</p>
-
-                <div class="stat-callout">
-                    <div class="stat-number">−0.34</div>
-                    <div class="stat-text">The correlation between heavy short-form video use and poorer psychological wellbeing in female participants, significantly stronger than in males. Nguyen et al., <em>Psychological Bulletin</em>, 2025. The algorithm does not affect everyone equally. It was built for maximum engagement. In girls, maximum engagement and maximum harm point in the same direction.</div>
-                </div>
-
-                <p>The counterfeit tribe problem is not gender-neutral in how it operates. The partial signal that social media delivers, dopamine without oxytocin, recognition without physical presence, affirmation without the nervous-system safety of genuine proximity, maps directly onto the components that female social bonding most depends on. A like is not the same as a friend holding your gaze and saying <em>I hear you</em>. A comment is not the same as physical presence in a moment of vulnerability.</p>
-
-                <div class="pull-quote">
-                    "The teenage girl lying in bed at midnight, her nervous system reading 847 strangers' curated images as evidence of her own inadequacy, is not weak. She is running ancient, precise, well-calibrated social software in an environment specifically engineered to exploit it."
-                </div>
-
-                <p>Instagram's internal research, leaked in 2021 and confirmed in subsequent legal proceedings, showed that the platform's own data found it worsened body image in one in three teenage girls. The algorithm did not stumble into this. It optimised toward engagement, and engagement, for adolescent girls on visual platforms, is highest around content that triggers social comparison around appearance. The machine found the lever. It pulled it. Repeatedly. On children.</p>
-
-                <p>The female social architecture that is being damaged here is not a vulnerability. It is the thing that held communities together for hundreds of thousands of years. The capacity for deep verbal intimacy, emotional reading, and relational maintenance is an extraordinary human capability being systematically degraded by a system that profits from the degradation.</p>
-
-                <h2>The Mirror in the Forest: What Our Closest Relatives Tell Us</h2>
-
-                <img src="IMG_6418.jpeg" alt="Primate social grooming, the original social network, running since before we had language" onerror="this.style.display='none'">
-
-                <p>Chimpanzees and bonobos share approximately 98–99% of our DNA. The evolutionary split between their lineage and ours occurred around eight million years ago. They are not metaphors for human nature. They are the closest empirical window we have into it.</p>
-
-                <p><strong>Chimpanzees</strong> rely on aggression to solve problems. Their social structure is male-dominated and hierarchical, with rank established through competition, coalition-building, and controlled violence. The male alliances are political, tactical, and ruthless, which is why de Waal's <em>Chimpanzee Politics</em> (1982) was required reading for the US Congress. Sound familiar?</p>
-
-                <p><strong>Bonobos</strong> are something else entirely. Female-dominated, peaceful, and exceptionally enthusiastic about physical contact as a social tool. De Waal called them "the hippies of the primate world." Where chimps meet rival groups with aggression, bonobos meet them with grooming, play, and physical affection.</p>
-
-                <p>De Waal's central argument: humans contain both. Both repertoires are in us. Both are activated or suppressed by our social environments.</p>
-
-                <p>The platforms structurally reward chimpanzee behaviours in their most amplified form: status competition, coalition formation against out-groups, dominance signalling, and tribal aggression, <strong>stripped of every biological mechanism that normally keeps these behaviours in check</strong>. Meanwhile, the bonobo repertoire is systematically eliminated. Touch. Physical presence. Shared laughter in the same room. You cannot groom someone through a screen. You cannot resolve genuine tension with a fire emoji.</p>
-
-                <p>What we are left with is the worst of both species and the best of neither: the chimpanzee's aggression without its physical accountability, the bonobo's need for connection without its biological fulfilment.</p>
-
-                <p>De Waal put it plainly before his death: <em>"Socially and emotionally we are basically the same as the other primates."</em> The technology has changed. The underlying animal has not.</p>
-
-                <h2>A Map, Not the Territory: The Western Lens</h2>
-
-                <img src="western-lens-contrast.jpg" alt="Not the whole world, but the direction it is moving" onerror="this.style.display='none'">
-
-                <p>Before going further, something needs to be said plainly: <strong>this is a Western map.</strong></p>
-
-                <p>Consider rural South America, where multi-generational households still gather daily, where the extended family is not a holiday arrangement but a living architecture, where communal social structures have not yet been displaced by the smartphone to the same degree they have in Northern Europe or urban North America. The Dunbar number holds there too. But the consequences of heavy platform use are relative: most acute where the technology has most thoroughly replaced what existed before.</p>
-
-                <p>The research cited in this piece was conducted primarily in North America, Western Europe, China, and Australia. The data bias toward those populations is itself worth naming: the studies that make headlines are conducted where the funding is, which is where the harm is most visible, which is where the screens arrived earliest and most thoroughly. That is a feedback loop worth being suspicious of.</p>
-
-                <p>The dumbphone revival is almost exclusively a wealthy Western phenomenon. Which itself tells you something: opting out is a luxury. In a township in Johannesburg or a rural village in Indonesia, the smartphone may be the primary tool of economic participation. Removing it is not an option. Managing it is the only play.</p>
-
-                <p>The honest framing: this piece describes the sharp end of a spectrum. The technology moves faster than any culture's ability to absorb it safely. And it moves toward everyone, regardless of whether they were ready. Part III takes up what can actually be done about that.</p>
-
-                <div class="series-nav">
-                    <a href="the-swarm-the-counterfeit-tribe.html" class="nav-prev">
-                        <div class="nav-label">&larr; Previous</div>
-                        <div class="nav-title">Part II: The Swarm</div>
-                    </a>
-
-                </div>
-
-                <div class="box">
-                    <h2>Sources &amp; Further Reading — Part II</h2>
-                    <h3>The Trial &amp; Internal Meta Documents</h3>
-                    <ul>
-                        <li>Middendorp S. "Meta's Internal Research Shows Its Platforms Are Addictive and Harmful, Still It Targets Teens." <em>The HighWire.</em></li>
-                        <li>Sippel B, Greb N, Park E, Rausch Z, Haidt J. NYU Stern Tech and Society Lab. <a href="https://jonathanhaidt.com" target="_blank" rel="noopener">jonathanhaidt.com</a></li>
-                        <li>Zuckerberg testimony, LA Superior Court, 18 Feb 2026. NPR: <a href="https://www.npr.org/2026/02/18/nx-s1-5717117/zuckerberg-testimony-social-media-addiction-trial" target="_blank" rel="noopener">npr.org</a></li>
-                        <li>Internal Meta documents. CNBC: <a href="https://www.cnbc.com/2026/02/18/meta-mark-zuckerberg-social-media-safety-trial.html" target="_blank" rel="noopener">cnbc.com</a></li>
-                        <li>Mosseri testimony. CNN: <a href="https://www.cnn.com/2026/02/17/tech/meta-mark-zuckerberg-addiction-trial-testimony" target="_blank" rel="noopener">cnn.com</a></li>
-                    </ul>
-                    <h3>Adolescent Brain Development</h3>
-                    <ul>
-                        <li>Beirnaert A. (2012). <em>Het Beloningssysteem in de Hersenen.</em> Ghent University. Promotor: Prof. Dr. C. Van Heeringen.</li>
-                        <li>Steinberg L et al. (2008). Age differences in sensation seeking. <em>Developmental Psychology</em>, 44(6).</li>
-                        <li>Galvan A et al. (2006). Earlier development of accumbens relative to OFC. <em>Journal of Neuroscience</em>, 26(25).</li>
-                    </ul>
-                    <h3>Social Displacement &amp; Mental Health</h3>
-                    <ul>
-                        <li>Haidt J (2024). <em>The Anxious Generation.</em> <a href="https://jonathanhaidt.com/anxious-generation/" target="_blank" rel="noopener">jonathanhaidt.com</a></li>
-                        <li>Turkle S (2011). <em>Alone Together.</em> <a href="https://www.ted.com/talks/sherry_turkle_connected_but_alone" target="_blank" rel="noopener">ted.com</a></li>
-                        <li>Hunt M et al. (2018). No More FOMO. <em>Journal of Social and Clinical Psychology.</em></li>
-                        <li>Nguyen et al. (2025). <em>Psychological Bulletin (APA).</em> <a href="https://psycnet.apa.org/fulltext/2026-89350-001.html" target="_blank" rel="noopener">psycnet.apa.org</a></li>
-                    </ul>
-                    <h3>Female Perspective</h3>
-                    <ul>
-                        <li>Jensen F (2015). <em>The Teenage Brain.</em> HarperCollins.</li>
-                        <li>Instagram internal research leak (2021). WSJ: <a href="https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739" target="_blank" rel="noopener">wsj.com</a></li>
-                        <li>Twenge JM (2017). <em>iGen.</em> Atria Books.</li>
-                    </ul>
-                    <h3>Sex Differences &amp; Male Social Behaviour</h3>
-                    <ul>
-                        <li>Deaner RO, Geary DC et al. (2012). <em>PLoS ONE.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3498324/" target="_blank" rel="noopener">PMC3498324</a></li>
-                        <li>UC Davis / Trainor Lab (2023). <em>PNAS.</em> <a href="https://www.ucdavis.edu/news/new-research-suggests-why-males-and-females-respond-differently-social-stress" target="_blank" rel="noopener">ucdavis.edu</a></li>
-                    </ul>
-                    <h3>Primate Social Structures</h3>
-                    <ul>
-                        <li>de Waal FBM (1982). <em>Chimpanzee Politics.</em> Johns Hopkins UP.</li>
-                        <li>de Waal FBM (2005). <em>Our Inner Ape.</em> Riverhead Books.</li>
-                        <li>de Waal FBM (1995). "Bonobo Sex and Society." <em>Scientific American.</em> <a href="https://www.scientificamerican.com/article/bonobo-sex-and-society-2006-06/" target="_blank" rel="noopener">scientificamerican.com</a></li>
-                    </ul>
-                    <h3>Herd Mentality</h3>
-                    <ul>
-                        <li>Bandwagon effect (Forbes): <a href="https://www.forbes.com/sites/brycehoffman/2024/05/26/bandwagon-effect-what-it-is-and-how-to-overcome-it/" target="_blank" rel="noopener">forbes.com</a></li>
-                        <li>Binge-watching &amp; social proof (63%): <a href="https://moldstud.com/articles/p-the-psychology-behind-binge-watching-on-video-streaming-apps" target="_blank" rel="noopener">moldstud.com</a></li>
-                    </ul>
-                </div>
-
-                <div class="article-actions">
-                    <button class="action-btn" onclick="shareArticle('twitter','The Digital Hive Part II: The Swarm')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
-                    <button class="action-btn" onclick="shareArticle('linkedin','The Digital Hive Part II: The Swarm')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
-                    <button class="action-btn" onclick="shareArticle('reddit','The Digital Hive Part II: The Swarm')"><i class="fab fa-reddit"></i><span>Reddit</span></button>
-                    <button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
-                    <button class="action-btn" onclick="shareArticle('email','The Digital Hive Part II: The Swarm')"><i class="fas fa-envelope"></i><span>Email</span></button>
-                </div>
+            </article>
+        </main>
+        <aside class="sidebar">
+            <div class="sidebar-section"><h3>🎯 Current Bounty Status</h3><div class="bounty-card" id="bounty-container"></div></div>
+            <div class="sidebar-section">
+                <h3>📢 Live from <img src="X_logo.svg" alt="X" class="x-logo"></h3>
+                <div class="x-feed-container"><a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a></div>
             </div>
-        </article>
-    </main>
-    <aside class="sidebar">
-        <div class="sidebar-section"><h3>🎯 Current Bounty Status</h3><div class="bounty-card" id="bounty-container"></div></div>
-        <div class="sidebar-section">
-            <h3>📢 Live from <img src="X_logo.svg" alt="X" class="x-logo"></h3>
-            <div class="x-feed-container"><a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a></div>
-        </div>
-    </aside>
-</div>
-<footer>
-    <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
-    <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
-</footer>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script>
-    function updateBountyDisplay(){const c=document.getElementById('bounty-container');if(c)c.innerHTML='<p style="font-size:1.1rem;margin-bottom:1rem;">No active bounty at the moment.</p><a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank" style="margin-top:1.5rem;">Follow on X</a>';}
-    function shareArticle(p,t){const u=encodeURIComponent(window.location.href),ti=encodeURIComponent(t+' | Echo Truth Hub');const m={twitter:`https://twitter.com/intent/tweet?url=${u}&text=${ti}&hashtags=EchoTruthHub,TheDigitalHive`,linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${u}`,reddit:`https://reddit.com/submit?url=${u}&title=${ti}`,email:`mailto:?subject=${ti}&body=${u}`};if(m[p])window.open(m[p],'_blank','width=600,height=400');}
-    function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const b=event.target.closest('.action-btn'),o=b.innerHTML;b.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>';b.style.background='#00BFA6';b.style.color='#0A0F14';setTimeout(()=>{b.innerHTML=o;b.style.background='';b.style.color='';},2000);});}
-    document.addEventListener('DOMContentLoaded',updateBountyDisplay);
-</script>
-```
-
+        </aside>
+    </div>
+    <footer>
+        <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+        <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+    </footer>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script>
+        function updateBountyDisplay(){const c=document.getElementById('bounty-container');if(c)c.innerHTML='<p style="font-size:1.1rem;margin-bottom:1rem;">No active bounty at the moment.</p><a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank" style="margin-top:1.5rem;">Follow on X</a>';}
+        function shareArticle(p,t){const u=encodeURIComponent(window.location.href),ti=encodeURIComponent(t+' | Echo Truth Hub');const m={twitter:`https://twitter.com/intent/tweet?url=${u}&text=${ti}&hashtags=EchoTruthHub,TheDigitalHive`,linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${u}`,reddit:`https://reddit.com/submit?url=${u}&title=${ti}`,email:`mailto:?subject=${ti}&body=${u}`};if(m[p])window.open(m[p],'_blank','width=600,height=400');}
+        function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const b=event.target.closest('.action-btn'),o=b.innerHTML;b.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>';b.style.background='#00BFA6';b.style.color='#0A0F14';setTimeout(()=>{b.innerHTML=o;b.style.background='';b.style.color='';},2000);});}
+        document.addEventListener('DOMContentLoaded',updateBountyDisplay);
+    </script>
 </body>
 </html>
