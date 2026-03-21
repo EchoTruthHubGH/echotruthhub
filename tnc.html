@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Terms & Conditions – Echo Truth Hub</title>
+
+<!-- Security hardening meta tags (same as other pages) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
 <style>
   body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:800px;margin:3rem auto;padding:0 1rem;}
   h1{color:#00BFA6;}
@@ -16,24 +23,42 @@
 <body>
 
 <div class="lang">
-  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
-  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
+  <button onclick="showLang('en')">EN</button>
+  <button onclick="showLang('nl')">NL</button>
 </div>
 
 <div class="content en">
   <h1>Terms & Conditions – the honest stuff nobody loves reading</h1>
   <p><strong>This is not gambling.</strong> Echo Truth Hub is a skill-based learning game. The result is decided only by the quality of evidence you bring — never by luck or chance.</p>
-  <!-- (rest of English T&Cs from previous final version) -->
+  <p><strong>Acceptance of Terms</strong><br>By accessing or participating in Echo Truth Hub, you agree to these Terms & Conditions. If you don't agree, please don't participate.</p>
+  <p><strong>Eligibility</strong><br>You must be at least 18 years old and reside in a jurisdiction where skill-based games are legal. We reserve the right to verify your eligibility.</p>
+  <p><strong>Entry Process</strong><br>To enter a bounty, pay €1.21 (including VAT) via the provided Bunq link. Include "Entry @yourhandle" in the payment notes. Then, reply to the relevant X post with your evidence and the hashtag #TruthWithTeeth.</p>
+  <p><strong>Judging and Winners</strong><br>Entries are open for 72 hours. The community decides the winner based on likes. A minimum of 10 paid entries is required for a payout. The top contributor earns up to 35% of the pot (after any fees). Winners are announced publicly and paid via Bunq within 24 hours.</p>
+  <p><strong>Payments and Refunds</strong><br>All entries are non-refundable. Payouts are handled securely via Bunq. We don't store your bank details.</p>
+  <p><strong>Conduct</strong><br>Be respectful. No spam, false evidence, or harassment. We may disqualify entries that violate this.</p>
+  <p><strong>Intellectual Property</strong><br>By submitting evidence, you grant us a non-exclusive license to display it on our site and X. You retain ownership.</p>
+  <p><strong>Limitation of Liability</strong><br>Echo Truth Hub is not liable for any damages, losses, or issues arising from participation. Use at your own risk.</p>
+  <p><strong>Governing Law</strong><br>These terms are governed by Dutch law. Disputes will be resolved in The Hague.</p>
+  <p><strong>Changes to Terms</strong><br>We may update these terms. Continued participation means you accept changes.</p>
   <p><a href="/">← Back</a></p>
 </div>
 
 <div class="content nl">
-  <!-- YOUR FULL DUTCH T&Cs from your last message – pasted exactly -->
   <h1>Algemene Voorwaarden – de eerlijke tekst dat niemand graag leest</h1>
   <p><strong>Dit is geen kansspel.</strong> Echo Truth Hub is een vaardigheidsspel. Het resultaat wordt uitsluitend bepaald door de kwaliteit van het bewijs dat je levert — nooit door toeval.</p>
-  <!-- (rest of your Dutch T&Cs) -->
+  <p><strong>Aanvaarding van Voorwaarden</strong><br>Door deel te nemen aan Echo Truth Hub, ga je akkoord met deze Algemene Voorwaarden. Als je het niet eens bent, neem dan niet deel.</p>
+  <p><strong>Deelnamevereisten</strong><br>Je moet minimaal 18 jaar oud zijn en wonen in een rechtsgebied waar vaardigheidsspellen legaal zijn. We behouden het recht om je deelname te verifiëren.</p>
+  <p><strong>Inlegproces</strong><br>Om mee te doen aan een premie, betaal €1,21 (inclusief BTW) via de Bunq-link. Voeg "Entry @yourhandle" toe in de betalingsnotities. Reageer vervolgens op de relevante X-post met je bewijs en de hashtag #TruthWithTeeth.</p>
+  <p><strong>Beoordeling en Winnaars</strong><br>Inleggen zijn open voor 72 uur. De gemeenschap beslist de winnaar op basis van likes. Minimaal 10 betaalde inleggen zijn vereist voor uitbetaling. De topbijdrager verdient maximaal 35% van de pot (na aftrek van kosten). Winnaars worden publiekelijk aangekondigd en uitbetaald via Bunq binnen 24 uur.</p>
+  <p><strong>Betalingen en Terugbetalingen</strong><br>Alle inleggen zijn niet-terugbetaalbaar. Uitbetalingen worden veilig afgehandeld via Bunq. We slaan geen bankgegevens op.</p>
+  <p><strong>Gedrag</strong><br>Wees respectvol. Geen spam, vals bewijs of intimidatie. We kunnen inleggen diskwalificeren die dit schenden.</p>
+  <p><strong>Intellectueel Eigendom</strong><br>Door bewijs in te dienen, verleen je ons een niet-exclusieve licentie om het te tonen op onze site en X. Jij behoudt het eigendom.</p>
+  <p><strong>Beperking van Aansprakelijkheid</strong><br>Echo Truth Hub is niet aansprakelijk voor schade, verliezen of problemen door deelname. Gebruik op eigen risico.</p>
+  <p><strong>Toepasselijk Recht</strong><br>Deze voorwaarden vallen onder Nederlands recht. Geschillen worden opgelost in Den Haag.</p>
+  <p><strong>Wijzigingen in Voorwaarden</strong><br>We kunnen deze voorwaarden bijwerken. Voortgezette deelname betekent acceptatie van wijzigingen.</p>
   <p><a href="/">← Terug</a></p>
 </div>
+
 <footer style="margin-top: 60px; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #eee;">
   <div class="lang-en">
     Echo Truth Hub is registered at the Chamber of Commerce of The Hague under registration number 51644525, The Netherlands.
@@ -45,6 +70,19 @@
     <a href="/tnc.html" style="color:#666; text-decoration:underline;">Terms & Conditions</a> • 
     <a href="/privacy.html" style="color:#666; text-decoration:underline;">Privacy Policy</a>
   </div>
+  <p style="font-size:0.8em; opacity:0.7; margin-top:1em;">© 2025 Echo Truth Hub. All content open for learning — please don't copy the site design without asking.</p>
 </footer>
+
+<script>
+function showLang(lang) {
+  document.querySelectorAll('.content').forEach(e => e.style.display = 'none');
+  document.querySelector('.' + lang).style.display = 'block';
+  
+  // Sync footer language
+  document.querySelectorAll('.lang-en, .lang-nl').forEach(el => el.style.display = 'none');
+  document.querySelector('.lang-' + lang).style.display = 'block';
+}
+</script>
+
 </body>
 </html>
