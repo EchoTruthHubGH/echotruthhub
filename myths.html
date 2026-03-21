@@ -4,51 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Myth Archive – Echo Truth Hub</title>
+<!-- Security hardening -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <style>
   body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:900px;margin:3rem auto;padding:0 1rem;}
   h1{color:#00BFA6;}
   .lang{position:fixed;top:20px;right:20px;z-index:10;}
   .lang button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;margin-left:0.5em;cursor:pointer;font-weight:bold;}
+  .lang button:hover{background:#FFB800;}
   .content{display:none;}
   .en{display:block;}
   table{width:100%;border-collapse:collapse;margin:2em 0;}
-  th,td{padding:1em;border-bottom:1px solid #00BFA633;text-align:left;}
+  th,td{padding:1em;border-bottom:1px solid #00BFA633;text-align:left;vertical-align:top;}
   th{background:#1a2630;color:#00BFA6;}
+  a{color:#00BFA6;}
 </style>
 </head>
 <body>
-
 <div class="lang">
-  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
-  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
+  <button onclick="showLang('en')">EN</button>
+  <button onclick="showLang('nl')">NL</button>
 </div>
 
 <div class="content en">
   <h1>Myth Archive</h1>
   <p>Every myth gets a permanent ID and can never be repeated.<br>
   Once settled, the best evidence earns the pot — forever on record.</p>
-  <!-- English table -->
+  <!-- Table here – same as your paste -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Myth</th>
+        <th>Status</th>
+        <th>Winner</th>
+        <th>Date Settled</th>
+        <th>X Thread</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="6" style="text-align:center;opacity:0.7;">No myths settled yet — the adventure is just beginning!</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="content nl">
   <h1>Mythe Archief</h1>
-  <p>Elke mythe krijgt een permanente ID en kan nooit worden herhaald.</p>
-  <p>Zodra de mythe is 'opgelost', verdient het beste bewijs de prijzenpot — en staat het voor altijd geregistreerd.</p>
-  <!-- Dutch table with your text -->
+  <p>Elke mythe krijgt een permanente ID en kan nooit worden herhaald.<br>
+  Zodra de mythe is opgelost, verdient het beste bewijs de pot — voor altijd geregistreerd.</p>
+  <!-- Dutch table – same as your paste -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Mythe</th>
+        <th>Status</th>
+        <th>Winnaar</th>
+        <th>Datum Opgelost</th>
+        <th>X Thread</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="6" style="text-align:center;opacity:0.7;">Nog geen mythen opgelost — het avontuur begint pas!</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <p style="margin-top:4em;text-align:center;"><a href="/">← Back</a></p>
+
 <footer style="margin-top: 60px; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #eee;">
-  <div class="lang-en">
-    Echo Truth Hub is registered at the Chamber of Commerce of The Hague under registration number 51644525, The Netherlands.
-  </div>
-  <div class="lang-nl" style="display:none;">
-    Echo Truth Hub staat ingeschreven bij de Kamer van Koophandel te Den Haag onder registratienummer 51644525.
-  </div>
+  <div class="lang-en">Echo Truth Hub is registered at the Chamber of Commerce of The Hague under registration number 51644525, The Netherlands.</div>
+  <div class="lang-nl" style="display:none;">Echo Truth Hub staat ingeschreven bij de Kamer van Koophandel te Den Haag onder registratienummer 51644525.</div>
   <div style="margin-top: 8px;">
-    <a href="/tnc.html" style="color:#666; text-decoration:underline;">Terms & Conditions</a> • 
+    <a href="/tnc.html" style="color:#666; text-decoration:underline;">Terms & Conditions</a> •
     <a href="/privacy.html" style="color:#666; text-decoration:underline;">Privacy Policy</a>
   </div>
+  <p style="font-size:0.8em; opacity:0.7; margin-top:1em;">© 2025 Echo Truth Hub. All content open for learning — please don't copy the site design without asking.</p>
 </footer>
+
+<script>
+function showLang(lang) {
+  document.querySelectorAll('.content').forEach(e => e.style.display = 'none');
+  document.querySelector('.' + lang).style.display = 'block';
+  
+  // Sync footer
+  document.querySelectorAll('.lang-en, .lang-nl').forEach(el => el.style.display = 'none');
+  document.querySelector('.lang-' + lang).style.display = 'block';
+}
+</script>
 </body>
 </html>
