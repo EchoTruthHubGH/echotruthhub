@@ -26,7 +26,6 @@
     .hero-bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:brightness(0.38) saturate(0.55); z-index:1; }
     .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(0,191,166,0.13) 0%,transparent 55%), linear-gradient(to bottom,rgba(4,8,11,0.2) 0%,rgba(4,8,11,0.92) 100%); z-index:2; }
     .hero-scanlines { position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.1) 2px,rgba(0,0,0,0.1) 4px); z-index:3; pointer-events:none; }
-    .hero-odido-logo { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(320px,55%); opacity:0.08; z-index:4; pointer-events:none; filter:grayscale(1) brightness(3); mix-blend-mode:screen; }
     .hero-tag { position:absolute; font-family:monospace; font-size:0.68rem; padding:0.28rem 0.65rem; border-radius:3px; border:1px solid; z-index:6; opacity:0; animation:tagIn 0.5s ease forwards; }
     @keyframes tagIn { to { opacity:0.85; } }
     .hero-tag.warn { color:#ff6b6b; border-color:rgba(255,107,107,0.45); background:rgba(255,107,107,0.08); }
@@ -62,7 +61,7 @@
     .article-wrap { min-width:0; }
     .article-header { margin-bottom:2rem; }
     .article-category-badge { display:inline-block; padding:0.35rem 0.8rem; border-radius:4px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; background:#FFB800; color:#0A0F14; font-family:monospace; margin-bottom:1.2rem; }
-    .article-header h1 { font-family:system-ui,-apple-system,sans-serif;font-weight:900; font-size:clamp(2.4rem,5vw,4rem); line-height:1.05; color:#fff; letter-spacing:1px; margin-bottom:0.8rem; }
+    .article-header h1 { font-family:system-ui,-apple-system,sans-serif;font-weight:900; font-size:clamp(2.4rem,5vw,4rem); line-height:1.05; color:#FFB800; letter-spacing:1px; margin-bottom:0.8rem; }
     .article-header h1 span { color:#FFB800; }
     .article-subtitle { font-size:1.15rem; color:#00BFA6; margin-bottom:1.5rem; font-style:italic; line-height:1.6; }
     .article-meta { display:flex; align-items:center; gap:1.2rem; padding:1rem 0; border-top:1px solid rgba(0,191,166,0.2); border-bottom:1px solid rgba(0,191,166,0.2); margin-bottom:0.8rem; flex-wrap:wrap; }
@@ -80,7 +79,7 @@
 
     /* inline images */
     .article-img { width:100%; border-radius:12px; margin:2rem 0; display:block; box-shadow:0 10px 40px rgba(0,0,0,0.6); }
-    .img-caption { font-family:monospace; font-size:0.75rem; color:rgba(255,255,255,0.4); margin:-1rem 0 2rem; text-align:center; }
+    .img-caption { font-family:monospace; font-size:0.75rem; color:#00BFA6; margin:-1rem 0 2rem; text-align:center; }
 
     /* boxes */
     .alert-box { background:rgba(255,184,0,0.07); border-left:4px solid #FFB800; border-radius:0 8px 8px 0; padding:1.4rem 1.8rem; margin:2.5rem 0; }
@@ -190,13 +189,10 @@
 
 <!-- HERO BANNER -->
 
-<!-- HERO BANNER -->
-
 <div class="hero-banner">
-    <img class="hero-bg-img" src="IMG_6321.png" alt="ShinyHunters extortion site">
+    <img class="hero-bg-img" src="IMG_6314.jpeg" alt="Data flowing through an open vault door">
     <div class="hero-overlay"></div>
     <div class="hero-scanlines"></div>
-    <img class="hero-odido-logo" src="IMG_6320.png" alt="Odido logo">
 
 ```
 <div class="hero-tag warn" style="top:11%;left:5%;animation-delay:0.2s;">IBAN EXPOSED</div>
@@ -237,6 +233,9 @@
         <a href="/blog.html" class="category-tag active">Investigation</a>
         <a href="/blog.html" class="category-tag">Analysis</a>
         <a href="/blog.html" class="category-tag">Debunked</a>
+        <a href="/blog.html" class="category-tag">Verified</a>
+        <a href="/blog.html" class="category-tag">Methodology</a>
+        <a href="/blog.html" class="category-tag">Language</a>
         <a href="/blog.html" class="category-tag">Evidence-Based</a>
     </div>
 </section>
@@ -253,7 +252,7 @@
         <h1>The <span>Open Door.</span> What the Odido Breach Tells Us About Cyber Complacency.</h1>
         <p class="article-subtitle">Odido's hack was not a sophisticated attack. It was a basic hygiene failure, dressed up in headlines. The real story is what it reveals about how companies treat their obligations to the people whose data they hold.</p>
         <div class="article-meta">
-            <span class="author">Echo Truth Hub</span>
+            <span class="author">Mimir Mimisbrunnr</span>
             <span>Investigative Commentary</span>
             <span>February 24, 2026</span>
             <span>The Hague, Netherlands</span>
