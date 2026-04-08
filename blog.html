@@ -8,7 +8,8 @@
     <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
+        body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;}
+        *, *::before, *::after {box-sizing:border-box;}
         header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,0.2);}
         .header-container {max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
         .title-block a {text-decoration:none;color:#fff;}
@@ -19,8 +20,14 @@
         .hero {padding:6rem 2rem;text-align:center;}
         .hero h1 {font-size:3.4em;margin:0 0 1rem;color:#FFB800;line-height:1.2;}
         .hero p {font-size:1.8em;color:#00BFA6;opacity:0.9;}
-        .category-filter {background:rgba(0,191,166,0.05);padding:1.5rem 2rem;border-bottom:1px solid rgba(0,191,166,0.2);}
+        .category-filter {background:rgba(0,191,166,0.05);padding:1.5rem 2rem;border-bottom:1px solid rgba(0,191,166,0.2);width:100%;}
         .filter-container {max-width:1400px;margin:0 auto;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+        @media (max-width:1024px) {
+            .filter-container {flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;}
+            .filter-container::-webkit-scrollbar {display:none;}
+            .filter-label {flex-shrink:0;}
+            .category-tag {flex-shrink:0;}
+        }
         .filter-label {font-weight:600;color:#00BFA6;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.5px;}
         .category-tag {padding:0.5rem 1rem;border-radius:20px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.1);color:#00BFA6;font-size:0.9rem;font-weight:500;transition:all 0.2s;cursor:pointer;text-decoration:none;display:inline-block;}
         .category-tag:hover, .category-tag.active {background:#00BFA6;color:#0A0F14;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,191,166,0.3);}
