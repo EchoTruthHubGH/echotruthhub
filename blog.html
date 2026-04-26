@@ -8,7 +8,7 @@
     <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        html {overflow-x:hidden;max-width:100%;}
+        html {overflow-x:hidden;max-width:100%;width:100%;}
         body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;max-width:100%;width:100%;}
         *, *::before, *::after {box-sizing:border-box;}
         header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,0.2);width:100%;overflow:hidden;}
@@ -28,6 +28,44 @@
             .filter-container::-webkit-scrollbar {display:none;}
             .filter-label {flex-shrink:0;}
             .category-tag {flex-shrink:0;}
+        }
+        /* Portrait mode fix */
+        @media (max-width:1024px), (orientation:portrait) {
+            html, body {overflow-x:hidden;width:100%;max-width:100%;}
+            .main-wrapper {
+                grid-template-columns:1fr !important;
+                width:100% !important;
+                max-width:100% !important;
+                padding:1.5rem 16px !important;
+                gap:2rem !important;
+                margin:0 auto !important;
+                overflow:hidden !important;
+            }
+            .featured-article {
+                max-width:100% !important;
+                overflow:hidden !important;
+            }
+            .featured-content {
+                padding:1.5rem !important;
+                overflow:hidden !important;
+                word-break:break-word !important;
+            }
+            .featured-content p, .featured-content h2 {
+                max-width:100% !important;
+                overflow-wrap:break-word !important;
+            }
+            .sidebar {
+                max-width:100% !important;
+                overflow:hidden !important;
+            }
+            .category-filter {
+                width:100% !important;
+                overflow:hidden !important;
+                padding:1rem !important;
+            }
+            .hero {padding:3rem 1rem;}
+            .featured-image {height:260px;}
+            .teaser-image-wrap {height:280px;}
         }
         .filter-label {font-weight:600;color:#00BFA6;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.5px;}
         .category-tag {padding:0.5rem 1rem;border-radius:20px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.1);color:#00BFA6;font-size:0.9rem;font-weight:500;transition:all 0.2s;cursor:pointer;text-decoration:none;display:inline-block;}
@@ -56,256 +94,253 @@
         .countdown {font-size:1.3em;color:#FFB800;margin:1rem 0;font-weight:600;}
         .mollie-badge {max-width:180px;height:auto;opacity:0.9;margin-top:1rem;}
         .x-logo {width:24px;height:24px;vertical-align:middle;margin-left:8px;opacity:0.9;}
-        .x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
+        .x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);max-width:100%;width:100%;}
+        .x-feed-container iframe {max-width:100% !important;width:100% !important;}
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
 
 ```
-/* ============================================================
-   ARTICLE CARD: Algorithm Ate Your Tribe
-============================================================ */
-@keyframes rain {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 2000px; }
-}
-@keyframes pulse-swarm {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.08); }
-}
-.code-rain {
-    position: absolute; inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 2px, #0f0 2px, #0f0 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, #0f0 2px, #0f0 4px);
-    background-size: 100% 100px;
-    animation: rain 20s linear infinite;
-    opacity: 0.07;
-    pointer-events: none;
-}
-.swarm-motion {
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 40%, rgba(200,0,0,0.15), transparent 70%),
-                radial-gradient(circle at 70% 60%, rgba(200,0,0,0.12), transparent 70%);
-    animation: pulse-swarm 12s ease-in-out infinite;
-    mix-blend-mode: screen;
-    pointer-events: none;
-}
-.vignette {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.75) 100%);
-    pointer-events: none;
-}
-
-/* ============================================================
-   WIRED CARD: Shatter / glass flicker effect
-============================================================ */
-@keyframes glassFlickerCard {
-    0%,100% { opacity:1; }
-    7%  { opacity:0.88; }
-    8%  { opacity:1; }
-    45% { opacity:1; }
-    46% { opacity:0.93; }
-    47% { opacity:1; }
-}
-.wired-card-img {
-    animation: glassFlickerCard 8s ease-in-out 1s infinite;
-}
-
-/* ============================================================
-   TEASER CARD SYSTEM
-============================================================ */
-.teaser-article {
-    margin-bottom: 4rem;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(0,191,166,0.03);
-    border: 1px solid rgba(255,184,0,0.25);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-.teaser-article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(255,184,0,0.15);
-}
-.teaser-image-wrap {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    background: #000;
-}
-.teaser-bg {
-    position: absolute; inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.55) saturate(0.9);
-    transition: filter 0.4s;
-}
-.teaser-article:hover .teaser-bg {
-    filter: brightness(0.65) saturate(1.1);
-}
-@keyframes amber-pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
-.teaser-amber-glow {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 65%, rgba(255,184,0,0.18) 0%, transparent 65%);
-    animation: amber-pulse 3s ease-in-out infinite;
-    pointer-events: none;
-}
-@keyframes dust {
-    0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
-    10%  { opacity: 0.6; }
-    90%  { opacity: 0.3; }
-    100% { transform: translateY(-80px) translateX(20px); opacity: 0; }
-}
-.teaser-dust {
-    position: absolute; inset: 0; pointer-events: none;
-}
-.teaser-dust::before, .teaser-dust::after {
-    content: '';
-    position: absolute;
-    width: 3px; height: 3px;
-    border-radius: 50%;
-    background: rgba(255,184,0,0.5);
-    animation: dust 6s ease-in-out infinite;
-}
-.teaser-dust::before { left: 40%; top: 60%; animation-delay: 0s; }
-.teaser-dust::after  { left: 60%; top: 70%; animation-delay: 2.5s; }
-.teaser-vignette {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.15) 40%,
-        rgba(0,0,0,0.6) 100%);
-    pointer-events: none;
-}
-.teaser-text-overlay {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
-    pointer-events: none;
-    z-index: 10;
-}
-.teaser-frame {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    padding: 1.2rem 2.2rem 1rem;
-    border: 2px solid rgba(255,184,0,0.6);
-    border-radius: 4px;
-    background: rgba(0,0,0,0.35);
-    box-shadow:
-        0 0 20px rgba(255,184,0,0.2),
-        inset 0 0 20px rgba(255,184,0,0.05);
-    animation: amber-pulse 3s ease-in-out infinite;
-}
-.typewriter-line1,
-.typewriter-line2 {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 0.15em;
-}
-.typewriter-line1 {
-    font-size: clamp(0.75rem, 1.8vw, 1.2rem);
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.3);
-    border-right: 3px solid #FFB800;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 0;
-    animation:
-        typing1 2.6s steps(26, end) 0.5s forwards,
-        blink-cursor 0.75s step-end infinite;
-}
-.typewriter-line2 {
-    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-    font-weight: 900;
-    color: #FFB800;
-    text-shadow: 0 0 15px rgba(255,184,0,0.6);
-    border-right: none;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 0;
-    opacity: 0;
-    animation:
-        delay-show 3.4s forwards,
-        typing2 0.8s steps(3, end) 3.4s forwards;
-}
-@keyframes typing1 { from { max-width: 0; } to { max-width: 100%; } }
-@keyframes typing2 { from { max-width: 0; } to { max-width: 100%; } }
-@keyframes delay-show { 0%, 99% { opacity: 0; } 100% { opacity: 1; } }
-@keyframes blink-cursor { from, to { border-color: transparent; } 50% { border-color: #FFB800; } }
-.teaser-badge {
-    position: absolute;
-    top: 1.2rem; right: 1.2rem;
-    background: rgba(255,184,0,0.15);
-    border: 1px solid rgba(255,184,0,0.4);
-    color: #FFB800;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.3rem 0.7rem;
-    border-radius: 3px;
-    z-index: 11;
-}
-.teaser-content {
-    padding: 2rem 2.5rem;
-    border-top: 1px solid rgba(255,184,0,0.15);
-}
-.teaser-content h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.6);
-    margin: 0 0 0.5rem;
-    font-style: italic;
-    letter-spacing: 0.02em;
-}
-.teaser-content p {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.95rem;
-    margin: 0;
-    font-style: italic;
-}
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media (max-width:1024px) {
-    .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
-    .sidebar {position:static;display:flex;flex-direction:column;}
-    .sticky-bounty-mobile {
-        display:block;position:sticky;top:0;z-index:100;
-        background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
-        border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);
+    @keyframes rain {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 2000px; }
     }
-    .sticky-bounty-mobile .bounty-compact {display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .sticky-bounty-mobile .bounty-info {flex:1;min-width:0;}
-    .sticky-bounty-mobile .bounty-title {font-size:0.95rem;font-weight:700;color:#FFB800;margin:0 0 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-    .sticky-bounty-mobile .bounty-meta-compact {display:flex;gap:12px;font-size:0.85rem;color:#00BFA6;}
-    .sticky-bounty-mobile .bounty-btn {padding:10px 20px;font-size:0.9rem;white-space:nowrap;margin:0;}
-    .x-feed-container {max-height:400px;overflow-y:auto;}
-}
-@media (max-width:640px) {
-    .hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
-    .filter-container {width:100%;}
-    .sticky-bounty-mobile .bounty-title {font-size:0.85rem;}
-    .sticky-bounty-mobile .bounty-meta-compact {font-size:0.75rem;}
-    .sticky-bounty-mobile .bounty-btn {padding:8px 16px;font-size:0.85rem;}
-    .typewriter-line1 { font-size: 0.85rem; }
-    .typewriter-line2 { font-size: 1.2rem; }
-}
-```
+    @keyframes pulse-swarm {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.08); }
+    }
+    .code-rain {
+        position: absolute; inset: 0;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 2px, #0f0 2px, #0f0 4px),
+            repeating-linear-gradient(90deg, transparent, transparent 2px, #0f0 2px, #0f0 4px);
+        background-size: 100% 100px;
+        animation: rain 20s linear infinite;
+        opacity: 0.07;
+        pointer-events: none;
+    }
+    .swarm-motion {
+        position: absolute; inset: 0;
+        background: radial-gradient(circle at 30% 40%, rgba(200,0,0,0.15), transparent 70%),
+                    radial-gradient(circle at 70% 60%, rgba(200,0,0,0.12), transparent 70%);
+        animation: pulse-swarm 12s ease-in-out infinite;
+        mix-blend-mode: screen;
+        pointer-events: none;
+    }
+    .vignette {
+        position: absolute; inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.75) 100%);
+        pointer-events: none;
+    }
 
+    @keyframes glassFlickerCard {
+        0%,100% { opacity:1; }
+        7%  { opacity:0.88; }
+        8%  { opacity:1; }
+        45% { opacity:1; }
+        46% { opacity:0.93; }
+        47% { opacity:1; }
+    }
+    .wired-card-img {
+        animation: glassFlickerCard 8s ease-in-out 1s infinite;
+    }
+
+    /* Maze shimmer for Opt-In Illusion card */
+    @keyframes maze-shimmer {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 1; }
+    }
+    .opt-in-card-img {
+        animation: maze-shimmer 6s ease-in-out infinite;
+    }
+
+    .teaser-article {
+        margin-bottom: 4rem;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(0,191,166,0.03);
+        border: 1px solid rgba(255,184,0,0.25);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+    }
+    .teaser-article:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(255,184,0,0.15);
+    }
+    .teaser-image-wrap {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        background: #000;
+    }
+    .teaser-bg {
+        position: absolute; inset: 0;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.55) saturate(0.9);
+        transition: filter 0.4s;
+    }
+    .teaser-article:hover .teaser-bg {
+        filter: brightness(0.65) saturate(1.1);
+    }
+    @keyframes amber-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+    }
+    .teaser-amber-glow {
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 50% 65%, rgba(255,184,0,0.18) 0%, transparent 65%);
+        animation: amber-pulse 3s ease-in-out infinite;
+        pointer-events: none;
+    }
+    @keyframes dust {
+        0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+        10%  { opacity: 0.6; }
+        90%  { opacity: 0.3; }
+        100% { transform: translateY(-80px) translateX(20px); opacity: 0; }
+    }
+    .teaser-dust {
+        position: absolute; inset: 0; pointer-events: none;
+    }
+    .teaser-dust::before, .teaser-dust::after {
+        content: '';
+        position: absolute;
+        width: 3px; height: 3px;
+        border-radius: 50%;
+        background: rgba(255,184,0,0.5);
+        animation: dust 6s ease-in-out infinite;
+    }
+    .teaser-dust::before { left: 40%; top: 60%; animation-delay: 0s; }
+    .teaser-dust::after  { left: 60%; top: 70%; animation-delay: 2.5s; }
+    .teaser-vignette {
+        position: absolute; inset: 0;
+        background: linear-gradient(to bottom,
+            rgba(0,0,0,0.55) 0%,
+            rgba(0,0,0,0.15) 40%,
+            rgba(0,0,0,0.6) 100%);
+        pointer-events: none;
+    }
+    .teaser-text-overlay {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        pointer-events: none;
+        z-index: 10;
+    }
+    .teaser-frame {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        padding: 1.2rem 2.2rem 1rem;
+        border: 2px solid rgba(255,184,0,0.6);
+        border-radius: 4px;
+        background: rgba(0,0,0,0.35);
+        box-shadow:
+            0 0 20px rgba(255,184,0,0.2),
+            inset 0 0 20px rgba(255,184,0,0.05);
+        animation: amber-pulse 3s ease-in-out infinite;
+    }
+    .typewriter-line1,
+    .typewriter-line2 {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 0.15em;
+    }
+    .typewriter-line1 {
+        font-size: clamp(0.75rem, 1.8vw, 1.2rem);
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        border-right: 3px solid #FFB800;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 0;
+        animation:
+            typing1 2.6s steps(26, end) 0.5s forwards,
+            blink-cursor 0.75s step-end infinite;
+    }
+    .typewriter-line2 {
+        font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+        font-weight: 900;
+        color: #FFB800;
+        text-shadow: 0 0 15px rgba(255,184,0,0.6);
+        border-right: none;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 0;
+        opacity: 0;
+        animation:
+            delay-show 3.4s forwards,
+            typing2 0.8s steps(3, end) 3.4s forwards;
+    }
+    @keyframes typing1 { from { max-width: 0; } to { max-width: 100%; } }
+    @keyframes typing2 { from { max-width: 0; } to { max-width: 100%; } }
+    @keyframes delay-show { 0%, 99% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes blink-cursor { from, to { border-color: transparent; } 50% { border-color: #FFB800; } }
+    .teaser-badge {
+        position: absolute;
+        top: 1.2rem; right: 1.2rem;
+        background: rgba(255,184,0,0.15);
+        border: 1px solid rgba(255,184,0,0.4);
+        color: #FFB800;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.3rem 0.7rem;
+        border-radius: 3px;
+        z-index: 11;
+    }
+    .teaser-content {
+        padding: 2rem 2.5rem;
+        border-top: 1px solid rgba(255,184,0,0.15);
+    }
+    .teaser-content h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: rgba(255,255,255,0.6);
+        margin: 0 0 0.5rem;
+        font-style: italic;
+        letter-spacing: 0.02em;
+    }
+    .teaser-content p {
+        color: rgba(255,255,255,0.4);
+        font-size: 0.95rem;
+        margin: 0;
+        font-style: italic;
+    }
+
+    @media (max-width:1024px) {
+        .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
+        .sidebar {position:static;display:flex;flex-direction:column;}
+        .sticky-bounty-mobile {
+            display:block;position:sticky;top:0;z-index:100;
+            background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
+            border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);
+        }
+        .sticky-bounty-mobile .bounty-compact {display:flex;align-items:center;justify-content:space-between;gap:12px;}
+        .sticky-bounty-mobile .bounty-info {flex:1;min-width:0;}
+        .sticky-bounty-mobile .bounty-title {font-size:0.95rem;font-weight:700;color:#FFB800;margin:0 0 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .sticky-bounty-mobile .bounty-meta-compact {display:flex;gap:12px;font-size:0.85rem;color:#00BFA6;}
+        .sticky-bounty-mobile .bounty-btn {padding:10px 20px;font-size:0.9rem;white-space:nowrap;margin:0;}
+        .x-feed-container {max-height:400px;overflow-y:auto;}
+    }
+    @media (max-width:640px) {
+        .hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
+        .filter-container {width:100%;}
+        .sticky-bounty-mobile .bounty-title {font-size:0.85rem;}
+        .sticky-bounty-mobile .bounty-meta-compact {font-size:0.75rem;}
+        .sticky-bounty-mobile .bounty-btn {padding:8px 16px;font-size:0.85rem;}
+        .typewriter-line1 { font-size: 0.85rem; }
+        .typewriter-line2 { font-size: 1.2rem; }
+    }
 </style>
+```
 
 </head>
 <body>
@@ -322,6 +357,7 @@
         </div>
     </header>
 
+```
 <section class="hero">
     <h1>Investigative Commentaries</h1>
     <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
@@ -346,184 +382,192 @@
 <div class="main-wrapper">
     <main class="main-content" id="articles-container">
 
-```
-    <!-- ARTICLE 0: WIRED Standard — NEWEST FIRST -->
-    <article class="featured-article" data-category="debunked">
-        <div class="featured-image wired-card-img" style="background-image:url('IMG_7366.jpeg');background-color:#04080b;background-position:center top;"></div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category debunked">Debunked</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 7 min read</span>
+        <!-- ARTICLE: THE OPT-IN ILLUSION — NEWEST -->
+        <article class="featured-article" data-category="investigation">
+            <div class="featured-image opt-in-card-img" style="background-image:url('opt-in-illusion-hero.jpg');background-color:#04080b;background-position:center;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Investigation</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 9 min read</span>
+                </div>
+                <h2><a href="/the-opt-in-illusion.html" style="color:#FFB800;text-decoration:none;">The Opt-In Illusion</a></h2>
+                <p><strong>April 25, 2026</strong></p>
+                <p>Google scans your Photos library. Meta trains on your posts by default. A cybersecurity consultant was permanently banned from LinkedIn for sharing a Redbook article about a father kissing his baby. The Dutch Data Protection Authority forwarded the complaint to a different regulator. The account holder is still waiting. An investigation into the architecture of manufactured consent.</p>
+                <a href="/the-opt-in-illusion.html" class="read-btn">Read Full Article &rarr;</a>
             </div>
-            <h2><a href="/wired-standard.html" style="color:#FFB800;text-decoration:none;">WIRED Set the Standard. Then Filed the Article.</a></h2>
-            <p><strong>March 20, 2026</strong></p>
-            <p>WIRED published a piece about AI verification failures on X. The title named one platform. The evidence of a multi-platform flood, 145 million views, NYT, BBC Verify, Cyabra, was publicly available before publication. We applied their standard to the article.</p>
-            <a href="/wired-standard.html" class="read-btn">Read Full Article →</a>
-        </div>
-    </article>
+        </article>
 
-    <!-- THE DIGITAL HIVE TRILOGY -->
-
-    <!-- TRILOGY PART I -->
-    <article class="featured-article" data-category="evidence">
-        <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#000;">
-            <div class="code-rain"></div>
-            <div class="swarm-motion"></div>
-            <div class="vignette"></div>
-        </div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Evidence-Based</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
+        <!-- ARTICLE: WIRED Standard -->
+        <article class="featured-article" data-category="debunked">
+            <div class="featured-image wired-card-img" style="background-image:url('IMG_7366.jpeg');background-color:#04080b;background-position:center top;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category debunked">Debunked</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 7 min read</span>
+                </div>
+                <h2><a href="/wired-standard.html" style="color:#FFB800;text-decoration:none;">WIRED Set the Standard. Then Filed the Article.</a></h2>
+                <p><strong>March 20, 2026</strong></p>
+                <p>WIRED published a piece about AI verification failures on X. The title named one platform. The evidence of a multi-platform flood, 145 million views, NYT, BBC Verify, Cyabra, was publicly available before publication. We applied their standard to the article.</p>
+                <a href="/wired-standard.html" class="read-btn">Read Full Article &rarr;</a>
             </div>
-            <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part I of III</p>
-            <h2><a href="/the-algorithm-that-ate-your-tribe.html" style="color:#FFB800;text-decoration:none;">The Algorithm That Ate Your Tribe</a></h2>
-            <p><strong>February 2026</strong></p>
-            <p>A 2024 EEG study, 98,000 data points, two primates, and one inconvenient number: 150. What we are, what we were built for, and what happens when a brain calibrated for a tribe of 150 is dropped into a machine offering millions.</p>
-            <a href="/the-algorithm-that-ate-your-tribe.html" class="read-btn">Read Part I →</a>
-        </div>
-    </article>
+        </article>
 
-        <!-- TRILOGY PART II -->
-    <article class="featured-article" data-category="evidence">
-        <div class="featured-image" style="background-image:url('tribe-swarm-static-2.jpg');background-color:#000;">
-            <div class="code-rain"></div>
-            <div class="swarm-motion"></div>
-            <div class="vignette"></div>
-        </div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Evidence-Based</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
+        <!-- THE DIGITAL HIVE TRILOGY -->
+        <article class="featured-article" data-category="evidence">
+            <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#000;">
+                <div class="code-rain"></div>
+                <div class="swarm-motion"></div>
+                <div class="vignette"></div>
             </div>
-            <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part II of III</p>
-            <h2><a href="/the-swarm-the-counterfeit-tribe.html" style="color:#FFB800;text-decoration:none;">The Swarm, The Counterfeit Tribe</a></h2>
-            <p><strong>February 2026</strong></p>
-            <p>The counterfeit tribe. What the machine does once it has your attention, what the unfinished adolescent brain makes you to it, and what the internal Meta documents prove the architects knew.</p>
-            <a href="/the-swarm-the-counterfeit-tribe.html" class="read-btn">Read Part II →</a>
-        </div>
-    </article>
-
-   <!-- TRILOGY PART III -->
-    <article class="featured-article" data-category="evidence">
-        <div class="featured-image" style="background-image:url('fire-vs-wildfire.jpg');background-color:#0d1a16;"></div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Evidence-Based</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 9 min read</span>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Evidence-Based</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+                <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part I of III</p>
+                <h2><a href="/the-algorithm-that-ate-your-tribe.html" style="color:#FFB800;text-decoration:none;">The Algorithm That Ate Your Tribe</a></h2>
+                <p><strong>February 2026</strong></p>
+                <p>A 2024 EEG study, 98,000 data points, two primates, and one inconvenient number: 150. What we are, what we were built for, and what happens when a brain calibrated for a tribe of 150 is dropped into a machine offering millions.</p>
+                <a href="/the-algorithm-that-ate-your-tribe.html" class="read-btn">Read Part I &rarr;</a>
             </div>
-            <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part III of III</p>
-            <h2><a href="/the-bios-first.html" style="color:#FFB800;text-decoration:none;">The Bios First</a></h2>
-            <p><strong>March 2026</strong></p>
-            <p>Fire or wildfire. Governance, dumbphones, and the only measure that has ever mattered. What the organism does when it starts to self-correct and why that matters more than any policy.</p>
-            <a href="the-bios-first.html" class="read-btn">Read Part III &rarr;</a>
-        </div>
-    </article>
+        </article>
 
-    <!-- ARTICLE 2: Odido Breach -->
-    <article class="featured-article" data-category="investigation">
-        <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Investigation</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
+        <article class="featured-article" data-category="evidence">
+            <div class="featured-image" style="background-image:url('tribe-swarm-static-2.jpg');background-color:#000;">
+                <div class="code-rain"></div>
+                <div class="swarm-motion"></div>
+                <div class="vignette"></div>
             </div>
-            <h2><a href="/odido-compliance.html" style="color:#FFB800;text-decoration:none;">The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</a></h2>
-            <p><strong>February 24, 2026</strong></p>
-            <p>Odido's breach wasn't a sophisticated attack, it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
-            <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
-        </div>
-    </article>
-
-    <!-- ARTICLE 3: Errored -->
-    <article class="featured-article" data-category="language">
-        <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Language &amp; Evidence</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 5 min read</span>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Evidence-Based</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
+                </div>
+                <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part II of III</p>
+                <h2><a href="/the-swarm-the-counterfeit-tribe.html" style="color:#FFB800;text-decoration:none;">The Swarm, The Counterfeit Tribe</a></h2>
+                <p><strong>February 2026</strong></p>
+                <p>The counterfeit tribe. What the machine does once it has your attention, what the unfinished adolescent brain makes you to it, and what the internal Meta documents prove the architects knew.</p>
+                <a href="/the-swarm-the-counterfeit-tribe.html" class="read-btn">Read Part II &rarr;</a>
             </div>
-            <h2><a href="/errored.html" style="color:#FFB800;text-decoration:none;">Errored. A Word That Wasn't. Until It Was.</a></h2>
-            <p><strong>February 2026</strong></p>
-            <p>Doodling on Echo Truth Hub, I noticed AI writing "erred" where I expected "errored." The grammar enthusiast in me went looking. What followed was a rabbit hole into Oxford English, 200 years of linguistic history, and why the engineers were right all along.</p>
-            <a href="/errored.html" class="read-btn">Read Full Article →</a>
-        </div>
-    </article>
+        </article>
 
-    <!-- ARTICLE 4: Biometric -->
-    <article class="featured-article" data-category="investigation">
-        <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
-        <div class="featured-content">
-            <div class="card-meta">
-                <span class="featured-category">Investigation</span>
-                <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
+        <article class="featured-article" data-category="evidence">
+            <div class="featured-image" style="background-image:url('fire-vs-wildfire.jpg');background-color:#0d1a16;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Evidence-Based</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 9 min read</span>
+                </div>
+                <p style="font-size:0.8rem;color:#00BFA6;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">The Digital Hive — Part III of III</p>
+                <h2><a href="/the-bios-first.html" style="color:#FFB800;text-decoration:none;">The Bios First</a></h2>
+                <p><strong>March 2026</strong></p>
+                <p>Fire or wildfire. Governance, dumbphones, and the only measure that has ever mattered. What the organism does when it starts to self-correct and why that matters more than any policy.</p>
+                <a href="the-bios-first.html" class="read-btn">Read Part III &rarr;</a>
             </div>
-            <h2><a href="/biometric.html" style="color:#FFB800;text-decoration:none;">The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</a></h2>
-            <p><strong>February 3, 2026</strong></p>
-            <p>OpenAI is reportedly exploring a new social platform designed exclusively for verified humans. One concept involves biometric verification, requiring iris scans via the World Orb or Apple's Face ID. The proposal addresses a real problem. But exchanging irreversible biological identity for digital participation may not be the safest solution.</p>
-            <a href="/biometric.html" class="read-btn">Read Full Article →</a>
-        </div>
-    </article>
+        </article>
 
-    <!-- TEASER CARDS -->
-    <article class="teaser-article" data-category="investigation">
-        <div class="teaser-image-wrap">
-            <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
-            <div class="teaser-amber-glow"></div>
-            <div class="teaser-dust"></div>
-            <div class="teaser-vignette"></div>
-            <span class="teaser-badge">Coming Soon</span>
-            <div class="teaser-text-overlay">
-                <div class="teaser-frame">
-                    <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
-                    <span class="typewriter-line2">ETH</span>
+        <!-- ARTICLE: Odido Breach -->
+        <article class="featured-article" data-category="investigation">
+            <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Investigation</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 10 min read</span>
+                </div>
+                <h2><a href="/odido-compliance.html" style="color:#FFB800;text-decoration:none;">The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</a></h2>
+                <p><strong>February 24, 2026</strong></p>
+                <p>Odido's breach wasn't a sophisticated attack, it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
+                <a href="/odido-compliance.html" class="read-btn">Read Full Article &rarr;</a>
+            </div>
+        </article>
+
+        <!-- ARTICLE: Errored -->
+        <article class="featured-article" data-category="language">
+            <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Language &amp; Evidence</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+                <h2><a href="/errored.html" style="color:#FFB800;text-decoration:none;">Errored. A Word That Wasn't. Until It Was.</a></h2>
+                <p><strong>February 2026</strong></p>
+                <p>Doodling on Echo Truth Hub, I noticed AI writing "erred" where I expected "errored." The grammar enthusiast in me went looking. What followed was a rabbit hole into Oxford English, 200 years of linguistic history, and why the engineers were right all along.</p>
+                <a href="/errored.html" class="read-btn">Read Full Article &rarr;</a>
+            </div>
+        </article>
+
+        <!-- ARTICLE: Biometric -->
+        <article class="featured-article" data-category="investigation">
+            <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
+            <div class="featured-content">
+                <div class="card-meta">
+                    <span class="featured-category">Investigation</span>
+                    <span class="read-time-badge"><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+                <h2><a href="/biometric.html" style="color:#FFB800;text-decoration:none;">The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</a></h2>
+                <p><strong>February 3, 2026</strong></p>
+                <p>OpenAI is reportedly exploring a new social platform designed exclusively for verified humans. One concept involves biometric verification, requiring iris scans via the World Orb or Apple's Face ID. The proposal addresses a real problem. But exchanging irreversible biological identity for digital participation may not be the safest solution.</p>
+                <a href="/biometric.html" class="read-btn">Read Full Article &rarr;</a>
+            </div>
+        </article>
+
+        <!-- TEASER CARDS -->
+        <article class="teaser-article" data-category="investigation">
+            <div class="teaser-image-wrap">
+                <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
+                <div class="teaser-amber-glow"></div>
+                <div class="teaser-dust"></div>
+                <div class="teaser-vignette"></div>
+                <span class="teaser-badge">Coming Soon</span>
+                <div class="teaser-text-overlay">
+                    <div class="teaser-frame">
+                        <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
+                        <span class="typewriter-line2">ETH</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="teaser-content">
-            <h2>Who Actually Protects Your Data, Identity &amp; Money</h2>
-            <p>EU Digital ID · eIDAS 2.0 · CBDC · Institutional Track Record</p>
-        </div>
-    </article>
+            <div class="teaser-content">
+                <h2>Who Actually Protects Your Data, Identity &amp; Money</h2>
+                <p>EU Digital ID &middot; eIDAS 2.0 &middot; CBDC &middot; Institutional Track Record</p>
+            </div>
+        </article>
 
-    <article class="teaser-article" data-category="investigation">
-        <div class="teaser-image-wrap">
-            <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
-            <div class="teaser-amber-glow"></div>
-            <div class="teaser-dust"></div>
-            <div class="teaser-vignette"></div>
-            <span class="teaser-badge">Coming Soon</span>
-            <div class="teaser-text-overlay">
-                <div class="teaser-frame">
-                    <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
-                    <span class="typewriter-line2">ETH</span>
+        <article class="teaser-article" data-category="investigation">
+            <div class="teaser-image-wrap">
+                <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
+                <div class="teaser-amber-glow"></div>
+                <div class="teaser-dust"></div>
+                <div class="teaser-vignette"></div>
+                <span class="teaser-badge">Coming Soon</span>
+                <div class="teaser-text-overlay">
+                    <div class="teaser-frame">
+                        <span class="typewriter-line1">INVESTIGATION IN PROGRESS</span>
+                        <span class="typewriter-line2">ETH</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="teaser-content">
-            <h2>Who Actually Protects Your Data When the State No Longer Owns the Infrastructure</h2>
-            <p>Privatisation · GDPR as Paper Tiger · The Revolving Door</p>
-        </div>
-    </article>
+            <div class="teaser-content">
+                <h2>Who Actually Protects Your Data When the State No Longer Owns the Infrastructure</h2>
+                <p>Privatisation &middot; GDPR as Paper Tiger &middot; The Revolving Door</p>
+            </div>
+        </article>
 
-</main>
+    </main>
 
-<aside class="sidebar">
-    <div class="sidebar-section">
-        <h3>🎯 Current Bounty Status</h3>
-        <div class="bounty-card" id="bounty-container"></div>
-    </div>
-    <div class="sidebar-section">
-        <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
-        <div class="x-feed-container">
-            <a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
-               data-chrome="noheader nofooter noborders transparent"
-               href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>🎯 Current Bounty Status</h3>
+            <div class="bounty-card" id="bounty-container"></div>
         </div>
-    </div>
-</aside>
-```
-
+        <div class="sidebar-section">
+            <h3>📢 Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+            <div class="x-feed-container">
+                <a class="twitter-timeline" data-height="600" data-theme="dark"
+                   data-chrome="noheader nofooter noborders transparent"
+                   href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+            </div>
+        </div>
+    </aside>
 </div>
 
 <footer>
@@ -627,6 +671,7 @@
         });
     });
 </script>
+```
 
 </body>
 </html>
