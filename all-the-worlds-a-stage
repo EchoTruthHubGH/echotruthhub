@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All the World's a Stage — Echo Truth Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #00BFA6;
+      --gold: #FFB800;
+      --bg: #0f0f0f;
+      --surface: #161616;
+      --surface-2: #1e1e1e;
+      --text: #e8e4dc;
+      --text-muted: #8a8278;
+      --rule: #2a2a2a;
+    }
+
+```
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,15,15,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.nav-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--rule);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  display: block;
+}
+
+.hero-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #1a2a28 0%, #0f0f0f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-placeholder-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  opacity: 0.5;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,15,15,1) 0%, rgba(15,15,15,0.2) 60%, transparent 100%);
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 90%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  text-align: center;
+}
+
+/* ARTICLE LAYOUT */
+.article-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* HEADER */
+.article-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+
+.article-category {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.25rem;
+}
+
+.article-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.article-subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+/* BODY TEXT */
+.article-body p {
+  margin-bottom: 1.6rem;
+  color: var(--text);
+}
+
+.article-body em {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* SECTION HEADERS */
+.section-block {
+  margin: 4rem 0 2.5rem;
+}
+
+.section-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--teal);
+  margin-bottom: 1.25rem;
+}
+
+.section-number {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1.3;
+}
+
+/* SECTION IMAGES */
+.section-image {
+  margin: 2.5rem -1.5rem;
+  position: relative;
+}
+
+.section-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+  opacity: 0.75;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 280px;
+  background: var(--surface-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.img-filename {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--teal);
+  opacity: 0.6;
+}
+
+.img-mood {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.img-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1.5rem;
+  line-height: 1.5;
+}
+
+/* HORIZONTAL RULE */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3.5rem 0;
+}
+
+/* OPENING — no section header, just text */
+.opening {
+  padding-top: 0.5rem;
+}
+
+/* CODA */
+.coda-block {
+  margin: 4rem 0 2.5rem;
+}
+
+.coda-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+/* FOOTER */
+.article-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  padding: 2.5rem 0 4rem;
+}
+
+.footer-pub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .section-image { margin: 2rem -1.5rem; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Echo Truth Hub</a>
+    <span class="nav-tag">Analysis</span>
+  </nav>
+
+  <!-- HERO IMAGE -->
+
+  <div class="hero">
+    <img src="eth-atws-blog-hero.jpg" alt="A child alone at the water's edge, watching the horizon" class="hero-img">
+    <div class="hero-overlay"></div>
+    <p class="hero-caption">Peaceful threshold. The border between land and sea. Wonder without performance.</p>
+  </div>
+
+  <div class="article-wrap">
+
+```
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <span class="article-category">Analysis &nbsp;·&nbsp; Personal Essay</span>
+  <h1 class="article-title">All the World's a Stage</h1>
+  <p class="article-subtitle">A personal observation — open for debate</p>
+  <div class="article-meta">
+    <span class="meta-item">Echo Truth Hub</span>
+    <span class="meta-dot"></span>
+    <span class="meta-item">April 2026</span>
+    <span class="meta-dot"></span>
+    <span class="meta-item">~1,800 words</span>
+  </div>
+</header>
+
+<!-- OPENING -->
+<div class="article-body opening">
+  <p>Before he had words for any of it, he already knew where to go.</p>
+  <p>His mother found the crib empty one morning, the household quietly searched, and the fear that visits every parent in that silence moved through her like cold water. Then someone looked toward the beach.</p>
+  <p>He had navigated his way out of a high-barred crib — how, remains a mystery to this day — and made his way, alone, to the shore. He sat where the sand flattened and the surf began its cadence, still as a small monk, watching the sunrise do what sunrises do whether anyone is watching or not.</p>
+  <p>No drama. Just an eye for a view.</p>
+  <p>That, in essence, was the basis of his being to be.</p>
+  <p>There are people who are drawn to the edge of things. Not out of restlessness, but out of the need to see clearly. The border is where what is true becomes visible. It always has been.</p>
+  <p>This is an attempt to describe what that vantage point looks like now, from here, in this particular moment in human history. It is not a warning. It is not a verdict. It is what one set of eyes has noticed, offered to whoever finds it useful.</p>
+  <p>All the world's a stage. We always knew this. What nobody anticipated was that we would all become so occupied documenting the performance that we forgot to simply be in it.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION I -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">I</div>
+  <h2 class="section-title">The Efficiency That Cost Us Something</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s1-digital-workspace.jpg</span>
+    <span class="img-mood">Functional absence. The price of optimisation.</span>
+  </div>
+  <p class="img-caption">A sleek digital workspace on one side. An empty chair, cold coffee, phone face-down on the other. The efficiency is real. So is what is missing.</p>
+</div>
+
+<div class="article-body">
+  <p>Digitalisation did what it promised. Work got faster. Information became instant. The friction of distance collapsed. And somewhere in the middle of all that convenience, a quieter thing happened — the texture of human interaction began to be renegotiated, term by term, in favour of scale.</p>
+  <p>It did not vanish. It was redacted. Actively, selectively, in the name of efficiency and optimisation, the warm and imprecise parts of human exchange were identified as costs and removed. What replaced them was smoother, faster, and entirely without soul.</p>
+  <p>Digitisation stacked in both directions. It took away certain burdens and replaced them with new ones nobody asked for — the endless administration of the self, the always-available expectation, the notification that arrives before the thought.</p>
+  <p>This is not nostalgia. It is observation.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION II -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">II</div>
+  <h2 class="section-title">The Algorithm in the Room</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s2-chatbot-interface.jpg</span>
+    <span class="img-mood">The facsimile of connection. Functional, frictionless, empty.</span>
+  </div>
+  <p class="img-caption">A chatbot interface on a cold blue screen — corporate, polished, smiling in the way that only software smiles.</p>
+</div>
+
+<div class="article-body">
+  <p>Companies and organisations have always understood, at some level, that connection drives commitment. The handshake, the familiar voice on the phone, the person who remembered your name — these were not accidents. They were the product of a species that evolved to read other faces and decide, in a fraction of a second, whether to trust.</p>
+  <p>What artificial intelligence offers in their place is a reasonable facsimile. Efficient. Available at all hours. Never tired, never distracted. And completely incapable of the thing it is pretending to do.</p>
+  <p>The way we interact with entities — companies, institutions, services — is being actively redacted by the development of artificial intelligence. What once carried the possibility of relation is being transformed, quietly and at scale, into an abstract experience.</p>
+  <p>On a personal note — and this piece allows for one — there is no interest in conversing with an algorithm about feelings toward a company. It becomes transactional immediately. Fine. Tell it what needs to be done, remove the performance of warmth, get it sorted. You are a tool. There is no shame in that. But there is also no intimacy, no recognition, no moment where one human being signals to another that they have been heard.</p>
+  <p>Abstract is the right word for what remains. The choices made in that space — individually, collectively, daily — define not just how we transact, but gradually, who we are becoming.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION III -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">III</div>
+  <h2 class="section-title">The Tell</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s3-conversation-tell.jpg</span>
+    <span class="img-mood">The moment dialogue becomes performance. The silence before the pit.</span>
+  </div>
+  <p class="img-caption">Two people in conversation. One present. One retrieving. The gap between retrieval and thought, made visible.</p>
+</div>
+
+<div class="article-body">
+  <p>Here is something worth noticing.</p>
+  <p>A growing number of people in daily conversation carry the fingerprints of a single AI agent they have given themselves to entirely. You can hear it before you can name it.</p>
+  <p>They speak with fluency. Opinions ready, references prepared, a certain polish to their responses. And then something genuine is asked — something off the prepared path, something that requires not retrieval but thought — and they fall into a sudden silence that says, clearly: <em>I haven't looked that up yet.</em></p>
+  <p>It is the difference between retrieval and thought. And it is not always visible. But it can be heard.</p>
+  <p>We saw this pattern with social media. We saw it with search engines. We saw it at the very beginning of the internet, when people began outsourcing their memory to a search bar and losing the habit of sitting with not knowing. The tool changes. The dynamic repeats.</p>
+  <p>The challenge this creates is subtle and cumulative. When a growing portion of what people say to each other is effectively quoted rather than thought, conversation stops being an exchange and becomes a transaction of cached content. The warmth is still there. The curiosity has been replaced.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION IV -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">IV</div>
+  <h2 class="section-title">The Biology of the Border</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s4-ocean-halocline.jpg</span>
+    <span class="img-mood">Natural tension. Distinct. Productive. The border as the most alive place.</span>
+  </div>
+  <p class="img-caption">The meeting of the Atlantic and Pacific — two distinct bodies of water visibly touching, turbulent at the border, maintaining their separate character on either side.</p>
+</div>
+
+<div class="article-body">
+  <p>There is a useful concept in microbiology called quorum sensing. Bacteria do not act collectively until a threshold number is reached — a minimum viable presence. Once that threshold is crossed, the entire colony shifts behaviour simultaneously. No leader. No decision. No meeting. Just critical mass triggering collective function. Watch a murmuration of starlings — thousands of birds, no visible signal, no one in charge, turning as a single body in the sky. The threshold has been crossed. The same logic. A different scale.</p>
+  <p>We may be more like this than we prefer to admit.</p>
+  <p>The notion of a minimum prime number for social function appears across disciplines. Robin Dunbar mapped it in his concentric circles of trust — the numbers of people a human mind can maintain genuine relationship with at each level of closeness. They are better understood as fluid, expanding or contracting with the willingness of those within them to coexist. Willingness is the variable. Not capacity.</p>
+  <p>Any species needs a threshold. Below it, the signals that make collective behaviour possible simply do not fire. Above it, something like coherence becomes available — not guaranteed, but possible.</p>
+  <p>Here is where it gets honest.</p>
+  <p>Collective sentiment — the idea that a community, a society, a species can reach genuine unified feeling — is not the destination. It never was. The Pacific and the Atlantic will never completely mix. They meet at a border that is turbulent precisely because the density differential is real. Distinct salinity. Distinct temperature. A halocline that holds them separate even at contact. And the border is where all the interesting biology happens. Not despite the tension. Because of it.</p>
+  <p>The freethinker's position is not that all differences can be resolved. It is that flavours can be mixed to a certain point — and that the mixing produces something new at the border without requiring either side to stop being what it is. Yin and yang. Enso. The circle that holds both and insists on neither.</p>
+  <p>A global community is only viable when there is an existential external threat that all can relate to. Short of that, any subjective societal narrative of its own conviction will produce friction. This is not failure. This is structure. The oceans do not fail because they do not merge. They function as a planetary system because they maintain their distinct character while managing the border productively.</p>
+  <p>The sentinel's function — the value of the watcher at the edge — is not to resolve this. It is to read it. To notice when the turbulence at the border tips from productive friction into cohesive conflict. Or alternatively, into cohesive development. The sentinel is the nerve ending. Not the judge. Nerve endings do not have opinions about pain. They report it. What the organism does with that signal is a separate question.</p>
+  <p>Subjective by definition, yes. The sentinel watches from within the tribe it belongs to. That is not a flaw in the design. It is the design. What distinguishes the sentinel is not objectivity. It is the willingness to see clearly what is actually there, rather than what the consensus has agreed to notice.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION V -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">V</div>
+  <h2 class="section-title">The Moment That Wasn't Saved</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s5-crowd-filming.jpg</span>
+    <span class="img-mood">Presence and its absence. The performance of living.</span>
+  </div>
+  <p class="img-caption">A crowd filming a moment on phones. One person simply watching. The contrast does not need to be laboured.</p>
+</div>
+
+<div class="article-body">
+  <p>People can reach each other now with almost no effort. The logistics of connection have never been simpler. And yet the first impulse, when something worth sharing happens, is to reach for the phone. Not to call someone. To document. To log the moment in bits and bytes, frame it for a feed, release it into the current of other people's endless scrolling.</p>
+  <p>The grey matter — the actual instrument built over millennia to absorb experience, to store it, to let it settle into something lasting — waits. While the registration happens. While the moment is transferred from lived to uploaded.</p>
+  <p>If it is not registered it did not happen. This is the quiet operating assumption of a growing portion of daily life. And it is not a small thing. The registration of experience has quietly replaced the experience of experience. The sense of belonging and connection that people are simultaneously, desperately seeking is being lost precisely in the act of trying to capture it.</p>
+  <p>People tend to get more distant and dyslexic about their own desires. The tools exist. The reach is there. And still, the distance grows.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION VI -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">VI</div>
+  <h2 class="section-title">The Quiet Rebellion</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s6-dumbphone.jpg</span>
+    <span class="img-mood">Refusal as clarity. Living as a verb, not a task.</span>
+  </div>
+  <p class="img-caption">A basic handset next to a switched-off smartphone. The choice has been made. The quiet is deliberate.</p>
+</div>
+
+<div class="article-body">
+  <p>Generation Z did not arrive at dumb-phones by accident.</p>
+  <p>They were born into the full noise of it — the non-personal stimuli, the optimised feeds, the always-available everything that adds no true value to a life being lived. And some of them, the ones paying attention, looked at it and arrived somewhere clear: <em>living has become a task, and I would rather just live.</em></p>
+  <p>There is something worth respecting in that. It is not a rejection of technology. It is a rejection of "expected" performance. A refusal to let the registration become the point.</p>
+  <p>Every generation produces this observation about the one that follows it. Every generation assumes it is the first to notice the acceleration. This does not make the observation wrong. It makes it old. Old, recurring, and apparently necessary to keep making.</p>
+  <p>What is different now is the speed. The quorum threshold for collective behaviour shift has always existed. What digital saturation has done is compress the timeline. The signal moves faster. The colony responds faster. Whether it responds well is the open question.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION VII -->
+<div class="section-block">
+  <div class="section-rule"></div>
+  <div class="section-number">VII</div>
+  <h2 class="section-title">The Cost of Seeing It</h2>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-s7-sentinel-figure.jpg</span>
+    <span class="img-mood">The vantage point and what it costs. Present but not absorbed.</span>
+  </div>
+  <p class="img-caption">A single figure positioned at a slight remove from the crowd. Watching the group rather than participating.</p>
+</div>
+
+<div class="article-body">
+  <p>There is a particular kind of person — and this piece neither diagnoses nor celebrates them, merely notes their existence — for whom these patterns, once visible, cannot be unseen.</p>
+  <p>You hear it in the conversation that drops when something genuine is asked. You notice it in the room where everyone is present and nobody is there. You recognise the cached response the way you recognise a dubbed film — the mouth moves, but something is slightly off. Everything becomes, at intervals, surrealistic. Until another person who reads the room the same way appears, and the conversation that follows has a quality that is almost startling in its difference.</p>
+  <p>The sentinel is not a type to be envied. The nerve ending that is most sensitive is also the one that registers pain most acutely. The value of the position is in the signal, not the experience of sending it.</p>
+  <p>It gets more challenging, honestly, to talk to most people when you are tuned to notice these things.</p>
+  <p>This may say something about the observable world. It may say something about the observer. In all probability, both.</p>
+  <p>The invitation here is not agreement. It is the frontier of the oceans colliding. You do not have to like it or accept it. It is just there. And if we cannot talk about what actually makes us tick — the carnal, pre-rational, quorum-sensing creatures that we are beneath all the language — then what exactly are we talking about.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- CODA -->
+<div class="coda-block">
+  <div class="section-rule"></div>
+  <div class="coda-label">Coda</div>
+</div>
+
+<div class="section-image">
+  <div class="img-placeholder">
+    <span class="img-filename">eth-atws-coda-empty-stage.jpg</span>
+    <span class="img-mood">Inevitability without tragedy. The world continues. The observation stands.</span>
+  </div>
+  <p class="img-caption">An empty theatre stage. A single spotlight on the boards. The curtain falling. What remains is the stage itself, indifferent, ready for the next performance.</p>
+</div>
+
+<div class="article-body">
+  <p>All the world's a stage. Jacques said it without pity, just precision. He was not calling for a return to something better. He was noting what is. Seven ages, each one trading one kind of performance for another.</p>
+  <p>We have added an eighth: the age of the documented self. The one where the act of living and the act of recording have become so entangled that people are beginning to ask, quietly, which one is supposed to be real.</p>
+  <p>He sat on that beach as an infant because something in him already understood that the view requires a witness. Not a camera. Not a caption. A pair of eyes and whatever that grey mass does when it is simply allowed to receive.</p>
+  <p>The waves did not perform for him. He did not perform for the waves. And that, for a moment, was enough.</p>
+  <p>The choices made daily — individually, collectively, quietly — in the question of what is worth actually experiencing versus what is worth registering, define not just how we live but who we are becoming.</p>
+  <p>That is not a warning. It is just what is playing, right now, on the stage.</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+  <p class="footer-pub">Echo Truth Hub &nbsp;·&nbsp; Personal essay &nbsp;·&nbsp; Open for debate</p>
+  <p class="footer-tag">#TruthWithTeeth</p>
+</footer>
+```
+
+  </div>
+
+</body>
+</html>
