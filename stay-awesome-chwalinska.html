@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stay Awesome. The Determination Story of Maja Chwalińska | Echo Truth Hub</title>
+<title>Stay Awesome. The Determination Story of Maja Chwalinska | Echo Truth Hub</title>
 <meta name="description" content="She couldn't pay her hotel bill in Paris. Nine matches later, she stood in the French Open final. The numbers are extraordinary. The story is not about tennis.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -20,6 +20,11 @@ header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,
 .hero {padding:6rem 2rem;text-align:center;}
 .hero h1 {font-size:3.4em;margin:0 0 1rem;color:#FFB800;line-height:1.2;}
 .hero p {font-size:1.8em;color:#00BFA6;opacity:0.9;}
+.category-filter {background:rgba(0,191,166,0.05);padding:1.5rem 1rem;border-bottom:1px solid rgba(0,191,166,0.2);width:100%;overflow:hidden;}
+.filter-container {max-width:1400px;margin:0 auto;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;}
+.filter-label {font-weight:600;color:#00BFA6;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.5px;}
+.category-tag {padding:0.5rem 1rem;border-radius:20px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.1);color:#00BFA6;font-size:0.9rem;font-weight:500;transition:all 0.2s;cursor:pointer;text-decoration:none;display:inline-block;}
+.category-tag.active {background:#00BFA6;color:#0A0F14;}
 .main-wrapper {max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
 .featured-article {margin-bottom:4rem;border-radius:16px;overflow:hidden;background:rgba(0,191,166,0.05);border:1px solid rgba(0,191,166,0.2);}
 .featured-image {width:100%;height:420px;background-size:cover;background-position:center 20%;background-repeat:no-repeat;}
@@ -30,31 +35,42 @@ header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,
 .img-caption {font-size:0.82rem;color:#00BFA6;text-align:center;margin-top:-1.1rem;margin-bottom:2rem;font-style:italic;}
 .pull-quote {border-left:5px solid #FFB800;padding:1.1rem 1.6rem;margin:2.2rem 0;font-size:1.25em;font-style:italic;color:rgba(255,255,255,0.92);background:rgba(255,184,0,0.06);border-radius:0 10px 10px 0;}
 .box {background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
-.box h2 {color:#FFB800;margin-bottom:1rem;}
-.box p {color:rgba(255,255,255,0.85);margin-bottom:0.8em;}
+.box h2 {color:#FFB800;margin-top:0;margin-bottom:1rem;}
+.box p {color:rgba(255,255,255,0.85);margin-bottom:0.5em;}
 .sidebar {position:sticky;top:100px;height:fit-content;}
 .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
 .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
-.bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;}
+.bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;transition:all 0.2s;}
 .bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
 .countdown {font-size:1.3em;color:#FFB800;margin:1rem 0;font-weight:600;}
-.mollie-badge {max-width:180px;height:auto;opacity:0.9;margin-top:1rem;}
 .x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
 footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
 footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
 footer a:hover {color:#FFB800;}
-.article-actions {display:flex;gap:12px;margin:32px 0;padding:0;flex-wrap:wrap;justify-content:center;}
+.match-table {width:100%;border-collapse:collapse;margin:2rem 0;font-size:0.95rem;}
+.match-table th {text-align:left;padding:0.7rem 1rem;color:#00BFA6;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(0,191,166,0.2);}
+.match-table td {padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);}
+.match-table .score {color:#FFB800;font-weight:700;font-family:monospace;}
+.stay-awesome-stamp {text-align:center;margin:4rem 0 2rem;padding:3rem 2rem;border:2px solid rgba(255,184,0,0.3);border-radius:16px;background:rgba(255,184,0,0.04);}
+.stay-awesome-stamp p {font-size:1.2rem;color:rgba(255,255,255,0.75);font-style:italic;margin:0;line-height:1.7;}
+.article-actions {display:flex;gap:12px;margin:32px 0;flex-wrap:wrap;justify-content:center;}
 .action-btn {display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:transparent;border:2px solid rgba(0,191,166,0.4);border-radius:8px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:all 0.2s;cursor:pointer;}
 .action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
 .action-btn i {font-size:16px;color:#00BFA6;}
-.ai-disclosure {font-size:0.8rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);}
+.sources-block {margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(0,191,166,0.2);}
+.sources-block h3 {color:#00BFA6;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;}
+.sources-block ul {list-style:none;padding:0;margin:0;}
+.sources-block ul li {font-size:0.85rem;color:rgba(255,255,255,0.45);padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5;}
+.sources-block ul li a {color:#00BFA6;text-decoration:none;}
+.sources-block ul li a:hover {color:#FFB800;}
+.ai-disclosure {font-size:0.8rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);}
 @media (max-width:1024px) {
-.main-wrapper {grid-template-columns:1fr !important;padding:1.5rem 16px !important;gap:2rem !important;}
-.sidebar {position:static;}
-.featured-image {height:280px;}
+  .main-wrapper {grid-template-columns:1fr !important;padding:1.5rem 16px !important;gap:2rem !important;}
+  .sidebar {position:static;}
+  .featured-image {height:280px;}
 }
 @media (max-width:640px) {
-.hero h1 {font-size:2.4em;} .hero p {font-size:1.35em;}
+  .hero h1 {font-size:2.4em;} .hero p {font-size:1.35em;}
 }
 </style>
 </head>
@@ -67,7 +83,7 @@ footer a:hover {color:#FFB800;}
   </div>
   <nav class="nav">
     <a href="/">Home</a>
-    <a href="/blog.html" class="active">Commentary</a>
+    <a href="/blog.html">Commentary</a>
     <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
   </nav>
 </div>
@@ -75,7 +91,21 @@ footer a:hover {color:#FFB800;}
 
 <section class="hero">
   <h1>Stay Awesome.</h1>
-  <p>The verified story of Maja Chwalińska — and what it actually proves.</p>
+  <p>The verified story of Maja Chwalinska and what it actually proves.</p>
+</section>
+
+<section class="category-filter">
+  <div class="filter-container">
+    <span class="filter-label">Filter by:</span>
+    <a href="/blog.html" class="category-tag">All</a>
+    <a href="/blog.html?cat=investigation" class="category-tag">Investigation</a>
+    <a href="/blog.html?cat=analysis" class="category-tag">Analysis</a>
+    <a href="/blog.html?cat=debunked" class="category-tag">Debunked</a>
+    <a href="/blog.html?cat=verified" class="category-tag active">Verified</a>
+    <a href="/blog.html?cat=methodology" class="category-tag">Methodology</a>
+    <a href="/blog.html?cat=language" class="category-tag">Language</a>
+    <a href="/blog.html?cat=evidence" class="category-tag">Evidence-Based</a>
+  </div>
 </section>
 
 <div class="main-wrapper">
@@ -86,33 +116,33 @@ footer a:hover {color:#FFB800;}
 
   <div class="featured-content">
 
-    <span class="featured-category" style="background:#FFB800;color:#0A0F14;">Verified · Inspiration</span>
+    <span style="display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;background:#00BFA6;color:#0A0F14;">Verified &middot; Inspiration</span>
 
     <h2 style="margin-top:0.8rem;">Stay Awesome.</h2>
 
     <p style="font-size:0.95rem;color:rgba(255,255,255,0.55);margin-top:-0.5rem;margin-bottom:1.8rem;">
-      <strong style="color:#FFB800;">Verified Commentary</strong> | Echo Truth Hub | 6 June 2026 | 
-      By <span style="color:#00BFA6;font-weight:600;">Mímir Mímisbrunnr</span> • 8 min read
+      <strong style="color:#FFB800;">Verified Commentary</strong> | Echo Truth Hub | 6 June 2026 |
+      By <span style="color:#00BFA6;font-weight:600;">M&iacute;mir M&iacute;misbrunnr</span> &bull; 8 min read
     </p>
 
     <div class="pull-quote">
       Stay Awesome is not a slogan. It is a discipline. It is what you do at six in the morning on a court that nobody is filming, with a knee that is telling you no, in a year when the ranking says you are going nowhere. It is the decision, made quietly and repeatedly, to keep being true to what you are.
     </div>
 
-    <p>Maja Chwalińska did not arrive at Roland Garros 2026 as a story. She arrived as a 24-year-old ranked 114th in the world, with no apparel sponsor, no guaranteed income, and no certainty she could cover the cost of staying in Paris long enough to lose in the first round.</p>
+    <p>Maja Chwalinska did not arrive at Roland Garros 2026 as a story. She arrived as a 24-year-old ranked 114th in the world, with no apparel sponsor, no guaranteed income, and no certainty she could cover the cost of staying in Paris long enough to lose in the first round.</p>
 
-    <img src="maja-paris-arrival.jpg" alt="Maja Chwalińska ahead of the 2026 Roland Garros qualifying rounds">
-    <p class="img-caption">Maja Chwalińska ahead of the 2026 Roland Garros qualifying rounds.</p>
+    <img src="maja-paris-arrival.jpg" alt="Maja Chwalinska ahead of the 2026 Roland Garros qualifying rounds">
+    <p class="img-caption">Maja Chwalinska ahead of the 2026 Roland Garros qualifying rounds.</p>
 
     <h2>The Hours Nobody Films</h2>
 
-    <p>Before Paris, there were years. Not a clean narrative arc of setbacks and comebacks, but the actual texture of a career built on the lower circuits — the ITF events in regional sports halls, the grinding administrative reality of booking your own travel and managing your own costs while trying to perform at the highest level of a global sport.</p>
+    <p>Before Paris, there were years. Not a clean narrative arc of setbacks and comebacks, but the actual texture of a career built on the lower circuits: ITF events in regional sports halls, the grinding administrative reality of booking your own travel and managing your own costs while trying to perform at the highest level of a global sport.</p>
 
-    <p>In 2019, Chwalińska was eighteen. She had a ranking. She had a future. She also had, beginning to accumulate beneath the surface, a depression that would eventually make getting out of bed the day's primary challenge. After a Wimbledon qualifying exit in 2021 she stepped away. Not strategically. Because she had to.</p>
+    <p>In 2019, Chwalinska was eighteen. She had a ranking. She had a future. She also had, beginning to accumulate beneath the surface, a depression that would eventually make getting out of bed the day's primary challenge. After a Wimbledon qualifying exit in 2021 she stepped away. Not strategically. Because she had to.</p>
 
     <div class="pull-quote">
-      “I just wanted to enjoy my tennis again. To play without feeling like everything depended on every point.”<br>
-      <span style="font-size:0.85rem;color:#00BFA6;">— Maja Chwalińska, Roland Garros 2026 press conference</span>
+      &ldquo;I just wanted to enjoy my tennis again. To play without feeling like everything depended on every point.&rdquo;<br>
+      <span style="font-size:0.85rem;color:#00BFA6;">&mdash; Maja Chwalinska, Roland Garros 2026 press conference</span>
     </div>
 
     <p>She came back in 2022 with boxing and running as anchors. That same year her right knee required surgery. The comeback paused again. The ranking slid.</p>
@@ -124,103 +154,111 @@ footer a:hover {color:#FFB800;}
 
     <h2>The System as It Actually Works</h2>
 
-    <p>Professional tennis has a structural problem it does not advertise. Prize money for Grand Slam tournaments is disbursed at the end of the tournament. A player who enters qualifying, wins three matches, enters the main draw, and then loses in the first round will collect their cheque weeks later — while already paying for accommodation in one of the most expensive cities in the world.</p>
+    <p>Professional tennis has a structural problem it does not advertise. Prize money for Grand Slam tournaments is disbursed at the end of the tournament. A player who enters qualifying, wins three matches, enters the main draw, and then loses in the first round will collect their cheque weeks later, while already paying for accommodation in one of the most expensive cities in the world.</p>
 
-    <p>Chwalińska mentioned this openly after her third-round win over Maria Sakkari. She had no apparel sponsor. The hotel was expensive. A Polish sports drink brand called Oshee quietly covered the bill. She now wears their logo on court.</p>
+    <p>Chwalinska mentioned this openly after her third-round win over Maria Sakkari. She had no apparel sponsor. The hotel was expensive. A Polish sports drink brand called Oshee quietly covered the bill. She now wears their logo on court. The transaction was private and voluntary. There is no structural mechanism that produces this outcome.</p>
 
     <div class="box">
-      <h2 style="margin-top:0;">Nine Matches. One Set Dropped.</h2>
-      <p><strong>114</strong> — World ranking on arrival<br>
-      <strong>9</strong> — Consecutive wins in Paris<br>
-      <strong>1</strong> — Set dropped all tournament<br>
-      <strong>€1.4M</strong> — Finalist prize (career earnings exceeded)</p>
+      <h2>The Numbers</h2>
+      <p><strong>114</strong> &mdash; World ranking on arrival</p>
+      <p><strong>9</strong> &mdash; Consecutive wins in Paris</p>
+      <p><strong>1</strong> &mdash; Set dropped across the entire tournament</p>
+      <p><strong>&euro;1.4M</strong> &mdash; Finalist prize. Career earnings exceeded in two weeks.</p>
     </div>
 
     <h2>Nine Matches. One Set Dropped.</h2>
 
     <p>What happened on the clay of Roland Garros 2026 is statistically extraordinary.</p>
 
-    <table class="match-table" style="width:100%;border-collapse:collapse;margin:2rem 0;font-family:system-ui,sans-serif;font-size:0.95rem;">
+    <table class="match-table">
       <thead>
         <tr>
-          <th style="text-align:left;padding:0.7rem 1rem;color:#00BFA6;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(0,191,166,0.2);">Round</th>
-          <th style="text-align:left;padding:0.7rem 1rem;color:#00BFA6;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(0,191,166,0.2);">Opponent</th>
-          <th style="text-align:left;padding:0.7rem 1rem;color:#00BFA6;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid rgba(0,191,166,0.2);">Score</th>
+          <th>Round</th>
+          <th>Opponent</th>
+          <th>Score</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Qualifying R1–R3</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">—</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">Won</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Main Draw R1</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Zheng Qinwen (No. 3)</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">Won</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">R2</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Elise Mertens</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">Won</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">R3</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Maria Sakkari</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">Won</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">R4</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Diane Parry</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">Won</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">QF</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Anna Kalinskaya</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">7-6(3) 6-3</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">SF</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Diana Shnaider</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">7-6(4) 6-4</td></tr>
-        <tr><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Final</td><td style="padding:0.75rem 1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,191,166,0.08);">Mirra Andreeva (No. 8)</td><td style="padding:0.75rem 1rem;color:#FFB800;font-weight:700;font-family:monospace;border-bottom:1px solid rgba(0,191,166,0.08);">6-3 6-2 (L)</td></tr>
+        <tr><td>Qualifying R1&ndash;R3</td><td>&mdash;</td><td class="score">Won</td></tr>
+        <tr><td>Main Draw R1</td><td>Zheng Qinwen (No. 3)</td><td class="score">Won</td></tr>
+        <tr><td>R2</td><td>Elise Mertens</td><td class="score">Won</td></tr>
+        <tr><td>R3</td><td>Maria Sakkari</td><td class="score">Won</td></tr>
+        <tr><td>R4</td><td>Diane Parry</td><td class="score">Won</td></tr>
+        <tr><td>QF</td><td>Anna Kalinskaya</td><td class="score">7-6(3) 6-3</td></tr>
+        <tr><td>SF</td><td>Diana Shnaider</td><td class="score">7-6(4) 6-4</td></tr>
+        <tr><td>Final</td><td>Mirra Andreeva (No. 8)</td><td class="score">6-3 6-2 (L)</td></tr>
       </tbody>
     </table>
 
     <p>She entered qualifying ranked 114th. She is the first qualifier in French Open history to reach the women's singles final. She lost the final to Mirra Andreeva 6-3, 6-2.</p>
 
-    <img src="maja-on-court.jpg" alt="Chwalińska on court at Roland Garros 2026">
-    <p class="img-caption">Chwalińska on court at Roland Garros 2026.</p>
+    <img src="maja-on-court.jpg" alt="Chwalinska on court at Roland Garros 2026">
+    <p class="img-caption">Chwalinska on court at Roland Garros 2026.</p>
 
     <h2>She Has Already Won</h2>
 
-    <p>The final has been played. Mirra Andreeva defeated Chwalińska 6-3, 6-2. It does not change what has already happened.</p>
+    <p>The final has been played. Mirra Andreeva defeated Chwalinska 6-3, 6-2. It does not change what has already happened.</p>
 
-    <p>Chwalińska's career earnings heading into this tournament were approximately $864,000. The finalist's cheque is €1.4 million. She earned more in two weeks than in her entire professional career before this tournament.</p>
+    <p>Chwalinska's career earnings heading into this tournament were approximately $864,000. The finalist's cheque is &euro;1.4 million. She earned more in two weeks than in her entire professional career before this tournament.</p>
 
-    <p>The money is real. But the victory was the decision, made in 2021, not to stop. The victory was getting out of bed when depression made that case against it. The victory was returning after knee surgery with a different relationship to pressure — playing because she loves it.</p>
+    <p>The money is real. But the victory was the decision, made in 2021, not to stop. The victory was getting out of bed when depression made that case against it. The victory was returning after knee surgery with a different relationship to pressure: playing because she loves it, not because she is terrified of what happens if she doesn't.</p>
 
     <div class="pull-quote">
-      “I feel free on court now. That's the biggest change.”<br>
-      <span style="font-size:0.85rem;color:#00BFA6;">— Maja Chwalińska, Roland Garros 2026</span>
+      &ldquo;I feel free on court now. That's the biggest change.&rdquo;<br>
+      <span style="font-size:0.85rem;color:#00BFA6;">&mdash; Maja Chwalinska, Roland Garros 2026</span>
     </div>
+
+    <p>Freedom is the word. Not freedom from pressure. Freedom from the specific tyranny of self-doubt that turns a sport into a verdict on your worth as a person. That is the thing she navigated. That is the thing that cannot be tracked by a ranking algorithm.</p>
 
     <h2>171,000 Views</h2>
 
-    <p>A post appeared on X on the morning of June 6, 2026 telling her story. By mid-morning it had 171,000 views.</p>
+    <p>A post appeared on X on the morning of June 6, 2026 telling her story. By mid-morning it had 171,000 views, 7,500 likes, 1,700 retweets. People were consuming it from their phones, from their sofas, from behind the screens where most of modern life is now conducted.</p>
 
-    <p>171,000 people watched a story about a person who got off the sofa and went to Paris. Who spent years doing the unglamorous work that produces the result everyone is now applauding.</p>
+    <p>171,000 people watched a story about a person who got off the sofa and went to Paris. Who spent years doing the unglamorous work that produces the result everyone is now applauding. Who navigated a system that was not designed to support her and still found a way to compete at its highest level.</p>
 
-    <p>Stay Awesome is not a slogan. It is what Maja Chwalińska has been doing, documented and verified, since before anyone knew her name.</p>
+    <p>Stay Awesome is not a motivational poster. It is a description of a decision made privately, repeatedly, in the absence of applause. It is what Maja Chwalinska has been doing, documented and verified, since before anyone knew her name.</p>
 
     <img src="maja-celebration.jpg" alt="The moment the crowd sees">
     <p class="img-caption">The moment the crowd sees. The years before it remain invisible. That is the point.</p>
 
     <h2>The Northstar</h2>
 
-    <p>Chwalińska's story is not exceptional because she reached a Grand Slam final. It is exceptional because she almost didn’t continue. Because the decision to continue was made without the reward she is now receiving.</p>
+    <p>Chwalinska's story is not exceptional because she reached a Grand Slam final. It is exceptional because she almost didn't continue. Because the decision to continue was made without the reward she is now receiving. Because the conviction that she belonged on a tennis court preceded any external confirmation that she was right.</p>
 
-    <p>That is the northstar. The internal knowledge, maintained under pressure, that what you are doing is worth doing.</p>
+    <p>That is the northstar. The internal knowledge, maintained under pressure, that what you are doing is worth doing. That you are expressing something true about who you are.</p>
 
     <p>The final score has been written. It is a data point. The story is already complete.</p>
 
-    <div class="stay-awesome-stamp" style="text-align:center;margin:4rem 0 2rem;padding:3rem 2rem;border:2px solid rgba(255,184,0,0.3);border-radius:16px;background:rgba(255,184,0,0.04);position:relative;">
-      <p style="font-size:1.2rem;color:rgba(255,255,255,0.75);font-style:italic;margin:0;line-height:1.7;">The hours nobody films. The decisions nobody witnesses. The conviction maintained in the absence of applause.<br><br>That is Stay Awesome. That is Maja Chwalińska.</p>
+    <div class="stay-awesome-stamp">
+      <p>The hours nobody films. The decisions nobody witnesses. The conviction maintained in the absence of applause.<br><br>
+      That is Stay Awesome. That is Maja Chwalinska.</p>
     </div>
 
-    <!-- UPDATED SOURCE LIST -->
-    <div class="box">
-      <h2>Primary Sources</h2>
-      <ul>
-        <li>WTA Official &amp; Roland Garros Official — Tournament results and draw, Roland Garros 2026 (including final: Andreeva def. Chwalińska 6-3, 6-2)</li>
-        <li>Chwalińska press conference transcripts — Roland Garros 2026 (mental health break 2021, knee surgery 2022, Oshee hotel support, “I feel free on court now”)</li>
-        <li>Reuters, BBC Sport, Independent, CNN — Reporting on Chwalińska’s run to the final and the final result</li>
-        <li>WTA career earnings records — Chwalińska prior career total ~$864,000</li>
-        <li>Open Era Grand Slam records — First qualifier to reach French Open women’s singles final</li>
-        <li>Oshee — Confirmed hotel support during the tournament (multiple press reports + Chwalińska public statement)</li>
-      </ul>
-    </div>
+    <p style="font-size:0.85rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:1rem;">#TruthWithTeeth</p>
 
-    <div class="ai-disclosure">Images credited where press photography was used.</div>
+    <div class="ai-disclosure">All editorial illustrations are AI-generated unless otherwise indicated.</div>
 
     <div class="article-actions">
-      <button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
-      <button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
-      <button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
-      <button class="action-btn" onclick="shareArticle('reddit')"><i class="fab fa-reddit"></i><span>Reddit</span></button>
+      <a class="action-btn" href="#" onclick="shareArticle('twitter');return false;"><i class="fab fa-x-twitter"></i> Share on X</a>
+      <a class="action-btn" href="#" onclick="shareArticle('bluesky');return false;"><i class="fas fa-cloud"></i> Bluesky</a>
+      <a class="action-btn" href="#" onclick="shareArticle('mastodon');return false;"><i class="fab fa-mastodon"></i> Mastodon</a>
+      <a class="action-btn" href="#" onclick="shareArticle('linkedin');return false;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="action-btn" href="#" onclick="shareArticle('reddit');return false;"><i class="fab fa-reddit"></i> Reddit</a>
+      <a class="action-btn" href="#" onclick="shareArticle('telegram');return false;"><i class="fab fa-telegram"></i> Telegram</a>
+    </div>
+
+    <div class="sources-block">
+      <h3>Primary Sources</h3>
+      <ul>
+        <li>WTA Official — Maja Chwalinska player profile and match results, Roland Garros 2026 — <a href="https://www.wtatennis.com" target="_blank">wtatennis.com</a></li>
+        <li>Roland Garros Official — Tournament draw and results, French Open 2026 (final: Andreeva def. Chwalinska 6-3, 6-2) — <a href="https://www.rolandgarros.com" target="_blank">rolandgarros.com</a></li>
+        <li>Chwalinska press conference transcripts — Post-Sakkari win (R3), post-Shnaider (SF), post-final. Roland Garros 2026. On file with ETH.</li>
+        <li>Reuters, BBC Sport, The Guardian, CNN, NYT The Athletic — Reporting on Chwalinska's run, Oshee hotel intervention, mental health backstory. June 2026.</li>
+        <li>Roland Garros 2026 prize money — Finalist &euro;1,400,000; Winner &euro;2,800,000. Official tournament documentation — <a href="https://www.rolandgarros.com" target="_blank">rolandgarros.com</a></li>
+        <li>WTA career earnings — Chwalinska prior career total ~$864,000 — <a href="https://www.wtatennis.com" target="_blank">wtatennis.com</a></li>
+        <li>Open Era Grand Slam qualifier records — First qualifier to reach French Open women's singles final. Second qualifier to reach any Grand Slam final after Raducanu (US Open 2021) — WTA / ITF historical records — <a href="https://www.itftennis.com" target="_blank">itftennis.com</a></li>
+        <li>Oshee — Polish sports drink brand; confirmed hotel support. Multiple press reports corroborated by Chwalinska's public statement — <a href="https://www.oshee.eu" target="_blank">oshee.eu</a></li>
+      </ul>
     </div>
 
   </div>
@@ -233,7 +271,7 @@ footer a:hover {color:#FFB800;}
     <div class="bounty-card">
       <p>Found an error, a missing source, or stronger evidence? Submit it. If the community agrees within 72 hours, you earn the bounty.</p>
       <div class="countdown" id="countdown">Loading...</div>
-      <a href="https://echotruthhub.com" class="bounty-btn">Submit Evidence &rarr;</a>
+      <a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank">Submit Evidence &rarr;</a>
     </div>
   </div>
   <div class="sidebar-section">
@@ -246,18 +284,22 @@ footer a:hover {color:#FFB800;}
 </div>
 
 <footer>
-  <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+  <p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+  <p><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
 </footer>
 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
 function shareArticle(platform) {
   var url = encodeURIComponent(window.location.href);
-  var text = encodeURIComponent('Stay Awesome. The verified story of Maja Chwalińska. @EchoTruthHub');
+  var text = encodeURIComponent('Stay Awesome. The verified story of Maja Chwalinska. @EchoTruthHub #StayAwesome #RolandGarros');
   var map = {
-    twitter: 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url,
-    bluesky: 'https://bsky.app/intent/compose?text=' + text + '%20' + url,
+    twitter:  'https://twitter.com/intent/tweet?text=' + text + '&url=' + url,
+    bluesky:  'https://bsky.app/intent/compose?text=' + text + '%20' + url,
+    mastodon: 'https://mastodon.social/share?text=' + text + '%20' + url,
     linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
-    reddit: 'https://reddit.com/submit?url=' + url + '&title=Stay+Awesome+Maja+Chwalinska'
+    reddit:   'https://reddit.com/submit?url=' + url + '&title=Stay+Awesome+Maja+Chwalinska',
+    telegram: 'https://t.me/share/url?url=' + url + '&text=' + text
   };
   if (map[platform]) window.open(map[platform], '_blank');
 }
