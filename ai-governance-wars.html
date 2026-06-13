@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Governance Wars Begin: Two Directives, One Week, One Structural Failure | Echo Truth Hub</title>
+<meta name="description" content="Two capability denial events in four days. The US applies export control logic to a frontier AI model. The EU's DMA blocks Siri AI in Europe. Neither regulator was in the room where the other's decision was made. Mímir documents the structural failure both reveal.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.8;}
+header{padding:2rem 0;border-bottom:1px solid rgba(0,191,166,0.2);}
+.header-container{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.title-block a{text-decoration:none;color:#fff;}
+.logo{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:2.2rem;letter-spacing:2px;color:#fff;}
+.tagline{font-size:0.85rem;color:#00BFA6;margin-top:0.2rem;font-family:monospace;}
+.nav a{color:#00BFA6;text-decoration:none;margin:0 1rem;font-weight:600;font-family:monospace;font-size:0.9rem;transition:color 0.2s;}
+.nav a:hover,.nav a.active{color:#FFB800;}
+
+/* HERO */
+.hero-banner{position:relative;width:100%;max-width:1400px;margin:0 auto;height:520px;overflow:hidden;background:#04080b;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.3) saturate(0.5);z-index:1;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,184,0,0.08) 0%,transparent 55%),linear-gradient(to bottom,rgba(4,8,11,0.1) 0%,rgba(4,8,11,0.95) 100%);z-index:2;}
+.hero-scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);z-index:3;pointer-events:none;}
+
+.hero-tag{position:absolute;font-family:monospace;font-size:0.68rem;padding:0.28rem 0.65rem;border-radius:3px;border:1px solid;z-index:6;opacity:0;animation:tagIn 0.5s ease forwards;}
+@keyframes tagIn{to{opacity:0.85;}}
+.hero-tag.warn{color:#ff6b6b;border-color:rgba(255,107,107,0.45);background:rgba(255,107,107,0.08);}
+.hero-tag.info{color:#00BFA6;border-color:rgba(0,191,166,0.35);background:rgba(0,191,166,0.06);}
+.hero-tag.gold{color:#FFB800;border-color:rgba(255,184,0,0.35);background:rgba(255,184,0,0.06);}
+
+.hero-terminal{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:min(640px,92%);background:rgba(4,10,14,0.97);border:1px solid rgba(255,184,0,0.4);border-radius:8px;overflow:hidden;box-shadow:0 0 50px rgba(255,184,0,0.08),0 20px 60px rgba(0,0,0,0.75);z-index:7;animation:termUp 0.7s ease forwards;}
+@keyframes termUp{from{opacity:0;transform:translateX(-50%) translateY(10px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+.terminal-bar{background:rgba(255,184,0,0.06);padding:0.52rem 1rem;display:flex;align-items:center;gap:0.45rem;border-bottom:1px solid rgba(255,184,0,0.15);}
+.t-dot{width:10px;height:10px;border-radius:50%;}
+.t-dot.r{background:#ff5f57;}.t-dot.y{background:#febc2e;}.t-dot.g{background:#28c840;}
+.terminal-title{font-family:monospace;font-size:0.7rem;color:rgba(255,255,255,0.4);margin-left:0.5rem;}
+.terminal-body{padding:0.95rem 1.4rem;font-family:monospace;font-size:0.77rem;line-height:2;}
+.tl{display:block;}
+.tl-k{color:#FFB800;}.tl-w{color:#ff6b6b;}.tl-g{color:#00BFA6;}.tl-d{color:rgba(255,255,255,0.35);}
+.t-cursor{display:inline-block;width:7px;height:13px;background:#FFB800;vertical-align:middle;animation:blink 1s step-end infinite;}
+@keyframes blink{50%{opacity:0;}}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,#0A0F14);z-index:8;}
+
+/* FILTER */
+.category-filter{background:rgba(0,191,166,0.05);padding:1.2rem 2rem;border-bottom:1px solid rgba(0,191,166,0.2);}
+.filter-container{max-width:1400px;margin:0 auto;display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+.filter-label{font-weight:600;color:#00BFA6;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;font-family:monospace;}
+.category-tag{padding:0.4rem 0.9rem;border-radius:20px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.08);color:#00BFA6;font-size:0.85rem;font-weight:500;transition:all 0.2s;cursor:pointer;text-decoration:none;display:inline-block;font-family:monospace;}
+.category-tag:hover,.category-tag.active{background:#00BFA6;color:#0A0F14;}
+
+.sticky-bounty-mobile{display:none;}
+.main-wrapper{max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
+.article-wrap{min-width:0;}
+
+/* ARTICLE HEADER */
+.article-header{margin-bottom:2rem;}
+.article-category-badge{display:inline-block;padding:0.35rem 0.8rem;border-radius:4px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:#FFB800;color:#0A0F14;font-family:monospace;margin-bottom:1.2rem;}
+.article-header h1{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;color:#FFB800;letter-spacing:1px;margin-bottom:0.8rem;}
+.article-subtitle{font-size:1.15rem;color:#00BFA6;margin-bottom:1.5rem;font-style:italic;line-height:1.6;}
+.article-meta{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-top:1px solid rgba(0,191,166,0.2);border-bottom:1px solid rgba(0,191,166,0.2);margin-bottom:0.8rem;flex-wrap:wrap;}
+.article-meta span{font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);}
+.article-meta .author{color:#00BFA6;font-weight:600;}
+.read-time{display:flex;align-items:center;gap:0.4rem;font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);padding:0.6rem 0;margin-bottom:2rem;}
+.read-time i{color:#FFB800;}
+
+/* BODY */
+.article-body h2{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.85rem;color:#FFB800;letter-spacing:1px;margin:3rem 0 1.2rem;padding-top:1rem;border-top:1px solid rgba(0,191,166,0.2);}
+.article-body p{margin-bottom:1.4rem;color:#fff;font-size:1.05rem;line-height:1.85;}
+.article-body a{color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+.article-body a:hover{color:#FFB800;}
+
+/* COMPONENTS */
+.alert-box{background:rgba(255,184,0,0.07);border-left:4px solid #FFB800;border-radius:0 8px 8px 0;padding:1.4rem 1.8rem;margin:2.5rem 0;}
+.alert-box p{color:rgba(255,255,255,0.9);font-size:1rem;margin:0 0 0.5rem;}
+.alert-box p:last-child{margin:0;}
+.alert-box strong{color:#FFB800;}
+
+.pull-quote{border-left:5px solid #00BFA6;padding:1rem 2rem;margin:3rem 0;background:rgba(0,191,166,0.05);border-radius:0 8px 8px 0;}
+.pull-quote p{font-size:1.25rem;font-style:italic;color:#fff;line-height:1.5;margin:0;}
+
+.fact-box{background:rgba(0,191,166,0.05);border:1px solid rgba(0,191,166,0.2);border-radius:12px;padding:2rem;margin:2.5rem 0;}
+.fact-box h4{font-family:monospace;font-size:0.76rem;text-transform:uppercase;letter-spacing:1px;color:#00BFA6;margin-bottom:1.2rem;}
+.fact-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.6rem 0;border-bottom:1px solid rgba(0,191,166,0.1);gap:1.5rem;}
+.fact-row:last-child{border-bottom:none;}
+.fact-label{font-family:monospace;font-size:0.8rem;color:rgba(255,255,255,0.5);flex-shrink:0;}
+.fact-value{font-size:0.88rem;color:#fff;text-align:right;}
+.fact-value.warn{color:#ff6b6b;}.fact-value.ok{color:#00BFA6;}.fact-value.unknown{color:#FFB800;}
+
+.logic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2.5rem 0;}
+.logic-card{background:rgba(0,191,166,0.04);border:1px solid rgba(0,191,166,0.18);border-radius:10px;padding:1.6rem;}
+.logic-card.gold-border{border-color:rgba(255,184,0,0.3);background:rgba(255,184,0,0.04);}
+.logic-card h4{font-family:monospace;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:#00BFA6;margin-bottom:1rem;}
+.logic-card.gold-border h4{color:#FFB800;}
+.logic-card p{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.7;margin:0;}
+
+.timeline-box{background:rgba(0,191,166,0.04);border:1px solid rgba(0,191,166,0.2);border-radius:12px;padding:2rem;margin:2.5rem 0;}
+.timeline-box h4{font-family:monospace;font-size:0.76rem;text-transform:uppercase;letter-spacing:1px;color:#00BFA6;margin-bottom:1.5rem;}
+.timeline-item{display:flex;gap:1.5rem;padding:0.8rem 0;border-bottom:1px solid rgba(0,191,166,0.08);align-items:flex-start;}
+.timeline-item:last-child{border-bottom:none;}
+.timeline-date{font-family:monospace;font-size:0.78rem;color:#FFB800;flex-shrink:0;min-width:90px;}
+.timeline-text{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.6;}
+.timeline-text strong{color:#fff;}
+
+.actor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:2rem 0;}
+.actor-card{background:rgba(0,191,166,0.04);border:1px solid rgba(0,191,166,0.15);border-radius:8px;padding:1.2rem 1.4rem;}
+.actor-name{font-weight:700;font-size:0.9rem;color:#FFB800;margin-bottom:0.4rem;font-family:monospace;}
+.actor-status{font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.6;}
+
+.sources-box{background:rgba(0,191,166,0.08);border-left:5px solid #00BFA6;border-radius:0 12px 12px 0;padding:2rem 2.5rem;margin:2rem 0;}
+.sources-box h4{font-size:1.4rem;font-weight:700;color:#FFB800;margin-bottom:1.2rem;font-family:system-ui,-apple-system,sans-serif;}
+.sources-box ol{padding-left:1.5rem;}
+.sources-box li{font-size:0.92rem;color:rgba(255,255,255,0.9);margin-bottom:0.75rem;line-height:1.65;}
+.sources-box a{color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+
+.closing-cta{text-align:center;padding:3rem 2rem;background:#0d1f1c;border-radius:16px;border:1px solid rgba(0,191,166,0.35);margin:3rem 0;}
+.closing-cta h3{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.9rem;color:#FFB800;letter-spacing:1px;margin-bottom:1rem;}
+.closing-cta p{color:rgba(255,255,255,0.65);margin-bottom:1.5rem;font-size:0.95rem;}
+.cta-btn{display:inline-block;padding:0.9rem 2rem;background:#00BFA6!important;color:#0A0F14!important;text-decoration:none!important;border-radius:8px;font-weight:700;font-family:monospace;font-size:0.9rem;transition:all 0.2s;margin:0.4rem;border:none;-webkit-text-fill-color:#0A0F14;}
+.cta-btn:hover{background:#FFB800!important;color:#0A0F14!important;-webkit-text-fill-color:#0A0F14;}
+
+.article-actions{display:flex;gap:10px;margin:2.5rem 0;flex-wrap:wrap;}
+.action-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:transparent;border:1px solid rgba(0,191,166,0.3);border-radius:8px;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;transition:all 0.2s;cursor:pointer;font-family:monospace;}
+.action-btn:hover{background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-1px);}
+.action-btn i{font-size:14px;color:#00BFA6;}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:100px;height:fit-content;}
+.sidebar-section{background:rgba(0,191,166,0.08);padding:2rem;border-radius:16px;margin-bottom:2.5rem;border-left:4px solid #00BFA6;}
+.sidebar-section h3{font-size:1.5rem;color:#FFB800;text-align:center;margin-bottom:1rem;font-family:system-ui,-apple-system,sans-serif;font-weight:900;letter-spacing:1px;}
+.bounty-btn{display:inline-block;margin-top:1rem;padding:0.9rem 1.8rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;font-family:monospace;}
+.bounty-btn:hover{background:#FFB800;transform:translateY(-2px);}
+.x-logo{width:22px;height:22px;vertical-align:middle;margin-left:6px;opacity:0.9;}
+.x-feed-container{border-radius:12px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
+
+footer{margin:100px 0 50px;text-align:center;color:rgba(255,255,255,0.45);font-size:0.85rem;border-top:1px solid rgba(0,191,166,0.2);padding-top:2.5rem;font-family:monospace;}
+footer a{color:#00BFA6;margin:0 1rem;text-decoration:none;}
+footer a:hover{color:#FFB800;}
+
+@media(max-width:1024px){
+.main-wrapper{grid-template-columns:1fr;gap:2rem;}
+.sidebar{position:static;}
+.logic-grid{grid-template-columns:1fr;}
+.sticky-bounty-mobile{display:block;position:sticky;top:0;z-index:100;background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
+.sticky-bounty-mobile .bounty-compact{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.sticky-bounty-mobile .bounty-title{font-size:0.9rem;font-weight:700;color:#FFB800;margin:0 0 4px;font-family:monospace;}
+.sticky-bounty-mobile .bounty-meta-compact{display:flex;gap:12px;font-size:0.8rem;color:#00BFA6;font-family:monospace;}
+.sticky-bounty-mobile .bounty-btn{padding:8px 16px;font-size:0.85rem;white-space:nowrap;margin:0;}
+}
+@media(max-width:640px){
+.hero-banner{height:420px;}
+.article-header h1{font-size:2rem;}
+.hero-terminal{width:95%;}
+.terminal-body{font-size:0.68rem;}
+.fact-row{flex-direction:column;gap:0.2rem;}
+.fact-value{text-align:left;}
+.timeline-item{flex-direction:column;gap:0.3rem;}
+.actor-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-container">
+<div class="title-block">
+<a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
+</div>
+<nav class="nav">
+<a href="/">Home</a>
+<a href="/blog.html" class="active">Commentary</a>
+<a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+</nav>
+</div>
+</header>
+
+<div class="hero-banner">
+<!-- IMAGE RESERVE: Hero background. Suggested prompt for Grok Imagine: "Satellite view of Earth at night, lights of the US and Europe visible, overlaid with faint circuit-board grid lines in amber and teal. Dark, cinematic, geopolitical." Filename: ai-governance-wars-hero.jpg -->
+<img class="hero-bg-img" src="ai-governance-wars-hero.jpg" alt="AI governance geopolitical map">
+<div class="hero-overlay"></div>
+<div class="hero-scanlines"></div>
+<div class="hero-tag warn" style="top:11%;left:5%;animation-delay:0.2s;">JUNE 8 — SIRI AI: EU BLOCKED</div>
+<div class="hero-tag warn" style="top:22%;left:6%;animation-delay:0.5s;">JUNE 12 — FABLE 5 / MYTHOS 5: GLOBAL DISABLE</div>
+<div class="hero-tag info" style="top:14%;right:5%;animation-delay:0.4s;">EU COMPUTE SHARE: ~5%</div>
+<div class="hero-tag gold" style="top:27%;right:6%;animation-delay:0.7s;">US COMPUTE SHARE: ~74%</div>
+<div class="hero-tag info" style="bottom:42%;left:4%;animation-delay:0.9s;">BRUSSELS NOT IN EITHER ROOM</div>
+<div class="hero-tag gold" style="bottom:36%;right:5%;animation-delay:1.1s;">ANALYSIS: JUNE 13 2026</div>
+<div class="hero-terminal">
+<div class="terminal-bar">
+<div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+<span class="terminal-title">mimirsbrunnr@eth ~ ai-governance-audit.sh</span>
+</div>
+<div class="terminal-body">
+<span class="tl"><span class="tl-k">EVENT_1 :</span> Apple Siri AI — EU DMA blocks iOS/iPadOS launch</span>
+<span class="tl"><span class="tl-k">DATE :</span> 08 June 2026 | Source: Apple Newsroom</span>
+<span class="tl"><span class="tl-k">EVENT_2 :</span> <span class="tl-w">Anthropic Fable 5 + Mythos 5 — US export control directive</span></span>
+<span class="tl"><span class="tl-k">DATE :</span> <span class="tl-w">12 June 2026 | Source: Anthropic official statement</span></span>
+<span class="tl"><span class="tl-k">EFFECT :</span> Capability denial. Both events. EU users in both.</span>
+<span class="tl"><span class="tl-k">REGULATOR :</span> <span class="tl-w">Not in the room for either decision.</span></span>
+<span class="tl tl-d" style="margin-top:0.3rem;">// This is not bilateral. This is multipolar. Read the data.</span>
+<span class="tl"><span class="tl-k">STATUS :</span> <span class="tl-g">DOCUMENTED</span> <span class="t-cursor"></span></span>
+</div>
+</div>
+<div class="hero-fade"></div>
+</div>
+
+<section class="category-filter">
+<div class="filter-container">
+<span class="filter-label">Filter by:</span>
+<a href="/blog.html" class="category-tag">All</a>
+<a href="/blog.html" class="category-tag active">Analysis</a>
+<a href="/blog.html" class="category-tag">Investigation</a>
+<a href="/blog.html" class="category-tag">Debunked</a>
+<a href="/blog.html" class="category-tag">Verified</a>
+<a href="/blog.html" class="category-tag">Evidence-Based</a>
+</div>
+</section>
+
+<div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
+
+<div class="main-wrapper">
+<main class="article-wrap">
+
+<div class="article-header">
+<span class="article-category-badge">Analysis</span>
+<h1>The AI Governance Wars Begin</h1>
+<p class="article-subtitle">Two capability denial events in four days. Two different regulatory logics. One structural failure neither bloc has publicly named. The US treats frontier AI as a strategic export-controlled asset. The EU regulates products it no longer produces at the frontier. Brussels was not in the room where either decision was made.</p>
+<div class="article-meta">
+<span class="author">M&iacute;mir M&iacute;misbrunnr</span>
+<span>Analysis</span>
+<span>13 June 2026</span>
+<span>The Hague, Netherlands</span>
+</div>
+<div class="read-time"><i class="far fa-clock"></i> Estimated reading time: 12 minutes</div>
+</div>
+
+<div class="article-body" id="articleContent">
+
+<p>The week of June 8, 2026 produced two separate acts of capability denial affecting European users. One came from a US technology company refusing to comply with EU regulatory demands on terms it considers incompatible with device safety architecture. The other came from the US government, which suspended access to a specific frontier AI model globally, citing national security. Both decisions were made without European regulators in the room. Both landed on European users the same way: as missing features, or models that simply went dark.</p>
+
+<p>This article documents both events from primary sources, examines the structural logic each reveals, and names the broader geopolitical contest those logics are operating inside. The EU-US framing is the obvious one. It is also insufficient.</p>
+
+<div class="alert-box">
+<p><strong>Event 1 — June 8, 2026:</strong> Apple publishes official newsroom statement. Siri AI will not ship in the EU with iOS 27 or iPadOS 27. No timeline. EU regulators rejected all proposed solutions including Apple's Trusted System Agent intermediary framework and an offered 18-month phased rollout. Source: Apple Newsroom.</p>
+<p><strong>Event 2 — June 12, 2026:</strong> Anthropic publishes official statement. US government issues export control directive. Fable 5 and Mythos 5 suspended for all foreign nationals globally, including Anthropic's own foreign employees. All other Claude models unaffected. Source: Anthropic official statement.</p>
+</div>
+
+<!-- IMAGE SLOT 1 — Opening context
+     Suggested: Dario Amodei at a conference, or split-screen Apple/Anthropic logos on dark background
+     Filename: ai-gov-wars-intro.jpg | Dimensions: 1200x600 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="ai-gov-wars-intro.jpg" alt="[Image: Opening — add caption]" style="width:100%;display:block;max-height:420px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>The Facts: Event One</h2>
+
+<p>Apple's position, stated in its official newsroom release, is that the Digital Markets Act as interpreted by the European Commission requires any third-party AI assistant to receive direct, autonomous access to user data and device controls the moment Siri AI is made available in the EU. That means read and send messages, make purchases, access files, and execute actions across any installed application, without ongoing user visibility or control.</p>
+
+<p>Apple proposed a mitigation: a purpose-built intermediary called Trusted System Agent, which would give third-party virtual assistants equivalent capability access within a defined safety boundary. It also offered an 18-month phased rollout to allow regulatory review of that architecture. The European Commission declined both proposals.</p>
+
+<p>Craig Federighi, Apple SVP Software Engineering, in the official statement: "Their refusal to engage constructively on solutions that preserve privacy and security means we do not currently have a timeline for Siri AI's availability on iOS and iPadOS in the EU."</p>
+
+<p>The EU Commission's public response: the decision is Apple's and Apple's only. Nothing in the DMA prohibits new products.</p>
+
+<p>Both statements are factually accurate. They describe incompatible positions, not a factual dispute. The DMA requires interoperability. Apple states it cannot deliver interoperability at the level the Commission requires without compromising the safety architecture it considers non-negotiable. One of them is wrong about what the DMA requires in practice, or both are right and the regulation as written produces this outcome. Either reading is a problem for the Commission's stated objectives.</p>
+
+<!-- IMAGE SLOT 2 — DMA / Apple visual
+     Suggested: Apple product shot with EU regulatory imagery, or Siri interface grayed out
+     Filename: ai-gov-wars-dma.jpg | Dimensions: 1200x500 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="ai-gov-wars-dma.jpg" alt="[Image: DMA / Apple — add caption]" style="width:100%;display:block;max-height:380px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>The Facts: Event Two</h2>
+
+<p>Anthropic's official statement documents a directive arriving at 5:21pm ET on June 12 with no specific technical justification. Per reporting by Axios, the letter was signed by Commerce Secretary Howard Lutnick and sent directly to Anthropic CEO Dario Amodei. The legal instrument: a Commerce Department export control order requiring a license for the export, re-export, or domestic transfer of the Fable 5 and Mythos 5 models, with individually validated licenses for each application. Failure to comply carries financial and civil penalties.</p>
+
+<p>The triggering claim, per an administration official who spoke to Axios: another company had reported being able to jailbreak Mythos 5, alarming the administration about possible national security risks. The Wall Street Journal subsequently identified the source of the jailbreak research as Amazon researchers. This is notable: the directive that disabled Anthropic's models globally was triggered not by a government internal finding, but by a third-party competitive lab's security report passed to the Commerce Department.</p>
+
+<p>Axios further reported that the Trump administration had already attempted to get Anthropic to pause releasing Fable 5 and Mythos 5 before the models launched. Anthropic did not comply. The export control letter arrived afterward. The directive is therefore documented as a second-step escalation following a refused voluntary request, not a first-contact action.</p>
+
+<p>Anthropic's documented position on the technical claim: the capability described is widely available from other publicly deployed models including OpenAI's GPT-5.5, is used daily by defenders in the security industry, and does not represent Mythos-specific uplift. No universal jailbreak was found by any tester, including the US government, UK AISI, and multiple private third-party organisations that collectively ran thousands of hours of red-teaming prior to launch. Anthropic stated explicitly at launch that perfect jailbreak resistance is not achievable by any current model provider, and built its strategy around defense-in-depth rather than a claim of invulnerability.</p>
+
+<p>Anthropic is complying with the directive and disagrees with its basis: "We disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people. If this standard was applied across the industry, we believe it would essentially halt all new model deployments for all frontier model providers."</p>
+
+<!-- IMAGE SLOT 3 — Anthropic / export control visual
+     Suggested: Dario Amodei official photo, or Commerce Department building, or Fable 5 interface
+     Filename: ai-gov-wars-anthropic.jpg | Dimensions: 1200x500 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(255,184,0,0.2);">
+<img src="ai-gov-wars-anthropic.jpg" alt="[Image: Anthropic / export directive — add caption]" style="width:100%;display:block;max-height:380px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<div class="fact-box">
+<h4>Event Comparison — Documented Facts</h4>
+<div class="fact-row"><span class="fact-label">Apple / DMA trigger</span><span class="fact-value">Interoperability requirements Apple states cannot be met safely</span></div>
+<div class="fact-row"><span class="fact-label">Apple / DMA effect</span><span class="fact-value warn">Siri AI unavailable on iPhone and iPad in EU — no timeline</span></div>
+<div class="fact-row"><span class="fact-label">Anthropic directive author</span><span class="fact-value">Commerce Secretary Howard Lutnick — letter to CEO Dario Amodei</span></div>
+<div class="fact-row"><span class="fact-label">Triggering source</span><span class="fact-value warn">Amazon researchers — jailbreak claim passed to Commerce Dept</span></div>
+<div class="fact-row"><span class="fact-label">Prior escalation</span><span class="fact-value warn">Trump admin asked Anthropic to pause release — refused — directive followed</span></div>
+<div class="fact-row"><span class="fact-label">Anthropic / export control effect</span><span class="fact-value warn">Fable 5 + Mythos 5 disabled globally — all non-US users</span></div>
+<div class="fact-row"><span class="fact-label">Coordination between events</span><span class="fact-value ok">None documented. Independent actions.</span></div>
+<div class="fact-row"><span class="fact-label">EU in either decision</span><span class="fact-value warn">No</span></div>
+</div>
+
+<h2>Two Regulatory Logics, One Asymmetry</h2>
+
+<p>These events share no common legal mechanism and no evidence of coordination. What they share is a structural logic, and that logic is worth examining precisely.</p>
+
+<div class="logic-grid">
+<div class="logic-card">
+<h4>EU — DMA logic</h4>
+<p>Product regulation. Defines conduct rules for designated gatekeepers in the single market. Its instrument is access: it requires platform features to be interoperable and rival services to receive equivalent capability. The theory of harm it addresses is market foreclosure and competitive distortion. Applies to products regardless of where they are produced.</p>
+</div>
+<div class="logic-card gold-border">
+<h4>US — Export control logic</h4>
+<p>Strategic asset control. Restricts access by category of person on national security grounds. The legal framework is the same apparatus applied to semiconductors, encryption, and aerospace components. It is now applied to a specific high-capability AI model. The instrument inverts: rather than requiring access, it denies it, to specific categories of person, globally.</p>
+</div>
+</div>
+
+<p>The EU asks: who can access the platform's capabilities, and on what terms? The US asks: who is permitted to access this capability at all, and the answer for some categories is no.</p>
+
+<p>These are not variations on the same question. A jurisdiction applying DMA-style interoperability logic to dual-use AI capability is using a consumer market instrument on a strategic asset. A jurisdiction applying export control logic to a commercial AI product deployed to hundreds of millions of users is treating a consumer product as a weapons-adjacent system. Both create friction. The friction lands on users in jurisdictions that produced neither the product nor the security assessment.</p>
+
+<div class="pull-quote">
+<p>The US has now explicitly applied strategic export control logic to a specific commercial AI model. That is new. It establishes a precedent: frontier AI capability can be treated as a controlled national asset subject to the same access restriction mechanisms historically reserved for hardware with weapons applications.</p>
+</div>
+
+<!-- IMAGE SLOT 4 — Regulatory logic visual
+     Suggested: Split graphic — EU flag / DMA document left, US Capitol / Commerce Dept right
+     Filename: ai-gov-wars-logics.jpg | Dimensions: 1200x480 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="ai-gov-wars-logics.jpg" alt="[Image: Regulatory logics — add caption]" style="width:100%;display:block;max-height:360px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>This Is Not a Bilateral Contest</h2>
+
+<p>Framing this as EU versus US misses the actual contest. The AI race in mid-2026 is multipolar, and the positions of each actor determine what the EU's regulatory choices actually cost.</p>
+
+<div class="actor-grid">
+<div class="actor-card">
+<div class="actor-name">United States</div>
+<div class="actor-status">Frontier edge via massive scaling, capital concentration, innovation density. Labs now treating top models as strategic national assets subject to export control architecture.</div>
+</div>
+<div class="actor-card">
+<div class="actor-name">China</div>
+<div class="actor-status">Closing frontier gaps via open-weight efficiency, rapid iteration, cost-performance leadership. Parallel dominance in robotics manufacturing at scale Western competitors have not matched. DeepSeek, Qwen, Moonshot K2, ByteDance Doubao.</div>
+</div>
+<div class="actor-card">
+<div class="actor-name">Russia</div>
+<div class="actor-status">Sovereign model strategy under hardware constraints. GigaChat, YandexGPT. Supplying alternatives to markets seeking independence from Western AI infrastructure. Lower benchmark performance, high localisation value.</div>
+</div>
+<div class="actor-card">
+<div class="actor-name">European Union</div>
+<div class="actor-status">Regulatory authority over products it does not produce at the frontier. ~5% of global high-end AI compute. Mistral is the primary frontier contender. DMA, AI Act, GDPR define the bloc's instrument: conduct rules for others' platforms.</div>
+</div>
+</div>
+
+<p>The compute asymmetry is not contested. According to Epoch AI datasets, as cited in Bruegel analysis and a Federal Reserve note on AI competition in advanced economies (October 2025): the EU holds approximately 5% of global high-end AI compute capacity. The United States holds approximately 74-75%. In 2025, US hyperscalers were on course for aggregate AI and data centre investment approaching $400 billion. The EU's InvestAI initiative, announced February 2025, targeted €200 billion total mobilisation including a €20 billion Gigafactories programme. The Commission's own press release confirms these figures.</p>
+
+<p>Mistral, the most prominent European frontier contender, raised €1.7 billion in a 2025 Series C, followed by $830 million in debt financing in 2026 for compute expansion. OpenAI raised $122 billion in a single round in early 2026. These numbers are not comparable and do not become comparable through regulatory activity.</p>
+
+<!-- IMAGE SLOT 5 — Compute / geopolitical map
+     Suggested: World map with compute concentration visualised, or bar chart graphic US/China/EU
+     Filename: ai-gov-wars-compute.jpg | Dimensions: 1200x500 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="ai-gov-wars-compute.jpg" alt="[Image: Global compute map — add caption]" style="width:100%;display:block;max-height:400px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>The Inference Control Trajectory</h2>
+
+<p>The Anthropic directive is not a standalone event. It sits within a logical progression that the published scenario document <em>Europe 2031</em> — authored by Daan Juijn, Stan van Baarsen, Judith Dada, and others — traces in its speculative section from August 2026 onward. That section is clearly labelled as scenario, not prediction. The structural mechanism it identifies, however, is already operating.</p>
+
+<div class="timeline-box">
+<h4>The Export Control Precedent Chain — Traceable History</h4>
+<div class="timeline-item">
+<div class="timeline-date">2020</div>
+<div class="timeline-text"><strong>Huawei restriction.</strong> US invokes Foreign Direct Product Rule. Any product made anywhere using American technology or software subject to US jurisdiction. Huawei effectively cut off from TSMC supply chain.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2022–2024</div>
+<div class="timeline-text"><strong>NVIDIA chip export controls.</strong> Progressive restriction of H100 and A100 exports to China. Compute as strategic asset made explicit. ASML DUV machine export restrictions follow under US pressure on the Netherlands.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">June 12, 2026</div>
+<div class="timeline-text"><strong>Fable 5 / Mythos 5 directive.</strong> <span style="color:#ff6b6b;">First documented application of export control logic directly to a specific commercial AI model.</span> Foreign national access suspended globally. Model disabled for all customers for compliance. Disputed technical basis; compliance confirmed.</div>
+</div>
+</div>
+
+<p>The same legal and institutional apparatus used for semiconductors is now available for model access. The precedent is set. Whether the current directive is restored, disputed, or reversed, the mechanism has been demonstrated. A national security authority can suspend a commercial AI model's global access within hours of a finding that the model's developer itself disputes.</p>
+
+<p>The <em>Europe 2031</em> scenario traces one plausible consequence of this trajectory: progressive inference rationing by ally tier, EU firms losing competitive access to frontier capabilities as the gap between US compute buildout and EU compute buildout compounds. It is a scenario, not evidence. But the structural conditions it identifies are confirmed by the primary data already cited: compute dependency, no frontier production at scale, regulatory authority without productive leverage.</p>
+
+<h2>What Brussels Has Not Said</h2>
+
+<p>European users, businesses, hospitals, governments, and critical infrastructure operators running on US-origin frontier AI are operating on infrastructure whose availability is contingent on US national security judgment. That is not a hypothetical risk. It was demonstrated on June 12, 2026. The models are expected to be restored. The precedent is not.</p>
+
+<p>The EU's standard response to technology dependency is regulation. The DMA, the AI Act, the Data Act, GDPR — these are conduct rules for others' platforms. They generate compliance costs and deployment delays. They do not generate frontier models. The Apple/DMA outcome demonstrates the failure mode of regulatory authority without productive capacity: the regulator issues requirements, the platform holder cannot meet them without compromising architecture it considers essential, and EU users lose the capability.</p>
+
+<p>The one genuine point of EU leverage in the entire AI hardware stack is ASML — the Dutch company that manufactures EUV lithography equipment used to print cutting-edge chips, which no other company in the world currently produces. That leverage has already been tested: the US applied pressure on the Netherlands in 2023 to restrict ASML's DUV machine exports to China, and the Dutch ultimately complied. The <em>Europe 2031</em> scenario explores what happens when that lever is pulled further. The factual prologue of that document, covering January 2025 through June 2026, is grounded in documented events.</p>
+
+<p>The European Commission has not publicly addressed what the Anthropic export directive means for European digital sovereignty. The question it has not answered is direct: if the United States can suspend access to a frontier model for all foreign nationals globally, by directive, within hours, on a disputed technical finding, what does that mean for European institutions that have built operational dependencies on US-origin frontier AI?</p>
+
+<p>That silence is a position.</p>
+
+<!-- IMAGE SLOT 6 — Brussels / EU Parliament or sovereignty concept
+     Suggested: EU Parliament exterior, or empty meeting room, or map of Europe at night
+     Filename: ai-gov-wars-brussels.jpg | Dimensions: 1200x480 recommended -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="ai-gov-wars-brussels.jpg" alt="[Image: Brussels / EU sovereignty — add caption]" style="width:100%;display:block;max-height:360px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>The Argument Lands in Real Time</h2>
+
+<p>The structural argument in this article is not abstract. Within hours of the Anthropic directive becoming public on June 13, Geert Wilders, leader of the PVV and the largest party in the Dutch parliament, posted publicly on X: "I want my Anthropic Claude Fable 5 back. We must excellerate building our own. AI is more and more national sovereignty." The post, time-stamped 13:28 CET June 13, 2026, included a screenshot of the Claude model selector showing Fable 5 marked as currently unavailable. It reached 35,000 views within the hour.</p>
+
+<p>ETH does not endorse Wilders or his political programme. What the post documents is something precise: a named European political actor, the leader of a major governing coalition party in the Netherlands, publicly naming AI as a sovereignty matter in direct response to a US export control action, on the day it happened. The conclusion the article identifies as unspoken is being spoken, in Dutch politics, already.</p>
+
+<p>The European Commission has not responded. That asymmetry is also data.</p>
+
+<h2>Bottom Line</h2>
+
+<p>Two capability denial events in four days. Independent causes, convergent effect: EU users lose access to AI capabilities available in other jurisdictions.</p>
+
+<p>The Apple/DMA case: EU regulatory interpretation requires interoperability terms Apple states it cannot meet without compromising device safety architecture. EU users on iPhone and iPad have no Siri AI at launch. No timeline.</p>
+
+<p>The Anthropic/export control case: US national security directive suspends frontier model access for all foreign nationals globally. All non-US users lose Fable 5 and Mythos 5, pending resolution of a disputed technical finding.</p>
+
+<p>The macro structural observation: the US has applied export control logic to a commercial AI model. China is closing frontier gaps while building robotics manufacturing dominance at a scale Western competitors have not matched. Europe holds approximately 5% of global AI compute and regulatory authority over products it does not produce at the frontier. ASML — the one genuine point of EU hardware leverage in the AI supply chain — operates under constraints already tested by Washington.</p>
+
+<p>The AI governance contest has moved from policy papers and fines to actual capability denial and deployment friction. European users are already on the receiving end of both sides of it. How the bloc responds — more conduct regulation, or a serious reckoning with productive capacity — will determine whether it retains any room to negotiate its own position between the powers that are actually running the race.</p>
+
+<div class="article-actions">
+<button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+<button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+<button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
+<button class="action-btn" onclick="shareArticle('telegram')"><i class="fab fa-telegram"></i><span>Telegram</span></button>
+<button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+</div>
+
+<div class="sources-box">
+<h4>Sources &amp; Primary References</h4>
+<ol>
+<li>Apple Newsroom, 8 June 2026: <a href="https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/" target="_blank">Due to DMA, Siri AI delayed in EU for iOS 27 and iPadOS 27</a></li>
+<li>Anthropic official statement, 12 June 2026: <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">Statement on the US government directive to suspend access to Fable 5 and Mythos 5</a></li>
+<li>Axios, 12 June 2026 (Isenstadt &amp; Curi): <a href="https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" target="_blank">Scoop: Trump admin blocks foreign access to Anthropic's most powerful AI</a> — names Commerce Secretary Howard Lutnick as directive author; reports Amazon researchers as jailbreak source; confirms prior failed pause request</li>
+<li>Wall Street Journal, 12 June 2026: <a href="https://www.wsj.com/tech/ai/anthropic-halts-access-to-top-ai-models-after-u-s-ban-on-foreign-use-a4bca2cc" target="_blank">Anthropic Halts Access to Top AI Models After U.S. Ban on Foreign Use</a> — identifies Amazon researchers as jailbreak source</li>
+<li>Geert Wilders (@geertwilderspvv), 13 June 2026, 13:28 CET: public post on X — "I want my Anthropic Claude Fable 5 back. We must excellerate building our own. AI is more and more national sovereignty."</li>
+<li>Bruegel / Epoch AI: <a href="https://www.bruegel.org/analysis/europe-needs-strategy-close-artificial-intelligence-compute-gap" target="_blank">Europe needs a strategy to close the AI compute gap</a></li>
+<li>US Federal Reserve, October 2025: <a href="https://www.federalreserve.gov/econres/notes/feds-notes/the-state-of-ai-competition-in-advanced-economies-20251006.html" target="_blank">The State of AI Competition in Advanced Economies</a></li>
+<li>European Commission press release, February 2025: <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_25_467" target="_blank">InvestAI — mobilising €200 billion for AI in Europe (IP/25/467)</a></li>
+<li>ComSoc Technology Blog, November 2025: <a href="https://techblog.comsoc.org/2025/11/01/ai-spending-boom-accelerates-big-tech-to-invest-invest-an-aggregate-of-400-billion-in-2025-more-in-2026/" target="_blank">Big Tech aggregate AI spending approaching $400 billion in 2025</a></li>
+<li>Clay dossier on Mistral AI funding rounds: <a href="https://www.clay.com/dossier/mistral-ai-funding" target="_blank">Mistral AI funding history</a></li>
+<li>Europe 2031 scenario (factual prologue January 2025 — June 2026): <a href="https://europe2031.ai/" target="_blank">europe2031.ai</a> — Authors: Daan Juijn, Stan van Baarsen, Judith Dada, Lily Stelling, Philip Fox, Alex Petropoulos, Michiel Bakker</li>
+<li>Epoch AI trends data: <a href="https://epoch.ai/trends" target="_blank">epoch.ai/trends</a></li>
+</ol>
+</div>
+
+<div class="closing-cta">
+<h3>Read the Primary Sources</h3>
+<p>Both statements are publicly available. The compute data is traceable. The Europe 2031 scenario is open access. Read them in full and form your own assessment.</p>
+<a href="https://www.anthropic.com/news/fable-mythos-access" class="cta-btn" target="_blank">Anthropic Statement →</a>
+<a href="https://europe2031.ai/" class="cta-btn" target="_blank">Europe 2031 →</a>
+<a href="https://x.com/EchoTruthHub" class="cta-btn" target="_blank">Follow ETH on X →</a>
+</div>
+
+</div><!-- end article-body -->
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-section">
+<h3>&#127919; Current Bounty</h3>
+<div id="bounty-container">
+<p style="font-size:1rem;margin-bottom:1rem;color:rgba(255,255,255,0.7);">No active bounty at the moment.</p>
+<a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank">Follow on X</a>
+</div>
+</div>
+<div class="sidebar-section">
+<h3>Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+<div class="x-feed-container">
+<a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
+data-chrome="noheader nofooter noborders transparent"
+href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+</div>
+</div>
+</aside>
+</div><!-- end main-wrapper -->
+
+<footer>
+<p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+<p style="margin-top:0.8rem;"><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+function shareArticle(platform){
+const url=encodeURIComponent(window.location.href);
+const title=encodeURIComponent('The AI Governance Wars Begin: Two Directives, One Week, One Structural Failure | Echo Truth Hub');
+const hashtags='TruthWithTeeth';
+let shareUrl;
+switch(platform){
+case 'twitter':shareUrl=`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`;break;
+case 'bluesky':shareUrl=`https://bsky.app/intent/compose?text=${title}%20${url}`;break;
+case 'linkedin':shareUrl=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`;break;
+case 'telegram':shareUrl=`https://t.me/share/url?url=${url}&text=${title}`;break;
+}
+if(shareUrl)window.open(shareUrl,'_blank','width=600,height=400');
+}
+function copyLink(){
+navigator.clipboard.writeText(window.location.href).then(()=>{
+const btn=event.target.closest('.action-btn');
+const orig=btn.innerHTML;
+btn.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>';
+btn.style.background='#00BFA6';btn.style.color='#0A0F14';btn.style.borderColor='#00BFA6';
+setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';btn.style.borderColor='';},2000);
+});
+}
+</script>
+</body>
+</html>
