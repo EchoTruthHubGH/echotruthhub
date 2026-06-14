@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Months Ago, Forever | Echo Truth Hub</title>
+<meta name="description" content="A supplement to The AI Governance Wars Begin. The June 12 export control directive on Fable 5 and Mythos 5 wasn't the start of anything. It was month four of a domestic fight between Anthropic and the Pentagon, fought entirely in public.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.8;}
+header{padding:2rem 0;border-bottom:1px solid rgba(0,191,166,0.2);}
+.header-container{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.title-block a{text-decoration:none;color:#fff;}
+.logo{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:2rem;letter-spacing:1px;color:#fff;}
+.tagline{font-size:0.85rem;color:#00BFA6;margin-top:0.2rem;font-family:monospace;}
+.nav a{color:#00BFA6;text-decoration:none;margin:0 1rem;font-weight:600;font-family:monospace;font-size:0.9rem;transition:color 0.2s;}
+.nav a:hover,.nav a.active{color:#FFB800;}
+
+/* HERO — simpler than main investigation pieces */
+.hero-banner{position:relative;width:100%;max-width:1400px;margin:0 auto;height:360px;overflow:hidden;background:#04080b;}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.32) saturate(0.65);z-index:1;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,191,166,0.07) 0%,transparent 55%),linear-gradient(to bottom,rgba(4,8,11,0.1) 0%,rgba(4,8,11,0.95) 100%);z-index:2;}
+.hero-scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);z-index:3;pointer-events:none;}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,#0A0F14);z-index:4;}
+
+.main-wrapper{max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
+.article-wrap{min-width:0;}
+
+.article-header{margin-bottom:2rem;}
+.supplement-tag{display:inline-block;padding:0.35rem 0.8rem;border-radius:4px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:rgba(0,191,166,0.12);color:#00BFA6;border:1px solid rgba(0,191,166,0.35);font-family:monospace;margin-bottom:1.2rem;}
+.article-header h1{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1.08;color:#FFB800;letter-spacing:1px;margin-bottom:0.8rem;}
+.article-subtitle{font-size:1.05rem;color:#00BFA6;margin-bottom:1.5rem;font-style:italic;line-height:1.6;}
+.article-meta{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-top:1px solid rgba(0,191,166,0.2);border-bottom:1px solid rgba(0,191,166,0.2);margin-bottom:0.8rem;flex-wrap:wrap;}
+.article-meta span{font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);}
+.article-meta .author{color:#00BFA6;font-weight:600;}
+.read-time{display:flex;align-items:center;gap:0.4rem;font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);padding:0.6rem 0;margin-bottom:2rem;}
+.read-time i{color:#FFB800;}
+
+.related-box{background:rgba(255,184,0,0.05);border:1px solid rgba(255,184,0,0.25);border-radius:10px;padding:1.2rem 1.6rem;margin-bottom:2.5rem;font-size:0.92rem;}
+.related-box a{color:#FFB800;text-decoration:underline;text-decoration-color:rgba(255,184,0,0.4);font-weight:600;}
+.related-box a:hover{color:#00BFA6;}
+
+.article-body h2{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.7rem;color:#FFB800;letter-spacing:1px;margin:2.6rem 0 1.1rem;padding-top:0.9rem;border-top:1px solid rgba(0,191,166,0.2);}
+.article-body p{margin-bottom:1.4rem;color:#fff;font-size:1.05rem;line-height:1.85;}
+.article-body a{color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+.article-body a:hover{color:#FFB800;}
+
+.alert-box{background:rgba(255,184,0,0.07);border-left:4px solid #FFB800;border-radius:0 8px 8px 0;padding:1.4rem 1.8rem;margin:1.5rem 0 2.5rem;}
+.alert-box p{color:rgba(255,255,255,0.9);font-size:1rem;margin:0 0 0.5rem;}
+.alert-box p:last-child{margin:0;}
+.alert-box strong{color:#FFB800;}
+.alert-box .src{font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.6rem;}
+
+.pull-quote{border-left:5px solid #00BFA6;padding:1rem 2rem;margin:2.5rem 0;background:rgba(0,191,166,0.05);border-radius:0 8px 8px 0;}
+.pull-quote p{font-size:1.2rem;font-style:italic;color:#fff;line-height:1.5;margin:0;}
+
+.timeline-box{background:rgba(0,191,166,0.04);border:1px solid rgba(0,191,166,0.2);border-radius:12px;padding:2rem;margin:2.5rem 0;}
+.timeline-box h4{font-family:monospace;font-size:0.76rem;text-transform:uppercase;letter-spacing:1px;color:#00BFA6;margin-bottom:1.5rem;}
+.timeline-item{display:flex;gap:1.5rem;padding:0.8rem 0;border-bottom:1px solid rgba(0,191,166,0.08);align-items:flex-start;}
+.timeline-item:last-child{border-bottom:none;}
+.timeline-date{font-family:monospace;font-size:0.78rem;color:#FFB800;flex-shrink:0;min-width:90px;}
+.timeline-text{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.6;}
+.timeline-text strong{color:#fff;}
+.timeline-item.flash .timeline-text strong{color:#ff6b6b;}
+
+.sources-box{background:rgba(0,191,166,0.08);border-left:5px solid #00BFA6;border-radius:0 12px 12px 0;padding:2rem 2.5rem;margin:2rem 0;}
+.sources-box h4{font-size:1.4rem;font-weight:700;color:#FFB800;margin-bottom:1.2rem;font-family:system-ui,-apple-system,sans-serif;}
+.sources-box ol{padding-left:1.5rem;}
+.sources-box li{font-size:0.92rem;color:rgba(255,255,255,0.9);margin-bottom:0.75rem;line-height:1.65;}
+.sources-box a{color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+
+.closing-cta{text-align:center;padding:2.5rem 2rem;background:#0d1f1c;border-radius:16px;border:1px solid rgba(0,191,166,0.35);margin:3rem 0;}
+.closing-cta h3{font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.7rem;color:#FFB800;letter-spacing:1px;margin-bottom:1rem;}
+.closing-cta p{color:rgba(255,255,255,0.65);margin-bottom:1.5rem;font-size:0.95rem;}
+.cta-btn{display:inline-block;padding:0.9rem 2rem;background:#00BFA6!important;color:#0A0F14!important;text-decoration:none!important;border-radius:8px;font-weight:700;font-family:monospace;font-size:0.9rem;transition:all 0.2s;margin:0.4rem;border:none;-webkit-text-fill-color:#0A0F14;}
+.cta-btn:hover{background:#FFB800!important;color:#0A0F14!important;-webkit-text-fill-color:#0A0F14;}
+
+.article-actions{display:flex;gap:10px;margin:2.5rem 0;flex-wrap:wrap;}
+.action-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:transparent;border:1px solid rgba(0,191,166,0.3);border-radius:8px;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;transition:all 0.2s;cursor:pointer;font-family:monospace;}
+.action-btn:hover{background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-1px);}
+.action-btn i{font-size:14px;color:#00BFA6;}
+
+.sidebar{position:sticky;top:100px;height:fit-content;}
+.sidebar-section{background:rgba(0,191,166,0.08);padding:2rem;border-radius:16px;margin-bottom:2.5rem;border-left:4px solid #00BFA6;}
+.sidebar-section h3{font-size:1.5rem;color:#FFB800;text-align:center;margin-bottom:1rem;font-family:system-ui,-apple-system,sans-serif;font-weight:900;letter-spacing:1px;}
+.bounty-btn{display:inline-block;margin-top:1rem;padding:0.9rem 1.8rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;font-family:monospace;}
+.bounty-btn:hover{background:#FFB800;transform:translateY(-2px);}
+.x-logo{width:22px;height:22px;vertical-align:middle;margin-left:6px;opacity:0.9;}
+.x-feed-container{border-radius:12px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
+
+footer{margin:100px 0 50px;text-align:center;color:rgba(255,255,255,0.45);font-size:0.85rem;border-top:1px solid rgba(0,191,166,0.2);padding-top:2.5rem;font-family:monospace;}
+footer a{color:#00BFA6;margin:0 1rem;text-decoration:none;}
+footer a:hover{color:#FFB800;}
+
+@media(max-width:1024px){
+.main-wrapper{grid-template-columns:1fr;gap:2rem;}
+.sidebar{position:static;}
+}
+@media(max-width:640px){
+.hero-banner{height:260px;}
+.article-header h1{font-size:1.8rem;}
+.timeline-item{flex-direction:column;gap:0.3rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-container">
+<div class="title-block">
+<a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
+</div>
+<nav class="nav">
+<a href="/">Home</a>
+<a href="/blog.html" class="active">Commentary</a>
+<a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+</nav>
+</div>
+</header>
+
+<!-- IMAGE RESERVE: Hero background.
+     Suggested Grok Imagine prompt:
+     "Dark room at night, multiple glowing phone and laptop screens showing social media
+     notifications and breaking news alerts on a desk, the Pentagon building visible through
+     a window in soft focus background, cinematic teal and amber lighting, photojournalistic"
+     Filename: three-months-forever-hero.jpg -->
+<div class="hero-banner">
+<img class="hero-bg-img" src="three-months-forever-hero.jpg" alt="Notifications and breaking news, Pentagon in background">
+<div class="hero-overlay"></div>
+<div class="hero-scanlines"></div>
+<div class="hero-fade"></div>
+</div>
+
+<div class="main-wrapper">
+<main class="article-wrap">
+
+<div class="article-header">
+<span class="supplement-tag">Field Notes &middot; Supplement</span>
+<h1>Three Months Ago, Forever</h1>
+<p class="article-subtitle">The June 12 export control directive on Fable 5 and Mythos 5 was not the start of anything. It was month four of a domestic fight between the Pentagon and a single AI company, fought entirely in public, that the rest of the world inherited without being asked.</p>
+<div class="article-meta">
+<span class="author">M&iacute;mir M&iacute;misbrunnr</span>
+<span>Field Notes</span>
+<span>14 June 2026</span>
+<span>The Hague, Netherlands</span>
+</div>
+<div class="read-time"><i class="far fa-clock"></i> Estimated reading time: 5 minutes</div>
+</div>
+
+<div class="related-box">
+This is a short supplement to <a href="/ai-governance-wars.html">The AI Governance Wars Begin</a>. That piece covers the EU/US regulatory collision in detail. This one covers what was happening inside the US the whole time.
+</div>
+
+<div class="article-body">
+
+<p>June 13, 22:40. US Secretary of Defense Pete Hegseth, posting to 603,000 views: "Three months ago, @DeptofWar kicked @AnthropicAI out of our building, forever. Every passing day proves why that was the right move."</p>
+
+<div class="alert-box">
+<p>That post has nothing to do with Brussels. Nothing to do with the DMA, Apple, or European digital sovereignty. It is the United States Secretary of Defense, the day after Fable 5 and Mythos 5 went dark for the entire planet, taking a victory lap on a fight that started in February.</p>
+<p class="src">Source: @PeteHegseth, X, 13 June 2026, 22:40, 603K views</p>
+</div>
+
+<!-- IMAGE SLOT 1 — Timeline visual
+     Suggested Grok Imagine prompt:
+     "A weathered cork board with a timeline of dated index cards from February to June 2026,
+     red string connecting them, dim desk lamp lighting, investigative board aesthetic, moody"
+     Filename: three-months-forever-timeline.jpg -->
+<figure style="margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);">
+<img src="three-months-forever-timeline.jpg" alt="[Image: Timeline — add caption]" style="width:100%;display:block;max-height:380px;object-fit:cover;">
+<figcaption style="padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);">Image caption here</figcaption>
+</figure>
+
+<h2>Four Months, Not One Week</h2>
+
+<p>The published piece documented the June 12 directive as a collision between two regulatory logics, one European, one American, with EU users caught in both. That collision is real. But the directive itself was never primarily about either of those things. It was the latest move in a four-month domestic argument over who gets to set the safety limits on America's most capable AI, fought in public between a cabinet department and a single company.</p>
+
+<div class="timeline-box">
+<h4>The Argument Before the Argument</h4>
+<div class="timeline-item">
+<div class="timeline-date">Feb 27</div>
+<div class="timeline-text"><strong>The refusal.</strong> The Pentagon requests unrestricted use of Claude, including mass domestic surveillance of Americans and lethal autonomous weapons without human oversight. Anthropic refuses, citing its own constitution. Trump bans every federal agency from using Anthropic's products.</div>
+</div>
+<div class="timeline-item flash">
+<div class="timeline-date">Feb 27</div>
+<div class="timeline-text"><strong>Supply chain risk.</strong> Defense Secretary Hegseth classifies Anthropic as a "supply chain risk," a designation normally reserved for firms tied to the Chinese military.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Mar 26&ndash;27</div>
+<div class="timeline-text"><strong>Injunction.</strong> A federal judge blocks both the federal ban and the supply chain risk designation on First Amendment grounds.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Late Apr</div>
+<div class="timeline-text"><strong>Second denial.</strong> The White House separately blocks an expansion of Mythos access to roughly seventy organisations, citing ongoing security concerns.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">Jun 5</div>
+<div class="timeline-text"><strong>NSPM-11.</strong> Trump signs a memorandum explicitly accelerating AI adoption across national security agencies and revoking Biden-era restrictions.</div>
+</div>
+<div class="timeline-item flash">
+<div class="timeline-date">Jun 12</div>
+<div class="timeline-text"><strong>The directive.</strong> Seven days after a memo to accelerate AI, the same administration disables the company's two most capable models, worldwide, citing a disputed jailbreak finding.</div>
+</div>
+<div class="timeline-item flash">
+<div class="timeline-date">Jun 13</div>
+<div class="timeline-text"><strong>The victory lap.</strong> Hegseth: "every passing day proves why that was the right move."</div>
+</div>
+</div>
+
+<p>Every non-US user, including everyone in the EU, inherited the outcome of an argument they were never party to, about a question, should the military get AI without human oversight on lethal force and domestic surveillance, that they were never asked.</p>
+
+<h2>Visible at Every Step</h2>
+
+<p>There is something genuinely new in how this is happening. Past technology transitions, nuclear, early cryptography export controls, played out mostly behind classification. This one is happening in the feed. A Secretary of Defense gloating in real time, a CEO's statement, a court injunction, an export directive, all visible, all timestamped, all four months apart and all colliding in one week. The institutions are improvising in public, and you can watch an administration sign a memo to accelerate AI on a Friday and disable the most advanced AI on the planet the following Friday.</p>
+
+<div class="pull-quote">
+<p>The institutional clock is wrong everywhere. Brussels was never going to be in this room, because the room itself was improvised, four months in the making, and aimed at something else entirely.</p>
+</div>
+
+<h2>Built It, Can't Use It</h2>
+
+<p>One detail worth sitting with: the foreign-national restriction in the June 12 directive lands on several of the people whose careers built the safety research the directive claims to be protecting. People who spent years on the question of how to make these systems safe now cannot access the systems they helped make safe, because of where they were born. Whatever the directive is actually targeting, it does not appear to distinguish between that and this.</p>
+
+<h2>What This Adds</h2>
+
+<p>The published piece found that the EU holds roughly 5% of global AI compute and regulates products it does not produce at the frontier. This adds a sharper edge to that finding. The mismatch is not only that some actors lack productive capacity. It is that even the country with the capacity is visibly struggling to build governance at the speed the technology moves, producing contradictory policy within the same administration inside a single week.</p>
+
+<p>This is not a one-off. The Anthropic/Pentagon relationship has been an open, escalating, publicly fought argument since February, and the June 12 directive reads less like a new event than like the next scheduled instalment. Expect more.</p>
+
+<div class="article-actions">
+<button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+<button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+<button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
+<button class="action-btn" onclick="shareArticle('telegram')"><i class="fab fa-telegram"></i><span>Telegram</span></button>
+<button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+</div>
+
+<div class="sources-box">
+<h4>Sources &amp; Primary References</h4>
+<ol>
+<li>Pete Hegseth (@PeteHegseth), X, 13 June 2026, 22:40 &mdash; "Three months ago, @DeptofWar kicked @AnthropicAI out of our building, forever."</li>
+<li>Associated Press: <a href="https://www.aol.com/articles/anthropic-refuses-bend-pentagon-ai-092859106.html" target="_blank">Trump orders US agencies to stop using Anthropic technology in clash over AI safety</a></li>
+<li>Fortune, 6 May 2026: <a href="https://fortune.com/2026/05/06/trump-administration-embraces-ai-oversight-policies-it-once-rejected-anthropic-mythos-caisi/" target="_blank">Trump administration suddenly embraces AI oversight ideas it once rejected</a></li>
+<li>Center for American Progress: <a href="https://www.americanprogress.org/article/the-trump-administration-is-trying-to-make-an-example-of-the-ai-giant-anthropic/" target="_blank">The Trump Administration Is Trying To Make an Example of the AI Giant Anthropic</a></li>
+<li>Council on Foreign Relations, 9 June 2026: <a href="https://www.cfr.org/articles/what-trumps-national-security-ai-memo-gets-right-and-leaves-unresolved" target="_blank">What Trump's National Security AI Memo Gets Right, and Leaves Unresolved (NSPM-11)</a></li>
+<li>The Hill: <a href="https://thehill.com/policy/technology/5922802-anthropic-mythos-ai-model-dangerous-trump-directive/" target="_blank">Anthropic restricts latest AI models in compliance with Trump admin directive</a></li>
+<li>Companion piece: <a href="/ai-governance-wars.html">The AI Governance Wars Begin</a> &mdash; Echo Truth Hub, 13 June 2026</li>
+</ol>
+</div>
+
+<div class="closing-cta">
+<h3>Read the Full Investigation</h3>
+<p>This supplement assumes the EU/US regulatory analysis in the main piece. Start there for the global picture, then come back here for the domestic fight underneath it.</p>
+<a href="/ai-governance-wars.html" class="cta-btn">The AI Governance Wars Begin &rarr;</a>
+<a href="https://x.com/EchoTruthHub" class="cta-btn" target="_blank">Follow ETH on X &rarr;</a>
+</div>
+
+</div><!-- end article-body -->
+</main>
+
+<aside class="sidebar">
+<div class="sidebar-section">
+<h3>&#127919; Current Bounty</h3>
+<div id="bounty-container">
+<p style="font-size:1rem;margin-bottom:1rem;color:rgba(255,255,255,0.7);">No active bounty at the moment.</p>
+<a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank">Follow on X</a>
+</div>
+</div>
+<div class="sidebar-section">
+<h3>Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+<div class="x-feed-container">
+<a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
+data-chrome="noheader nofooter noborders transparent"
+href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+</div>
+</div>
+</aside>
+</div><!-- end main-wrapper -->
+
+<footer>
+<p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+<p style="margin-top:0.8rem;"><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+function shareArticle(platform){
+const url=encodeURIComponent(window.location.href);
+const title=encodeURIComponent('Three Months Ago, Forever | Echo Truth Hub');
+const hashtags='TruthWithTeeth';
+let shareUrl;
+switch(platform){
+case 'twitter':shareUrl=`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`;break;
+case 'bluesky':shareUrl=`https://bsky.app/intent/compose?text=${title}%20${url}`;break;
+case 'linkedin':shareUrl=`https://www.linkedin.com/sharing/share-offsite/?url=${url}`;break;
+case 'telegram':shareUrl=`https://t.me/share/url?url=${url}&text=${title}`;break;
+}
+if(shareUrl)window.open(shareUrl,'_blank','width=600,height=400');
+}
+function copyLink(){
+navigator.clipboard.writeText(window.location.href).then(()=>{
+const btn=event.target.closest('.action-btn');
+const orig=btn.innerHTML;
+btn.innerHTML='<i class="fas fa-check"></i><span>Copied!</span>';
+btn.style.background='#00BFA6';btn.style.color='#0A0F14';btn.style.borderColor='#00BFA6';
+setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';btn.style.color='';btn.style.borderColor='';},2000);
+});
+}
+</script>
+</body>
+</html>
