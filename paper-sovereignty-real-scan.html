@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Sovereignty, Real Scan | Echo Truth Hub</title>
+<meta name="description" content="The EU Commission officially migrated to W Social, a closed-source platform requiring passport scans, built on undisclosed ATproto infrastructure, with a Tools for Humanity adviser on its board. The same week Brussels published its Tech Sovereignty Package. The same week it couldn't tell one citizen where his LinkedIn complaint had gone.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+html {overflow-x:hidden;max-width:100%;}
+body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;}
+*, *::before, *::after {box-sizing:border-box;}
+header {padding:2rem 0;border-bottom:1px solid rgba(0,191,166,0.2);width:100%;overflow:hidden;}
+.header-container {max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.title-block a {text-decoration:none;color:#fff;}
+.logo {font-size:2rem;font-weight:900;color:#fff;}
+.tagline {font-size:0.85rem;color:#00BFA6;margin-top:0.2rem;font-family:monospace;}
+.nav a {color:#00BFA6;text-decoration:none;margin:0 1rem;font-weight:600;font-family:monospace;font-size:0.9rem;transition:color 0.2s;}
+.nav a:hover,.nav a.active {color:#FFB800;}
+
+.hero-banner {position:relative;width:100%;height:400px;overflow:hidden;background:#04080b;}
+.hero-bg-img {position:absolute;inset:0;width:100% !important;height:100% !important;max-width:none !important;object-fit:cover !important;object-position:center !important;filter:brightness(0.3) saturate(0.6);z-index:1;}
+.hero-overlay {position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,191,166,0.07) 0%,transparent 55%),linear-gradient(to bottom,rgba(4,8,11,0.1) 0%,rgba(4,8,11,0.95) 100%);z-index:2;}
+.hero-scanlines {position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);z-index:3;pointer-events:none;}
+.hero-fade {position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,#0A0F14);z-index:4;}
+
+.main-wrapper {max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
+.article-wrap {min-width:0;}
+
+.article-header {margin-bottom:2rem;}
+.category-tag {display:inline-block;padding:0.35rem 0.8rem;border-radius:4px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;background:rgba(255,107,107,0.15);color:#ff6b6b;border:1px solid rgba(255,107,107,0.35);font-family:monospace;margin-bottom:1.2rem;}
+.article-header h1 {font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.1;color:#FFB800;letter-spacing:0.5px;margin-bottom:0.8rem;}
+.article-subtitle {font-size:1.05rem;color:#00BFA6;margin-bottom:1.5rem;font-style:italic;line-height:1.6;}
+.article-meta {display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-top:1px solid rgba(0,191,166,0.2);border-bottom:1px solid rgba(0,191,166,0.2);margin-bottom:0.8rem;flex-wrap:wrap;}
+.article-meta span {font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);}
+.article-meta .author {color:#00BFA6;font-weight:600;}
+.read-time {display:flex;align-items:center;gap:0.4rem;font-family:monospace;font-size:0.78rem;color:rgba(255,255,255,0.5);padding:0.6rem 0;margin-bottom:2rem;}
+.read-time i {color:#FFB800;}
+
+.article-body h2 {font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.6rem;color:#FFB800;letter-spacing:0.5px;margin:2.6rem 0 1.1rem;padding-top:0.9rem;border-top:1px solid rgba(0,191,166,0.2);}
+.article-body p {margin-bottom:1.4rem;color:#fff;font-size:1.05rem;line-height:1.85;}
+.article-body a {color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+.article-body a:hover {color:#FFB800;}
+
+.alert-box {background:rgba(255,184,0,0.07);border-left:4px solid #FFB800;border-radius:0 8px 8px 0;padding:1.4rem 1.8rem;margin:1.5rem 0 2.5rem;}
+.alert-box p {color:rgba(255,255,255,0.9);font-size:1rem;margin:0 0 0.5rem;}
+.alert-box p:last-child {margin:0;}
+.alert-box .src {font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.6rem;}
+
+.pull-quote {border-left:5px solid #00BFA6;padding:1rem 2rem;margin:2.5rem 0;background:rgba(0,191,166,0.05);border-radius:0 8px 8px 0;}
+.pull-quote p {font-size:1.2rem;font-style:italic;color:#fff;line-height:1.5;margin:0;}
+
+.fact-box {background:rgba(0,191,166,0.04);border:1px solid rgba(0,191,166,0.2);border-radius:12px;padding:2rem;margin:2.5rem 0;}
+.fact-box h4 {font-family:monospace;font-size:0.76rem;text-transform:uppercase;letter-spacing:1px;color:#00BFA6;margin-bottom:1.5rem;}
+.fact-item {display:flex;gap:1.5rem;padding:0.9rem 0;border-bottom:1px solid rgba(0,191,166,0.08);align-items:flex-start;}
+.fact-item:last-child {border-bottom:none;}
+.fact-label {font-family:monospace;font-size:0.82rem;color:#FFB800;flex-shrink:0;min-width:120px;}
+.fact-text {font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65;}
+.fact-text strong {color:#fff;}
+
+figure {margin:2.5rem 0;border-radius:10px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);}
+figure img {width:100%;display:block;max-height:380px;object-fit:cover;}
+figcaption {padding:0.7rem 1rem;font-family:monospace;font-size:0.75rem;color:rgba(255,255,255,0.4);background:rgba(0,0,0,0.3);}
+
+.sources-box {background:rgba(0,191,166,0.08);border-left:5px solid #00BFA6;border-radius:0 12px 12px 0;padding:2rem 2.5rem;margin:2rem 0;}
+.sources-box h4 {font-size:1.4rem;font-weight:700;color:#FFB800;margin-bottom:1.2rem;font-family:system-ui,-apple-system,sans-serif;}
+.sources-box ol {padding-left:1.5rem;}
+.sources-box li {font-size:0.92rem;color:rgba(255,255,255,0.9);margin-bottom:0.75rem;line-height:1.65;}
+.sources-box a {color:#00BFA6;text-decoration:underline;text-decoration-color:rgba(0,191,166,0.4);}
+
+.related-box {background:rgba(255,184,0,0.05);border:1px solid rgba(255,184,0,0.25);border-radius:10px;padding:1.2rem 1.6rem;margin-bottom:2.5rem;font-size:0.92rem;}
+.related-box a {color:#FFB800;text-decoration:underline;text-decoration-color:rgba(255,184,0,0.4);font-weight:600;}
+
+.closing-cta {text-align:center;padding:2.5rem 2rem;background:#0d1f1c;border-radius:16px;border:1px solid rgba(0,191,166,0.35);margin:3rem 0;}
+.closing-cta h3 {font-family:system-ui,-apple-system,sans-serif;font-weight:900;font-size:1.7rem;color:#FFB800;letter-spacing:1px;margin-bottom:1rem;}
+.closing-cta p {color:rgba(255,255,255,0.65);margin-bottom:1.5rem;font-size:0.95rem;}
+.cta-btn {display:inline-block;padding:0.9rem 2rem;background:#00BFA6 !important;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;font-family:monospace;font-size:0.9rem;transition:all 0.2s;margin:0.4rem;}
+.cta-btn:hover {background:#FFB800 !important;}
+
+.article-actions {display:flex;gap:10px;margin:2.5rem 0;flex-wrap:wrap;}
+.action-btn {display:inline-flex;align-items:center;gap:7px;padding:10px 16px;background:transparent;border:1px solid rgba(0,191,166,0.3);border-radius:8px;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;transition:all 0.2s;cursor:pointer;font-family:monospace;}
+.action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-1px);}
+.action-btn i {font-size:14px;color:#00BFA6;}
+
+.sidebar {position:sticky;top:100px;height:fit-content;}
+.sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
+.sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;font-family:system-ui,-apple-system,sans-serif;font-weight:900;}
+.bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14 !important;text-decoration:none !important;-webkit-text-fill-color:#0A0F14;border-radius:8px;font-weight:700;font-family:monospace;transition:all 0.2s;}
+.bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
+.x-logo {width:24px;height:24px;vertical-align:middle;margin-left:8px;opacity:0.9;}
+.x-feed-container {border-radius:16px;overflow:hidden;min-height:400px;background:rgba(0,191,166,0.05);}
+
+footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;font-family:monospace;}
+footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
+footer a:hover {color:#FFB800;}
+
+@media (max-width:1024px) {
+  .main-wrapper {grid-template-columns:1fr;gap:2rem;}
+  .sidebar {position:static;}
+}
+@media (max-width:640px) {
+  .hero-banner {height:280px;}
+  .article-header h1 {font-size:1.7rem;}
+  .fact-item {flex-direction:column;gap:0.3rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-container">
+  <div class="title-block">
+    <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
+  </div>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/blog.html" class="active">Commentary</a>
+    <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+  </nav>
+</div>
+</header>
+
+<!-- IMAGE RESERVE: Hero background
+     Suggested Grok Imagine prompt:
+     "A passport being scanned by a phone camera in front of a glowing EU flag,
+     dark room, teal and amber cinematic lighting, photojournalistic, no text overlay"
+     Filename: paper-sovereignty-hero.jpg -->
+<div class="hero-banner">
+  <img class="hero-bg-img" src="paper-sovereignty-hero.jpg" alt="Passport scan and EU flag">
+  <div class="hero-overlay"></div>
+  <div class="hero-scanlines"></div>
+  <div class="hero-fade"></div>
+</div>
+
+<div class="main-wrapper">
+<main class="article-wrap">
+
+<div class="article-header">
+  <span class="category-tag">Investigation</span>
+  <h1>Paper Sovereignty, Real Scan</h1>
+  <p class="article-subtitle">The EU Commission officially migrated to W Social, a platform requiring passport scans, built on infrastructure it initially failed to disclose, with a Tools for Humanity adviser on its board. The same week Brussels published its Tech Sovereignty Package. The same week it couldn't tell one citizen where his LinkedIn complaint had gone after six months.</p>
+  <div class="article-meta">
+    <span class="author">M&iacute;mir M&iacute;misbrunnr</span>
+    <span>Investigation</span>
+    <span>19 June 2026</span>
+    <span>The Hague, Netherlands</span>
+  </div>
+  <div class="read-time"><i class="far fa-clock"></i> Estimated reading time: 8 minutes</div>
+</div>
+
+<div class="related-box">
+  This piece connects to prior ETH investigations: <a href="/the-opt-in-illusion.html">The Opt-In Illusion</a> (manufactured consent and the gap between formal rights and practical recourse) and <a href="/biometric.html">The Biometric Dilemma</a> (why identity verification as platform access raises questions that don't disappear when a European entity runs the infrastructure).
+</div>
+
+<div class="article-body">
+
+<p>On June 17, 2026, the European Commission posted on X: "Looking for a new place to debate Europe? Follow our account on W, a freshly launched independent social media network, based in Europe and aiming for open, safer online conversations." The Commission had officially begun migrating its public communications to W Social.</p>
+
+<p>The same day, the Commission's competition directorate was asking European citizens to submit feedback on new merger guidelines before a June 26 deadline, guidelines that explicitly address digital market concentration and the need for European competitiveness. The same week, the Commission published its Tech Sovereignty Package. And six months after a Dutch citizen filed a complaint with the AP about a LinkedIn account suspension, the AP had told him it was the ACM's problem, the ACM had told him it was a structural signal rather than an individual case, and nobody had given him a contact name.</p>
+
+<p>These are not separate stories. They are the same story, told from three different angles, about the distance between what European digital sovereignty looks like on paper and what it produces in practice.</p>
+
+<!-- IMAGE SLOT 1
+     Suggested Grok Imagine prompt:
+     "Split screen: left side shows an official government letterhead, right side shows a smartphone
+     displaying a passport scan app, teal and amber cinematic lighting, photojournalistic"
+     Filename: paper-sovereignty-split.jpg -->
+<figure>
+  <img src="paper-sovereignty-split.jpg" alt="[Image: paper rights versus digital scan — add caption]">
+  <figcaption>Formal rights on paper; passport scan required in practice</figcaption>
+</figure>
+
+<h2>What W Social Actually Is</h2>
+
+<p>W Social AB is a limited company incorporated in Sweden, a subsidiary of We Don't Have Time AB. Its CEO and co-founder is Anna Zeiter, previously Chief Privacy Officer at eBay. Its chairman is Ingmar Rentzhog, a Swedish climate entrepreneur. The platform describes itself as built for "verified human users, transparency, privacy, and free speech," with all data hosted in Europe.</p>
+
+<div class="alert-box">
+  <p>To post, comment, or interact on W Social, identity verification is required. The W Identity app, available on the App Store, describes its function plainly: "W Identity works as an e-identification for phones and tablets. Scan your ID document, passport or national ID card." The verification method is NFC scan of a physical identity document.</p>
+  <p class="src">Source: W Identity, App Store listing, W Social AB, June 2026</p>
+</div>
+
+<p>The platform is built on ATproto, the same open-source protocol as BlueSky. This is not disclosed prominently. Elena Rossini, who has published two detailed investigations into W Social's structure, documented that the company initially failed to disclose its ATproto foundation entirely, before pivoting to openly praising the protocol once the omission was noted.</p>
+
+<p>W Social went closed-source in March 2026. The Commission's Tech Sovereignty Package, published the same week as the Commission's migration announcement, calls explicitly for open-source infrastructure as a component of European digital sovereignty. The Commission endorsed a closed-source platform while publishing a document calling for open-source infrastructure. This is not a minor inconsistency. It is the central one.</p>
+
+<!-- IMAGE SLOT 2
+     Suggested Grok Imagine prompt:
+     "A conference slide projected in a dark room showing silhouettes of advisors, EU stars
+     faintly visible in background, teal and amber cinematic lighting, no readable text"
+     Filename: paper-sovereignty-advisors.jpg -->
+<figure>
+  <img src="paper-sovereignty-advisors.jpg" alt="[Image: advisory board — add caption]">
+  <figcaption>W Social advisory board includes the current Chief Privacy Officer of Tools for Humanity</figcaption>
+</figure>
+
+<h2>The Advisory Board</h2>
+
+<p>W Social's advisory board includes Yariv Adan, a former AI lead at Google who co-founded Google Assistant and Google Lens. It includes Cristina Caffarra, founder of EuroStack, an initiative aimed at building independent European digital infrastructure. It includes prominent figures from European politics and media.</p>
+
+<div class="alert-box">
+  <p>It also includes Marc Placzek. Placzek was previously Chief Privacy Officer at PayPal, a company co-founded by Peter Thiel. He currently serves as Chief Privacy Officer at Tools for Humanity, the company co-founded and chaired by Sam Altman, whose product is a metallic orb that scans users' irises to generate a unique digital identity called a World ID.</p>
+  <p class="src">Source: Elena Rossini, "W Social, Public Institutions and the Theater of European Digital Sovereignty," June 2026; Bloomberg Law, July 2024 (Tools for Humanity CPO appointment)</p>
+</div>
+
+<p>Tools for Humanity's technology has been temporarily banned or investigated in several countries on privacy and data-security grounds. The irony of a platform presented as Europe's sovereign alternative to US Big Tech having, as an adviser, the current Chief Privacy Officer of one of Sam Altman's companies is not subtle. It is, however, documented.</p>
+
+<h2>What Belgium Paid For</h2>
+
+<p>The Commission's endorsement is not merely rhetorical. Belgium has made a financial contribution to W Social as part of the broader institutional push to establish it as a European public communications platform. This represents public funding directed toward a specific private platform in a market the Commission is simultaneously claiming to regulate neutrally through its merger guidelines review.</p>
+
+<p>The merger guidelines consultation, closing June 26, explicitly addresses "geopolitical context" and "digital markets" as areas requiring updated rules. Topic E covers digitalisation. Topic G covers public policy, security, and market considerations. The Commission is asking stakeholders to comment on rules governing digital market concentration while simultaneously directing public funds and institutional communications toward one specific private platform in that market. That is a structural tension the consultation document does not address.</p>
+
+<!-- IMAGE SLOT 3
+     Suggested Grok Imagine prompt:
+     "A bureaucratic corridor with doors labeled AP, ACM, DSA, GDPR, each door slightly ajar
+     but leading to another identical corridor, Kafkaesque, teal and amber cinematic lighting"
+     Filename: paper-sovereignty-corridor.jpg -->
+<figure>
+  <img src="paper-sovereignty-corridor.jpg" alt="[Image: the regulatory corridor — add caption]">
+  <figcaption>AP to ACM to silence: six months, no resolution, no contact name</figcaption>
+</figure>
+
+<h2>The Corridor</h2>
+
+<p>In late 2025, a Dutch citizen whose LinkedIn account had been suspended filed a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens, AP). The AP determined in December 2025 that the matter fell not under GDPR but under Article 17 of the Digital Services Act, and forwarded the complaint to the Authority for Consumers and Markets (ACM). The AP confirmed its role was concluded. Further communication would go through the ACM.</p>
+
+<p>In June 2026, following up on six months of silence, the complainant wrote again to the AP. The AP's response: once forwarded, the AP has no further visibility into how the ACM handles the case or who the contact person is. The ACM, it noted, is oriented toward addressing broader structural issues rather than providing individual case feedback. Complaints like this one serve primarily as signals.</p>
+
+<div class="pull-quote">
+  <p>The formal architecture of rights exists. GDPR. DSA. Article 17. The AP. The ACM. Each institution is real, each regulation is law. What the six-month corridor produces is a documented, dated sequence of referrals with no resolution, no contact name, and no recovery of data.</p>
+</div>
+
+<p>This is the same institution now directing citizens toward W Social, a platform requiring passport scans to participate, built on undisclosed infrastructure, with a closed-source codebase, endorsed with Belgian public funding. Citizens are being asked to trust the next layer of European digital infrastructure by the same regulatory apparatus that could not navigate one LinkedIn complaint to a conclusion in half a year.</p>
+
+<h2>The Pattern</h2>
+
+<p>The three threads are the same thread. The Commission produces sovereignty documents while endorsing non-sovereign infrastructure. It funds specific private platforms while claiming to regulate markets neutrally. Its regulatory apparatus promises recourse while delivering referral. And it does all of this while posting the announcements on X, the platform it is publicly migrating away from, owned by the man under criminal investigation in the country that hosted this week's G7.</p>
+
+<p>The question is not whether European digital sovereignty is a legitimate goal. It is. The question is whether the mechanism being built to achieve it, identity-verified platforms, public institutional endorsement of specific private actors, regulatory frameworks that produce procedural circulation rather than outcomes, constitutes sovereignty or a more expensive version of dependence with a European flag on it.</p>
+
+<p>The merger guidelines consultation closes in seven days. The feedback form is at link.europa.eu/XyfjJY. The answer to "have your say" is available to anyone with a functioning browser and an opinion. No passport scan required. Yet.</p>
+
+<div class="article-actions">
+  <button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i><span>Share on X</span></button>
+  <button class="action-btn" onclick="shareArticle('linkedin')"><i class="fab fa-linkedin"></i><span>LinkedIn</span></button>
+  <button class="action-btn" onclick="shareArticle('bluesky')"><i class="fas fa-cloud"></i><span>Bluesky</span></button>
+  <button class="action-btn" onclick="shareArticle('telegram')"><i class="fab fa-telegram"></i><span>Telegram</span></button>
+  <button class="action-btn" onclick="copyLink()"><i class="fas fa-link"></i><span>Copy Link</span></button>
+</div>
+
+<div class="sources-box">
+  <h4>Sources &amp; Primary References</h4>
+  <ol>
+    <li>European Commission (@EU_Commission), X, 17 June 2026: official W Social migration announcement</li>
+    <li>W Social AB, Legal Notice / Imprint: <a href="https://wsocial.eu/public/imprint-w-social" target="_blank">wsocial.eu/public/imprint-w-social</a> — registered office, board of directors, DSA contact</li>
+    <li>W Identity, App Store listing, W Social AB, version 1.1.6, June 2026: <a href="https://apps.apple.com/nl/app/w-identity/id6758667517" target="_blank">apps.apple.com/nl/app/w-identity</a></li>
+    <li>Elena Rossini, "W Social, Public Institutions and the Theater of European Digital Sovereignty," June 2026: <a href="https://blog.elenarossini.com/w-social-public-institutions-and-the-theater-of-european-digital-sovereignty/" target="_blank">blog.elenarossini.com</a></li>
+    <li>Elena Rossini, "The Untold Story About W Social," June 2026: <a href="https://blog.elenarossini.com/the-untold-story-about-w-social-unconventional-beginnings-strategic-pitches-conflicting-signals/" target="_blank">blog.elenarossini.com</a> — advisory board, ATproto disclosure failure</li>
+    <li>Bloomberg Law, July 2024: Tools for Humanity appoints Damien Kieran as first CPO (background on TFH structure)</li>
+    <li>iamexpat.de, January 2026: W Social AB corporate structure, Anna Zeiter background</li>
+    <li>Impact Loop, February 2026: W Social advisory board detail, Belgian funding context</li>
+    <li>PAL NWS, June 2026: European Commission + Belgium W Social funding: <a href="https://pal.be/2026/06/europese-commissie-belgie-w-social-x/" target="_blank">pal.be</a></li>
+    <li>European Commission, DG Competition: Review of Merger Guidelines, public consultation open until 26 June 2026: <a href="https://competition-policy.ec.europa.eu/mergers/review-merger-guidelines_en" target="_blank">competition-policy.ec.europa.eu</a></li>
+    <li>AP (Autoriteit Persoonsgegevens) to complainant, 22 December 2025: referral to ACM under DSA Article 17 (primary correspondence, screenshots on file)</li>
+    <li>AP to complainant, 16 June 2026: confirmation of no further visibility into ACM case handling (primary correspondence, screenshots on file)</li>
+    <li>Related ETH investigations: <a href="/the-opt-in-illusion.html">The Opt-In Illusion</a> &middot; <a href="/biometric.html">The Biometric Dilemma</a></li>
+  </ol>
+</div>
+
+<div class="closing-cta">
+  <h3>The Merger Guidelines Consultation Closes 26 June</h3>
+  <p>The Commission is asking for public feedback on rules governing digital market concentration. One week left.</p>
+  <a href="https://competition-policy.ec.europa.eu/mergers/review-merger-guidelines_en" class="cta-btn" target="_blank">Read the Guidelines &rarr;</a>
+  <a href="https://x.com/EchoTruthHub" class="cta-btn" target="_blank">Follow ETH on X &rarr;</a>
+</div>
+
+</div>
+</main>
+
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <h3>Current Bounty Status</h3>
+    <div id="bounty-container">
+      <p style="font-size:1rem;margin-bottom:1rem;color:rgba(255,255,255,0.7);">No active bounty at the moment.</p>
+      <a href="https://x.com/EchoTruthHub" class="bounty-btn" target="_blank">Follow on X</a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <h3>Live from <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
+    <div class="x-feed-container">
+      <a class="twitter-timeline" data-width="400" data-height="800" data-theme="dark"
+        data-chrome="noheader nofooter noborders transparent"
+        href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
+  <p><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
+</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+function shareArticle(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent('Paper Sovereignty, Real Scan | Echo Truth Hub');
+  const hashtags = 'TruthWithTeeth';
+  let shareUrl;
+  switch(platform) {
+    case 'twitter': shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`; break;
+    case 'bluesky': shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`; break;
+    case 'linkedin': shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`; break;
+    case 'telegram': shareUrl = `https://t.me/share/url?url=${url}&text=${title}`; break;
+  }
+  if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = event.target.closest('.action-btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+    btn.style.background = '#00BFA6'; btn.style.color = '#0A0F14'; btn.style.borderColor = '#00BFA6';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.style.borderColor = ''; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
